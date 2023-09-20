@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('phone')->nullable();
             $table->string('role')->default('seller');
+            $table->float('wallet')->default(0);
             $table->boolean('approve')->default(0);
             $table->string('cccd_front')->nullable();
             $table->string('cccd_back')->nullable();
