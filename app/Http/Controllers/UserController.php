@@ -27,6 +27,17 @@ class UserController extends Controller
         ]);
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
+        $ramdomLinkRef = quickRandom();
+        $isExist = true;
+        while ($isExist) {
+            $checkExist = User::where('ref_link', $ramdomLinkRef)->count();
+            if ($checkExist == 0) {
+                $isExist = false;
+                break;
+            }
+        }
+        $data['ref_link'] = $ramdomLinkRef;
+        $data['role'] = $request->role ?? 'seller';
         $user = User::create($data);
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
