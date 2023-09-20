@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
+use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
@@ -18,6 +19,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public $userRepo;
+
+    public function __construct(UserRepository $userRepo) {
+        $this->userRepo = $userRepo;
+    }
+
+    public function info() {
+        return $this->userRepo->info();
+    }
 
     public function register(Request $request)
     {

@@ -24,5 +24,24 @@ class OrderController extends Controller
         if ($order) {
             return $this->sendJsonResponse($order, 'success');
         }
+        return $this->sendJsonError($order, 'error');
+    }
+
+    public function update(Request $request) {
+        $id = $request->id;
+        $order = $this->orderRepo->update($id, $request->all());
+        if ($order) {
+            return $this->sendJsonResponse($order, 'success');
+        }
+        return $this->sendJsonError($order, 'error');
+    }
+
+    public function delete(Request $request) {
+        $id = $request->id;
+        $order = $this->orderRepo->delete($id);
+        if ($order) {
+            return $this->sendJsonResponse($order, 'success');
+        }
+        return $this->sendJsonError($order, 'error');
     }
 }
