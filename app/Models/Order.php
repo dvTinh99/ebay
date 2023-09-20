@@ -21,5 +21,11 @@ class Order extends Model
         'profit',
         'shipping',
         'coupon',
+        'time_create',
+        'time_signing',
     ];
+
+    public function orderItem() {
+        return $this->hasMany(OrderItem::class);
+    }
 }

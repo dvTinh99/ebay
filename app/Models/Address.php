@@ -10,14 +10,11 @@ class Address extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'use_default',
-        'name',
-        'owner',
-        'number',
-        'dinh_tuyen',
-        'use_usdt',
-        'link_usdt',
-        'address_usdt',
+        'address',
+        'country',
+        'status',
+        'city',
+        'zip_code',
+        'phone',
     ];
 }
