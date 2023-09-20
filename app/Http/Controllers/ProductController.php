@@ -8,11 +8,11 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
-use App\Repositories\ProductRepository;
+use App\Http\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
-    
+
     public $productRepo;
 
     public function __construct(ProductRepository $productRepo) {

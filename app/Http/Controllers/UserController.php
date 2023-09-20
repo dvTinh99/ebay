@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\UserRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
-use App\Repositories\UserRepository;
 
 class UserController extends Controller
 {
@@ -22,7 +22,6 @@ class UserController extends Controller
 
 
     public $userRepo;
-
     public function __construct(UserRepository $userRepo) {
         $this->userRepo = $userRepo;
     }

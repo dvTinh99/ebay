@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Http\Repositories;
 
-use App\Repositories\BaseRepository;
+use App\Models\User;
+use App\Http\Repositories\BaseRepository;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Auth;
 
-class UserRepository implements BaseRepository
+class UserRepository extends BaseRepository
 {
     public function getModel()
     {

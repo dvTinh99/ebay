@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
-use App\Repositories\OrderRepository;
+use App\Http\Repositories\OrderRepository;
 
 class OrderController extends Controller
 {

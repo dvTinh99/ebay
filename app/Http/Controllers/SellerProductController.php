@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\SellerProductRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
-use App\Repositories\SellerRepository;
 
-class SellerController extends Controller
+class SellerProductController extends Controller
 {
-    public $sellerRepo;
+    public $sellerProductRepo;
 
-    public function __construct(SellerRepository $sellerRepo) {
-        $this->sellerRepo = $sellerRepo;
+    public function __construct(SellerProductRepository $sellerProductRepo) {
+        $this->sellerProductRepo = $sellerProductRepo;
     }
 
     public function create(Request $request) {
-        $order = $this->sellerRepo->create($request->all());
+        $order = $this->sellerProductRepo->create($request->all());
         if ($order) {
             return $this->sendJsonResponse($order, 'success');
         }
@@ -28,7 +28,7 @@ class SellerController extends Controller
 
     public function update(Request $request) {
         $id = $request->id;
-        $order = $this->sellerRepo->update($id, $request->all());
+        $order = $this->sellerProductRepo->update($id, $request->all());
         if ($order) {
             return $this->sendJsonResponse($order, 'success');
         }
@@ -37,7 +37,7 @@ class SellerController extends Controller
 
     public function delete(Request $request) {
         $id = $request->id;
-        $order = $this->sellerRepo->delete($id);
+        $order = $this->sellerProductRepo->delete($id);
         if ($order) {
             return $this->sendJsonResponse($order, 'success');
         }

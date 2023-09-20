@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Http\Repositories;
 
-use App\Repositories\BaseRepository;
+use App\Http\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 
-class ProductRepository implements BaseRepository
+class ProductRepository extends BaseRepository
 {
     public function getModel()
     {
