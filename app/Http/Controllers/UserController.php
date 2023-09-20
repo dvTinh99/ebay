@@ -27,7 +27,18 @@ class UserController extends Controller
     }
 
     public function info() {
-        return $this->userRepo->info();
+        return $this->sendJsonResponse($this->userRepo->info(), 'success');
+    }
+    public function listSeller() {
+        return $this->sendJsonResponse($this->userRepo->listSeller(), 'success');
+    }
+
+    public function myProduct() {
+        return $this->sendJsonResponse($this->userRepo->myProduct(), 'success');
+    }
+
+    public function addProduct(Request $request) {
+        return $this->sendJsonResponse($this->userRepo->addProduct($request->product_ids), 'success');
     }
 
     public function register(Request $request)
@@ -49,6 +60,9 @@ class UserController extends Controller
         }
         $data['ref_link'] = $ramdomLinkRef;
         $data['role'] = $request->role ?? 'seller';
+        if ($request->ref_link) {
+            $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
+        }
         $user = User::create($data);
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;

@@ -13,4 +13,8 @@ class SellerProduct extends Model
         'user_id',
         'product_id',
     ];
+
+    public function product() {
+        return $this->hasMany(Product::class);
+    }
 }
