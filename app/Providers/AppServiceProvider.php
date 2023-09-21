@@ -13,7 +13,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Log::debug('vaof bind');
         $this->app->bind(
             \App\Http\Repositories\BaseRepositoryInterface::class,
             \App\Http\Repositories\BaseRepository::class

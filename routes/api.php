@@ -47,8 +47,8 @@ Route::group([
 ], function() {
     Route::get('/list-order', [OrderController::class, 'getAll']);
     Route::get('/my-order', [OrderController::class, 'myOrder']);
+    Route::get('/detail-order', [OrderController::class, 'detail']);
     Route::post('/create-order', [OrderController::class, 'create']);
-    Route::post('/detail-order', [OrderController::class, 'detail']);
     Route::post('/update-order', [OrderController::class, 'update']);
 });
 

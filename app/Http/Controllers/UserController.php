@@ -61,7 +61,10 @@ class UserController extends Controller
         $data['ref_link'] = $ramdomLinkRef;
         $data['role'] = $request->role ?? 'seller';
         if ($request->ref_link) {
-            $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
+            $user = $this->userRepo->findWithRefCode($request->ref_link);
+            if ($user) {
+                $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
+            }
         }
         $user = User::create($data);
         $tokenResult = $user->createToken('Personal Access Token');

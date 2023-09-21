@@ -33,7 +33,13 @@ class BankController extends Controller
     }
 
     public function create(Request $request) {
-        $bank = User::find($request->user_id)->bank;
+        if ($request->user_id) {
+            $bank = User::find($request->user_id)->bank;
+        } else {
+            $user = Auth::user();
+            $bank = $user->bank;
+            $request->request->add(['user_id' => $user->id]); 
+        }
         if ($bank) {
             $this->bankRepo->update($bank->id, $request->all());
             return $this->sendJsonResponse($bank, 'success');
