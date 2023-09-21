@@ -41,6 +41,13 @@ class UserController extends Controller
         return $this->sendJsonResponse($this->userRepo->addProduct($request->product_ids), 'success');
     }
 
+    public function recharge(Request $request) {
+        $user_id = $request->user_id;
+        $amount = $request->amount;
+        $method = $request->method;
+        return $this->sendJsonResponse($this->userRepo->recharge($user_id, $amount, $method), 'success');
+    }
+
     public function register(Request $request)
     {
         $request->validate([

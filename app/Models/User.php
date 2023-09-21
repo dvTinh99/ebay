@@ -23,6 +23,7 @@ class User extends Authenticatable
         'ref_of',
         'password',
         'role',
+        'wallet',
     ];
 
     /**
@@ -46,5 +47,13 @@ class User extends Authenticatable
 
     public function bank() {
         return $this->hasOne(Bank::class);
+    }
+
+    public function exchanges() {
+        return $this->hasMany(Exchange::class);
+    }
+
+    public function address() {
+        return $this->hasMany(Address::class);
     }
 }

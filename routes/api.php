@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\BankController;
-use App\Http\Controllers\SellerProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\AddressController;
+use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExchangeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,12 +36,15 @@ Route::group([
     //master
     Route::get('/list-seller', [UserController::class, 'listSeller']);
     Route::post('/create-order', [OrderController::class, 'create']);
+    Route::post('/recharge', [UserController::class, 'recharge']);
 
 
     //seller
     Route::get('/info', [UserController::class, 'info']);
     Route::get('/my-product', [UserController::class, 'myProduct']);
     Route::get('/add-product', [SellerProductController::class, 'create']);
+
+    Route::get('/my-exchange', [ExchangeController::class, 'myExchange']);
 });
 
 Route::group([
@@ -60,4 +66,14 @@ Route::group([
     Route::get('/my-bank', [BankController::class, 'myBank']);
     Route::post('/create-bank', [BankController::class, 'create']);
     Route::post('/update-bank', [BankController::class, 'update']);
+});
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/address',
+], function() {
+    Route::get('/list-address', [AddressController::class, 'getAll']);
+    Route::get('/my-address', [AddressController::class, 'myAddress']);
+    Route::post('/create-address', [AddressController::class, 'create']);
+    Route::post('/update-address', [AddressController::class, 'update']);
 });
