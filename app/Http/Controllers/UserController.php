@@ -115,4 +115,11 @@ class UserController extends Controller
             )->toDateTimeString()
         ]);
     }
+
+    public function logout(Request $request) {
+        Auth::user()->AauthAcessToken()->delete();
+        return $this->sendJsonResponse('logout success', 'success');
+    }
+
+
 }

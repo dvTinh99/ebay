@@ -56,4 +56,9 @@ class User extends Authenticatable
     public function address() {
         return $this->hasMany(Address::class);
     }
+
+    public function AauthAcessToken(){
+        return $this->hasMany(OauthAccessToken::class);
+    }
+    
 }
