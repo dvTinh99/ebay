@@ -54,6 +54,10 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+        $userExist = User::where('email', $request->email)->exists();
+        if ($userExist) {
+            return $this->sendJsonError('User already exist', 300);
+        }
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
         $ramdomLinkRef = quickRandom();

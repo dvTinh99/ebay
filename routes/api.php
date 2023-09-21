@@ -19,7 +19,9 @@ use App\Http\Controllers\ExchangeController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get('/', function() {
+    echo 'api';
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
