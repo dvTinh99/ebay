@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExchangeController;
@@ -80,4 +81,14 @@ Route::group([
     Route::get('/my-address', [AddressController::class, 'myAddress']);
     Route::post('/create-address', [AddressController::class, 'create']);
     Route::post('/update-address', [AddressController::class, 'update']);
+});
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/product',
+], function() {
+    Route::get('/list-product', [ProductController::class, 'getAll']);
+    Route::get('/my-product', [ProductController::class, 'myProduct']);
+    Route::post('/create-product', [ProductController::class, 'create']);
+    Route::post('/update-product', [ProductController::class, 'update']);
 });

@@ -264,7 +264,11 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->status }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->payment }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;"><button>Chi tiết</button></td>
+                                                                <td style="text-align: center; vertical-align: middle;">
+                                                                    <a href="#id={{ $order->id }}">
+                                                                        <button onclick="showDetail({{ $order->id }})" data-toggle="modal" data-target="#exampleModal" >Chi tiết</button>
+                                                                    </a>
+                                                                </td>
                                                             </tr>
                                                         @endforeach
                                                     </tbody>
@@ -292,6 +296,32 @@
         </section>
     </div>
     <!-- /.row (main row) -->
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe id="iframe" src="http://ebay.test/detail/1" style="height: 17em;width: 100%;"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script>
+    function showDetail(id) {
+        $('#iframe').src = 'http://ebay.test/detail/' + id;
+    }
+</script>
 
 </section>
 <!-- /.content -->

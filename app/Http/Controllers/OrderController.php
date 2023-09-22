@@ -10,6 +10,7 @@ use Validator;
 use Carbon\Carbon;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\OrderItemRepository;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -37,7 +38,14 @@ class OrderController extends Controller
     public function create(Request $request) {
         $order = $this->orderRepo->create($request->all());
         $products = $request->products;
+        $warehouse_price = 0.0;
+        $profit = 0.0;
+        $price = 0.0;
         foreach ($products as $product) {
+            $pro = Product::find($product['product_id']);
+            $warehouse_price += $pro->warehouse_price * $product['quantity'];
+            $profit += $pro->profit * $product['quantity'];
+            $price += $pro->price * $product['quantity'];
             $this->orderItemRepo->create([
                 'order_id' => $order->id,
                 'product_id' => $product["product_id"],
@@ -45,6 +53,10 @@ class OrderController extends Controller
                 // 'type' ,
             ]);
         }
+        $order->price = $price;
+        $order->profit = $profit;
+        $order->warehouse_price = $warehouse_price;
+        $order->save();
         if ($order) {
             return $this->sendJsonResponse($order, 'success');
         }

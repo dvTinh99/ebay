@@ -24,6 +24,8 @@ class CreateProductsTable extends Migration
             $table->string('ma_vach')->nullable();
             $table->boolean('returnable')->default(0);
             $table->float('price')->default(0);
+            $table->float('warehouse_price')->default(0);
+            $table->float('profit')->default(0);
             $table->float('price_discount')->default(0);
             $table->string('price_discount_type')->nullable();
             $table->string('price_discount_from')->nullable();

@@ -29,20 +29,20 @@
                                 <button type="button" id="faupload-avatar" class="faupload dz-clickable" data-input-id="c-avatar" initialized="true"><i class="fa fa-upload dz-message"></i> Upload</button>
                             </div>
 
-                            <h3 class="profile-username text-center">duyanh092389756@gmail.com</h3>
+                            <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
 
-                            <p class="text-muted text-center">duyanh092389756@gmail.com</p>
+                            <p class="text-muted text-center">{{ Auth::user()->name }}</p>
                             <div class="form-group">
                                 <label for="email" class="control-label">Email:</label>
-                                <input type="text" readonly="readonly" class="form-control" id="email" name="row[email]" value="duyanh092389756@gmail.com">
+                                <input type="text" readonly="readonly" class="form-control" id="email" name="row[email]" value="{{ Auth::user()->name }}">
                             </div>
     <!--                        <div class="form-group">-->
     <!--                            <label for="email" class="control-label">Email:</label>-->
-    <!--                            <input type="text" class="form-control" id="email" name="row[email]" value="duyanh092389756@gmail.com" data-rule="required;email"/>-->
+    <!--                            <input type="text" class="form-control" id="email" name="row[email]" value="{{ Auth::user()->name }}" data-rule="required;email"/>-->
     <!--                        </div>-->
     <!--                        <div class="form-group">-->
     <!--                            <label for="email" class="control-label">email:</label>-->
-    <!--                            <input type="text" class="form-control" id="email" name="row[email]" value="duyanh092389756@gmail.com" data-rule="required"/>-->
+    <!--                            <input type="text" class="form-control" id="email" name="row[email]" value="{{ Auth::user()->name }}" data-rule="required"/>-->
     <!--                        </div>-->
                             <div class="form-group">
                                 <label for="password" class="control-label">Password:</label>

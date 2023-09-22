@@ -19,6 +19,10 @@ class ProductController extends Controller
         $this->productRepo = $productRepo;
     }
 
+    public function getAll() {
+        return $this->sendJsonResponse($this->productRepo->getAll(), 'success');
+    }
+
     public function create(Request $request) {
         $order = $this->productRepo->create($request->all());
         if ($order) {

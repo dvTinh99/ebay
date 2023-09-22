@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\OrderController;
 use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,6 @@ Route::group([
 Route::get('/login', function () {
     return view('kho.login' , ["page"=> "login"]);
 });
+Route::get('/detail/{id}', [OrderController::class, 'detail']);
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
