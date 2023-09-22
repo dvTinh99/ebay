@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 use App\Models\User;
 use App\Models\Exchange;
 use App\Http\Repositories\BaseRepository;
+use App\Models\Order;
 use App\Models\SellerProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -43,6 +44,29 @@ class UserRepository extends BaseRepository
         ];
         $recharge = Exchange::create($data);
         return $recharge;
+    }
+
+    public function myOrder() {
+        return Order::where('user_id', Auth::id());
+    }
+
+    public function myRecharge() {
+        return Exchange::where('user_id', Auth::id());
+    }
+
+    public function dashboard() {
+        $walletBalance = Auth::user()->wallet;
+        $totalOrderAmount = Order::where('user_id', Auth::id())->sum('price');
+        $totalOrderProfit = Order::where('user_id', Auth::id())->sum('profit');
+        $totalUnpaidOrder = Order::where('user_id', Auth::id())->sum('warehouse_price');
+
+        $data = [
+            'wallet' => $walletBalance,
+            'total_order_amount' => $totalOrderAmount,
+            'total_order_profit' => $totalOrderProfit,
+            'total_unpaid_order' => $totalUnpaidOrder
+        ];
+        return $data;
     }
 
 }

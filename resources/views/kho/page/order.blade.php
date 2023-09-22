@@ -23,7 +23,7 @@
                                 <div class="widget-body no-padding">
 
                                     <div class="bootstrap-table">
-                                        <div class="commonsearch-table ">
+                                        {{-- <div class="commonsearch-table ">
                                             <form
                                                 class="form-horizontal form-commonsearch nice-validator n-default n-bootstrap"
                                                 novalidate="" method="post" action="">
@@ -65,8 +65,8 @@
                                                     </div>
                                                 </fieldset>
                                             </form>
-                                        </div>
-                                        <div class="fixed-table-toolbar">
+                                        </div> --}}
+                                        {{-- <div class="fixed-table-toolbar">
                                             <div class="bs-bars pull-left">
                                                 <div id="toolbar" class="toolbar">
                                                     <a href="javascript:;" class="btn btn-primary btn-refresh"
@@ -169,235 +169,104 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="fixed-table-container" style="padding-bottom: 0px;">
                                             <div class="fixed-table-header" style="display: none;">
                                                 <table></table>
                                             </div>
                                             <div class="fixed-table-body">
-                                                <div class="fixed-table-loading"
-                                                    style="top: 42px; display: none;">Loading, please wait...</div>
                                                 <table id="table"
                                                     class="table table-striped table-bordered table-hover table-nowrap"
                                                     width="100%">
                                                     <thead>
                                                         <tr>
-                                                            <th class="bs-checkbox "
-                                                                style="text-align: center; vertical-align: middle; width: 36px; "
-                                                                data-field="0">
-                                                                <div class="th-inner "><input name="btSelectAll"
-                                                                        type="checkbox"></div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
-                                                            <th style="text-align: center; vertical-align: middle; "
-                                                                data-field="o_id">
-                                                                <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">NHẬN
-                                                                            DẠNG</font>
-                                                                    </font>
-                                                                </div>
-                                                                <div class="fht-cell"></div>
-                                                            </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="code">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Số
-                                                                            đơn hàng</font>
-                                                                    </font>
+                                                                    Mã đơn hàng
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="product_storehouse_total">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Số
-                                                                            tiền nhận</font>
-                                                                    </font>
+                                                                    Giá kho
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="profit">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Lợi
-                                                                            nhuận</font>
-                                                                    </font>
+                                                                    Lợi nhuận
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="grand_total">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            Tổng cộng</font>
-                                                                    </font>
+                                                                   Tổng cộng
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="email">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            Email của khách hàng</font>
-                                                                    </font>
+                                                                    Email khách
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="seller">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            Người bán</font>
-                                                                    </font>
+                                                                    Người bán
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="product_storehouse_status">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Tình
-                                                                            trạng đón</font>
-                                                                    </font>
+                                                                    Tình trạng đơn hàng
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="payment_status">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Tình
-                                                                            trạng thanh toán</font>
-                                                                    </font>
+                                                                    Tình trạng thanh toán
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="created_at">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Tạo
-                                                                            thời gian</font>
-                                                                    </font>
+                                                                    Thời gian tạo
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                             <th style="text-align: center; vertical-align: middle; "
                                                                 data-field="operate">
                                                                 <div class="th-inner ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Vận
-                                                                            hành</font>
-                                                                    </font>
+                                                                    Chi tiết
                                                                 </div>
                                                                 <div class="fht-cell"></div>
                                                             </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody data-listidx="0">
-                                                        <tr data-index="0" style="">
-                                                            <td class="bs-checkbox "><input data-index="0"
-                                                                    name="btSelectItem" type="checkbox"></td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        20230813236</font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        20230813-20373114</font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">31,9
-                                                                    </font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">6,38
-                                                                    </font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">38,28
-                                                                    </font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">Đ****
-                                                                    </font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        duyanh092389756@gmail.com</font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <span class="label label-warning">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            Không nhặt được</font>
-                                                                    </font>
-                                                                </span></td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <span class="label label-success">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Trả
-                                                                        </font>
-                                                                    </font>
-                                                                </span></td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <font style="vertical-align: inherit;">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        2023-08-13 20:37:31</font>
-                                                                </font>
-                                                            </td>
-                                                            <td
-                                                                style="text-align: center; vertical-align: middle; ">
-                                                                <a href="/sys.php/order/seller_order/new_order_detail/ids/236"
-                                                                    class="btn btn-info btn-xs btn-detail btn-dialog"
-                                                                    title="Chi tiết" data-table-id="table"
-                                                                    data-field-index="11" data-row-index="0"
-                                                                    data-button-index="0"><i
-                                                                        class="fa fa-list"></i>
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">Chi
-                                                                            tiết</font>
-                                                                    </font>
-                                                                </a></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="fixed-table-footer" style="display: none;">
-                                                <table>
-                                                    <tbody>
-                                                        <tr></tr>
+                                                        @foreach($myOrder as $order)
+                                                            <tr>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->warehouse_price }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->profit }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->customer_id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->user_id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->status }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->payment }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;"><button>Chi tiết</button></td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -405,259 +274,9 @@
                                                 <div class="pull-left pagination-detail"><span
                                                         class="pagination-info">
                                                         <font style="vertical-align: inherit;">
-                                                            <font style="vertical-align: inherit;">Hiển thị 1 đến 1
-                                                                trên 1 hàng</font>
+                                                           {{ $myOrder->links() }}
                                                         </font>
-                                                    </span><span class="page-list" style="display: none;"><span
-                                                            class="btn-group dropup"><button type="button"
-                                                                class="btn btn-default dropdown-toggle"
-                                                                data-toggle="dropdown"><span
-                                                                    class="page-size">10</span> <span
-                                                                    class="caret"></span></button>
-                                                            <ul class="dropdown-menu" role="menu">
-                                                                <li role="menuitem"><a href="#">10</a></li>
-                                                            </ul>
-                                                        </span> rows per page</span></div>
-                                                <div class="pull-right pagination" style="display: none;">
-                                                    <ul class="pagination">
-                                                        <li class="page-pre"><a href="#">Previous</a></li>
-                                                        <li class="page-number active"><a href="#">1</a>
-                                                        </li>
-                                                        <li class="page-next"><a href="#">Next</a></li>
-                                                        <li class="jumpto"><input type="text"
-                                                                class="form-control"><button
-                                                                class="btn btn-default" title="Go"
-                                                                type="button">Go</button></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="fixed-columns-right"
-                                                style="right: 0px; width: 90px; height: 90px; min-height: calc(100% - 54px);">
-                                                <div class="fixed-table-header" style="display: none;">
-                                                    <table></table>
-                                                </div>
-                                                <div class="fixed-table-body"
-                                                    style="height: 90px; min-height: calc(100% - 0px); overflow: hidden;">
-                                                    <div class="fixed-table-loading"
-                                                        style="top: 42px; display: none;">Loading, please wait...
-                                                    </div>
-                                                    <table id="table"
-                                                        class="table table-striped table-bordered table-hover table-nowrap"
-                                                        width="100%">
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="bs-checkbox "
-                                                                    style="text-align: center; vertical-align: middle; width: 36px; "
-                                                                    data-field="0">
-                                                                    <div class="th-inner "><input
-                                                                            name="btSelectAll" type="checkbox">
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="o_id">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                NHẬN DẠNG</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="code">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Số đơn hàng</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="product_storehouse_total">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Số tiền nhận</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="profit">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Lợi nhuận</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="grand_total">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Tổng cộng</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="email">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Email của khách hàng</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="seller">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Người bán</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="product_storehouse_status">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Tình trạng đón</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="payment_status">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Tình trạng thanh toán</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="created_at">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Tạo thời gian</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                                <th style="text-align: center; vertical-align: middle; "
-                                                                    data-field="operate">
-                                                                    <div class="th-inner ">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Vận hành</font>
-                                                                        </font>
-                                                                    </div>
-                                                                    <div class="fht-cell"></div>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody data-listidx="0">
-                                                            <tr data-index="0" style="">
-                                                                <td class="bs-checkbox "><input data-index="0"
-                                                                        name="btSelectItem" type="checkbox"></td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            20230813236</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            20230813-20373114</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">31,9
-                                                                        </font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">6,38
-                                                                        </font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            38,28</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            Đ****</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            duyanh092389756@gmail.com</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <span class="label label-warning">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Không nhặt được</font>
-                                                                        </font>
-                                                                    </span></td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <span class="label label-success">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Trả</font>
-                                                                        </font>
-                                                                    </span></td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <font style="vertical-align: inherit;">
-                                                                        <font style="vertical-align: inherit;">
-                                                                            2023-08-13 20:37:31</font>
-                                                                    </font>
-                                                                </td>
-                                                                <td
-                                                                    style="text-align: center; vertical-align: middle; ">
-                                                                    <a href="/sys.php/order/seller_order/new_order_detail/ids/236"
-                                                                        class="btn btn-info btn-xs btn-detail btn-dialog"
-                                                                        title="Chi tiết" data-table-id="table"
-                                                                        data-field-index="11" data-row-index="0"
-                                                                        data-button-index="0"><i
-                                                                            class="fa fa-list"></i>
-                                                                        <font style="vertical-align: inherit;">
-                                                                            <font style="vertical-align: inherit;">
-                                                                                Chi tiết</font>
-                                                                        </font>
-                                                                    </a></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -665,7 +284,6 @@
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

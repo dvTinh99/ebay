@@ -38,7 +38,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">$0.00</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['wallet'] }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -57,7 +57,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">$38.28</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['total_order_amount'] }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">$6.38</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['total_order_profit'] }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -96,7 +96,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">$31.9</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['total_unpaid_order'] }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>

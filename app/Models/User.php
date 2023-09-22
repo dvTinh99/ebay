@@ -60,5 +60,9 @@ class User extends Authenticatable
     public function AauthAcessToken(){
         return $this->hasMany(OauthAccessToken::class);
     }
-    
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
+
 }

@@ -20,15 +20,9 @@ Route::group([
     Route::get('/', function () {
         return view('kho.index' , ["page"=> "dashboard"]);
     });
-    Route::get('/dashboard', function () {
-        return view('kho.index' , ["page"=> "dashboard"]);
-    });
-    Route::get('/order', function () {
-        return view('kho.index' , ["page"=> "order"]);
-    });
-    Route::get('/wallet-recharge', function () {
-        return view('kho.index' , ["page"=> "wallet-recharge"]);
-    });
+    Route::get('/dashboard', [UserController::class, 'dashboard']);
+    Route::get('/order', [UserController::class, 'myOrder']);
+    Route::get('/wallet-recharge', [UserController::class, 'myRecharge']);
     Route::get('/profile', function () {
         return view('kho.index' , ["page"=> "profile"]);
     });
