@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group([
+    'middleware' => 'auth'
+], function () {
 
-Route::get('/', function () {
-    return view('kho.index');
+    Route::get('/', function () {
+        return view('kho.index' , ["page"=> "dashboard"]);
+    });
+    Route::get('/dashboard', function () {
+        return view('kho.index' , ["page"=> "dashboard"]);
+    });
+    Route::get('/order', function () {
+        return view('kho.index' , ["page"=> "order"]);
+    });
+    Route::get('/wallet-recharge', function () {
+        return view('kho.index' , ["page"=> "wallet-recharge"]);
+    });
+    Route::get('/profile', function () {
+        return view('kho.index' , ["page"=> "profile"]);
+    });
+
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });
+
+Route::get('/login', function () {
+    return view('kho.login' , ["page"=> "login"]);
+});
+
+Route::post('/login', [UserController::class, 'login'])->name('login');
