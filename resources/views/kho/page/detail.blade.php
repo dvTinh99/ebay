@@ -24,12 +24,20 @@
             <td>{{ $order->profit }}</td>
           </tr>
           <tr>
+            <td>Sản phẩm</td>
+            <td>
+                @foreach ($order->orderItem as $item)
+                    {{ $item->product->name }} ( {{ $item->quantity }})<br>
+                @endforeach
+            </td>
+          </tr>
+          <tr>
             <td>Tổng cộng</td>
             <td>{{ $order->price }}</td>
           </tr>
           <tr>
             <td>Email khách</td>
-            <td>{{ $order->customer->name }}</td>
+            <td>{{ substr($order->customer->email, 0, 3) }}**********</td>
           </tr>
           <tr>
             <td>Người bán</td>
