@@ -29,11 +29,11 @@
           </tr>
           <tr>
             <td>Email khách</td>
-            <td>{{ $order->customer_id }}</td>
+            <td>{{ $order->customer->name }}</td>
           </tr>
           <tr>
             <td>Người bán</td>
-            <td>{{ $order->user_id }}</td>
+            <td>{{ $order->seller->name }}</td>
           </tr>
           <tr>
             <td>Tình trạng đơn hàng</td>

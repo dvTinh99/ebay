@@ -259,8 +259,8 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->warehouse_price }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->profit }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->customer_id }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->user_id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->customer->name }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->seller->name }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->status }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->payment }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
