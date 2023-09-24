@@ -37,7 +37,7 @@
                     <i class="fa fa-user fa-fw"></i> <span>Tài khoản</span>
                 </a>
             </li>
-            <li class="treeview <?= $page == 'wallet-recharge' ? 'active' : '' ?>">
+            <li class="treeview <?= in_array($page, ['wallet-recharge', 'wallet-withdraw']) ? 'active' : '' ?>">
                 <a href="#">
                     <i class="fa fa-bitcoin fa-fw"></i>
                     <span>VÍ</span>
@@ -47,6 +47,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="<?= $page == 'wallet-recharge' ? 'active' : '' ?>"><a href="wallet-recharge"><i class="fa fa-circle-o"></i>Biến động số dư</a></li>
+                    <li class="<?= $page == 'wallet-withdraw' ? 'active' : '' ?>"><a href="wallet-withdraw"><i class="fa fa-circle-o"></i>Rút tiền</a></li>
                 </ul>
             </li>
             {{-- <li>

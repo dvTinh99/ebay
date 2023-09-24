@@ -35,5 +35,12 @@ Route::get('/login', function () {
     return view('kho.login' , ["page"=> "login"]);
 });
 Route::get('/detail/{id}', [OrderController::class, 'detail']);
+Route::get('/404', function () {
+    return view('kho.maintenance' , ["page"=> "maintenance"]);
+});
+
+Route::get('/wallet-withdraw', function () {
+    return view('kho.index' , ["page"=> "wallet-withdraw"]);
+});
 
 Route::post('/login', [UserController::class, 'login'])->name('login');
