@@ -12,6 +12,7 @@ class Order extends Model
     protected $fillable = [
         'customer_id',
         'user_id',
+        'address_id',
         'status',
         'price',
         'payment',
@@ -35,5 +36,9 @@ class Order extends Model
 
     public function seller() {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function address() {
+        return $this->hasOne(Address::class, 'id', 'address_id');
     }
 }

@@ -319,7 +319,7 @@
   </div>
 <script>
     function showDetail(id) {
-        $('#iframe').src = 'http://ebay.test/detail/' + id;
+        $('#iframe')[0].src = 'http://ebay.test/detail/' + id;
     }
 </script>
 

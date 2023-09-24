@@ -40,16 +40,24 @@
             <td>{{ substr($order->customer->email, 0, 3) }}**********</td>
           </tr>
           <tr>
+            <td>Địa chỉ</td>
+            <td>{{ substr($order->address->address, 0, 3) }}**********</td>
+          </tr>
+          <tr>
+            <td>zip code</td>
+            <td>{{ substr($order->address->zip_code, 0, 3) }}**********</td>
+          </tr>
+          <tr>
             <td>Người bán</td>
             <td>{{ $order->seller->name }}</td>
           </tr>
           <tr>
             <td>Tình trạng đơn hàng</td>
-            <td>{{ $order->status }}</td>
+            <td>{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}</td>
           </tr>
           <tr>
             <td>Tình trạng thanh toán</td>
-            <td>{{ $order->payment }}</td>
+            <td>{{ Config::get('paynebt.'.$order->payment, 'Chưa thanh toán') }}</td>
           </tr>
         </tbody>
     </table>
