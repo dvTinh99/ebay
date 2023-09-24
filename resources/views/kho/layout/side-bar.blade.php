@@ -26,10 +26,10 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="header">MAIN NAVIGATION</li>
+            {{-- <li class="header">MAIN NAVIGATION</li> --}}
             <li class="<?= $page == 'dashboard' ? 'active' : '' ?>">
                 <a href="/dashboard">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <i class="fa fa-dashboard"></i> <span>Trang chủ</span>
                 </a>
             </li>
             <li class="<?= $page == 'profile' ? 'active' : '' ?>">

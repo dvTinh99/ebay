@@ -18,9 +18,7 @@ Route::group([
     'middleware' => 'auth'
 ], function () {
 
-    Route::get('/', function () {
-        return view('kho.index' , ["page"=> "dashboard"]);
-    });
+    Route::get('/', [UserController::class, 'dashboard']);
     Route::get('/dashboard', [UserController::class, 'dashboard']);
     Route::get('/order', [UserController::class, 'myOrder']);
     Route::get('/wallet-recharge', [UserController::class, 'myRecharge']);

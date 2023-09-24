@@ -261,8 +261,8 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->customer->name }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->seller->name }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->status }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->payment }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ Config::get('paynebt.'.$order->payment, 'Chưa thanh toán') }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">
                                                                     <a href="#id={{ $order->id }}">
@@ -302,7 +302,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Chi tiết</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -311,8 +311,7 @@
           <iframe id="iframe" src="http://ebay.test/detail/1" style="height: 17em;width: 100%;"></iframe>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">đóng</button>
         </div>
       </div>
     </div>

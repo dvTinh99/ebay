@@ -1,8 +1,8 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Dashboard
-        <small>Control panel</small>
+        Trang chủ
+        {{-- <small>Control panel</small> --}}
     </h1>
     {{-- <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -38,7 +38,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">${{ $dashboard['wallet'] }}</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['wallet'] ?? '' }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>

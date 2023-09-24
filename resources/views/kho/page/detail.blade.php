@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <table class="table" >
+    <table class="table table-striped table-bordered">
         <tbody style="text-align: center; vertical-align: middle;">
           <tr>
             <td>Mã đơn hàng</td>
