@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::get('/', [ShopController::class, 'index']);
+    Route::get('/categories', [ShopController::class, 'categories']);
 });
 Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
 
