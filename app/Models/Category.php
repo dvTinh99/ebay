@@ -11,5 +11,11 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'father_id',
+
     ];
+
+    public function children() {
+        return $this->hasMany(Category::class, 'father_id', 'id');
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\UserController;
@@ -91,4 +92,13 @@ Route::group([
     Route::get('/my-product', [ProductController::class, 'myProduct']);
     Route::post('/create-product', [ProductController::class, 'create']);
     Route::post('/update-product', [ProductController::class, 'update']);
+});
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/category',
+], function() {
+    Route::get('/list-category', [CategoriesController::class, 'getAll']);
+    Route::post('/create-category', [CategoriesController::class, 'create']);
+    Route::post('/update-category', [CategoriesController::class, 'update']);
 });

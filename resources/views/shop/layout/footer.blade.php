@@ -417,8 +417,10 @@
 
 
 <!-- SCRIPTS -->
-<script src="https://www.ebeebbuy.cc/public/assets/js/vendors.js"></script>
-<script src="https://www.ebeebbuy.cc/public/assets/js/aiz-core.js"></script>
+{{-- <script src="https://www.ebeebbuy.cc/public/assets/js/vendors.js"></script> --}}
+{{-- <script src="https://www.ebeebbuy.cc/public/assets/js/aiz-core.js"></script> --}}
+<script src="{{ asset('shop/') }}/assets/js/vendors.js"></script>
+<script src="{{ asset('shop/') }}/assets/js/aiz-core.js"></script>
 
 
 <script type="text/javascript">
@@ -438,27 +440,23 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<div id="fb-root"></div>
-<!-- Your customer chat code -->
-<div class="fb-customerchat" attribution=setup_tool page_id="">
-</div>
 
 <script></script>
 
 <script>
     $(document).ready(function() {
-        $('.category-nav-element').each(function(i, el) {
-            $(el).on('mouseover', function() {
-                if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
-                    $.post('https://www.ebeebbuy.cc/category/nav-element-list', {
-                        _token: AIZ.data.csrf,
-                        id: $(el).data('id')
-                    }, function(data) {
-                        $(el).find('.sub-cat-menu').addClass('loaded').html(data);
-                    });
-                }
-            });
-        });
+        // $('.category-nav-element').each(function(i, el) {
+        //     $(el).on('mouseover', function() {
+        //         if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
+        //             $.post('https://www.ebeebbuy.cc/category/nav-element-list', {
+        //                 _token: AIZ.data.csrf,
+        //                 id: $(el).data('id')
+        //             }, function(data) {
+        //                 $(el).find('.sub-cat-menu').addClass('loaded').html(data);
+        //             });
+        //         }
+        //     });
+        // });
         if ($('#lang-change').length > 0) {
             $('#lang-change .dropdown-menu a').each(function() {
                 $(this).on('click', function(e) {
@@ -710,36 +708,36 @@
 
 <script>
     $(document).ready(function() {
-        $.post('https://www.ebeebbuy.cc/home/section/featured', {
-            _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
-        }, function(data) {
-            $('#section_featured').html(data);
-            AIZ.plugins.slickCarousel();
-        });
-        $.post('https://www.ebeebbuy.cc/home/section/best_selling', {
-            _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
-        }, function(data) {
-            $('#section_best_selling').html(data);
-            AIZ.plugins.slickCarousel();
-        });
-        $.post('https://www.ebeebbuy.cc/home/section/auction_products', {
-            _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
-        }, function(data) {
-            $('#auction_products').html(data);
-            AIZ.plugins.slickCarousel();
-        });
-        $.post('https://www.ebeebbuy.cc/home/section/home_categories', {
-            _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
-        }, function(data) {
-            $('#section_home_categories').html(data);
-            AIZ.plugins.slickCarousel();
-        });
-        $.post('https://www.ebeebbuy.cc/home/section/best_sellers', {
-            _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
-        }, function(data) {
-            $('#section_best_sellers').html(data);
-            AIZ.plugins.slickCarousel();
-        });
+        // $.post('https://www.ebeebbuy.cc/home/section/featured', {
+        //     _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
+        // }, function(data) {
+        //     $('#section_featured').html(data);
+        //     AIZ.plugins.slickCarousel();
+        // });
+        // $.post('https://www.ebeebbuy.cc/home/section/best_selling', {
+        //     _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
+        // }, function(data) {
+        //     $('#section_best_selling').html(data);
+        //     AIZ.plugins.slickCarousel();
+        // });
+        // $.post('https://www.ebeebbuy.cc/home/section/auction_products', {
+        //     _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
+        // }, function(data) {
+        //     $('#auction_products').html(data);
+        //     AIZ.plugins.slickCarousel();
+        // });
+        // $.post('https://www.ebeebbuy.cc/home/section/home_categories', {
+        //     _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
+        // }, function(data) {
+        //     $('#section_home_categories').html(data);
+        //     AIZ.plugins.slickCarousel();
+        // });
+        // $.post('https://www.ebeebbuy.cc/home/section/best_sellers', {
+        //     _token: 'KJouRyNDcGqDccZbaW6oe0EUyQjUVXu4XNFb9YWJ'
+        // }, function(data) {
+        //     $('#section_best_sellers').html(data);
+        //     AIZ.plugins.slickCarousel();
+        // });
     });
 </script>
 

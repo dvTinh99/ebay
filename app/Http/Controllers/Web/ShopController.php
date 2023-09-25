@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -15,10 +16,12 @@ use App\Models\Product;
 class ShopController extends Controller
 {
     function index() {
-        return view('shop.index');
+        $categories = Category::with('children')->where('father_id', 0)->get();
+        return view('shop.index', compact('categories'));
     }
 
     function categories() {
-        return view('shop.page.category');
+        $categories = Category::with('children')->where('father_id', 0)->get();
+        return view('shop.page.category', compact('categories'));
     }
 }

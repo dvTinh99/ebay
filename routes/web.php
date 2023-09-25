@@ -3,6 +3,7 @@
 use App\Http\Controllers\Web\OrderController;
 use App\Http\Controllers\Web\UserController;
 use App\Http\Controllers\Web\ShopController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*

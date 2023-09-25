@@ -18,7 +18,7 @@
     {{-- <link rel="stylesheet" href="https://www.ebeebbuy.cc/public/assets/css/aiz-core.css?v-23">
     <link rel="stylesheet" href="https://www.ebeebbuy.cc/public/assets/css/custom-style.css"> --}}
     <link rel="stylesheet" href="<?= asset('/kho')?>/bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= asset('/shop')?>/asset/css/aiz-core.css">
+    <link rel="stylesheet" href="<?= asset('/shop')?>/assets/css/aiz-core.css">
 
     <script>
         var AIZ = AIZ || {};
