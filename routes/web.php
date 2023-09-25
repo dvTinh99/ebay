@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::domain('shop.btsdoors.com')->group(function () {
+Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::get('/', [ShopController::class, 'index']);
 });
-Route::domain('dev.btsdoors.com')->group(function () {
-    
+Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
+
     Route::group([
         'middleware' => 'auth'
     ], function () {
