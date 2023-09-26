@@ -11,6 +11,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExchangeController;
+use App\Http\Controllers\ShopController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -74,6 +76,16 @@ Route::group([
     Route::get('/my-bank', [BankController::class, 'myBank']);
     Route::post('/create-bank', [BankController::class, 'create']);
     Route::post('/update-bank', [BankController::class, 'update']);
+});
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/shop',
+], function() {
+    Route::get('/list-shop', [ShopController::class, 'getAll']);
+    Route::get('/my-shop', [ShopController::class, 'myShop']);
+    Route::post('/create-shop', [ShopController::class, 'create']);
+    Route::post('/update-shop', [ShopController::class, 'update']);
 });
 
 Route::group([
