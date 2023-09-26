@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('avatar')->nullable();
             $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->string('role')->default('seller');
             $table->float('wallet')->default(0);
             $table->boolean('approve')->default(0);

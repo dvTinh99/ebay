@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'ref_of',
+        'address',
         'ref_link',
         'password',
         'role',
@@ -58,9 +59,9 @@ class User extends Authenticatable
         return $this->hasMany(Exchange::class);
     }
 
-    public function address() {
-        return $this->hasMany(Address::class);
-    }
+    // public function address() {
+    //     return $this->hasMany(Address::class);
+    // }
 
     public function AauthAcessToken(){
         return $this->hasMany(OauthAccessToken::class);
