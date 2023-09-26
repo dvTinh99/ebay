@@ -57,7 +57,7 @@
           </tr>
           <tr>
             <td>Tình trạng thanh toán</td>
-            <td>{{ Config::get('paynebt.'.$order->payment, 'Chưa thanh toán') }}</td>
+            <td>{{ Config::get('payment.'.$order->payment, 'Chưa thanh toán') }}</td>
           </tr>
         </tbody>
     </table>

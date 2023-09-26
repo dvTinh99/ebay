@@ -36,6 +36,11 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <form action="/login" method="post">
         @csrf
       <div class="form-group has-feedback">

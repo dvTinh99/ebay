@@ -253,7 +253,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody data-listidx="0">
-                                                        @foreach($myOrder as $order)
+                                                        @foreach($myOrderPurchase as $order)
                                                             <tr>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->id }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->warehouse_price }}</td>
@@ -261,8 +261,8 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ substr($order->customer->email, 0, 3) }}*****</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->seller->name }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ Config::get('payment.'.$order->payment, 'Chưa thanh toán') }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;"><label class="{{ $order->payment == '2' ? 'label label-success' : ''}}">{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}<label></td>
+                                                                <td style="text-align: center; vertical-align: middle;"><label class="{{ $order->payment == '2' ? 'label label-success' : ''}}">{{ Config::get('payment.'.$order->payment, 'Chưa thanh toán') }}<label></td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">
                                                                     <a href="#id={{ $order->id }}">
@@ -278,7 +278,7 @@
                                                 <div class="pull-left pagination-detail"><span
                                                         class="pagination-info">
                                                         <font style="vertical-align: inherit;">
-                                                           {{ $myOrder->links() }}
+                                                           {{ $myOrderPurchase->links() }}
                                                         </font>
                                                     </span>
                                                 </div>
@@ -298,17 +298,17 @@
     <!-- /.row (main row) -->
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content" style="height: 41em;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Chi tiết</h5>
+          <h2 class="modal-title" id="exampleModalLabel">Chi tiết</h2>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <iframe id="iframe" src="/detail/1" style="height: 17em;width: 100%;"></iframe>
+          <iframe id="iframe" src="/detail/1" style="height: 27em;width: 100%;"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">đóng</button>
@@ -319,8 +319,7 @@
 <script>
     function showDetail(id) {
         var host = window.location.protocol + "//" + window.location.host;
-
-        $('#iframe')[0].src = host+'/detail/' + id;
+        $('#iframe')[0].src = host+'/detail-purchase/' + id;
     }
 </script>
 

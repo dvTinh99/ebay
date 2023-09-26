@@ -27,4 +27,9 @@ class OrderController extends Controller
         $order = $this->orderRepo->detail($id);
         return view('kho.page.detail' , compact('order'));
     }
+
+    public function detailPurchase($id) {
+        $order = $this->orderRepo->detail($id);
+        return view('kho.page.detail-purchase' , compact('order'));
+    }
 }

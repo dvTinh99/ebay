@@ -48,6 +48,7 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         return view('kho.login' , ["page"=> "login"]);
     });
     Route::get('/detail/{id}', [OrderController::class, 'detail']);
+    Route::get('/detail-purchase/{id}', [OrderController::class, 'detailPurchase']);
     Route::get('/404', function () {
         return view('kho.maintenance' , ["page"=> "maintenance"]);
     });

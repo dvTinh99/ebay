@@ -32,6 +32,12 @@ class UserController extends Controller
         return view('kho.index' , compact('page', 'myOrder'));
     }
 
+    public function myOrderPurchase() {
+        $page = 'order-purchase';
+        $myOrderPurchase = $this->userRepo->myOrderPurchase()->paginate(5);
+        return view('kho.index' , compact('page', 'myOrderPurchase'));
+    }
+
     public function dashboard() {
         $page = 'dashboard';
         $dashboard = $this->userRepo->dashboard();
@@ -53,15 +59,17 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-       $email = $request->email;
-       $password = $request->password;
+        $email = $request->email;
+        $password = $request->password;
 
-       if (Auth::attempt([
-        'email' => $email,
-        'password' => $password
-       ])) {
-         return redirect('/dashboard');
-       }
+        if (Auth::attempt([
+            'email' => $email,
+            'password' => $password
+        ])) {
+            return redirect('/dashboard');
+        } else {
+            return redirect()->back()->with('error', 'Username or password incorrect');
+        }
     }
 
     public function logout(Request $request) {
