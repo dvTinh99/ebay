@@ -27,14 +27,22 @@ class UserController extends Controller
     }
 
     public function detail(Request $request) {
-        return $this->sendJsonResponse($this->userRepo->find($request->id), 'success');
+        $user = $this->userRepo->find($request->id);
+        if ($user) {
+            return $this->sendJsonResponse($this->userRepo->find($request->id), 'success');
+        }
+        return $this->sendJsonError('User not found', 404);
     }
 
     public function update(Request $request) {
         if (!$request->id) {
             $request->request->add(['id' => Auth::id()]);
         }
-        return $this->sendJsonResponse($this->userRepo->update($request->id, $request->all()), 'success');
+        $user = $this->userRepo->find($request->id);
+        if ($user) {
+            return $this->sendJsonResponse($this->userRepo->update($request->id, $request->all()), 'success');
+        }
+        return $this->sendJsonError('User not found', 404);
     }
 
     public function info() {
