@@ -26,6 +26,17 @@ class UserController extends Controller
         $this->userRepo = $userRepo;
     }
 
+    public function detail(Request $request) {
+        return $this->sendJsonResponse($this->userRepo->find($request->id), 'success');
+    }
+
+    public function update(Request $request) {
+        if (!$request->id) {
+            $request->request->add(['id' => Auth::id()]);
+        }
+        return $this->sendJsonResponse($this->userRepo->update($request->id, $request->all()), 'success');
+    }
+
     public function info() {
         return $this->sendJsonResponse($this->userRepo->info(), 'success');
     }
@@ -37,9 +48,9 @@ class UserController extends Controller
         return $this->sendJsonResponse($this->userRepo->myProduct(), 'success');
     }
 
-    public function addProduct(Request $request) {
-        return $this->sendJsonResponse($this->userRepo->addProduct($request->product_ids), 'success');
-    }
+    // public function addProduct(Request $request) {
+    //     return $this->sendJsonResponse($this->userRepo->addProduct($request->product_ids), 'success');
+    // }
 
     public function recharge(Request $request) {
         $user_id = $request->user_id;
