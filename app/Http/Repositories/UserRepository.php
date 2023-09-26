@@ -17,6 +17,10 @@ class UserRepository extends BaseRepository
         return User::class;
     }
 
+    public function find($id) {
+        return $this->model->with(['bank', 'address'])->find($id);
+    }
+
     public function info() {
         return Auth::user();
     }
@@ -67,7 +71,11 @@ class UserRepository extends BaseRepository
     }
 
     public function myOrder() {
-        return Order::where('user_id', Auth::id());
+        return Order::where('user_id', Auth::id())->where('status', '1');
+    }
+
+    public function myOrderPurchase() {
+        return Order::where('user_id', Auth::id())->where('status', '<>', '1');
     }
 
     public function myRecharge() {
