@@ -41,7 +41,9 @@ Route::group([
 ], function() {
     //master
     Route::get('/list-seller', [UserController::class, 'listSeller']);
+    Route::get('/detail-seller', [UserController::class, 'detail']);
     Route::post('/create-order', [OrderController::class, 'create']);
+    Route::post('/update-seller', [UserController::class, 'update']);
     Route::post('/recharge', [UserController::class, 'recharge']);
 
 
