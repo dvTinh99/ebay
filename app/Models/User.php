@@ -69,19 +69,4 @@ class User extends Authenticatable
     public function sellerProduct() {
         return $this->hasMany(SellerProduct::class);
     }
-
-    public function orderInfo () {
-        $totalProduct = $this->sellerProduct->count();
-        $totalOrder = $this->orders->count();
-        $totalPay = $this->orders->where('status', 2)->count();
-
-        $result = [
-            'total_product' => $totalProduct,
-            'total_order' => $totalOrder,
-            'total_pay' => $totalPay,
-        ];
-
-        return $result;
-    }
-
 }
