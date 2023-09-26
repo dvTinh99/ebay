@@ -259,7 +259,7 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->warehouse_price }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->profit }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->customer->name }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ substr($order->customer->email, 0, 3) }}*****</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->seller->name }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ Config::get('paynebt.'.$order->payment, 'Chưa thanh toán') }}</td>
@@ -308,7 +308,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <iframe id="iframe" src="http://ebay.test/detail/1" style="height: 17em;width: 100%;"></iframe>
+          <iframe id="iframe" src="/detail/1" style="height: 17em;width: 100%;"></iframe>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">đóng</button>
@@ -318,7 +318,9 @@
   </div>
 <script>
     function showDetail(id) {
-        $('#iframe')[0].src = 'http://ebay.test/detail/' + id;
+        var host = window.location.protocol + "//" + window.location.host;
+
+        $('#iframe')[0].src = host+'/detail/' + id;
     }
 </script>
 

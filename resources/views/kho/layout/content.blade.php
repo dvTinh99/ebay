@@ -3,6 +3,8 @@
 
     @if($page == 'order')
         @include('kho.page.order')
+    @elseif($page == 'order-purchase')
+        @include('kho.page.order-purchase')
     @elseif($page == 'dashboard')
         @include('kho.page.dashboard')
     @elseif($page == 'wallet-recharge')

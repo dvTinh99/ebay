@@ -24,16 +24,16 @@
             <td>{{ $order->profit }}</td>
           </tr>
           <tr>
+            <td>Tổng cộng</td>
+            <td>{{ $order->price }}</td>
+          </tr>
+          <tr>
             <td>Sản phẩm</td>
             <td>
                 @foreach ($order->orderItem as $item)
                     {{ $item->product->name }} ( {{ $item->quantity }})<br>
                 @endforeach
             </td>
-          </tr>
-          <tr>
-            <td>Tổng cộng</td>
-            <td>{{ $order->price }}</td>
           </tr>
           <tr>
             <td>Email khách</td>

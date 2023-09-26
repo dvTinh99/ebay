@@ -35,6 +35,7 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         Route::get('/', [UserController::class, 'dashboard']);
         Route::get('/dashboard', [UserController::class, 'dashboard']);
         Route::get('/order', [UserController::class, 'myOrder']);
+        Route::get('/order-purchase', [UserController::class, 'myOrderPurchase']);
         Route::get('/wallet-recharge', [UserController::class, 'myRecharge']);
         Route::get('/profile', function () {
             return view('kho.index' , ["page"=> "profile"]);

@@ -58,7 +58,7 @@
                     </span>
                 </a>
             </li> --}}
-            <li class="treeview <?= $page == 'order' ? 'active' : '' ?>">
+            <li class="treeview <?= in_array($page, ['order', 'order-purchase']) ? 'active' : '' ?>">
                 <a href="#">
                     <i class="fa fa-wpforms fa-fw"></i>
                     <span>Đặt Hàng</span>
@@ -68,6 +68,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="<?= $page == 'order' ? 'active' : '' ?>"><a href="/order"><i class="fa fa-circle-o"></i> Đơn hàng mới</a></li>
+                    <li class="<?= $page == 'order-purchase' ? 'active' : '' ?>"><a href="/order-purchase"><i class="fa fa-circle-o"></i> Hồ sơ mua hàng</a></li>
                 </ul>
             </li>
         </ul>
