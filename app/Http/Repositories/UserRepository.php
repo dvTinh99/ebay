@@ -26,7 +26,10 @@ class UserRepository extends BaseRepository
     }
 
     public function listSeller() {
-        return User::where('ref_of', Auth::id())->orWhere('ref_of', Auth::user()->ref_link)->get();
+        return User::with(['bank', 'orders'])
+        ->where('ref_of', Auth::id())
+        ->orWhere('ref_of', Auth::user()->ref_link)
+        ->get();
     }
 
     public function myProduct() {
