@@ -3,7 +3,12 @@
 use App\Http\Controllers\Web\OrderController;
 use App\Http\Controllers\Web\UserController;
 use App\Http\Controllers\Web\ShopController;
+use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Product;
+use App\Models\Image;
+use App\Models\SellerProduct;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,4 +56,72 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
     });
 
     Route::post('/login', [UserController::class, 'login'])->name('login');
+
+    Route::get('/craw', function () {
+        $jsonData = file_get_contents(public_path().'/database/ebay/data.json');
+
+        $response = str_replace(chr(0), '', $jsonData);
+        $results = json_decode($response);
+        foreach($results as $key => $item) {
+            echo $key .'\n';
+            $existSeller = User::where('name', 'like', '%'.$item->seller->name.'%')->first();
+            if ($existSeller) {
+                $user = $existSeller;
+            } else {
+                $sellerData = [
+                    'email' => $key.'@gmail.com',
+                    'name' => $item->seller->name,
+                    'ref_of' => 0,
+                    'ref_link' => quickRandom(),
+                    'password' => bcrypt('123123')
+                ];
+
+                $user = User::create($sellerData);
+            }
+
+            $existBand = Brand::where('name', 'like', '%'. $item->brand->name.'%')->first();
+
+            if ($existBand) {
+                $brand = $existBand;
+            } else {
+                $brandData = [
+                    "name" => $item->brand->name,
+                    "image" => $item->brand->image,
+                ];
+                $brand = Brand::create($brandData);
+            }
+
+            $profit = rand(21, 99)  / 10;
+
+            $product = [
+                "name" => $item->name,
+                "price" => $item->price,
+                "warehouse_price" => $item->price - $profit,
+                "profit" => $profit,
+                "stock" => $item->stock,
+                "description" => $item->content,
+                "slug" => $item->slug,
+                "category_id" => rand(2, 100),
+                "brand_id" => $brand->id,
+            ];
+            $pro = Product::create($product);
+
+            foreach($item->images as $image) {
+                $imageData = [
+                    'product_id' => $pro->id,
+                    'image_link' => $image
+                ];
+
+                Image::create($imageData);
+            }
+
+            $sellerProductData = [
+                'user_id' => $user->id,
+                'product_id' => $pro->id,
+            ];
+
+            SellerProduct::create($sellerProductData);
+        }
+        echo 'done ne';
+    });
 });

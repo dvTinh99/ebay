@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\URL;
 
 class Image extends Model
 {
@@ -14,4 +15,8 @@ class Image extends Model
         'image_link',
         'image_type',
     ];
+
+    public function getImageLinkAttribute($data) {
+        return URL::to('/').'/database/ebay' . $data;        ;
+    }
 }

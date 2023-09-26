@@ -32,4 +32,8 @@ class Product extends Model
         'description',
         'time_ship',
     ];
+
+    public function images() {
+        return $this->hasMany(Image::class);
+    }
 }

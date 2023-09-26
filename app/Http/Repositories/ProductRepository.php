@@ -12,4 +12,9 @@ class ProductRepository extends BaseRepository
     {
         return Product::class;
     }
+
+    public function getAll()
+    {
+        return $this->model->with('images')->get();
+    }
 }

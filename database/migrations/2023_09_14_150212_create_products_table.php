@@ -32,6 +32,8 @@ class CreateProductsTable extends Migration
             $table->string('price_discount_to')->nullable();
             $table->integer('dinh_luong')->nullable();
             $table->string('sku')->nullable();
+            $table->unsignedBigInteger('stock')->nullable();
+            $table->string('slug')->nullable();
             $table->string('out_site_link')->nullable();
             $table->string('text_link')->nullable();
             $table->text('description')->nullable();
