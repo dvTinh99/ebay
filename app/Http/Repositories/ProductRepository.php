@@ -15,6 +15,13 @@ class ProductRepository extends BaseRepository
 
     public function getAll()
     {
-        return $this->model->with(['category', 'images'])->get();
+        $products = $this->model->with(['category'])->get();
+        $products = $products->map(function ($item) {
+            $images = $item->images->pluck('image_link');
+            unset($item->images);
+            $item->images = $images;
+            return $item;
+        });
+        return $products;
     }
 }

@@ -34,7 +34,11 @@ class BankController extends Controller
 
     public function create(Request $request) {
         if ($request->user_id) {
-            $bank = User::find($request->user_id)->bank;
+            $user = User::find($request->user_id);
+            if(!$user) {
+                return $this->sendJsonError('user_id not exist', 404);
+            }
+            $bank = $user->bank;
         } else {
             $user = Auth::user();
             $bank = $user->bank;

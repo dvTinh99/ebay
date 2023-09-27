@@ -9,18 +9,26 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
 use App\Http\Repositories\ProductRepository;
+use App\Http\Repositories\UserRepository;
 
 class ProductController extends Controller
 {
 
     public $productRepo;
+    public $userRepo;
 
-    public function __construct(ProductRepository $productRepo) {
+    public function __construct(ProductRepository $productRepo, UserRepository $userRepo) {
         $this->productRepo = $productRepo;
+        $this->userRepo = $userRepo;
     }
 
-    public function getAll() {
-        return $this->sendJsonResponse($this->productRepo->getAll(), 'success');
+    public function getAll(Request $request) {
+        if ($request->user_id) {
+            $data = User::find($request->user_id)->products;
+            return $this->sendJsonResponse($data, 'success');
+        } else {
+            return $this->sendJsonResponse($this->productRepo->getAll(), 'success');
+        }
     }
 
     public function create(Request $request) {

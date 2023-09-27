@@ -13,7 +13,7 @@ class CreateSellerProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seller_products', function (Blueprint $table) {
+        Schema::create('product_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('product_id')->nullable();
