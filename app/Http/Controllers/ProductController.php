@@ -25,6 +25,12 @@ class ProductController extends Controller
     public function getAll(Request $request) {
         if ($request->user_id) {
             $data = User::find($request->user_id)->products;
+            $data = $data->map(function ($item) {
+                $images = $item->images->pluck('image_link');
+                unset($item->images);
+                $item->images = $images;
+                return $item;
+            });
             return $this->sendJsonResponse($data, 'success');
         } else {
             return $this->sendJsonResponse($this->productRepo->getAll(), 'success');

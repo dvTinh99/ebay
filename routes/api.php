@@ -116,3 +116,12 @@ Route::group([
     Route::post('/create-category', [CategoriesController::class, 'create']);
     Route::post('/update-category', [CategoriesController::class, 'update']);
 });
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/customer',
+], function() {
+    Route::get('/list-customer', [UserController::class, 'allCustomer']);
+    Route::post('/create-customer', [CategoriesController::class, 'create']);
+    Route::post('/update-customer', [CategoriesController::class, 'update']);
+});

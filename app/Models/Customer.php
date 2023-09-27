@@ -17,4 +17,8 @@ class Customer extends Model
         'wallet'
 
     ];
+
+    public function address() {
+        return $this->hasMany(Address::class, 'user_id', 'id');
+    }
 }

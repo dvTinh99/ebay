@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\UserRepository;
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Carbon\Carbon;
@@ -24,6 +25,10 @@ class UserController extends Controller
     public $userRepo;
     public function __construct(UserRepository $userRepo) {
         $this->userRepo = $userRepo;
+    }
+
+    public function allCustomer() {
+        return $this->sendJsonResponse(Customer::with('address')->get(), 'success');
     }
 
     public function detail(Request $request) {
