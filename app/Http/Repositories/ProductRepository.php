@@ -15,6 +15,6 @@ class ProductRepository extends BaseRepository
 
     public function getAll()
     {
-        return $this->model->with('images')->get();
+        return $this->model->with(['category', 'images'])->get();
     }
 }

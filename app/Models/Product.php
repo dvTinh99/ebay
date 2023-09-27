@@ -22,6 +22,8 @@ class Product extends Model
         'warehouse_price',
         'profit',
         'price_discount',
+        'special',
+        'published',
         'price_discount_type',
         'price_discount_from',
         'price_discount_to',
@@ -35,5 +37,9 @@ class Product extends Model
 
     public function images() {
         return $this->hasMany(Image::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }

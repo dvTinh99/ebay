@@ -72,6 +72,7 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
             } else {
                 $sellerData = [
                     'email' => $key.'@gmail.com',
+                    'address' => 'some where in this planet',
                     'name' => $item->seller->name,
                     'ref_of' => 0,
                     'ref_link' => quickRandom(),

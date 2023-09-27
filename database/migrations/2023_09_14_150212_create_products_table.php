@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->string('tag')->nullable();
             $table->string('ma_vach')->nullable();
             $table->boolean('returnable')->default(0);
+            $table->boolean('published')->default(1);
+            $table->boolean('special')->default(0);
             $table->float('price')->default(0);
             $table->float('warehouse_price')->default(0);
             $table->float('profit')->default(0);

@@ -17,6 +17,6 @@ class Image extends Model
     ];
 
     public function getImageLinkAttribute($data) {
-        return URL::to('/').'/database/ebay' . $data;        ;
+        return '/database/ebay' . $data;        ;
     }
 }
