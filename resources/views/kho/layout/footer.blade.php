@@ -48,7 +48,7 @@
       border: none;
       background: #f1f1f1;
       resize: none;
-      min-height: 200px;
+      min-height: 35em;
     }
 
     /* Set a style for the submit/send button */
@@ -84,7 +84,6 @@
 
     <div class="chat-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
-        <h1>Chăm sóc khách hàng</h1>
         <iframe class="iframe-chat" id="iframe-chat" src="https://cskh.mp3vnvip.top/client/1" title="description"></iframe>
 
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
