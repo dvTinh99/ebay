@@ -33,7 +33,19 @@ class OrderRepository extends BaseRepository
     }
 
     public function detail($id) {
-        return Order::with('orderItem')->find($id);
+        $order = $this->model->with(['seller', 'address', 'customer', 'products'])
+            ->where('id', $id)->first();
+        $orderItem = $order->orderItem;
+        $order->products = $order->products->map(function ($item) use ($orderItem) {
+            $quantity = $orderItem->where('product_id', $item->id)->first()->quantity;
+            $item->quantity = $quantity;
+            $images = $item->images->pluck('image_link');
+            unset($item->images);
+            $item->images = $images;
+            return $item;
+        });
+        unset($order->orderItem);
+        return $order;
     }
 
     public function myOrder() {
