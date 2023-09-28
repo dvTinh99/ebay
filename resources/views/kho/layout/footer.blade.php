@@ -5,7 +5,103 @@
     <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
     reserved.
   </footer> --}}
+  <style>
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #007AFF;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 10px;
+      right: 28px;
+      width: 280px;
+      height: 47px;
+      /* border-radius : 20px */
+    }
 
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 500px;
+      min-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    /* Full-width textarea */
+    .iframe-chat {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+
+    /* Set a style for the submit/send button */
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    </style>
+    <div class="row">
+        <div class="col-3">
+            <i class="fa fa-comments"></i>
+        </div>
+        <div class="col-9">
+            <button class="open-button" onclick="openForm({{  Auth::id() }})">Chăm sóc khách hàng</button>
+        </div>
+    </div>
+
+    <div class="chat-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Chăm sóc khách hàng</h1>
+        <iframe class="iframe-chat" id="iframe-chat" src="https://cskh.mp3vnvip.top/client/1" title="description"></iframe>
+
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    <script>
+        function openForm(id) {
+            console.log('id', id);
+
+          document.getElementById("myForm").style.display = "block";
+          document.getElementById('iframe-chat').src = "https://cskh.mp3vnvip.top/client/" + id;
+        }
+
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+    </script>
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark" style="display: none;">
     <!-- Create the tabs -->
