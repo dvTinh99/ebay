@@ -13,7 +13,7 @@ class CreateOrderItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_items', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('order_id')->nullable();
             $table->unsignedInteger('product_id')->nullable();

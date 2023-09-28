@@ -41,4 +41,16 @@ class Order extends Model
     public function address() {
         return $this->hasOne(Address::class, 'id', 'address_id');
     }
+
+    public function products() {
+        return $this->belongsToMany(Product::class);
+    }
+
+    public function getStatusAttribute($data) {
+        return intval($data);
+    }
+
+    public function getPaymentAttribute($data) {
+        return intval($data);
+    }
 }

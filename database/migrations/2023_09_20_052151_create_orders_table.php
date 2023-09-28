@@ -18,11 +18,11 @@ class CreateOrdersTable extends Migration
             $table->unsignedInteger('customer_id')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('address_id')->nullable();
-            $table->string('status')->default('1');
+            $table->unsignedInteger('status')->default('1');
             $table->string('time_create')->nullable();
             $table->string('time_signing')->nullable();
             $table->float('price')->nullable();
-            $table->string('payment')->nullable();
+            $table->unsignedInteger('payment')->nullable();
             $table->text('note')->nullable();
             $table->float('tax')->nullable();
             $table->float('warehouse_price')->nullable();
