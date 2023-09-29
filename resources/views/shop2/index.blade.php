@@ -4,8 +4,8 @@
 <head>
 
     <meta name="csrf-token" content="oVvb046Hcw9FgwJYVjbsSE7InrxWD9HGapRVeCtY">
-    <meta name="app-url" content="//www.ebeebbuy.cc/">
-    <meta name="file-base-url" content="//www.ebeebbuy.cc/public/">
+    <meta name="app-url" content="www.shop.btsdoors.test">
+    <meta name="file-base-url" content="//www.shop.btsdoors.test/public/">
 
     <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
 
