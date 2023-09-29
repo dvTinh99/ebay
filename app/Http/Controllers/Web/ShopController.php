@@ -16,7 +16,7 @@ use App\Models\Product;
 class ShopController extends Controller
 {
     function index() {
-        $categories = Category::with('children')->where('father_id', 0)->get();
+        $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
         return view('shop.index', compact('categories'));
     }
 

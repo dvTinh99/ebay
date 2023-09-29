@@ -18,6 +18,8 @@ class CreateShopsTable extends Migration
             $table->unsignedBigInteger("user_id")->nullable();
             $table->string("name")->nullable();
             $table->string("address")->nullable();
+            $table->unsignedInteger("star")->default(0);
+            $table->unsignedInteger("view")->default(0);
             $table->string("phone")->nullable();
             $table->timestamps();
         });
