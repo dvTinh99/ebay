@@ -25,7 +25,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::get('/', [ShopController::class, 'index']);
+    Route::get('/users/login', [ShopController::class, 'login']);
+    Route::get('/users/registration', [ShopController::class, 'register']);
+    Route::get('/detail', [ShopController::class, 'detail']);
     Route::get('/categories', [ShopController::class, 'categories']);
+
+    // pages
+    Route::get('/term', [ShopController::class, 'term']);
+    Route::get('/return-policy', [ShopController::class, 'returnPolicy']);
+    Route::get('/support-policy', [ShopController::class, 'supportPolicy']);
+    Route::get('/privacy-policy', [ShopController::class, 'privatePolicy']);
+    Route::get('/compare', [ShopController::class, 'compare']);
+    Route::get('/cart', [ShopController::class, 'cart']);
+    Route::get('/shops/create', [ShopController::class, 'shopsCreate']);
+
+    //index 2 là page có sản phẩm trong giỏ hàng trên header
+    Route::get('/index2', [ShopController::class, 'index2']);
 });
 Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
 
