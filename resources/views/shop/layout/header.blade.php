@@ -254,7 +254,7 @@
                             <div class="" id="compare">
                                 <a href="https://www.ebeebbuy.cc/compare"
                                     class="d-flex align-items-center text-reset">
-                                    <i class="la la-refresh la-2x opacity-80"></i>
+                                    <i class="fa fa-refresh fa-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill">0</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">Đối chiếu</span>
@@ -267,7 +267,7 @@
                             <div class="" id="wishlist">
                                 <a href="https://www.ebeebbuy.cc/wishlists"
                                     class="d-flex align-items-center text-reset">
-                                    <i class="la la-heart-o la-2x opacity-80"></i>
+                                    <i class="fa fa-heart-o fa-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill">0</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">Danh sách yêu
@@ -281,7 +281,7 @@
                             <div class="nav-cart-box dropdown h-100" id="cart_items">
                                 <a href="javascript:void(0)" class="d-flex align-items-center text-reset h-100"
                                     data-toggle="dropdown" data-display="static">
-                                    <i class="la la-shopping-cart la-2x opacity-80"></i>
+                                    <i class="fa fa-shopping-cart fa-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill cart-count">0</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">xe đẩy</span>

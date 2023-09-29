@@ -638,28 +638,28 @@
         <div class="row no-gutters">
             <div class="col-lg-3 col-md-6">
                 <a class="text-reset border-left text-center p-4 d-block" href="https://www.ebeebbuy.cc/terms">
-                    <i class="la la-file-text la-3x text-primary mb-2"></i>
+                    <i class="fa fa-file-text fa-3x text-primary mb-2"></i>
                     <h4 class="h6">Điều khoản và điều kiện</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <a class="text-reset border-left text-center p-4 d-block"
                     href="https://www.ebeebbuy.cc/return-policy">
-                    <i class="la la-mail-reply la-3x text-primary mb-2"></i>
+                    <i class="fa fa-mail-reply fa-3x text-primary mb-2"></i>
                     <h4 class="h6">chính sách hoàn trả</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <a class="text-reset border-left text-center p-4 d-block"
                     href="https://www.ebeebbuy.cc/support-policy">
-                    <i class="la la-support la-3x text-primary mb-2"></i>
+                    <i class="fa fa-support fa-3x text-primary mb-2"></i>
                     <h4 class="h6">Chính sách hỗ trợ</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
                 <a class="text-reset border-left border-right text-center p-4 d-block"
                     href="https://www.ebeebbuy.cc/privacy-policy">
-                    <i class="las la-exclamation-circle la-3x text-primary mb-2"></i>
+                    <i class="fa fa-exclamation-circle fa-3x text-primary mb-2"></i>
                     <h4 class="h6">Chính sách bảo mật</h4>
                 </a>
             </div>
