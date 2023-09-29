@@ -17,11 +17,11 @@ class ShopController extends Controller
 {
     function index() {
         $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
-        return view('shop.index', compact('categories'));
+        return view('shop2.index', compact('categories'));
     }
 
     function categories() {
         $categories = Category::with('children')->where('father_id', 0)->get();
-        return view('shop.page.category', compact('categories'));
+        return view('shop2.page.category', compact('categories'));
     }
 }

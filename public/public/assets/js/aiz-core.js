@@ -840,7 +840,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     }
                     $this.selectpicker({
                         size: 5,
-                        noneSelectedText: AIZ.local.nothing_selected,
+                        noneSelectedText: AIZ.local.nothing_selected,                     
                         virtualScroll: false
                     });
                 }
@@ -928,8 +928,8 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
 
                 var nativeHtmlBuilderFunc = $this.summernote('module', 'videoDialog').createVideoNode;
 
-                $this.summernote('module', 'videoDialog').createVideoNode =  function(url)
-                {
+                $this.summernote('module', 'videoDialog').createVideoNode =  function(url) 
+                {   
                     var wrap = $('<div class="embed-responsive embed-responsive-16by9"></div>');
                     var html = nativeHtmlBuilderFunc(url);
                         html = $(html).addClass('embed-responsive-item');
@@ -1183,13 +1183,13 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                 });
             }
         },
-        // å‰ç«¯ç§’æ€æ´»åŠ¨
+        // 前端秒杀活动
         countDownCircle: function () {
             let html =  '<div id="time"><div class="circle"><svg><circle cx="30" cy="30" r="30"></circle><circle cx="30" cy="30" r="30" id="dd"></circle></svg><div id="days">00 <br><span>Days</span></div></div>' +
                         '<div class="circle"><svg><circle cx="30" cy="30" r="30"></circle><circle cx="30" cy="30" r="30" id="hh"></circle></svg><div id="hours">00 <br><span>Hrs</span></div></div>' +
                         '<div class="circle"><svg><circle cx="30" cy="30" r="30"></circle><circle cx="30" cy="30" r="30" id="mm"></circle></svg><div id="minutes">00 <br><span>Min</span></div></div>' +
                         '<div class="circle"><svg><circle cx="30" cy="30" r="30"></circle><circle cx="30" cy="30" r="30" id="ss"></circle></svg><div id="seconds">00 <br><span>Sec</span></div></div></div>';
-
+            
             if ($(".aiz-count-down-circle").length > 0) {
                 console.log($(".aiz-count-down-circle").length);
                 $('.aiz-count-down-circle').each(function(){
@@ -1219,7 +1219,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                             let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                             let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                             let s = Math.floor((distance % (1000 * 60)) / (1000));
-
+                            
                             // Output the results in elements with id
                             days.html(d + '<br><span>Days</span>');
                             hours.html(h + '<br><span>Hrs</span>');
@@ -1322,9 +1322,9 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     adaptiveHeight: adaptiveHeight,
                     slidesToScroll: 1,
                     prevArrow:
-                        '<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>',
+                        '<button type="button" class="slick-prev"><i class="las la-angle-left"></i></button>',
                     nextArrow:
-                        '<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>',
+                        '<button type="button" class="slick-next"><i class="las la-angle-right"></i></button>',
                     responsive: [
                         {
                             breakpoint: 1500,
@@ -1398,7 +1398,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                             max: parseInt(c.getAttribute("data-range-value-max")),
                         },
                     }),
-
+                    
                     c.noUiSlider.on("update", function (a, b) {
                         f[b].textContent = a[b];
                     }),
@@ -1786,7 +1786,7 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                             $(this).attr("disabled", true);
                         }
                     }
-
+                    
                 } else {
                     input.val(0);
                 }

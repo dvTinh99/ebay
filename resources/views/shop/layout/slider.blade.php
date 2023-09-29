@@ -1,7 +1,7 @@
 <div class="col-lg-9">
     <div class="aiz-carousel dots-inside-bottom mobile-img-auto-height slick-initialized slick-slider slick-dotted"
         data-arrows="true" data-dots="true" data-autoplay="true"><button type="button" class="slick-prev slick-arrow"
-            aria-disabled="false" style=""><i class="las la-angle-left"></i></button>
+            aria-disabled="false" style=""><i class="fa fa-angle-left"></i></button>
         <div class="slick-list draggable">
             <div class="slick-track" style="opacity: 1; width: 3312px; transform: translate3d(-2484px, 0px, 0px);">
                 <div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 828px;" role="tabpanel"
@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div><button type="button" class="slick-next slick-arrow slick-disabled" style=""
-            aria-disabled="true"><i class="las la-angle-right"></i></button>
+            aria-disabled="true"><i class="fa fa-angle-right"></i></button>
         <ul class="slick-dots" style="" role="tablist">
             <li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control00"
                     aria-controls="slick-slide00" aria-label="1 of 4" tabindex="-1">1</button></li>

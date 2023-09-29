@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="<?= asset('/kho')?>/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?= asset('/shop')?>/assets/css/aiz-core.css">
 
+
+    <!-- SCRIPTS -->
+    <script src="<?= asset('/shop')?>/assets/js/vendors.js"></script>
+    <script src="<?= asset('/shop')?>/assets/js/aiz-core.js"></script>
+
     <script>
         var AIZ = AIZ || {};
         AIZ.local = {

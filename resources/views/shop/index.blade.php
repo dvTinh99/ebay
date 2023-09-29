@@ -928,9 +928,6 @@
 </div>
 
 
-<!-- SCRIPTS -->
-<script src="https://www.ebeebbuy.cc/public/assets/js/vendors.js"></script>
-<script src="https://www.ebeebbuy.cc/public/assets/js/aiz-core.js"></script>
 
 
 <script type="text/javascript">
