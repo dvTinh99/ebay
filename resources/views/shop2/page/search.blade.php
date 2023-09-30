@@ -37,7 +37,7 @@
                                         @foreach ($categories as $category)
                                         <li class="mb-2 ml-2">
                                             <a class="text-reset fs-14"
-                                                href="/category/men%20clothing%20&amp;%20fashion">{{ $category->name }}</a>
+                                                href="/category/{{ $category->id }}">{{ $category->name }}</a>
                                         </li>
                                         @endforeach
 
@@ -113,7 +113,10 @@
                         <div class="row gutters-5 flex-wrap align-items-center">
                             <div class="col-lg col-10">
                                 <h1 class="h6 fw-600 text-body">
-                                    tìm kết quả cho"GUESS"
+                                    @if (isset($keyWord))
+
+                                        tìm kết quả cho "{{ $keyWord }} "
+                                    @endif
                                 </h1>
                                 <input type="hidden" name="keyword" value="GUESS">
                             </div>
@@ -187,8 +190,8 @@
                                 <div class="position-relative">
                                     <a href="/product/{{ $product->id }}" class="d-block">
                                         <img class="img-fit mx-auto h-140px h-md-210px lazyloaded"
-                                            src="{{ $product->images->first()->image_link }}"
-                                            data-src="{{ $product->images->first()->image_link }}"
+                                            src="{{ @$product->images->first()->image_link }}"
+                                            data-src="{{ @$product->images->first()->image_link }}"
                                             alt="GUESS Women's Abey Black Crossbody Flap Bag"
                                             onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </a>

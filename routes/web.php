@@ -47,6 +47,8 @@ Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::get('/shops/create', [ShopController::class, 'shopsCreate']);
     Route::get('/shops', [ShopController::class, 'shops']);
     Route::get('/search', [ShopController::class, 'search']);
+    Route::get('/categories', [ShopController::class, 'categories']);
+    Route::get('/category/{id}', [ShopController::class, 'category']);
 
     //cart
     Route::get('/cart-add', [ShopController::class, 'cartAdd']);

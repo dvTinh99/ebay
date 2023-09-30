@@ -161,7 +161,7 @@ class ShopController extends Controller
         $keyWord = $request->keyword;
         $products = Product::where('name', 'like', '%' . $keyWord . '%')->paginate(9);
         $categories = Category::where('father_id', 0)->get();
-        return view('shop2.page.search', compact('products', 'categories'));
+        return view('shop2.page.search', compact('products', 'categories', 'keyWord'));
     }
 
     function term() {
@@ -170,6 +170,12 @@ class ShopController extends Controller
 
     function categories() {
         $categories = Category::with('children')->where('father_id', 0)->get();
-        return view('shop2.page.category', compact('categories'));
+        return view('shop2.page.categories', compact('categories'));
+    }
+
+    function category($id) {
+        $products = Product::where('category_id', $id)->paginate(10);
+        $categories = Category::where('father_id', 0)->get();
+        return view('shop2.page.search', compact('products', 'categories'));
     }
 }

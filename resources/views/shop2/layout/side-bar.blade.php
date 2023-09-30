@@ -3,14 +3,14 @@
         <div
             class="p-3 bg-soft-primary d-none d-lg-block rounded-top all-category position-relative text-left">
             <span class="fw-600 fs-16 mr-3">Thể loại</span>
-            <a href="https://www.ebeebbuy.cc/categories" class="text-reset">
+            <a href="/categories" class="text-reset">
                 <span class="d-none d-lg-inline-block">Nhìn thấy tất cả &gt;</span>
             </a>
         </div>
         <ul class="list-unstyled categories no-scrollbar py-2 mb-0 text-left">
             @foreach ($categories as $category)
             <li class="category-nav-element" data-id="15">
-                <a href="https://www.ebeebbuy.cc/category/-r0egg"
+                <a href="/category/{{ $category->id }}"
                     class="text-truncate text-reset py-2 px-3 d-block">
                     <img class="cat-image mr-2 opacity-60 ls-is-cached lazyloaded"
                         src="{{ URL::to('/') . '/uploads' . $category->image }}" data-src=""
@@ -25,7 +25,7 @@
                             <ul class="list-unstyled mb-3">
                                 <li class="fw-600 border-bottom pb-2 mb-3">
                                     <a class="text-reset"
-                                        href="https://www.ebeebbuy.cc/category/sunglasses-byvz3">{{ $child->name }}</a>
+                                        href="/category/{{ $child->id }}">{{ $child->name }}</a>
                                 </li>
                             </ul>
                         </div>
