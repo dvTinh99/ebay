@@ -16,7 +16,7 @@ class Image extends Model
         'image_type',
     ];
 
-    public function getImageLinkAttribute($data) {
-        return '/database/ebay' . $data;        ;
-    }
+    // public function getImageLinkAttribute($data) {
+    //     return '/database/ebay' . $data;        ;
+    // }
 }

@@ -17,7 +17,10 @@ class ShopController extends Controller
 {
     function index() {
         $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
-        return view('shop2.index', compact('categories'));
+        $products = Product::limit(11)->get();
+        $productNoiBat = Product::skip(11)->limit(11)->get();
+        $productBanChay = Product::skip(22)->limit(11)->get();
+        return view('shop2.index', compact('categories', 'products', 'productNoiBat', 'productBanChay'));
     }
 
     function index2() {
@@ -56,9 +59,27 @@ class ShopController extends Controller
     function detail() {
         return view('shop2.detail');
     }
+    function detailProduct($id) {
+        $product = Product::find($id);
+        // dd($product);
+        $productBanChay = Product::skip(22)->limit(3)->get();
+        $productTuongTu = Product::skip(44)->limit(11)->get();
+        return view('shop2.detail', compact('product', 'productBanChay', 'productTuongTu'));
+    }
 
     function shopsCreate() {
         return view('shop2.page.shops-create');
+    }
+
+    function shops() {
+        return view('shop2.page.shop');
+    }
+
+    function search(Request $request) {
+        $keyWord = $request->keyword;
+        $products = Product::where('name', 'like', '%' . $keyWord . '%')->paginate(9);
+        $categories = Category::where('father_id', 0)->get();
+        return view('shop2.page.search', compact('products', 'categories'));
     }
 
     function term() {
