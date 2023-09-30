@@ -44,8 +44,10 @@ Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
 
     //cart
     Route::get('/cart-add', [ShopController::class, 'cartAdd']);
+    Route::get('/cart-compare', [ShopController::class, 'cartCompare']);
     Route::get('/cart-remove', [ShopController::class, 'cartRemove']);
     Route::get('/cart-reload', [ShopController::class, 'cartReload']);
+    Route::get('/compare/reset', [ShopController::class, 'compareReset']);
 
     //index 2 là page có sản phẩm trong giỏ hàng trên header
     Route::get('/index2', [ShopController::class, 'index2']);

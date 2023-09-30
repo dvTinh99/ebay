@@ -487,7 +487,7 @@
                                 <a href="/compare" class="d-flex align-items-center text-reset">
                                     <i class="la la-refresh la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
-                                        <span class="badge badge-primary badge-inline badge-pill">0</span>
+                                        <span class="badge badge-primary badge-inline badge-pill" id="cart-compare">{{ getCountCompare() }}</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">Đối chiếu</span>
                                     </span>
                                 </a>
@@ -513,7 +513,7 @@
                                     data-toggle="dropdown" data-display="static">
                                     <i class="la la-shopping-cart la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
-                                        <span class="badge badge-primary badge-inline badge-pill cart-count" id="cart-count">{{ Cart::count() }}</span>
+                                        <span class="badge badge-primary badge-inline badge-pill cart-count" id="cart-count">{{ getCountCart() }}</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">xe đẩy</span>
                                     </span>
                                 </a>
@@ -530,6 +530,7 @@
                                     </div>
                                     <ul class="h-250px overflow-auto c-scrollbar-light list-group list-group-flush" id="ul-cart">
                                         @foreach (Cart::content() as $product)
+                                        @if($product->options['type'] == 1)
                                         <li class="list-group-item">
                                             <span class="d-flex align-items-center">
                                                 <a href="/product/{{ $product->id }}"
@@ -555,6 +556,7 @@
                                                 </span>
                                             </span>
                                         </li>
+                                        @endif
                                         @endforeach
 
                                     </ul>
@@ -565,7 +567,7 @@
                                     <div class="px-3 py-2 text-center border-top">
                                         <ul class="list-inline mb-0">
                                             <li class="list-inline-item">
-                                                <a href="https://www.ebeebbuy.cc/cart"
+                                                <a href="/cart"
                                                     class="btn btn-soft-primary btn-sm">
                                                     Xem giỏ hàng
                                                 </a>

@@ -20,15 +20,52 @@ class ShopController extends Controller
         $product = Product::find($request->product_id);
         $qty = $request->quantity;
 
+        // cart type = 1
+        // compare type = 2
         Cart::add([
             'id' => $product->id,
             'name' => $product->name,
             'price' => $product->price,
             'qty' => $qty,
             'weight' => 1,
-            'options' => ['image' => $product->images->first()->image_link]
+            'options' => [
+                'image' => $product->images->first()->image_link,
+                'type' => 1
+            ]
         ]);
         return 'ok';
+    }
+
+    function cartCompare(Request $request) {
+        $product = Product::find($request->product_id);
+        $qty = $request->quantity;
+
+        // cart type = 1
+        // compare type = 2
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'price' => $product->price,
+            'qty' => $qty,
+            'weight' => 1,
+            'options' => [
+                'image' => $product->images->first()->image_link,
+                'type' => 2,
+                'category' => $product->category->name,
+            ]
+        ]);
+        return getCountCompare();
+    }
+
+    function compareReset() {
+        $content = Cart::content();
+        foreach($content as $value) {
+            \Log::debug('value', [$value]);
+            if ($value->options['type'] != 1) {
+                Cart::remove($value->rowId);
+            }
+        }
+        return redirect('/');
     }
     function cartRemove(Request $request) {
         Cart::remove($request->id);
@@ -38,10 +75,13 @@ class ShopController extends Controller
     function cartReload(Request $request) {
         $arrayProduct = [];
         $content = Cart::content();
+        $count = 0;
         foreach($content as $value) {
-            array_push($arrayProduct, $value);
+            if ($value->options['type'] == 1) {
+                array_push($arrayProduct, $value);
+                $count ++;
+            }
         }
-        $count = Cart::count();
         $total = Cart::priceTotal();
         return response()->json([
             'content' => $arrayProduct,
@@ -49,6 +89,7 @@ class ShopController extends Controller
             'total' => $total
         ], 200);
     }
+
     function index() {
         $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
         $products = Product::limit(11)->get();

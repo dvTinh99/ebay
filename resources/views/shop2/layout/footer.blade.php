@@ -415,6 +415,22 @@
             // $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
         });
     }
+    function removeFromCartPage(key) {
+        console.log('key', key);
+
+        $.get('/cart-remove', {
+            id: key
+        }, function(data) {
+            AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
+            location.reload();
+
+            //reload page
+            // updateNavCart(data.nav_cart_view, data.cart_count);
+            // $('#cart-summary').html(data.cart_view);
+            // AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
+            // $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
+        });
+    }
 
     function reloadCart() {
         $.get('/cart-reload', {
@@ -457,13 +473,14 @@
     }
 
     function addToCompare(id) {
-        $.post('https://www.ebeebbuy.cc/compare/addToCompare', {
-            _token: AIZ.data.csrf,
-            id: id
+        $.get('/cart-compare', {
+            product_id: id,
+            quantity : 1
         }, function(data) {
-            $('#compare').html(data);
+            console.log('data', data);
+
             AIZ.plugins.notify('success', "Mục đã được thêm vào danh sách so sánh");
-            $('#compare_items_sidenav').html(parseInt($('#compare_items_sidenav').html()) + 1);
+            $('#cart-compare').html(data);
         });
     }
 
@@ -540,28 +557,37 @@
         return false;
     }
 
-    function addToCart() {
-        if (checkAddToCartValidity()) {
-            $('#addToCart').modal();
-            $('.c-preloader').show();
-            $.ajax({
-                type: "POST",
-                url: 'https://www.ebeebbuy.cc/cart/addtocart',
-                data: $('#option-choice-form').serializeArray(),
-                success: function(data) {
+    function addToCart(id) {
+        // if (checkAddToCartValidity()) {
+        //     $('#addToCart').modal();
+        //     $('.c-preloader').show();
+        //     $.ajax({
+        //         type: "POST",
+        //         url: 'https://www.ebeebbuy.cc/cart/addtocart',
+        //         data: $('#option-choice-form').serializeArray(),
+        //         success: function(data) {
 
-                    $('#addToCart-modal-body').html(null);
-                    $('.c-preloader').hide();
-                    $('#modal-size').removeClass('modal-lg');
-                    $('#addToCart-modal-body').html(data.modal_view);
-                    AIZ.extra.plusMinus();
-                    AIZ.plugins.slickCarousel();
-                    updateNavCart(data.nav_cart_view, data.cart_count);
-                }
-            });
-        } else {
-            AIZ.plugins.notify('warning', "Vui lòng chọn tất cả các tùy chọn");
-        }
+        //             $('#addToCart-modal-body').html(null);
+        //             $('.c-preloader').hide();
+        //             $('#modal-size').removeClass('modal-lg');
+        //             $('#addToCart-modal-body').html(data.modal_view);
+        //             AIZ.extra.plusMinus();
+        //             AIZ.plugins.slickCarousel();
+        //             updateNavCart(data.nav_cart_view, data.cart_count);
+        //         }
+        //     });
+        // } else {
+        //     AIZ.plugins.notify('warning', "Vui lòng chọn tất cả các tùy chọn");
+        // }
+        $.get('/cart-add', {
+            product_id: id,
+            quantity: 1,
+
+        }, function(data) {
+            AIZ.plugins.notify('success', "Thêm vào giỏ hàng thành công");
+            reloadCart();
+
+        });
     }
 
     function buyNow() {

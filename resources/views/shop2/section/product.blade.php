@@ -29,12 +29,12 @@
                                             onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </a>
                                     <div class="absolute-top-right aiz-p-hov-icon">
-                                        <a href="javascript:void(0)" onclick="addToWishList(159591)"
+                                        <a href="javascript:void(0)" onclick="addToWishList('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào danh sách yêu thích"
                                             data-placement="left">
                                             <i class="la la-heart-o"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="addToCompare(159591)"
+                                        <a href="javascript:void(0)" onclick="addToCompare('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào để so sánh"
                                             data-placement="left">
                                             <i class="las la-sync"></i>
@@ -97,12 +97,12 @@
                                             onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </a>
                                     <div class="absolute-top-right aiz-p-hov-icon">
-                                        <a href="javascript:void(0)" onclick="addToWishList(159591)"
+                                        <a href="javascript:void(0)" onclick="addToWishList('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào danh sách yêu thích"
                                             data-placement="left">
                                             <i class="la la-heart-o"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="addToCompare(159591)"
+                                        <a href="javascript:void(0)" onclick="addToCompare('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào để so sánh"
                                             data-placement="left">
                                             <i class="las la-sync"></i>
@@ -165,12 +165,12 @@
                                             onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </a>
                                     <div class="absolute-top-right aiz-p-hov-icon">
-                                        <a href="javascript:void(0)" onclick="addToWishList(159591)"
+                                        <a href="javascript:void(0)" onclick="addToWishList('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào danh sách yêu thích"
                                             data-placement="left">
                                             <i class="la la-heart-o"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="addToCompare(159591)"
+                                        <a href="javascript:void(0)" onclick="addToCompare('{{ $product->id }}')"
                                             data-toggle="tooltip" data-title="Thêm vào để so sánh"
                                             data-placement="left">
                                             <i class="las la-sync"></i>
