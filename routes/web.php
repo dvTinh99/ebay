@@ -35,6 +35,7 @@ Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::post('/user/register', [UserController::class, 'register']);
     Route::get('/user/logout', [UserController::class, 'logoutShop']);
     Route::post('/user/login', [UserController::class, 'loginShop']);
+    Route::get('/to-manager', [UserController::class, 'toManager']);
 
 
     // pages

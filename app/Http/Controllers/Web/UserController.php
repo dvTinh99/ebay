@@ -32,6 +32,24 @@ class UserController extends Controller
         return view('kho.index' , compact('page', 'myOrder'));
     }
 
+    public function toManager() {
+        $user = Auth::user();
+        $tokenResult = $user->createToken('Personal Access Token');
+        switch ($user->role) {
+            case 'customer' : {
+                return redirect('/');
+                break;
+            }
+            case 'master' : {
+                return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                break;
+            }
+            case 'seller' : {
+                break;
+            }
+        }
+    }
+
     public function myOrderPurchase() {
         $page = 'order-purchase';
         $myOrderPurchase = $this->userRepo->myOrderPurchase()->paginate(5);

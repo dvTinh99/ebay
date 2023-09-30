@@ -322,8 +322,9 @@
                                         Bán Trên ebay
                                     @else
                                         @if (Auth::user()->role != 'customer')
-
-                                            Trang điều khiển {{ Auth::user()->role  }}
+                                            <a href="/to-manager">
+                                            Trang điều khiển
+                                            </a>
                                         @endif
                                     @endif
                                 </a>
