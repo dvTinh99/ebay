@@ -81,7 +81,21 @@ class UserController extends Controller
             'email' => $email,
             'password' => $password
         ])) {
-            return redirect('/');
+            $user = Auth::user();
+            $tokenResult = $user->createToken('Personal Access Token');
+            switch ($user->role) {
+                case 'customer' : {
+                    return redirect('/');
+                    break;
+                }
+                case 'master' : {
+                    return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                    break;
+                }
+                case 'seller' : {
+                    break;
+                }
+            }
         } else {
             return redirect()->back()->with('error', 'Username or password incorrect');
         }
