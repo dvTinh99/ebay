@@ -32,9 +32,8 @@
                                 <div class="px-4 py-3 py-lg-4">
                                     <div class="">
                                         <form class="form-default" role="form"
-                                            action="https://www.ebeebbuy.cc/login" method="POST">
-                                            <input type="hidden" name="_token"
-                                                value="RMRPNbCxZ0ltJj0o5JpZ5tEKEyw9VH1rZnC94aDb">
+                                            action="/user/login" method="POST">
+                                            @csrf
                                             <div class="form-group">
                                                 <input type="email" class="form-control input-email" value=""
                                                     placeholder="E-mail" name="email" id="email"

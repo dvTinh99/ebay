@@ -222,54 +222,6 @@
                                             <span class="language">Belarusian</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="ru" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/ru.png" class="mr-1 lazyload"
-                                                alt="Россия" height="11">
-                                            <span class="language">Россия</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="es" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/es.png" class="mr-1 lazyload"
-                                                alt="Español" height="11">
-                                            <span class="language">Español</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="fa" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/fa.png" class="mr-1 lazyload"
-                                                alt="فارس" height="11">
-                                            <span class="language">فارس</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="th" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/th.png" class="mr-1 lazyload"
-                                                alt="แบบไทย" height="11">
-                                            <span class="language">แบบไทย</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="pt" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/pt.png" class="mr-1 lazyload"
-                                                alt="Português" height="11">
-                                            <span class="language">Português</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="tr" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/tr.png" class="mr-1 lazyload"
-                                                alt="Türkçe" height="11">
-                                            <span class="language">Türkçe</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <style>
@@ -286,7 +238,9 @@
                             </style>
                             <li class="mobile">
                                 <a style="color:#e62e04 !important" href="/shops/create"
-                                    class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                                    class="text-reset d-inline-block opacity-60 py-2">
+
+                                </a>
                             </li>
                             <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0" id="currency-change">
 
@@ -354,34 +308,6 @@
                                         <a class="dropdown-item " href="javascript:void(0)"
                                             data-currency="NOK">Norwegian Krone (kr)</a>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)" data-currency="NZD">New
-                                            Zealand Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="PHP">Philippine Peso (₱)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="PLN">Polish Zloty (zł)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)" data-currency="GBP">Pound
-                                            Sterling (£)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="RUB">Russian Ruble (руб)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="SGD">Singapore Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="Rupee">Indian Rupee (Rs)</a>
-                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -390,17 +316,37 @@
                         <ul class="list-inline mb-0 h-100 d-flex justify-content-end align-items-center">
                             <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
                                 <a style="color:#e62e04 !important" href="/shops/create"
-                                    class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                                    class="text-reset d-inline-block opacity-60 py-2">
+
+                                    @if(!Auth::check())
+                                        Bán Trên ebay
+                                    @else
+                                        @if (Auth::user()->role != 'customer')
+
+                                            Trang điều khiển {{ Auth::user()->role  }}
+                                        @endif
+                                    @endif
+                                </a>
 
                             </li>
+                            @if(!Auth::check())
+                                <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
+                                    <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng
+                                        ký</a>
+                                </li>
+                            @else
+                            <li class="list-inline-item border-right border-left-0 pr-3 pl-0">
+                                <a href="/user/" class="text-reset d-inline-block opacity-60 py-2">{{ Auth::user()->name }}</a>
+                            </li>
+                            <li class="list-inline-item border-right border-left-0 pr-3 pl-0">
+                                <a href="/user/logout" class="text-reset d-inline-block opacity-60 py-2">Đăng xuất</a>
+                            </li>
+                            @endif
 
-                            <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
-                                <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng
-                                    ký</a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>

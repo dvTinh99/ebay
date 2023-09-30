@@ -11,11 +11,17 @@ use Validator;
 use Carbon\Carbon;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\OrderItemRepository;
+use App\Http\Repositories\UserRepository;
 use App\Models\Product;
 use Cart;
 class ShopController extends Controller
 {
 
+    public $userRepo;
+
+    function __construct(UserRepository $userRepo) {
+        $this->userRepo = $userRepo;
+    }
     function cartAdd(Request $request) {
         $product = Product::find($request->product_id);
         $qty = $request->quantity;
@@ -110,6 +116,7 @@ class ShopController extends Controller
     function register() {
         return view('shop2.register');
     }
+
 
     function returnPolicy() {
         return view('shop2.page.return-policy');

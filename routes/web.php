@@ -31,6 +31,12 @@ Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
     Route::get('/product/{id}', [ShopController::class, 'detailProduct']);
     Route::get('/categories', [ShopController::class, 'categories']);
 
+    // đăng kí đăng nhập
+    Route::post('/user/register', [UserController::class, 'register']);
+    Route::get('/user/logout', [UserController::class, 'logoutShop']);
+    Route::post('/user/login', [UserController::class, 'loginShop']);
+
+
     // pages
     Route::get('/term', [ShopController::class, 'term']);
     Route::get('/return-policy', [ShopController::class, 'returnPolicy']);
