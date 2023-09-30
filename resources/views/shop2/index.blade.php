@@ -14,7 +14,7 @@
 <div class="home-banner-area mb-4 pt-3">
     <div class="container">
         <div class="row gutters-10 position-relative">
-            @include('shop.layout.side-bar')
+            @include('shop2.layout.side-bar')
             <div class="col-lg-9">
                 <div class="aiz-carousel dots-inside-bottom mobile-img-auto-height" data-arrows="true" data-dots="true"
                     data-autoplay="true">
@@ -53,53 +53,6 @@
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </div>

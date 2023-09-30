@@ -19,8 +19,7 @@
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="ebay shop">
     <meta itemprop="description" content="ebay shop">
-    <meta itemprop="image"
-        content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
+    <meta itemprop="image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
@@ -28,15 +27,13 @@
     <meta name="twitter:title" content="ebay shop">
     <meta name="twitter:description" content="ebay shop">
     <meta name="twitter:creator" content="@author_handle">
-    <meta name="twitter:image"
-        content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
+    <meta name="twitter:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="ebay shop" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
-    <meta property="og:image"
-        content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" />
+    <meta property="og:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" />
     <meta property="og:description" content="ebay shop" />
     <meta property="og:site_name" content="ebay Shop" />
     <meta property="fb:app_id" content="">
@@ -139,8 +136,8 @@
                                 <a href="javascript:void(0)" class="dropdown-toggle text-reset py-2"
                                     data-toggle="dropdown" data-display="static">
                                     <img src="../public/assets/img/placeholder.jpg"
-                                        data-src="/public/assets/img/flags/vn.png"
-                                        class="mr-2 lazyload" alt="Vietnamese" height="11">
+                                        data-src="/public/assets/img/flags/vn.png" class="mr-2 lazyload"
+                                        alt="Vietnamese" height="11">
                                     <span class="opacity-60">Vietnamese</span>
                                 </a>
 
@@ -148,128 +145,128 @@
                                     <li>
                                         <a href="javascript:void(0)" data-flag="en" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/en.png"
-                                                class="mr-1 lazyload" alt="English" height="11">
+                                                data-src="/public/assets/img/flags/en.png" class="mr-1 lazyload"
+                                                alt="English" height="11">
                                             <span class="language">English</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="sa" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/sa.png"
-                                                class="mr-1 lazyload" alt="Arabic" height="11">
+                                                data-src="/public/assets/img/flags/sa.png" class="mr-1 lazyload"
+                                                alt="Arabic" height="11">
                                             <span class="language">Arabic</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="cn" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/cn.png"
-                                                class="mr-1 lazyload" alt="中文" height="11">
+                                                data-src="/public/assets/img/flags/cn.png" class="mr-1 lazyload"
+                                                alt="中文" height="11">
                                             <span class="language">中文</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="hk" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/hk.png"
-                                                class="mr-1 lazyload" alt="繁体中文" height="11">
+                                                data-src="/public/assets/img/flags/hk.png" class="mr-1 lazyload"
+                                                alt="繁体中文" height="11">
                                             <span class="language">繁体中文</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="jp" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/jp.png"
-                                                class="mr-1 lazyload" alt="にほんご" height="11">
+                                                data-src="/public/assets/img/flags/jp.png" class="mr-1 lazyload"
+                                                alt="にほんご" height="11">
                                             <span class="language">にほんご</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="kr" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/kr.png"
-                                                class="mr-1 lazyload" alt="한국어" height="11">
+                                                data-src="/public/assets/img/flags/kr.png" class="mr-1 lazyload"
+                                                alt="한국어" height="11">
                                             <span class="language">한국어</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="id" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/id.png"
-                                                class="mr-1 lazyload" alt="Indonesian" height="11">
+                                                data-src="/public/assets/img/flags/id.png" class="mr-1 lazyload"
+                                                alt="Indonesian" height="11">
                                             <span class="language">Indonesian</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="vn" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/vn.png"
-                                                class="mr-1 lazyload" alt="Vietnamese" height="11">
+                                                data-src="/public/assets/img/flags/vn.png" class="mr-1 lazyload"
+                                                alt="Vietnamese" height="11">
                                             <span class="language">Vietnamese</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="my" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/my.png"
-                                                class="mr-1 lazyload" alt="Malay" height="11">
+                                                data-src="/public/assets/img/flags/my.png" class="mr-1 lazyload"
+                                                alt="Malay" height="11">
                                             <span class="language">Malay</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="by" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/by.png"
-                                                class="mr-1 lazyload" alt="Belarusian" height="11">
+                                                data-src="/public/assets/img/flags/by.png" class="mr-1 lazyload"
+                                                alt="Belarusian" height="11">
                                             <span class="language">Belarusian</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="ru" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/ru.png"
-                                                class="mr-1 lazyload" alt="Россия" height="11">
+                                                data-src="/public/assets/img/flags/ru.png" class="mr-1 lazyload"
+                                                alt="Россия" height="11">
                                             <span class="language">Россия</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="es" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/es.png"
-                                                class="mr-1 lazyload" alt="Español" height="11">
+                                                data-src="/public/assets/img/flags/es.png" class="mr-1 lazyload"
+                                                alt="Español" height="11">
                                             <span class="language">Español</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="fa" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/fa.png"
-                                                class="mr-1 lazyload" alt="فارس" height="11">
+                                                data-src="/public/assets/img/flags/fa.png" class="mr-1 lazyload"
+                                                alt="فارس" height="11">
                                             <span class="language">فارس</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="th" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/th.png"
-                                                class="mr-1 lazyload" alt="แบบไทย" height="11">
+                                                data-src="/public/assets/img/flags/th.png" class="mr-1 lazyload"
+                                                alt="แบบไทย" height="11">
                                             <span class="language">แบบไทย</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="pt" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/pt.png"
-                                                class="mr-1 lazyload" alt="Português" height="11">
+                                                data-src="/public/assets/img/flags/pt.png" class="mr-1 lazyload"
+                                                alt="Português" height="11">
                                             <span class="language">Português</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)" data-flag="tr" class="dropdown-item ">
                                             <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/tr.png"
-                                                class="mr-1 lazyload" alt="Türkçe" height="11">
+                                                data-src="/public/assets/img/flags/tr.png" class="mr-1 lazyload"
+                                                alt="Türkçe" height="11">
                                             <span class="language">Türkçe</span>
                                         </a>
                                     </li>
@@ -401,8 +398,8 @@
                                 <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="/users/registration"
-                                    class="text-reset d-inline-block opacity-60 py-2">Đăng ký</a>
+                                <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng
+                                    ký</a>
                             </li>
                         </ul>
                     </div>
@@ -439,8 +436,7 @@
 
                         <div class="flex-grow-1 front-header-search d-flex align-items-center bg-white">
                             <div class="position-relative flex-grow-1">
-                                <form action="/search" method="GET"
-                                    class="stop-propagation">
+                                <form action="/search" method="GET" class="stop-propagation">
                                     <div class="d-flex position-relative align-items-center">
                                         <div class="d-lg-none" data-toggle="class-toggle"
                                             data-target=".front-header-search">
@@ -488,8 +484,7 @@
 
                         <div class="d-none d-lg-block ml-3 mr-0">
                             <div class="" id="compare">
-                                <a href="/compare"
-                                    class="d-flex align-items-center text-reset">
+                                <a href="/compare" class="d-flex align-items-center text-reset">
                                     <i class="la la-refresh la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill">0</span>
@@ -501,8 +496,7 @@
 
                         <div class="d-none d-lg-block ml-3 mr-0">
                             <div class="" id="wishlist">
-                                <a href="/wishlists"
-                                    class="d-flex align-items-center text-reset">
+                                <a href="/wishlists" class="d-flex align-items-center text-reset">
                                     <i class="la la-heart-o la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill">0</span>
@@ -519,16 +513,66 @@
                                     data-toggle="dropdown" data-display="static">
                                     <i class="la la-shopping-cart la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
-                                        <span class="badge badge-primary badge-inline badge-pill cart-count">0</span>
+                                        <span class="badge badge-primary badge-inline badge-pill cart-count" id="cart-count">{{ Cart::count() }}</span>
                                         <span class="nav-box-text d-none d-xl-block opacity-70">xe đẩy</span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg p-0 stop-propagation">
 
+                                    {{-- @if(\Cart::count() == 0)
                                     <div class="text-center p-3">
                                         <i class="las la-frown la-3x opacity-60 mb-3"></i>
                                         <h3 class="h6 fw-700">Giỏ của bạn trống trơn</h3>
                                     </div>
+                                    @else --}}
+                                    <div class="p-3 fs-15 fw-600 p-3 border-bottom">
+                                        Các mặt hàng trong giỏ hàng
+                                    </div>
+                                    <ul class="h-250px overflow-auto c-scrollbar-light list-group list-group-flush" id="ul-cart">
+                                        @foreach (Cart::content() as $product)
+                                        <li class="list-group-item">
+                                            <span class="d-flex align-items-center">
+                                                <a href="/product/{{ $product->id }}"
+                                                    class="text-reset d-flex align-items-center flex-grow-1">
+                                                    <img src="{{ $product->options['image'] }}"
+                                                        data-src="{{ $product->options['image'] }}"
+                                                        class="img-fit size-60px rounded ls-is-cached lazyloaded"
+                                                        alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed">
+                                                    <span class="minw-0 pl-2 flex-grow-1">
+                                                        <span class="fw-600 mb-1 text-truncate-2">
+                                                           {{ $product->name }}
+                                                        </span>
+                                                        <span class="">{{ $product->qty }}x</span>
+
+                                                        <span class="">${{ $product->price }}</span>
+                                                    </span>
+                                                </a>
+                                                <span class="">
+                                                    <button onclick="removeFromCart('{{ $product->rowId }}')"
+                                                        class="btn btn-sm btn-icon stop-propagation">
+                                                        <i class="la la-close"></i>
+                                                    </button>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        @endforeach
+
+                                    </ul>
+                                    <div class="px-3 py-2 fs-15 border-top d-flex justify-content-between">
+                                        <span class="opacity-60">Tổng phụ</span>
+                                        <span class="fw-600" id="cart-total">${{ Cart::priceTotal()}}</span>
+                                    </div>
+                                    <div class="px-3 py-2 text-center border-top">
+                                        <ul class="list-inline mb-0">
+                                            <li class="list-inline-item">
+                                                <a href="https://www.ebeebbuy.cc/cart"
+                                                    class="btn btn-soft-primary btn-sm">
+                                                    Xem giỏ hàng
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {{-- @endif --}}
 
                                 </div>
                             </div>

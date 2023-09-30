@@ -12,9 +12,43 @@ use Carbon\Carbon;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\OrderItemRepository;
 use App\Models\Product;
-
+use Cart;
 class ShopController extends Controller
 {
+
+    function cartAdd(Request $request) {
+        $product = Product::find($request->product_id);
+        $qty = $request->quantity;
+
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->name,
+            'price' => $product->price,
+            'qty' => $qty,
+            'weight' => 1,
+            'options' => ['image' => $product->images->first()->image_link]
+        ]);
+        return 'ok';
+    }
+    function cartRemove(Request $request) {
+        Cart::remove($request->id);
+        return 'ok';
+    }
+
+    function cartReload(Request $request) {
+        $arrayProduct = [];
+        $content = Cart::content();
+        foreach($content as $value) {
+            array_push($arrayProduct, $value);
+        }
+        $count = Cart::count();
+        $total = Cart::priceTotal();
+        return response()->json([
+            'content' => $arrayProduct,
+            'count' => $count,
+            'total' => $total
+        ], 200);
+    }
     function index() {
         $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
         $products = Product::limit(11)->get();

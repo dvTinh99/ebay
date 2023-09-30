@@ -39,7 +39,7 @@
                                             data-placement="left">
                                             <i class="las la-sync"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="showAddToCartModal(159591)"
+                                        <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})"
                                             data-toggle="tooltip" data-title="Thêm vào giỏ hàng"
                                             data-placement="left">
                                             <i class="las la-shopping-cart"></i>
@@ -107,7 +107,7 @@
                                             data-placement="left">
                                             <i class="las la-sync"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="showAddToCartModal(159591)"
+                                        <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})"
                                             data-toggle="tooltip" data-title="Thêm vào giỏ hàng"
                                             data-placement="left">
                                             <i class="las la-shopping-cart"></i>
@@ -175,7 +175,7 @@
                                             data-placement="left">
                                             <i class="las la-sync"></i>
                                         </a>
-                                        <a href="javascript:void(0)" onclick="showAddToCartModal(159591)"
+                                        <a href="javascript:void(0)" onclick="showAddToCartModal({{ $product->id }})"
                                             data-toggle="tooltip" data-title="Thêm vào giỏ hàng"
                                             data-placement="left">
                                             <i class="las la-shopping-cart"></i>

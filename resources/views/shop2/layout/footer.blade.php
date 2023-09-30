@@ -399,14 +399,60 @@
     }
 
     function removeFromCart(key) {
-        $.post('https://www.ebeebbuy.cc/cart/removeFromCart', {
-            _token: AIZ.data.csrf,
+        console.log('key', key);
+
+        $.get('/cart-remove', {
             id: key
         }, function(data) {
-            updateNavCart(data.nav_cart_view, data.cart_count);
-            $('#cart-summary').html(data.cart_view);
             AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
-            $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
+            reloadCart()
+            // location.reload();
+
+            //reload page
+            // updateNavCart(data.nav_cart_view, data.cart_count);
+            // $('#cart-summary').html(data.cart_view);
+            // AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
+            // $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
+        });
+    }
+
+    function reloadCart() {
+        $.get('/cart-reload', {
+        }, function(data) {
+            const content = data.content;
+            const count = data.count;
+            const total = data.total;
+            let element = '';
+            content.forEach(product => {
+            element += (`<li class="list-group-item">
+                        <span class="d-flex align-items-center">
+                            <a href="/product/${product.id}"
+                                class="text-reset d-flex align-items-center flex-grow-1">
+                                <img src="${product.options.image}"
+                                    data-src="${product.options.image}"
+                                    class="img-fit size-60px rounded ls-is-cached lazyloaded"
+                                    alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed">
+                                <span class="minw-0 pl-2 flex-grow-1">
+                                    <span class="fw-600 mb-1 text-truncate-2">
+                                        ${product.name}
+                                    </span>
+                                    <span class="">${product.qty}x</span>
+
+                                    <span class="">${'$' + product.price}</span>
+                                </span>
+                            </a>
+                            <span class="">
+                                <button onclick="removeFromCart('${product.rowId}')"
+                                    class="btn btn-sm btn-icon stop-propagation">
+                                    <i class="la la-close"></i>
+                                </button>
+                            </span>
+                        </span>
+                    </li>`);
+            });
+            $('#ul-cart').html(element);
+            $('#cart-count').html(count);
+            $('#cart-total').html('$' + total);
         });
     }
 
@@ -426,22 +472,15 @@
     }
 
     function showAddToCartModal(id) {
-        if (!$('#modal-size').hasClass('modal-lg')) {
-            $('#modal-size').addClass('modal-lg');
-        }
-        $('#addToCart-modal-body').html(null);
-        $('#addToCart').modal();
-        $('.c-preloader').show();
-        $.post('https://www.ebeebbuy.cc/cart/show-cart-modal', {
-            _token: AIZ.data.csrf,
-            id: id
+        console.log('id', id);
+        $.get('/cart-add', {
+            product_id: id,
+            quantity: 1,
+
         }, function(data) {
-            $('.c-preloader').hide();
-            $('#addToCart-modal-body').html(data);
-            AIZ.plugins.slickCarousel();
-            AIZ.plugins.zoom();
-            AIZ.extra.plusMinus();
-            getVariantPrice();
+            AIZ.plugins.notify('success', "Thêm vào giỏ hàng thành công");
+            reloadCart();
+
         });
     }
 
