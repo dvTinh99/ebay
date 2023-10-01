@@ -71,7 +71,7 @@ class UserRepository extends BaseRepository
     }
 
     public function myOrder() {
-        return Order::where('user_id', Auth::id())->where('status', '1');
+        return Order::where('user_id', Auth::id())->where('status', '1')->orWhereNull('status');
     }
 
     public function myOrderPurchase() {
