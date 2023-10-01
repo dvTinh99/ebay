@@ -3,40 +3,12 @@
 
 <head>
 
-    <meta name="csrf-token" content="oVvb046Hcw9FgwJYVjbsSE7InrxWD9HGapRVeCtY">
-    <meta name="app-url" content="www.shop.btsdoors.test">
-    <meta name="file-base-url" content="//www.shop.btsdoors.test/public/">
-
     <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="ebay shop" />
-    <meta name="keywords" content="ebay shop">
 
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="ebay shop">
-    <meta itemprop="description" content="ebay shop">
-    <meta itemprop="image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
-
     <!-- Twitter Card data -->
-    <meta name="twitter:card" content="product">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="ebay shop">
-    <meta name="twitter:description" content="ebay shop">
-    <meta name="twitter:creator" content="@author_handle">
-    <meta name="twitter:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="ebay shop" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" />
-    <meta property="og:description" content="ebay shop" />
-    <meta property="og:site_name" content="ebay Shop" />
-    <meta property="fb:app_id" content="">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('public') }}/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
