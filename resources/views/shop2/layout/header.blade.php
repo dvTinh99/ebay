@@ -3,12 +3,10 @@
 
 <head>
 
+    <meta name="app-url" content="www.google.com">
+
     <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
 
-
-
-    <!-- Schema.org markup for Google+ -->
-    <!-- Twitter Card data -->
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('public') }}/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
