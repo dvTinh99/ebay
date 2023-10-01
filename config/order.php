@@ -1,8 +1,8 @@
 <?php
 return [
-    1 => 'Đang chờ xử lí',
-    2 => 'Đã xác nhận',
-    3 => 'Xuất hàng thành công',
-    4 => 'Trên đường',
-    5 => 'Ngoại lệ đặt hàng',
+    0 => 'Đang chờ xử lí',
+    1 => 'Đã xác nhận',
+    2 => 'Xuất hàng thành công',
+    3 => 'Trên đường',
+    4 => 'Ngoại lệ đặt hàng',
 ];

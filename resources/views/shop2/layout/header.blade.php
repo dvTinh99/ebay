@@ -302,7 +302,7 @@
                             </li>
                             @if(!Auth::check())
                                 <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
-                                    <a href="" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
+                                    <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng
