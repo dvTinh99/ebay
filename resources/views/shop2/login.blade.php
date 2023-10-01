@@ -61,7 +61,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="col-6 text-right">
-                                                    <a href="https://www.ebeebbuy.cc/password/reset"
+                                                    <a href="/password/reset"
                                                         class="text-reset opacity-60 fs-14">Quên mật khẩu?</a>
                                                 </div>
                                             </div>
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="text-center">
                                         <p class="text-muted mb-0">Không có tài khoản?</p>
-                                        <a href="https://www.ebeebbuy.cc/users/registration">Đăng ký ngay</a>
+                                        <a href="/users/registration">Đăng ký ngay</a>
                                     </div>
                                 </div>
                             </div>

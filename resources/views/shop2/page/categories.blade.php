@@ -24,7 +24,7 @@
                         <a class="text-reset" href="https://www.ebeebbuy.cc">Trang Chủ</a>
                     </li>
                     <li class="text-dark fw-600 breadcrumb-item">
-                        <a class="text-reset" href="https://www.ebeebbuy.cc/categories">"Tất cả danh mục"</a>
+                        <a class="text-reset" href="/categories">"Tất cả danh mục"</a>
                     </li>
                 </ul>
             </div>

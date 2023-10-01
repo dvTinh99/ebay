@@ -19,7 +19,7 @@
                     <!-- Schema.org markup for Google+ -->
                 <meta itemprop="name" content="ebay shop">
                 <meta itemprop="description" content="ebay shop">
-                <meta itemprop="image" content="https://www.ebeebbuy.cc/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
+                <meta itemprop="image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
                 <!-- Twitter Card data -->
                 <meta name="twitter:card" content="product">
@@ -27,19 +27,19 @@
                 <meta name="twitter:title" content="ebay shop">
                 <meta name="twitter:description" content="ebay shop">
                 <meta name="twitter:creator" content="@author_handle">
-                <meta name="twitter:image" content="https://www.ebeebbuy.cc/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
+                <meta name="twitter:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
                 <!-- Open Graph data -->
                 <meta property="og:title" content="ebay shop"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://www.ebeebbuy.cc"/>
-                <meta property="og:image" content="https://www.ebeebbuy.cc/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"/>
+                <meta property="og:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"/>
                 <meta property="og:description" content="ebay shop"/>
                 <meta property="og:site_name" content="ebay Shop"/>
                 <meta property="fb:app_id" content="">
 
         <!-- Favicon -->
-            <link rel="icon" href="https://www.ebeebbuy.cc/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
+            <link rel="icon" href="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
             <!-- Google Fonts -->
             <link
@@ -47,9 +47,9 @@
                 rel="stylesheet">
 
             <!-- CSS Files -->
-            <link rel="stylesheet" href="https://www.ebeebbuy.cc/public/assets/css/vendors.css">
-                        <link rel="stylesheet" href="https://www.ebeebbuy.cc/public/assets/css/aiz-core.css?v-23">
-            <link rel="stylesheet" href="https://www.ebeebbuy.cc/public/assets/css/custom-style.css">
+            <link rel="stylesheet" href="/public/assets/css/vendors.css">
+                        <link rel="stylesheet" href="/public/assets/css/aiz-core.css?v-23">
+            <link rel="stylesheet" href="/public/assets/css/custom-style.css">
 
 
             <script>
@@ -133,104 +133,104 @@
                 <ul class="list-inline d-flex justify-content-between justify-content-lg-start mb-0">
                                         <li class="list-inline-item dropdown mr-3" id="lang-change">
                                                 <a href="javascript:void(0)" class="dropdown-toggle text-reset py-2" data-toggle="dropdown" data-display="static">
-                            <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/vn.png" class="mr-2 lazyload" alt="Vietnamese" height="11">
+                            <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/vn.png" class="mr-2 lazyload" alt="Vietnamese" height="11">
                             <span class="opacity-60">Vietnamese</span>
                         </a>
 
                         <ul class="dropdown-menu dropdown-menu-left">
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="en" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/en.png" class="mr-1 lazyload" alt="English" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/en.png" class="mr-1 lazyload" alt="English" height="11">
                                         <span class="language">English</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="sa" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/sa.png" class="mr-1 lazyload" alt="Arabic" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/sa.png" class="mr-1 lazyload" alt="Arabic" height="11">
                                         <span class="language">Arabic</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="cn" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/cn.png" class="mr-1 lazyload" alt="中文" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/cn.png" class="mr-1 lazyload" alt="中文" height="11">
                                         <span class="language">中文</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="hk" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/hk.png" class="mr-1 lazyload" alt="繁体中文" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/hk.png" class="mr-1 lazyload" alt="繁体中文" height="11">
                                         <span class="language">繁体中文</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="jp" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/jp.png" class="mr-1 lazyload" alt="にほんご" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/jp.png" class="mr-1 lazyload" alt="にほんご" height="11">
                                         <span class="language">にほんご</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="kr" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/kr.png" class="mr-1 lazyload" alt="한국어" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/kr.png" class="mr-1 lazyload" alt="한국어" height="11">
                                         <span class="language">한국어</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="id" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/id.png" class="mr-1 lazyload" alt="Indonesian" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/id.png" class="mr-1 lazyload" alt="Indonesian" height="11">
                                         <span class="language">Indonesian</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="vn" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/vn.png" class="mr-1 lazyload" alt="Vietnamese" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/vn.png" class="mr-1 lazyload" alt="Vietnamese" height="11">
                                         <span class="language">Vietnamese</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="my" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/my.png" class="mr-1 lazyload" alt="Malay" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/my.png" class="mr-1 lazyload" alt="Malay" height="11">
                                         <span class="language">Malay</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="by" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/by.png" class="mr-1 lazyload" alt="Belarusian" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/by.png" class="mr-1 lazyload" alt="Belarusian" height="11">
                                         <span class="language">Belarusian</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="ru" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/ru.png" class="mr-1 lazyload" alt="Россия" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/ru.png" class="mr-1 lazyload" alt="Россия" height="11">
                                         <span class="language">Россия</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="es" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/es.png" class="mr-1 lazyload" alt="Español" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/es.png" class="mr-1 lazyload" alt="Español" height="11">
                                         <span class="language">Español</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="fa" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/fa.png" class="mr-1 lazyload" alt="فارس" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/fa.png" class="mr-1 lazyload" alt="فارس" height="11">
                                         <span class="language">فارس</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="th" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/th.png" class="mr-1 lazyload" alt="แบบไทย" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/th.png" class="mr-1 lazyload" alt="แบบไทย" height="11">
                                         <span class="language">แบบไทย</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="pt" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/pt.png" class="mr-1 lazyload" alt="Português" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/pt.png" class="mr-1 lazyload" alt="Português" height="11">
                                         <span class="language">Português</span>
                                     </a>
                                 </li>
                                                             <li>
                                     <a href="javascript:void(0)" data-flag="tr" class="dropdown-item ">
-                                        <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg" data-src="https://www.ebeebbuy.cc/public/assets/img/flags/tr.png" class="mr-1 lazyload" alt="Türkçe" height="11">
+                                        <img src="/public/assets/img/placeholder.jpg" data-src="/public/assets/img/flags/tr.png" class="mr-1 lazyload" alt="Türkçe" height="11">
                                         <span class="language">Türkçe</span>
                                     </a>
                                 </li>
@@ -248,7 +248,7 @@
                     }
                     </style>
                                         <li  class="mobile">
-                    <a style="color:#e62e04 !important" href="https://www.ebeebbuy.cc/shops/create" class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                    <a style="color:#e62e04 !important" href="/shops/create" class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
                     </li>
                     <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0" id="currency-change">
 
@@ -329,15 +329,15 @@
             <div class="col-6 text-right d-none d-lg-block">
                 <ul class="list-inline mb-0 h-100 d-flex justify-content-end align-items-center">
                 <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
-                                <a style="color:#e62e04 !important" href="https://www.ebeebbuy.cc/shops/create" class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                                <a style="color:#e62e04 !important" href="/shops/create" class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
 
                     </li>
 
                                             <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
-                            <a href="https://www.ebeebbuy.cc/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
+                            <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="https://www.ebeebbuy.cc/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng ký</a>
+                            <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng ký</a>
                         </li>
                                     </ul>
             </div>
@@ -352,7 +352,7 @@
 
                 <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
                     <a class="d-block py-20px mr-3 ml-0" href="https://www.ebeebbuy.cc">
-                                                                            <img src="https://www.ebeebbuy.cc/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" alt="ebay Shop" class="mw-100 h-30px h-md-40px" height="40">
+                                                                            <img src="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" alt="ebay Shop" class="mw-100 h-30px h-md-40px" height="40">
                                             </a>
 
                                     </div>
@@ -364,7 +364,7 @@
 
                 <div class="flex-grow-1 front-header-search d-flex align-items-center bg-white">
                     <div class="position-relative flex-grow-1">
-                        <form action="https://www.ebeebbuy.cc/search" method="GET" class="stop-propagation">
+                        <form action="/search" method="GET" class="stop-propagation">
                             <div class="d-flex position-relative align-items-center">
                                 <div class="d-lg-none" data-toggle="class-toggle" data-target=".front-header-search">
                                     <button class="btn px-2" type="button"><i class="la la-2x la-long-arrow-left"></i></button>
@@ -403,7 +403,7 @@
 
                 <div class="d-none d-lg-block ml-3 mr-0">
                     <div class="" id="compare">
-                        <a href="https://www.ebeebbuy.cc/compare" class="d-flex align-items-center text-reset">
+                        <a href="/compare" class="d-flex align-items-center text-reset">
     <i class="la la-refresh la-2x opacity-80"></i>
     <span class="flex-grow-1 ml-1">
                     <span class="badge badge-primary badge-inline badge-pill">4</span>
@@ -414,7 +414,7 @@
 
                 <div class="d-none d-lg-block ml-3 mr-0">
                     <div class="" id="wishlist">
-                        <a href="https://www.ebeebbuy.cc/wishlists" class="d-flex align-items-center text-reset">
+                        <a href="/wishlists" class="d-flex align-items-center text-reset">
     <i class="la la-heart-o la-2x opacity-80"></i>
     <span class="flex-grow-1 ml-1">
                     <span class="badge badge-primary badge-inline badge-pill">0</span>
@@ -444,10 +444,10 @@
         <ul class="h-250px overflow-auto c-scrollbar-light list-group list-group-flush">
                                                                             <li class="list-group-item">
                         <span class="d-flex align-items-center">
-                            <a href="https://www.ebeebbuy.cc/product/1130062638-qb8tB"
+                            <a href="/product/1130062638-qb8tB"
                                 class="text-reset d-flex align-items-center flex-grow-1">
-                                <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                                    data-src="https://www.ebeebbuy.cc/public/download/p/919340b3bbd32c2277b8fffbfc8793e1.jpg"
+                                <img src="/public/assets/img/placeholder.jpg"
+                                    data-src="/public/download/p/919340b3bbd32c2277b8fffbfc8793e1.jpg"
                                     class="img-fit lazyload size-60px rounded"
                                     alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed">
                                 <span class="minw-0 pl-2 flex-grow-1">
@@ -469,10 +469,10 @@
                     </li>
                                                                                 <li class="list-group-item">
                         <span class="d-flex align-items-center">
-                            <a href="https://www.ebeebbuy.cc/product/1817120293-zR97C"
+                            <a href="/product/1817120293-zR97C"
                                 class="text-reset d-flex align-items-center flex-grow-1">
-                                <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                                    data-src="https://www.ebeebbuy.cc/public/download/p/ab177e6d7d555096defcd11eaa162a36.jpg"
+                                <img src="/public/assets/img/placeholder.jpg"
+                                    data-src="/public/download/p/ab177e6d7d555096defcd11eaa162a36.jpg"
                                     class="img-fit lazyload size-60px rounded"
                                     alt="Electronic Interactive Alphabet Wall Chart, Talking ABC &amp; 123s &amp; Music Poster, Best Educational Toy Gifts for Toddler,Kids Fun Learning for Boys &amp; Girls">
                                 <span class="minw-0 pl-2 flex-grow-1">
@@ -494,10 +494,10 @@
                     </li>
                                                                                 <li class="list-group-item">
                         <span class="d-flex align-items-center">
-                            <a href="https://www.ebeebbuy.cc/product/1177214807-a73P1"
+                            <a href="/product/1177214807-a73P1"
                                 class="text-reset d-flex align-items-center flex-grow-1">
-                                <img src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                                    data-src="https://www.ebeebbuy.cc/public/download/p/b51d784df49207e8d9cabc80f1fb7104.jpg"
+                                <img src="/public/assets/img/placeholder.jpg"
+                                    data-src="/public/download/p/b51d784df49207e8d9cabc80f1fb7104.jpg"
                                     class="img-fit lazyload size-60px rounded"
                                     alt="Moulty Letters Matching Eggs 26PCS ABC Alphabet Color Recoginition Sorter Puzzle Easter Travel Bingo Game Uppercase Learning Educational Fine Motor Skill Montessori Gift for 1 2 3 Year Old Toddler Kid">
                                 <span class="minw-0 pl-2 flex-grow-1">
@@ -525,7 +525,7 @@
         <div class="px-3 py-2 text-center border-top">
             <ul class="list-inline mb-0">
                 <li class="list-inline-item">
-                    <a href="https://www.ebeebbuy.cc/cart" class="btn btn-soft-primary btn-sm">
+                    <a href="/cart" class="btn btn-soft-primary btn-sm">
                         Xem giỏ hàng
                     </a>
                 </li>
@@ -541,7 +541,7 @@
                         <div class="aiz-topbar-item">
                             <div class="d-flex align-items-center">
                                 <a class="btn btn-icon btn-circle btn-light" href="https://chat.ichatlink.net/widget/standalone.html?eid=0c95e3378016c8f24c5132454abffffa&amp;groupid=a79ec2c6ca5975b3f910ed1f9cb12e14&amp;language=vi" target="_blank" title="địa chỉ dịch vụ khách hàng">
-                                    <img class="las la-bell fs-24" width="100%" height="100%" src="https://www.ebeebbuy.cc/public/assets/img/customer_service.png">
+                                    <img class="las la-bell fs-24" width="100%" height="100%" src="/public/assets/img/customer_service.png">
                                 </a>
                             </div>
                         </div>
@@ -571,33 +571,33 @@
                     <div class="aiz-category-menu bg-white rounded  shadow-sm" >
     <div class="p-3 bg-soft-primary d-none d-lg-block rounded-top all-category position-relative text-left">
         <span class="fw-600 fs-16 mr-3">Thể loại</span>
-        <a href="https://www.ebeebbuy.cc/categories" class="text-reset">
+        <a href="/categories" class="text-reset">
             <span class="d-none d-lg-inline-block">Nhìn thấy tất cả ></span>
         </a>
     </div>
     <ul class="list-unstyled categories no-scrollbar py-2 mb-0 text-left">
                     <li class="category-nav-element" data-id="116">
-                <a href="https://www.ebeebbuy.cc/category/pet-accessories-oceab" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/pet-accessories-oceab" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
+                        src="/public/assets/img/placeholder.jpg"
                         data-src=""
                         width="16"
                         alt="Đồ dùng cho thú cưng"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Đồ dùng cho thú cưng</span>
                 </a>
                             </li>
                     <li class="category-nav-element" data-id="15">
-                <a href="https://www.ebeebbuy.cc/category/-r0egg" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/-r0egg" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
+                        src="/public/assets/img/placeholder.jpg"
                         data-src=""
                         width="16"
                         alt="Thời trang nữ và phụ kiện"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Thời trang nữ và phụ kiện</span>
                 </a>
@@ -608,14 +608,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="2">
-                <a href="https://www.ebeebbuy.cc/category/men%20clothing%20&amp;%20fashion" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/men%20clothing%20&amp;%20fashion" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/YTrXmHPHEBAeW73ffIhMuvOkpDsDbd1IbHVGDaZh.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/YTrXmHPHEBAeW73ffIhMuvOkpDsDbd1IbHVGDaZh.jpg"
                         width="16"
                         alt="Thời Trang &amp; Phụ Kiện Nam"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Thời Trang &amp; Phụ Kiện Nam</span>
                 </a>
@@ -626,14 +626,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="68">
-                <a href="https://www.ebeebbuy.cc/category/epidemic-prevention-supplies-xfhil" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/epidemic-prevention-supplies-xfhil" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
+                        src="/public/assets/img/placeholder.jpg"
                         data-src=""
                         width="16"
                         alt="Vật liệu chống dịch"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Vật liệu chống dịch</span>
                 </a>
@@ -644,14 +644,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="3">
-                <a href="https://www.ebeebbuy.cc/category/computer%20&amp;%20accessories" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/computer%20&amp;%20accessories" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/aZrKPk8DiOV4C5wAMt5ObBC3Jk5dSpnWUuLHP8xe.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/aZrKPk8DiOV4C5wAMt5ObBC3Jk5dSpnWUuLHP8xe.jpg"
                         width="16"
                         alt="Các thiết bị điện tử"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Các thiết bị điện tử</span>
                 </a>
@@ -662,14 +662,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="4">
-                <a href="https://www.ebeebbuy.cc/category/kids--toy-6j7m7" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/kids--toy-6j7m7" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/sC6ULeGDfqVbu1b3LcqrTOL5pm4UGQedv0kbHDIv.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/sC6ULeGDfqVbu1b3LcqrTOL5pm4UGQedv0kbHDIv.jpg"
                         width="16"
                         alt="Trẻ em &amp; đồ chơi"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Trẻ em &amp; đồ chơi</span>
                 </a>
@@ -680,14 +680,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="5">
-                <a href="https://www.ebeebbuy.cc/category/sports--outdoor-quozm" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/sports--outdoor-quozm" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/FwZlWQdDtdap6FDGukabtPR9nGISL2SINWeDUlLV.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/FwZlWQdDtdap6FDGukabtPR9nGISL2SINWeDUlLV.jpg"
                         width="16"
                         alt="Thể thao &amp; ngoài trời"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Thể thao &amp; ngoài trời</span>
                 </a>
@@ -698,14 +698,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="6">
-                <a href="https://www.ebeebbuy.cc/category/automobile--motorcycle-jjc59" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/automobile--motorcycle-jjc59" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/xjmjKIo32nm4WUsDbDgpyEOyJtDNXSCqZvrclGPL.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/xjmjKIo32nm4WUsDbDgpyEOyJtDNXSCqZvrclGPL.jpg"
                         width="16"
                         alt="Ô tô &amp; Xe máy"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Ô tô &amp; Xe máy</span>
                 </a>
@@ -716,14 +716,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="7">
-                <a href="https://www.ebeebbuy.cc/category/jewelry--watches-9zv51" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/jewelry--watches-9zv51" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/AmrpWEDDbar3ylIjWdVvyIxHrAhcYfq9EGGY9tjh.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/AmrpWEDDbar3ylIjWdVvyIxHrAhcYfq9EGGY9tjh.jpg"
                         width="16"
                         alt="Trang sức &amp; Đồng hồ"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Trang sức &amp; Đồng hồ</span>
                 </a>
@@ -734,14 +734,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="8">
-                <a href="https://www.ebeebbuy.cc/category/phone-accessories-fqzez" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/phone-accessories-fqzez" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/EF9g1my5HQIF8tGgEjNGW1vxR8JajuhSvZ1C0uBn.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/EF9g1my5HQIF8tGgEjNGW1vxR8JajuhSvZ1C0uBn.jpg"
                         width="16"
                         alt="Phụ Kiện Điện Tử"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Phụ Kiện Điện Tử</span>
                 </a>
@@ -752,14 +752,14 @@
                     </div>
                             </li>
                     <li class="category-nav-element" data-id="9">
-                <a href="https://www.ebeebbuy.cc/category/home-improvement--tools-ywx7z" class="text-truncate text-reset py-2 px-3 d-block">
+                <a href="/category/home-improvement--tools-ywx7z" class="text-truncate text-reset py-2 px-3 d-block">
                     <img
                         class="cat-image lazyload mr-2 opacity-60"
-                        src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                        data-src="https://www.ebeebbuy.cc/public/uploads/all/n3HgCaj2U1rbs12p3TVUKNbCVD3Jo4r4hYOcEzH2.jpg"
+                        src="/public/assets/img/placeholder.jpg"
+                        data-src="/public/uploads/all/n3HgCaj2U1rbs12p3TVUKNbCVD3Jo4r4hYOcEzH2.jpg"
                         width="16"
                         alt="Công cụ &amp; Cải tiến Trang chủ"
-                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
                     >
                     <span class="cat-name">Công cụ &amp; Cải tiến Trang chủ</span>
                 </a>
@@ -784,10 +784,10 @@
                                     <a href="https://">
                                         <img
                                             class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
-                                            src="https://www.ebeebbuy.cc/public/uploads/all/olqknhpEizdysiBSCuZ6XK5YXJ9nnPeBI2UsQkpI.jpg"
+                                            src="/public/uploads/all/olqknhpEizdysiBSCuZ6XK5YXJ9nnPeBI2UsQkpI.jpg"
                                             alt="ebay Shop promo"
                                                                                         height="315"
-                                                                                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder-rect.jpg';"
+                                                                                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                         >
                                     </a>
                                 </div>
@@ -795,10 +795,10 @@
                                     <a href="">
                                         <img
                                             class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
-                                            src="https://www.ebeebbuy.cc/public/uploads/all/63UjjMKy25oqaXvoEAoBhECNB2bNxgLy9Cjb1NrQ.jpg"
+                                            src="/public/uploads/all/63UjjMKy25oqaXvoEAoBhECNB2bNxgLy9Cjb1NrQ.jpg"
                                             alt="ebay Shop promo"
                                                                                         height="315"
-                                                                                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder-rect.jpg';"
+                                                                                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                         >
                                     </a>
                                 </div>
@@ -806,10 +806,10 @@
                                     <a href="">
                                         <img
                                             class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
-                                            src="https://www.ebeebbuy.cc/public/uploads/all/K7zsD97YfwdQ8fKc16dZIRmRJC0DaDkxy83TpzOz.jpg"
+                                            src="/public/uploads/all/K7zsD97YfwdQ8fKc16dZIRmRJC0DaDkxy83TpzOz.jpg"
                                             alt="ebay Shop promo"
                                                                                         height="315"
-                                                                                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder-rect.jpg';"
+                                                                                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                         >
                                     </a>
                                 </div>
@@ -817,10 +817,10 @@
                                     <a href="">
                                         <img
                                             class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
-                                            src="https://www.ebeebbuy.cc/public/uploads/all/iKKXiL9jniaNt7NDtlJrhhhSXJeBYOSg2SZL07GP.jpg"
+                                            src="/public/uploads/all/iKKXiL9jniaNt7NDtlJrhhhSXJeBYOSg2SZL07GP.jpg"
                                             alt="ebay Shop promo"
                                                                                         height="315"
-                                                                                        onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder-rect.jpg';"
+                                                                                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                         >
                                     </a>
                                 </div>
@@ -905,13 +905,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/957088318-iSeId" class="d-block">
+                <a href="/product/957088318-iSeId" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/a057812383f41a1c980efa8a43dde42c.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/a057812383f41a1c980efa8a43dde42c.jpg"
                 alt="2 in 1 Sports Transformers Toy Car Robot Boy Bugatti Sports Car"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -934,7 +934,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/957088318-iSeId" class="d-block text-reset">2 in 1 Sports Transformers Toy Car Robot Boy Bugatti Sports Car</a>
+            <a href="/product/957088318-iSeId" class="d-block text-reset">2 in 1 Sports Transformers Toy Car Robot Boy Bugatti Sports Car</a>
         </h3>
             </div>
 </div>
@@ -942,13 +942,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/1130062638-qb8tB" class="d-block">
+                <a href="/product/1130062638-qb8tB" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/919340b3bbd32c2277b8fffbfc8793e1.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/919340b3bbd32c2277b8fffbfc8793e1.jpg"
                 alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -971,7 +971,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/1130062638-qb8tB" class="d-block text-reset">AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed</a>
+            <a href="/product/1130062638-qb8tB" class="d-block text-reset">AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed</a>
         </h3>
             </div>
 </div>
@@ -979,13 +979,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/1817120293-zR97C" class="d-block">
+                <a href="/product/1817120293-zR97C" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/ab177e6d7d555096defcd11eaa162a36.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/ab177e6d7d555096defcd11eaa162a36.jpg"
                 alt="Electronic Interactive Alphabet Wall Chart, Talking ABC &amp; 123s &amp; Music Poster, Best Educational Toy Gifts for Toddler,Kids Fun Learning for Boys &amp; Girls"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1008,7 +1008,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/1817120293-zR97C" class="d-block text-reset">Electronic Interactive Alphabet Wall Chart, Talking ABC &amp; 123s &amp; Music Poster, Best Educational Toy Gifts for Toddler,Kids Fun Learning for Boys &amp; Girls</a>
+            <a href="/product/1817120293-zR97C" class="d-block text-reset">Electronic Interactive Alphabet Wall Chart, Talking ABC &amp; 123s &amp; Music Poster, Best Educational Toy Gifts for Toddler,Kids Fun Learning for Boys &amp; Girls</a>
         </h3>
             </div>
 </div>
@@ -1016,13 +1016,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/1443998259-EhcMK" class="d-block">
+                <a href="/product/1443998259-EhcMK" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/22b1722fffd31402f4d545ac8b8b1c05.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/22b1722fffd31402f4d545ac8b8b1c05.jpg"
                 alt="Moulty Wooden Lacing Beads for Toddlers, Fine Motor Montessori Toys for Toddlers 2 3 4 Years Old, Wooden Toys Animals Fruits Vegetables for Kids,Preschool Educational Activities Gift for Boys Girls"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1045,7 +1045,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/1443998259-EhcMK" class="d-block text-reset">Moulty Wooden Lacing Beads for Toddlers, Fine Motor Montessori Toys for Toddlers 2 3 4 Years Old, Wooden Toys Animals Fruits Vegetables for Kids,Preschool Educational Activities Gift for Boys Girls</a>
+            <a href="/product/1443998259-EhcMK" class="d-block text-reset">Moulty Wooden Lacing Beads for Toddlers, Fine Motor Montessori Toys for Toddlers 2 3 4 Years Old, Wooden Toys Animals Fruits Vegetables for Kids,Preschool Educational Activities Gift for Boys Girls</a>
         </h3>
             </div>
 </div>
@@ -1053,13 +1053,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/1177214807-a73P1" class="d-block">
+                <a href="/product/1177214807-a73P1" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/b51d784df49207e8d9cabc80f1fb7104.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/b51d784df49207e8d9cabc80f1fb7104.jpg"
                 alt="Moulty Letters Matching Eggs 26PCS ABC Alphabet Color Recoginition Sorter Puzzle Easter Travel Bingo Game Uppercase Learning Educational Fine Motor Skill Montessori Gift for 1 2 3 Year Old Toddler Kid"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1082,7 +1082,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/1177214807-a73P1" class="d-block text-reset">Moulty Letters Matching Eggs 26PCS ABC Alphabet Color Recoginition Sorter Puzzle Easter Travel Bingo Game Uppercase Learning Educational Fine Motor Skill Montessori Gift for 1 2 3 Year Old Toddler Kid</a>
+            <a href="/product/1177214807-a73P1" class="d-block text-reset">Moulty Letters Matching Eggs 26PCS ABC Alphabet Color Recoginition Sorter Puzzle Easter Travel Bingo Game Uppercase Learning Educational Fine Motor Skill Montessori Gift for 1 2 3 Year Old Toddler Kid</a>
         </h3>
             </div>
 </div>
@@ -1090,13 +1090,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2092136505-ldzuS" class="d-block">
+                <a href="/product/2092136505-ldzuS" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/777055c8690ff9983092c6e140d99624.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/777055c8690ff9983092c6e140d99624.jpg"
                 alt="KiddoZone Cloth Baby Book Fabric Intelligence Development Educational Toy Soft Cloth Rustle Sound 3D Book Enlightenment Learning Cognize Books For 0-3 Years Old Kids Baby Toys"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1119,7 +1119,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2092136505-ldzuS" class="d-block text-reset">KiddoZone Cloth Baby Book Fabric Intelligence Development Educational Toy Soft Cloth Rustle Sound 3D Book Enlightenment Learning Cognize Books For 0-3 Years Old Kids Baby Toys</a>
+            <a href="/product/2092136505-ldzuS" class="d-block text-reset">KiddoZone Cloth Baby Book Fabric Intelligence Development Educational Toy Soft Cloth Rustle Sound 3D Book Enlightenment Learning Cognize Books For 0-3 Years Old Kids Baby Toys</a>
         </h3>
             </div>
 </div>
@@ -1127,13 +1127,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2247717579-8wRY7" class="d-block">
+                <a href="/product/2247717579-8wRY7" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/264df8e620274b59288e9afd8db7e8f2.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/264df8e620274b59288e9afd8db7e8f2.jpg"
                 alt="Go, Go! Cute Swimming Turtle Bath Toys for Toddlers &amp; Kids | Wind Up Bathtub Toy for Baby 6 to 12 Months Boys and Girls, 1 2 3 Years Old | Dolphin Whale"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1156,7 +1156,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2247717579-8wRY7" class="d-block text-reset">Go, Go! Cute Swimming Turtle Bath Toys for Toddlers &amp; Kids | Wind Up Bathtub Toy for Baby 6 to 12 Months Boys and Girls, 1 2 3 Years Old | Dolphin Whale</a>
+            <a href="/product/2247717579-8wRY7" class="d-block text-reset">Go, Go! Cute Swimming Turtle Bath Toys for Toddlers &amp; Kids | Wind Up Bathtub Toy for Baby 6 to 12 Months Boys and Girls, 1 2 3 Years Old | Dolphin Whale</a>
         </h3>
             </div>
 </div>
@@ -1164,13 +1164,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2328991616-ilKkC" class="d-block">
+                <a href="/product/2328991616-ilKkC" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/6911ebd5969b5b44bf6b0c02ca52eed9.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/6911ebd5969b5b44bf6b0c02ca52eed9.jpg"
                 alt="Fidget Toy Infinity Cubes Finger Exceresing Toys Stress Relief Toys for Adults Children"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1193,7 +1193,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2328991616-ilKkC" class="d-block text-reset">Fidget Toy Infinity Cubes Finger Exceresing Toys Stress Relief Toys for Adults Children</a>
+            <a href="/product/2328991616-ilKkC" class="d-block text-reset">Fidget Toy Infinity Cubes Finger Exceresing Toys Stress Relief Toys for Adults Children</a>
         </h3>
             </div>
 </div>
@@ -1201,13 +1201,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2328988524-sBJNN" class="d-block">
+                <a href="/product/2328988524-sBJNN" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/620d5f48772937959b225bc2d5bc7395.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/620d5f48772937959b225bc2d5bc7395.jpg"
                 alt="(Random Color) 48cm LED DIY Kids Toys Hand Throw Flying Glider Planes Foam Aeroplane Model Party Bag Fillers Flying Glider Plane Toys Kids Game"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1230,7 +1230,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2328988524-sBJNN" class="d-block text-reset">(Random Color) 48cm LED DIY Kids Toys Hand Throw Flying Glider Planes Foam Aeroplane Model Party Bag Fillers Flying Glider Plane Toys Kids Game</a>
+            <a href="/product/2328988524-sBJNN" class="d-block text-reset">(Random Color) 48cm LED DIY Kids Toys Hand Throw Flying Glider Planes Foam Aeroplane Model Party Bag Fillers Flying Glider Plane Toys Kids Game</a>
         </h3>
             </div>
 </div>
@@ -1238,13 +1238,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/1616264706-cB7wg" class="d-block">
+                <a href="/product/1616264706-cB7wg" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/3a943ef7cf4eeb3d75200bb23345b79e.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/3a943ef7cf4eeb3d75200bb23345b79e.jpg"
                 alt="【High Quality+ In Stock】Safe Magic Bubble Glue Toy Blowing Colorful Bubble Ball Plastic Balloon Space Balloon Safe Practical Jokes Kids Toy Won&#039;t Burst"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1267,7 +1267,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/1616264706-cB7wg" class="d-block text-reset">【High Quality+ In Stock】Safe Magic Bubble Glue Toy Blowing Colorful Bubble Ball Plastic Balloon Space Balloon Safe Practical Jokes Kids Toy Won&#039;t Burst</a>
+            <a href="/product/1616264706-cB7wg" class="d-block text-reset">【High Quality+ In Stock】Safe Magic Bubble Glue Toy Blowing Colorful Bubble Ball Plastic Balloon Space Balloon Safe Practical Jokes Kids Toy Won&#039;t Burst</a>
         </h3>
             </div>
 </div>
@@ -1275,13 +1275,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2365982524-XrPQV" class="d-block">
+                <a href="/product/2365982524-XrPQV" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/p/4901f3125d29c27426bdb84307ee6c91.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/p/4901f3125d29c27426bdb84307ee6c91.jpg"
                 alt="Auto-Reset Electronic Shooting Scoring Target Toy with Realistic Sound for Nerf Shooting Games Kids Children Birthday Christmas Gift"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1304,7 +1304,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2365982524-XrPQV" class="d-block text-reset">Auto-Reset Electronic Shooting Scoring Target Toy with Realistic Sound for Nerf Shooting Games Kids Children Birthday Christmas Gift</a>
+            <a href="/product/2365982524-XrPQV" class="d-block text-reset">Auto-Reset Electronic Shooting Scoring Target Toy with Realistic Sound for Nerf Shooting Games Kids Children Birthday Christmas Gift</a>
         </h3>
             </div>
 </div>
@@ -1312,13 +1312,13 @@
                                                         <div class="carousel-box">
                                 <div class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
         <div class="position-relative">
-                <a href="https://www.ebeebbuy.cc/product/2037950529-udz3S" class="d-block">
+                <a href="/product/2037950529-udz3S" class="d-block">
             <img
                 class="img-fit lazyload mx-auto h-140px h-md-210px"
-                src="https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg"
-                data-src="https://www.ebeebbuy.cc/public/download/kf/S338987f9122649f99fc4b2285ae2f735N.jpg"
+                src="/public/assets/img/placeholder.jpg"
+                data-src="/public/download/kf/S338987f9122649f99fc4b2285ae2f735N.jpg"
                 alt="Baby Toys 1 to 2 Years Old Intelligence Brain-Boosting Two Children 3 Boys and Girls Children 4 and a Half Children Multi-Functional Early Education"
-                onerror="this.onerror=null;this.src='https://www.ebeebbuy.cc/public/assets/img/placeholder.jpg';"
+                onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';"
             >
         </a>
                 <div class="absolute-top-right aiz-p-hov-icon">
@@ -1341,7 +1341,7 @@
             <i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i><i class = 'las la-star'></i>
         </div>
         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-            <a href="https://www.ebeebbuy.cc/product/2037950529-udz3S" class="d-block text-reset">Baby Toys 1 to 2 Years Old Intelligence Brain-Boosting Two Children 3 Boys and Girls Children 4 and a Half Children Multi-Functional Early Education</a>
+            <a href="/product/2037950529-udz3S" class="d-block text-reset">Baby Toys 1 to 2 Years Old Intelligence Brain-Boosting Two Children 3 Boys and Girls Children 4 and a Half Children Multi-Functional Early Education</a>
         </h3>
             </div>
 </div>
@@ -1388,25 +1388,25 @@
     <div class="container">
         <div class="row no-gutters">
             <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="https://www.ebeebbuy.cc/terms">
+                <a class="text-reset border-left text-center p-4 d-block" href="/terms">
                     <i class="la la-file-text la-3x text-primary mb-2"></i>
                     <h4 class="h6">Điều khoản và điều kiện</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="https://www.ebeebbuy.cc/return-policy">
+                <a class="text-reset border-left text-center p-4 d-block" href="/return-policy">
                     <i class="la la-mail-reply la-3x text-primary mb-2"></i>
                     <h4 class="h6">chính sách hoàn trả</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="https://www.ebeebbuy.cc/support-policy">
+                <a class="text-reset border-left text-center p-4 d-block" href="/support-policy">
                     <i class="la la-support la-3x text-primary mb-2"></i>
                     <h4 class="h6">Chính sách hỗ trợ</h4>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left border-right text-center p-4 d-block" href="https://www.ebeebbuy.cc/privacy-policy">
+                <a class="text-reset border-left border-right text-center p-4 d-block" href="/privacy-policy">
                     <i class="las la-exclamation-circle la-3x text-primary mb-2"></i>
                     <h4 class="h6">Chính sách bảo mật</h4>
                 </a>
@@ -1421,14 +1421,14 @@
             <div class="col-lg-5 col-xl-4 text-center text-md-left">
                 <div class="mt-4">
                     <a href="https://www.ebeebbuy.cc" class="d-block">
-                                                    <img class="lazyload" src="https://www.ebeebbuy.cc/public/assets/img/placeholder-rect.jpg" data-src="https://www.ebeebbuy.cc/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop" height="44">
+                                                    <img class="lazyload" src="/public/assets/img/placeholder-rect.jpg" data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop" height="44">
                                             </a>
                     <div class="my-3">
                         <p><br></p><table class="gf-t" role="presentation" helvetica="" neue",="" helvetica,="" arial,="" sans-serif;="" font-size:="" 14px;"="" style="width: 1247.99px; margin-top: 20px; border-spacing: 0px; color: rgb(51, 51, 51);"><tbody><tr><td colspan="2" style="padding: 1px 0px;"></td></tr><tr valign="top"><td class="gf-legal" style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">Copyright © 2023 eBay. All rights reserved</td></tr></tbody></table><p>
                                     </p>
                     </div>
                     <div class="d-inline-block d-md-block mb-4">
-                        <form class="form-inline" method="POST" action="https://www.ebeebbuy.cc/subscribers">
+                        <form class="form-inline" method="POST" action="/subscribers">
                             <input type="hidden" name="_token" value="ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT">                            <div class="form-group mb-0">
                                 <input type="email" class="form-control" placeholder="Địa chỉ email của bạn" name="email" required>
                             </div>
@@ -1485,27 +1485,27 @@
                     </h4>
                     <ul class="list-unstyled">
                                                     <li class="mb-2">
-                                <a class="opacity-50 hov-opacity-100 text-reset" href="https://www.ebeebbuy.cc/users/login">
+                                <a class="opacity-50 hov-opacity-100 text-reset" href="/users/login">
                                     Đăng nhập
                                 </a>
                             </li>
                                                 <li class="mb-2">
-                            <a class="opacity-50 hov-opacity-100 text-reset" href="https://www.ebeebbuy.cc/purchase_history">
+                            <a class="opacity-50 hov-opacity-100 text-reset" href="/purchase_history">
                                 lịch sử đơn hàng
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a class="opacity-50 hov-opacity-100 text-reset" href="https://www.ebeebbuy.cc/wishlists">
+                            <a class="opacity-50 hov-opacity-100 text-reset" href="/wishlists">
                                 Sản phẩm yêu thích
                             </a>
                         </li>
                         <li class="mb-2">
-                            <a class="opacity-50 hov-opacity-100 text-reset" href="https://www.ebeebbuy.cc/track-your-order">
+                            <a class="opacity-50 hov-opacity-100 text-reset" href="/track-your-order">
                                 Theo dõi thứ tự
                             </a>
                         </li>
                         <!--                             <li class="mb-2"> -->
-<!--                                 <a class="opacity-50 hov-opacity-100 text-light" href="https://www.ebeebbuy.cc/affiliate">Là một đối tác liên kết</a> -->
+<!--                                 <a class="opacity-50 hov-opacity-100 text-light" href="/affiliate">Là một đối tác liên kết</a> -->
 <!--                             </li> -->
                                             </ul>
                 </div>
@@ -1513,10 +1513,10 @@
                         <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
                             Hãy là người bán hàng
                         </h4>
-                        <a href="https://www.ebeebbuy.cc/shops/create" class="btn btn-primary btn-sm shadow-md mb-4">
+                        <a href="/shops/create" class="btn btn-primary btn-sm shadow-md mb-4">
                             Áp dụng ngay bây giờ
                         </a>
-                        <a href="https://www.ebeebbuy.cc/users/shops" class="btn btn-primary btn-sm shadow-md mb-4">
+                        <a href="/users/shops" class="btn btn-primary btn-sm shadow-md mb-4">
                             Đăng nhập người bán
                         </a>
                     </div>
@@ -1540,7 +1540,7 @@
                 <div class="text-center text-md-right">
                     <ul class="list-inline mb-0">
                                                                                     <li class="list-inline-item">
-                                    <img src="https://www.ebeebbuy.cc/public/uploads/all/A4exnDZSrAXvDu3OLWe07zbp2XXmwnQXb8iHu7jE.png" height="30" class="mw-100 h-auto" style="max-height: 30px">
+                                    <img src="/public/uploads/all/A4exnDZSrAXvDu3OLWe07zbp2XXmwnQXb8iHu7jE.png" height="30" class="mw-100 h-auto" style="max-height: 30px">
                                 </li>
                                                                         </ul>
                 </div>
@@ -1559,13 +1559,13 @@
             </a>
         </div>
         <div class="col">
-            <a href="https://www.ebeebbuy.cc/categories" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/categories" class="text-reset d-block text-center pb-2 pt-3">
                 <i class="las la-list-ul fs-20 opacity-60 "></i>
                 <span class="d-block fs-10 fw-600 opacity-60 ">Thể loại</span>
             </a>
         </div>
                 <div class="col-auto">
-            <a href="https://www.ebeebbuy.cc/cart" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/cart" class="text-reset d-block text-center pb-2 pt-3">
                 <span class="align-items-center bg-primary border border-white border-width-4 d-flex justify-content-center position-relative rounded-circle size-50px" style="margin-top: -33px;box-shadow: 0px -5px 10px rgb(0 0 0 / 15%);border-color: #fff !important;">
                     <i class="las la-shopping-bag la-2x text-white"></i>
                 </span>
@@ -1576,7 +1576,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="https://www.ebeebbuy.cc/all-notifications" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/all-notifications" class="text-reset d-block text-center pb-2 pt-3">
                 <span class="d-inline-block position-relative px-2">
                     <i class="las la-bell fs-20 opacity-60 "></i>
                                     </span>
@@ -1584,9 +1584,9 @@
             </a>
         </div>
         <div class="col">
-                    <a href="https://www.ebeebbuy.cc/users/login" class="text-reset d-block text-center pb-2 pt-3">
+                    <a href="/users/login" class="text-reset d-block text-center pb-2 pt-3">
                 <span class="d-block mx-auto">
-                    <img src="https://www.ebeebbuy.cc/public/assets/img/avatar-place.png" class="rounded-circle size-20px">
+                    <img src="/public/assets/img/avatar-place.png" class="rounded-circle size-20px">
                 </span>
                 <span class="d-block fs-10 fw-600 opacity-60">Tài khoản</span>
             </a>
@@ -1647,8 +1647,8 @@
 
 
         <!-- SCRIPTS -->
-        <script src="https://www.ebeebbuy.cc/public/assets/js/vendors.js"></script>
-        <script src="https://www.ebeebbuy.cc/public/assets/js/aiz-core.js"></script>
+        <script src="/public/assets/js/vendors.js"></script>
+        <script src="/public/assets/js/aiz-core.js"></script>
 
 
                     <script type="text/javascript">
@@ -1684,7 +1684,7 @@
                 $('.category-nav-element').each(function (i, el) {
                     $(el).on('mouseover', function () {
                         if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
-                            $.post('https://www.ebeebbuy.cc/category/nav-element-list', {
+                            $.post('/category/nav-element-list', {
                                 _token: AIZ.data.csrf,
                                 id: $(el).data('id')
                             }, function (data) {
@@ -1699,7 +1699,7 @@
                             e.preventDefault();
                             var $this = $(this);
                             var locale = $this.data('flag');
-                            $.post('https://www.ebeebbuy.cc/language', {
+                            $.post('/language', {
                                 _token: AIZ.data.csrf,
                                 locale: locale
                             }, function (data) {
@@ -1716,7 +1716,7 @@
                             e.preventDefault();
                             var $this = $(this);
                             var currency_code = $this.data('currency');
-                            $.post('https://www.ebeebbuy.cc/currency', {
+                            $.post('/currency', {
                                 _token: AIZ.data.csrf,
                                 currency_code: currency_code
                             }, function (data) {
@@ -1757,7 +1757,7 @@
 
                     $('.typed-search-box').removeClass('d-none');
                     $('.search-preloader').removeClass('d-none');
-                    $.post('https://www.ebeebbuy.cc/ajax-search', {_token: AIZ.data.csrf, search: searchKey}, function (data) {
+                    $.post('/ajax-search', {_token: AIZ.data.csrf, search: searchKey}, function (data) {
                         if (data == '0') {
                             // $('.typed-search-box').addClass('d-none');
                             $('#search-content').html(null);
@@ -1782,7 +1782,7 @@
             }
 
             function removeFromCart(key) {
-                $.post('https://www.ebeebbuy.cc/cart/removeFromCart', {
+                $.post('/cart/removeFromCart', {
                     _token: AIZ.data.csrf,
                     id: key
                 }, function (data) {
@@ -1794,7 +1794,7 @@
             }
 
             function addToCompare(id) {
-                $.post('https://www.ebeebbuy.cc/compare/addToCompare', {_token: AIZ.data.csrf, id: id}, function (data) {
+                $.post('/compare/addToCompare', {_token: AIZ.data.csrf, id: id}, function (data) {
                     $('#compare').html(data);
                     AIZ.plugins.notify('success', "Mục đã được thêm vào danh sách so sánh");
                     $('#compare_items_sidenav').html(parseInt($('#compare_items_sidenav').html()) + 1);
@@ -1812,7 +1812,7 @@
                 $('#addToCart-modal-body').html(null);
                 $('#addToCart').modal();
                 $('.c-preloader').show();
-                $.post('https://www.ebeebbuy.cc/cart/show-cart-modal', {_token: AIZ.data.csrf, id: id}, function (data) {
+                $.post('/cart/show-cart-modal', {_token: AIZ.data.csrf, id: id}, function (data) {
                     $('.c-preloader').hide();
                     $('#addToCart-modal-body').html(data);
                     AIZ.plugins.slickCarousel();
@@ -1830,7 +1830,7 @@
                 if ($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()) {
                     $.ajax({
                         type: "POST",
-                        url: 'https://www.ebeebbuy.cc/product/variant_price',
+                        url: '/product/variant_price',
                         data: $('#option-choice-form').serializeArray(),
                         success: function (data) {
 
@@ -1883,7 +1883,7 @@
                     $('.c-preloader').show();
                     $.ajax({
                         type: "POST",
-                        url: 'https://www.ebeebbuy.cc/cart/addtocart',
+                        url: '/cart/addtocart',
                         data: $('#option-choice-form').serializeArray(),
                         success: function (data) {
 
@@ -1908,7 +1908,7 @@
                     $('.c-preloader').show();
                     $.ajax({
                         type: "POST",
-                        url: 'https://www.ebeebbuy.cc/cart/addtocart',
+                        url: '/cart/addtocart',
                         data: $('#option-choice-form').serializeArray(),
                         success: function (data) {
                             if (data.status == 1) {
@@ -1916,7 +1916,7 @@
                                 $('#addToCart-modal-body').html(data.modal_view);
                                 updateNavCart(data.nav_cart_view, data.cart_count);
 
-                                window.location.replace("https://www.ebeebbuy.cc/cart");
+                                window.location.replace("/cart");
                             } else {
                                 $('#addToCart-modal-body').html(null);
                                 $('.c-preloader').hide();
@@ -1934,23 +1934,23 @@
 
             <script>
         $(document).ready(function(){
-            $.post('https://www.ebeebbuy.cc/home/section/featured', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
+            $.post('/home/section/featured', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
                 $('#section_featured').html(data);
                 AIZ.plugins.slickCarousel();
             });
-            $.post('https://www.ebeebbuy.cc/home/section/best_selling', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
+            $.post('/home/section/best_selling', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
                 $('#section_best_selling').html(data);
                 AIZ.plugins.slickCarousel();
             });
-            $.post('https://www.ebeebbuy.cc/home/section/auction_products', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
+            $.post('/home/section/auction_products', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
                 $('#auction_products').html(data);
                 AIZ.plugins.slickCarousel();
             });
-            $.post('https://www.ebeebbuy.cc/home/section/home_categories', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
+            $.post('/home/section/home_categories', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
                 $('#section_home_categories').html(data);
                 AIZ.plugins.slickCarousel();
             });
-            $.post('https://www.ebeebbuy.cc/home/section/best_sellers', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
+            $.post('/home/section/best_sellers', {_token:'ifLcHfjpjV82TQuczbqyp2ixmsdNBfEfVmi5tjhT'}, function(data){
                 $('#section_best_sellers').html(data);
                 AIZ.plugins.slickCarousel();
             });

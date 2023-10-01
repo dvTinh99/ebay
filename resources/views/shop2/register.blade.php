@@ -65,7 +65,7 @@
                             </div>
                             <div class="text-center">
                                 <p class="text-muted mb-0">Bạn co săn san để tạo một tai khoản?</p>
-                                <a href="https://www.ebeebbuy.cc/users/login">Đăng nhập</a>
+                                <a href="/users/login">Đăng nhập</a>
                             </div>
                         </div>
                     </div>

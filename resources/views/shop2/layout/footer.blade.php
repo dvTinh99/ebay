@@ -297,7 +297,7 @@
         $('.category-nav-element').each(function(i, el) {
             $(el).on('mouseover', function() {
                 if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
-                    $.post('https://www.ebeebbuy.cc/category/nav-element-list', {
+                    $.post('/category/nav-element-list', {
                         _token: AIZ.data.csrf,
                         id: $(el).data('id')
                     }, function(data) {
@@ -312,7 +312,7 @@
                     e.preventDefault();
                     var $this = $(this);
                     var locale = $this.data('flag');
-                    $.post('https://www.ebeebbuy.cc/language', {
+                    $.post('/language', {
                         _token: AIZ.data.csrf,
                         locale: locale
                     }, function(data) {
@@ -329,7 +329,7 @@
                     e.preventDefault();
                     var $this = $(this);
                     var currency_code = $this.data('currency');
-                    $.post('https://www.ebeebbuy.cc/currency', {
+                    $.post('/currency', {
                         _token: AIZ.data.csrf,
                         currency_code: currency_code
                     }, function(data) {
@@ -370,7 +370,7 @@
 
             $('.typed-search-box').removeClass('d-none');
             $('.search-preloader').removeClass('d-none');
-            $.post('https://www.ebeebbuy.cc/ajax-search', {
+            $.post('/ajax-search', {
                 _token: AIZ.data.csrf,
                 search: searchKey
             }, function(data) {
@@ -509,7 +509,7 @@
         if ($('#option-choice-form input[name=quantity]').val() > 0 && checkAddToCartValidity()) {
             $.ajax({
                 type: "POST",
-                url: 'https://www.ebeebbuy.cc/product/variant_price',
+                url: '/product/variant_price',
                 data: $('#option-choice-form').serializeArray(),
                 success: function(data) {
 
@@ -563,7 +563,7 @@
         //     $('.c-preloader').show();
         //     $.ajax({
         //         type: "POST",
-        //         url: 'https://www.ebeebbuy.cc/cart/addtocart',
+        //         url: '/cart/addtocart',
         //         data: $('#option-choice-form').serializeArray(),
         //         success: function(data) {
 
@@ -597,7 +597,7 @@
             $('.c-preloader').show();
             $.ajax({
                 type: "POST",
-                url: 'https://www.ebeebbuy.cc/cart/addtocart',
+                url: '/cart/addtocart',
                 data: $('#option-choice-form').serializeArray(),
                 success: function(data) {
                     if (data.status == 1) {
@@ -605,7 +605,7 @@
                         $('#addToCart-modal-body').html(data.modal_view);
                         updateNavCart(data.nav_cart_view, data.cart_count);
 
-                        window.location.replace("https://www.ebeebbuy.cc/cart");
+                        window.location.replace("/cart");
                     } else {
                         $('#addToCart-modal-body').html(null);
                         $('.c-preloader').hide();
