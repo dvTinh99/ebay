@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SellerProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExchangeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ShopController;
 
 /*
@@ -36,6 +37,7 @@ Route::post('register', [UserController::class, 'register']);
 Route::post('logout', [UserController::class, 'logout'])->middleware('auth:api');
 Route::get('logout', [UserController::class, 'logout'])->middleware('auth:api');
 
+Route::post('upload-image', [ImageController::class, 'upload']);
 
 Route::group([
     'middleware' => 'auth:api',
