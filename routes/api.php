@@ -37,7 +37,8 @@ Route::post('register', [UserController::class, 'register']);
 Route::post('logout', [UserController::class, 'logout'])->middleware('auth:api');
 Route::get('logout', [UserController::class, 'logout'])->middleware('auth:api');
 
-Route::post('upload-image', [ImageController::class, 'upload']);
+Route::post('upload-images', [ImageController::class, 'uploadImages']);
+Route::post('upload-image', [ImageController::class, 'uploadImage']);
 
 Route::group([
     'middleware' => 'auth:api',

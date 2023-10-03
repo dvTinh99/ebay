@@ -14,7 +14,7 @@ use Carbon\Carbon;
 class ImageController extends Controller
 {
 
-    function upload(Request $request) {
+    function uploadImages(Request $request) {
         if($request->images) {
             $rs = [];
             if ($request->type == 'avatar') {
@@ -32,6 +32,22 @@ class ImageController extends Controller
                 $image->move($path, $name);
                 array_push($rs, $storedPath);
             }
+        }
+        return $this->sendJsonResponse($rs, 'success');
+    }
+    function uploadImage(Request $request) {
+        if($request->image) {
+            $rs = [];
+            $path = 'database/avatar';
+
+            $image = $request->image;
+            $name = $image->getClientOriginalName();
+            $explode = explode('.', $name);
+            $ext = end($explode);
+            $name = Carbon::now()->timestamp.'.'.$ext;
+            $storedPath = $path.'/'.$name;
+            $image->move($path, $name);
+            array_push($rs, $storedPath);
         }
         return $this->sendJsonResponse($rs, 'success');
     }
