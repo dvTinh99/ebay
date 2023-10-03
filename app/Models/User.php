@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'ref_of',
         'address',
+        'avatar',
         'ref_link',
         'password',
         'role',
@@ -77,7 +78,7 @@ class User extends Authenticatable
     }
 
     public function products() {
-        return $this->belongsToMany(Product::class)->with('category');
+        return $this->belongsToMany(Product::class)->with(['category', 'images']);
     }
 
     public function shop() {

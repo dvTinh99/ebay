@@ -55,8 +55,8 @@ Route::group([
     //seller
     Route::get('/info', [UserController::class, 'info']);
     Route::get('/my-product', [UserController::class, 'myProduct']);
-    Route::get('/add-product', [SellerProductController::class, 'create']);
-    Route::get('/add-product-full', [SellerProductController::class, 'addFull']);
+    Route::post('/add-product', [SellerProductController::class, 'create']);
+    Route::post('/add-product-full', [SellerProductController::class, 'addFull']);
     Route::get('/my-exchange', [ExchangeController::class, 'myExchange']);
 });
 

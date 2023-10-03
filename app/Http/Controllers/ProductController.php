@@ -23,6 +23,8 @@ class ProductController extends Controller
     }
 
     public function getAll(Request $request) {
+        $perPage = $request->per_page ?? 10;
+        $offset = $request->offset ?? 1;
         if ($request->user_id) {
             $data = User::find($request->user_id)->products;
             $data = $data->map(function ($item) {
@@ -33,7 +35,7 @@ class ProductController extends Controller
             });
             return $this->sendJsonResponse($data, 'success');
         } else {
-            return $this->sendJsonResponse($this->productRepo->getAll(), 'success');
+            return $this->sendJsonResponse($this->productRepo->getAll($perPage, $offset), 'success', $this->productRepo->countAll());
         }
     }
 

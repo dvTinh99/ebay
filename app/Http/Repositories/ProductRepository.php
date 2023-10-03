@@ -13,9 +13,9 @@ class ProductRepository extends BaseRepository
         return Product::class;
     }
 
-    public function getAll()
+    public function getAll($perPage = 10, $offset = 1)
     {
-        $products = $this->model->with(['category'])->limit(50)->get();
+        $products = $this->model->with(['category'])->skip($offset)->limit($perPage)->get();
         $products = $products->map(function ($item) {
             $images = $item->images->pluck('image_link');
             unset($item->images);
@@ -23,5 +23,9 @@ class ProductRepository extends BaseRepository
             return $item;
         });
         return $products;
+    }
+
+    public function countAll() {
+        return $this->model->all()->count();
     }
 }

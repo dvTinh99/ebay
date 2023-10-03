@@ -57,8 +57,10 @@ class UserController extends Controller
         return $this->sendJsonResponse($this->userRepo->listSeller(), 'success');
     }
 
-    public function myProduct() {
-        return $this->sendJsonResponse($this->userRepo->myProduct(), 'success');
+    public function myProduct(Request $request) {
+        $perPage = $request->per_page ?? 10;
+        $offset = $request->offset ?? 1;
+        return $this->sendJsonResponse($this->userRepo->myProduct($perPage, $offset), 'success', $this->userRepo->totalMyProduct());
     }
 
     // public function addProduct(Request $request) {

@@ -53,15 +53,19 @@ class UserRepository extends BaseRepository
         return $users;
     }
 
-    public function myProduct() {
-        $products = Auth::user()->products->take(50);
+    public function myProduct($perPage = 10, $offset = 0) {
+        $products = Auth::user()->products->skip($offset)->take($perPage);
         $products = $products->map(function ($item) {
             $images = $item->images->pluck('image_link');
             unset($item->images);
             $item->images = $images;
             return $item;
         });
-        return $products;
+        return $products->flatten();
+    }
+
+    public function totalMyProduct() {
+        return Auth::user()->products->count();
     }
 
     public function recharge($user_id, $amount, $method) {
