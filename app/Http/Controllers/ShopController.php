@@ -24,6 +24,10 @@ class ShopController extends Controller
         return $this->sendJsonResponse($this->ShopRepo->find($request->id), 'success');
     }
 
+    public function detailUserShop(Request $request) {
+        return $this->sendJsonResponse($this->ShopRepo->findWithUserId($request->user_id), 'success');
+    }
+
     public function getAll() {
         return $this->sendJsonResponse($this->ShopRepo->getAll(), 'success');
     }

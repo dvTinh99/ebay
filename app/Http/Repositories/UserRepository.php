@@ -54,7 +54,7 @@ class UserRepository extends BaseRepository
     }
 
     public function myProduct() {
-        $products = Auth::user()->products;
+        $products = Auth::user()->products->take(50);
         $products = $products->map(function ($item) {
             $images = $item->images->pluck('image_link');
             unset($item->images);

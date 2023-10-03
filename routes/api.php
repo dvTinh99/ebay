@@ -87,6 +87,7 @@ Route::group([
 ], function() {
     Route::get('/list-shop', [ShopController::class, 'getAll']);
     Route::get('/my-shop', [ShopController::class, 'myShop']);
+    Route::get('/detail-user-shop', [ShopController::class, 'detailUserShop']);
     Route::post('/create-shop', [ShopController::class, 'create']);
     Route::post('/update-shop', [ShopController::class, 'update']);
 });

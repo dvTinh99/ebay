@@ -18,4 +18,8 @@ class ShopRepository extends BaseRepository
     public function myShop() {
         return Shop::where('user_id', Auth::id())->first();
     }
+
+    public function findWithUserId($userId) {
+        return Shop::where('user_id', $userId)->first();
+    }
 }
