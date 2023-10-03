@@ -49,6 +49,21 @@ class OrderRepository extends BaseRepository
     }
 
     public function myOrder() {
-        return Order::with('orderItem')->where('user_id', Auth::id())->get();
+        $orders = $this->model->with(['seller', 'address', 'customer', 'products'])
+            ->where('user_id', Auth::id())
+            ->get();
+        foreach ($orders as $key => $order) {
+            $orderItem = $order->orderItem;
+            $order->products = $order->products->map(function ($item) use ($orderItem) {
+                $quantity = $orderItem->where('product_id', $item->id)->first()->quantity;
+                $item->quantity = $quantity;
+                $images = $item->images->pluck('image_link');
+                unset($item->images);
+                $item->images = $images;
+                return $item;
+            });
+            unset($order->orderItem);
+        }
+        return $orders;
     }
 }

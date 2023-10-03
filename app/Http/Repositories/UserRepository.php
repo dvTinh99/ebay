@@ -54,7 +54,14 @@ class UserRepository extends BaseRepository
     }
 
     public function myProduct() {
-        return SellerProduct::where('user_id', Auth::id())->get();
+        $products = Auth::user()->products;
+        $products = $products->map(function ($item) {
+            $images = $item->images->pluck('image_link');
+            unset($item->images);
+            $item->images = $images;
+            return $item;
+        });
+        return $products;
     }
 
     public function recharge($user_id, $amount, $method) {

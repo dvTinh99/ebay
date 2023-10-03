@@ -77,7 +77,7 @@ class User extends Authenticatable
     }
 
     public function products() {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->with('category');
     }
 
     public function shop() {
