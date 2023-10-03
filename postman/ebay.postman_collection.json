@@ -1,0 +1,1451 @@
+{
+	"info": {
+		"_postman_id": "eead3907-1809-4988-b99b-d189bbdaacdb",
+		"name": "ebay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29744368",
+		"_collection_link": "https://restless-water-60892.postman.co/workspace/My-Workspace~22a4b225-7a62-46a1-8530-42c1fe50c343/collection/29744368-eead3907-1809-4988-b99b-d189bbdaacdb?action=share&source=collection_link&creator=29744368"
+	},
+	"item": [
+		{
+			"name": "seller",
+			"item": [
+				{
+					"name": "info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tinh5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/info",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tinh5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/my-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"my-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-exchange",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tinh5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/my-exchange",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"my-exchange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_ids\" : [\n        1,2,3\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/add-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-product-full",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/add-product-full",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"add-product-full"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "master",
+			"item": [
+				{
+					"name": "list-seller",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tinh6@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/list-seller",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"list-seller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recharge",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 9,\n    \"amount\" : 7,\n    \"method\" : \"from admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/recharge",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"recharge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/detail-seller",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"detail-seller"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"update 1\",\n    \"email\" : \"update1@gmail.com\",\n    \"approve\" : true,\n    \"address\" : \"ha noi, lam dong, viet nam\",\n    \"cccd_front\" : \"/cccd_mat_truoc.png\",\n    \"cccd_back\" : \"/cccd_mat_sau.png\",\n    \"giay_phep_kinh_doanh\" : \"/giay_phep_kinh_doanh.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/update-seller",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"update-seller"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 2,\n    \"products\" : [\n        {\n            \"product_id\" : 1,\n            \"quantity\" : 2\n        },\n        {\n            \"product_id\" : 2,\n            \"quantity\" : 2\n        }\n    ],\n    \"customer_id\" : 12,\n    \"price\" : 90,\n    \"tax\" : 0,\n    \"coupon\" : 0,\n    \"address_id\" : 1,\n    \"time_create\" : \"2023-09-20\",\n    \"time_signing\" : \"2023-09-22\",\n    \"status\" : \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/create-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udpate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"time_create\": \"2023-09-20 09:09:09\",\n    \"time_signing\": \"2023-09-22 09:09:09\",\n    \"status\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/update-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"update-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"status\" : \"đang giao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/list-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"list-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/detail-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"detail-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"status\" : \"đang giao\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/my-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"my-order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"use_default\" : true,\n    \"name\" : \"Agribank\",\n    \"owner\": \"nguyen van A\",\n    \"number\" : \"123123123\",\n    \"dinh_tuyen\" : \"da nang\",\n    \"use_usdt\" : false,\n    \"link_usdt\" : \"\",\n    \"address_usdt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bank/create-bank",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bank",
+								"create-bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-bank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3,\n    \"use_default\" : true,\n    \"name\" : \"Agribank\",\n    \"owner\": \"nguyen van B\",\n    \"number\" : \"123123123\",\n    \"dinh_tuyen\" : \"da nang\",\n    \"use_usdt\" : false,\n    \"link_usdt\" : \"\",\n    \"address_usdt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bank/update-bank",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bank",
+								"update-bank"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-bank",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3,\n    \"use_default\" : true,\n    \"name\" : \"Agribank\",\n    \"owner\": \"nguyen van A\",\n    \"number\" : \"123123123\",\n    \"dinh_tuyen\" : \"da nang\",\n    \"use_usdt\" : false,\n    \"link_usdt\" : \"\",\n    \"address_usdt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/bank/my-bank",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bank",
+								"my-bank"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 2,\n    \"name\" : \"shop 1\",\n    \"address\" : \"da nang, quang nam\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/create-shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"create-shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 2,\n    \"name\" : \"shop update ne\",\n    \"address\" : \"da nang, quang nam\",\n    \"star\" : 2,\n    \"views\" : 80\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/update-shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"update-shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/my-shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"my-shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail-user-shop",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/detail-user-shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"detail-user-shop"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\" : \"viet nam\",\n    \"country\" : \"viet nam\",\n    \"status\" : \"\",\n    \"city\" : \"sai gon\",\n    \"zip_code\" : \"1000\",\n    \"phone\" : \"12323131232\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/address/create-address",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address",
+								"create-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\" : \"viet nam\",\n    \"country\" : \"viet nam\",\n    \"status\" : \"\",\n    \"city\" : \"ha noi\",\n    \"zip_code\" : \"1000\",\n    \"phone\" : \"2222222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/address/update-address",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address",
+								"update-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 3,\n    \"use_default\" : true,\n    \"name\" : \"Agribank\",\n    \"owner\": \"nguyen van A\",\n    \"number\" : \"123123123\",\n    \"dinh_tuyen\" : \"da nang\",\n    \"use_usdt\" : false,\n    \"link_usdt\" : \"\",\n    \"address_usdt\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/address/my-address",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address",
+								"my-address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"product 2\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"warehouse_price\" : 30.6,\n    \"profit\" : 4.0,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/create-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"create-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/update-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"update-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/list-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"list-product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Chăm Sóc Da Đẹp\",\n    \"father_id\" : 105\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/create-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/update-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"update-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/list-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"list-category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/customer/list-customer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customer",
+								"list-customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "5@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "helookjklnlk@guen.dev",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "123456789",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test@guen.dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "ref_link",
+							"value": "60405",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "master",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer  {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "tinhdoan5@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload-images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images[]",
+							"type": "file",
+							"src": "/Users/thanhtuan/Documents/brandskin.crypto_anime_illustration_anime_character_anime_creat_78e25126-1b35-44e6-80f4-98e1642d3707.png"
+						},
+						{
+							"key": "images[]",
+							"type": "file",
+							"src": "/Users/thanhtuan/Documents/logo.jpg"
+						},
+						{
+							"key": "type",
+							"value": "avatar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/upload-images",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"upload-images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload-image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/thanhtuan/Documents/logo.jpg"
+						},
+						{
+							"key": "images[]",
+							"type": "file",
+							"src": "mkOUXDfom/94132137-7d4fc100-fe7c-11ea-8512-69f90cb65e48.gif",
+							"disabled": true
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/upload-image",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"upload-image"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
