@@ -13,6 +13,7 @@ class Shop extends Model
         'user_id',
         'views',
         'star',
+        'phone',
         'name',
         'address',
     ];

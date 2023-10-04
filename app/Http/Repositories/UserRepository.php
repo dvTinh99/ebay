@@ -99,11 +99,26 @@ class UserRepository extends BaseRepository
         $totalOrderProfit = Order::where('user_id', Auth::id())->sum('profit');
         $totalUnpaidOrder = Order::where('user_id', Auth::id())->sum('warehouse_price');
 
+        $myProducts = $this->totalMyProduct();
+        $totalProfit = $totalOrderProfit;
+        $totalOrder = $totalOrderAmount;
+        $totalViewsDay = 0;
+        $totalViewsWeek = 0;
+        $totalViewsMonth = 0;
+
         $data = [
             'wallet' => $walletBalance,
             'total_order_amount' => $totalOrderAmount,
             'total_order_profit' => $totalOrderProfit,
-            'total_unpaid_order' => $totalUnpaidOrder
+            'total_unpaid_order' => $totalUnpaidOrder,
+
+            /////
+            'my_products' => $myProducts,
+            'total_profit' => $totalProfit,
+            'total_order' => $totalOrder,
+            'total_views_day' => $totalViewsDay,
+            'total_views_week' => $totalViewsWeek,
+            'total_views_month' => $totalViewsMonth,
         ];
         return $data;
     }

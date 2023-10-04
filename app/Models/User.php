@@ -26,6 +26,7 @@ class User extends Authenticatable
         'avatar',
         'ref_link',
         'password',
+        'phone',
         'role',
         'approve',
         'cccd_front',

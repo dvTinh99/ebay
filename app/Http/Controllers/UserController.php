@@ -151,5 +151,9 @@ class UserController extends Controller
         return $this->sendJsonResponse('logout success', 'success');
     }
 
+    public function dashboard() {
+        return $this->sendJsonResponse($dashboard = $this->userRepo->dashboard(), 'success');
+    }
+
 
 }
