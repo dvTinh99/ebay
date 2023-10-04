@@ -60,7 +60,15 @@ class UserController extends Controller
     public function myProduct(Request $request) {
         $perPage = $request->per_page ?? 10;
         $offset = $request->offset ?? 1;
-        return $this->sendJsonResponse($this->userRepo->myProduct($perPage, $offset), 'success', $this->userRepo->totalMyProduct());
+
+        $name = $request->name ?? null;
+        $special = $request->special ?? null;
+        $published = $request->published ?? null;
+
+        $data = $this->userRepo->myProduct($perPage, $offset, $name, $special, $published);
+        $count = $data->count();
+
+        return $this->sendJsonResponse($data->skip($offset)->take($perPage)->flatten(), 'success', $count);
     }
 
     // public function addProduct(Request $request) {

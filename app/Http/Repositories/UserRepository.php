@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class UserRepository extends BaseRepository
 {
+
+    public $productRepository;
+
+    public function __construct(ProductRepository $productRepository) {
+        $this->productRepository = $productRepository;
+    }
     public function getModel()
     {
         return User::class;
@@ -53,15 +59,10 @@ class UserRepository extends BaseRepository
         return $users;
     }
 
-    public function myProduct($perPage = 10, $offset = 0) {
-        $products = Auth::user()->products->skip($offset)->take($perPage);
-        $products = $products->map(function ($item) {
-            $images = $item->images->pluck('image_link');
-            unset($item->images);
-            $item->images = $images;
-            return $item;
-        });
-        return $products->flatten();
+    public function myProduct($perPage = 10, $offset = 0, $name, $special, $published) {
+        $products = Auth::user()->products;
+        $products = $this->productRepository->mapImageToProduct($products,  $name, $special, $published);
+        return $products;
     }
 
     public function totalMyProduct() {

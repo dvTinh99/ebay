@@ -45,6 +45,7 @@ class UserController extends Controller
                 break;
             }
             case 'seller' : {
+                return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
                 break;
             }
         }
@@ -111,6 +112,7 @@ class UserController extends Controller
                     break;
                 }
                 case 'seller' : {
+                    return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
                     break;
                 }
             }
