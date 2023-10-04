@@ -128,12 +128,16 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
                 $brand = Brand::create($brandData);
             }
 
-            $profit = rand(21, 99)  / 10;
+            $profitPercen = rand(15, 30) / 100;
+            $price = $item->price;
+            $profit = $item->price * $profitPercen;
+            $wareHouse = $price = $profit;
+
 
             $product = [
                 "name" => $item->name,
-                "price" => $item->price,
-                "warehouse_price" => $item->price - $profit,
+                "price" => $price,
+                "warehouse_price" => $wareHouse,
                 "profit" => $profit,
                 "stock" => $item->stock,
                 "description" => $item->content,
