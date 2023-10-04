@@ -129,9 +129,9 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
             }
 
             $profitPercen = rand(15, 30) / 100;
-            $price = $item->price;
-            $profit = $item->price * $profitPercen;
-            $wareHouse = $price = $profit;
+            $price = $item->price / 100;
+            $profit = $price * $profitPercen;
+            $wareHouse = $price - $profit;
 
 
             $product = [
