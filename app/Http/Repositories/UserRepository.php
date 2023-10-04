@@ -24,7 +24,7 @@ class UserRepository extends BaseRepository
     }
 
     public function find($id) {
-        return $this->model->with(['bank', 'shop'])->find($id);
+        return User::with(['bank', 'shop'])->find($id);
     }
 
     public function info() {

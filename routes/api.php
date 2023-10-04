@@ -50,6 +50,7 @@ Route::group([
     Route::post('/create-order', [OrderController::class, 'create']);
     Route::post('/update-seller', [UserController::class, 'update']);
     Route::post('/recharge', [UserController::class, 'recharge']);
+    Route::get('/dashboard', [UserController::class, 'dashboard']);
 
 
     //seller
