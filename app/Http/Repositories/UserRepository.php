@@ -96,9 +96,9 @@ class UserRepository extends BaseRepository
 
     public function dashboard() {
         $walletBalance = Auth::user()->wallet;
-        $totalOrderAmount = Order::where('user_id', Auth::id())->sum('price');
-        $totalOrderProfit = Order::where('user_id', Auth::id())->sum('profit');
-        $totalUnpaidOrder = Order::where('user_id', Auth::id())->sum('warehouse_price');
+        $totalOrderAmount = round(Order::where('user_id', Auth::id())->sum('price'), 2);
+        $totalOrderProfit = round(Order::where('user_id', Auth::id())->sum('profit'), 2);
+        $totalUnpaidOrder = round(Order::where('user_id', Auth::id())->sum('warehouse_price'), 2);
 
         $myProducts = $this->totalMyProduct();
         $totalProfit = $totalOrderProfit;

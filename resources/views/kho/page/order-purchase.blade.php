@@ -263,7 +263,7 @@
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->seller->name }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;"><label class="{{ $order->payment == '2' ? 'label label-success' : ''}}">{{ Config::get('order.'.$order->status, 'Đang chờ xử lí') }}<label></td>
                                                                 <td style="text-align: center; vertical-align: middle;"><label class="{{ $order->payment == '2' ? 'label label-success' : ''}}">{{ Config::get('payment.'.$order->payment, 'Chưa thanh toán') }}<label></td>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->time_signing }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->time_create }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">
                                                                     <a href="#id={{ $order->id }}">
                                                                         <button onclick="showDetail({{ $order->id }})" data-toggle="modal" data-target="#exampleModal" >Chi tiết</button>
