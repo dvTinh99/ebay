@@ -17,7 +17,9 @@ class CreateWithdrawsTable extends Migration
             $table->id();
             $table->float('withdraw')->default(0);
             $table->unsignedTinyInteger('status')->default(0);
-            $table->unsignedTinyInteger('status')->default(0);
+            $table->unsignedTinyInteger('user_id');
+            $table->text('seller_note')->nullable();
+            $table->text('master_note')->nullable();
             $table->timestamps();
         });
     }

@@ -85,4 +85,8 @@ class User extends Authenticatable
     public function shop() {
         return $this->hasOne(Shop::class);
     }
+
+    public function withdraws() {
+        return $this->hasMany(Withdraw::class);
+    }
 }

@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExchangeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\WithdrawController;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,4 +132,18 @@ Route::group([
     Route::get('/list-customer', [UserController::class, 'allCustomer']);
     Route::post('/create-customer', [CategoriesController::class, 'create']);
     Route::post('/update-customer', [CategoriesController::class, 'update']);
+});
+
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/withdraw',
+], function() {
+    Route::post('/create-withdraw', [WithdrawController::class, 'create']);
+
+    Route::post('/approve-withdraw', [WithdrawController::class, 'approveWithDraw']);
+    Route::post('/reject-withdraw', [WithdrawController::class, 'rejectWithDraw']);
+
+    Route::get('/list-withdraw', [WithdrawController::class, 'getAll']);
+    Route::get('/my-withdraw', [WithdrawController::class, 'myWithdraw']);
+    Route::get('/detail-withdraw', [WithdrawController::class, 'detail']);
 });
