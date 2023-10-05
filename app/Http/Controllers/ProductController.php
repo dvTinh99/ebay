@@ -36,10 +36,10 @@ class ProductController extends Controller
                 if ($name && !str_contains($item->name, $name)) {
                     $data->forget($key);
                 }
-                if ($item->special != $special) {
+                if (!is_null($special) && $item->special != $special) {
                     $data->forget($key);
                 }
-                if ($item->published != $published) {
+                if (!is_null($published) && $item->published != $published) {
                     $data->forget($key);
                 }
                 $images = $item->images->pluck('image_link');

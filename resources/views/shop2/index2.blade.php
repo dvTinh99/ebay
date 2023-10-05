@@ -1576,7 +1576,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="/all-notifications" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/#" class="text-reset d-block text-center pb-2 pt-3">
                 <span class="d-inline-block position-relative px-2">
                     <i class="las la-bell fs-20 opacity-60 "></i>
                                     </span>

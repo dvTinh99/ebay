@@ -17,7 +17,7 @@
             <div class="profile">
                 <div class="container">
                     <div class="row" style="display:flex;justify-content: center;overflow: hidden;">
-                        <img style="height:394px" src="{{ asset('public/uploads/all/flash-sell.jpg') }}" />
+                        <!-- <img style="height:394px" src="{{ asset('public/uploads/all/flash-sell.jpg') }}" /> -->
                         <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 mx-auto"
                             style="margin-left: 0 !important; margin-right: 0 !important;padding:0;">
 

@@ -103,7 +103,7 @@ class UserRepository extends BaseRepository
         $myProducts = $this->totalMyProduct();
         $totalProfit = $totalOrderProfit;
         $totalOrder = $totalOrderAmount;
-        $totalViewsDay = 0;
+        $totalViewsDay = @Auth::user()->shop->views ?? 0;
         $totalViewsWeek = 0;
         $totalViewsMonth = 0;
 

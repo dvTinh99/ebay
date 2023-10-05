@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta name="app-url" content="www.google.com">
+    <meta name="app-url" content="sellerhubvn.info">
 
     <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
 
@@ -84,6 +84,29 @@
         .pac-container {
             z-index: 100000;
         }
+
+        @media only screen and (max-device-width: 480px) {
+            .container,.container-md,.container-sm {
+                max-width: 100%;
+            }
+            .aiz-main-wrapper {
+                zoom: 2;
+            }
+            .gutters-5 {
+                zoom : 1.4;
+            }
+        }
+        @media only screen and (device-width: 820px) {
+            .container,.container-md,.container-sm {
+                max-width: 100%;
+            }
+            .aiz-main-wrapper {
+                zoom: 2;
+            }
+            .gutters-5 {
+                zoom : 1.4;
+            }
+        }
     </style>
 
 
@@ -120,78 +143,6 @@
                                             <span class="language">English</span>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="sa" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/sa.png" class="mr-1 lazyload"
-                                                alt="Arabic" height="11">
-                                            <span class="language">Arabic</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="cn" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/cn.png" class="mr-1 lazyload"
-                                                alt="中文" height="11">
-                                            <span class="language">中文</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="hk" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/hk.png" class="mr-1 lazyload"
-                                                alt="繁体中文" height="11">
-                                            <span class="language">繁体中文</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="jp" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/jp.png" class="mr-1 lazyload"
-                                                alt="にほんご" height="11">
-                                            <span class="language">にほんご</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="kr" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/kr.png" class="mr-1 lazyload"
-                                                alt="한국어" height="11">
-                                            <span class="language">한국어</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="id" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/id.png" class="mr-1 lazyload"
-                                                alt="Indonesian" height="11">
-                                            <span class="language">Indonesian</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="vn" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/vn.png" class="mr-1 lazyload"
-                                                alt="Vietnamese" height="11">
-                                            <span class="language">Vietnamese</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="my" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/my.png" class="mr-1 lazyload"
-                                                alt="Malay" height="11">
-                                            <span class="language">Malay</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-flag="by" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/by.png" class="mr-1 lazyload"
-                                                alt="Belarusian" height="11">
-                                            <span class="language">Belarusian</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <style>
@@ -225,58 +176,6 @@
                                     <li>
                                         <a class="dropdown-item  active " href="javascript:void(0)"
                                             data-currency="USD">U.S. Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="AUD">Australian Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="BRL">Brazilian Real (R$)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="CAD">Canadian Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)" data-currency="CZK">Czech
-                                            Koruna (Kč)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="DKK">Danish Krone (kr)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)" data-currency="EUR">Euro
-                                            (€)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)" data-currency="HKD">Hong
-                                            Kong Dollar ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="HUF">Hungarian Forint (Ft)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="ILS">Israeli New Sheqel (₪)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="JPY">Japanese Yen (¥)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="MYR">Malaysian Ringgit (RM)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="MXN">Mexican Peso ($)</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item " href="javascript:void(0)"
-                                            data-currency="NOK">Norwegian Krone (kr)</a>
                                     </li>
                                 </ul>
                             </li>

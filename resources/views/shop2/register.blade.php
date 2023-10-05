@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="text-center pt-4">
                             <h1 class="h4 fw-600">
-                                tạo tài khoản người mua
+                                tạo tài khoản
                             </h1>
                         </div>
                         <div class="px-4 py-3 py-lg-4">

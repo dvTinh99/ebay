@@ -1,7 +1,7 @@
 <div id="section_home_categories">
 
 </div>
-<section class="bg-white border-top mt-auto">
+<!-- <section class="bg-white border-top mt-auto">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-lg-3 col-md-6">
@@ -30,14 +30,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="bg-dark py-5 text-light footer-widget">
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-xl-4 text-center text-md-left">
                 <div class="mt-4">
-                    <a href="index.html" class="d-block">
+                    <a href="#" class="d-block">
                         <img class="lazyload" src="{{ asset('public') }}/assets/img/placeholder-rect.jpg"
                             data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop"
                             height="44">
@@ -192,7 +192,7 @@
     style="box-shadow: 0px -1px 10px rgb(0 0 0 / 15%)!important; ">
     <div class="row align-items-center gutters-5">
         <div class="col">
-            <a href="index.html" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/" class="text-reset d-block text-center pb-2 pt-3">
                 <i class="las la-home fs-20 opacity-60 opacity-100 text-primary"></i>
                 <span class="d-block fs-10 fw-600 opacity-60 opacity-100 fw-600">Trang Chủ</span>
             </a>
@@ -217,7 +217,7 @@
             </a>
         </div>
         <div class="col">
-            <a href="/all-notifications" class="text-reset d-block text-center pb-2 pt-3">
+            <a href="/#" class="text-reset d-block text-center pb-2 pt-3">
                 <span class="d-inline-block position-relative px-2">
                     <i class="las la-bell fs-20 opacity-60 "></i>
                 </span>
