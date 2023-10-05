@@ -56,7 +56,8 @@ class WithdrawRepository extends BaseRepository
     }
 
     public function myWithdraw() {
-        return Auth::user()->withdraws;
+        $withDraws = Withdraw::where('user_id', Auth::id())->with('user')->get();
+        return $withDraws;
     }
 
     public function getAll() {
