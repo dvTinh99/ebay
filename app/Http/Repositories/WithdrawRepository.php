@@ -18,7 +18,7 @@ class WithdrawRepository extends BaseRepository
     }
 
     public function createWithDraw($data) {
-        $user = User::find($data['user_id']);
+        $user = User::find(@$data['user_id'] ?? Auth::id());
         $withDraw = $data['withdraw'];
 
         if ($user->wallet < $withDraw) {
