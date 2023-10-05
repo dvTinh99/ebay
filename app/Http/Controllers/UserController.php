@@ -27,6 +27,9 @@ class UserController extends Controller
         $this->userRepo = $userRepo;
     }
 
+    public function userInfo(Request $request) {
+        return User::select('name', 'email')->where('id', $request->user_id)->first();
+    }
     public function allCustomer() {
         return $this->sendJsonResponse(Customer::with('address')->get(), 'success');
     }
