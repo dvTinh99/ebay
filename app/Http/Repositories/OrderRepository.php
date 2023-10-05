@@ -6,6 +6,7 @@ use App\Http\Repositories\BaseRepository;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class OrderRepository extends BaseRepository
 {
@@ -51,6 +52,7 @@ class OrderRepository extends BaseRepository
     public function myOrder() {
         $orders = $this->model->with(['seller', 'address', 'customer', 'products'])
             ->where('user_id', Auth::id())
+            ->whereDate('time_create', '<=', Carbon::today()->toDateString() . ' 00:00:00')
             ->get();
         foreach ($orders as $key => $order) {
             $orderItem = $order->orderItem;
