@@ -9,6 +9,8 @@ use App\Models\Order;
 use App\Models\SellerProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class UserRepository extends BaseRepository
 {
@@ -96,9 +98,13 @@ class UserRepository extends BaseRepository
 
     public function dashboard() {
         $walletBalance = Auth::user()->wallet;
-        $totalOrderAmount = round(Order::where('user_id', Auth::id())->sum('price'), 2);
-        $totalOrderProfit = round(Order::where('user_id', Auth::id())->sum('profit'), 2);
-        $totalUnpaidOrder = round(Order::where('user_id', Auth::id())->where('payment', 0)->sum('warehouse_price'), 2);
+        $myOrder = Order::where('user_id', Auth::id())
+            ->where('time_create', '<=', Carbon::now());
+        $totalOrderAmount = round($myOrder->sum('price'), 2);
+        $totalOrderProfit = round($myOrder->sum('profit'), 2);
+        $totalUnpaidOrder = round($myOrder->where(function ($q) {
+            $q->where('payment', 0)->orWhereNull('payment');
+        })->sum('warehouse_price'), 2);
 
         $myProducts = $this->totalMyProduct();
         $totalProfit = $totalOrderProfit;
