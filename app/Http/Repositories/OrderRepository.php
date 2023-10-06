@@ -52,7 +52,7 @@ class OrderRepository extends BaseRepository
     public function myOrder() {
         $orders = $this->model->with(['seller', 'address', 'customer', 'products'])
             ->where('user_id', Auth::id())
-            ->whereDate('time_create', '<=', Carbon::today()->toDateString() . ' 00:00:00')
+            ->where('time_create', '<=', Carbon::today())
             ->get();
         foreach ($orders as $key => $order) {
             $orderItem = $order->orderItem;

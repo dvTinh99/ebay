@@ -98,7 +98,7 @@ class UserRepository extends BaseRepository
         $walletBalance = Auth::user()->wallet;
         $totalOrderAmount = round(Order::where('user_id', Auth::id())->sum('price'), 2);
         $totalOrderProfit = round(Order::where('user_id', Auth::id())->sum('profit'), 2);
-        $totalUnpaidOrder = round(Order::where('user_id', Auth::id())->sum('warehouse_price'), 2);
+        $totalUnpaidOrder = round(Order::where('user_id', Auth::id())->where('payment', 0)->sum('warehouse_price'), 2);
 
         $myProducts = $this->totalMyProduct();
         $totalProfit = $totalOrderProfit;

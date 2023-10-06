@@ -18,7 +18,7 @@
             <div class="nav-tabs-custom">
                 <div class="panel panel-default panel-intro">
                     <div class="panel-body">
-                        <div id="myTabContent" class="tab-content">
+                        <div id="myTabContent" class="tab-content" style="overflow:scroll">
                             <div class="tab-pane fade active in" id="one">
                                 <div class="widget-body no-padding">
 

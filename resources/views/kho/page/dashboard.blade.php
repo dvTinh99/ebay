@@ -31,7 +31,7 @@
                                         <div class="panel bg-blue-gradient no-border">
                                             <div class="panel-body">
                                                 <div class="ibox-title">
-                                                    <span class="label label-primary pull-right">Real time</span>
+                                                    <span class="label label-primary pull-right">Thơì gian thực</span>
                                                     <h5>Wallet balance</h5>
                                                 </div>
                                                 <div class="ibox-content">
@@ -50,8 +50,8 @@
                                         <div class="panel bg-teal-gradient no-border">
                                             <div class="panel-body">
                                                 <div class="ibox-title">
-                                                    <span class="label label-primary pull-right">Real time</span>
-                                                    <h5>Total order amount</h5>
+                                                    <span class="label label-primary pull-right">Thơì gian thực</span>
+                                                    <h5>Tổng hóa đơn</h5>
                                                 </div>
                                                 <div class="ibox-content">
 
@@ -69,8 +69,8 @@
                                         <div class="panel bg-purple-gradient no-border">
                                             <div class="panel-body">
                                                 <div class="ibox-title">
-                                                    <span class="label label-primary pull-right">Real time</span>
-                                                    <h5>Total Profit</h5>
+                                                    <span class="label label-primary pull-right">Thơì gian thực</span>
+                                                    <h5>Tổng lợi nhuận</h5>
                                                 </div>
                                                 <div class="ibox-content">
 
@@ -89,8 +89,8 @@
                                         <div class="panel bg-blue-gradient no-border">
                                             <div class="panel-body">
                                                 <div class="ibox-title">
-                                                    <span class="label label-primary pull-right">Real time</span>
-                                                    <h5>Unpaid order amount</h5>
+                                                    <span class="label label-primary pull-right">Thơì gian thực</span>
+                                                    <h5>Tổng tiền chưa thanh toán</h5>
                                                 </div>
                                                 <div class="ibox-content">
 

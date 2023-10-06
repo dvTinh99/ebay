@@ -165,8 +165,7 @@
                         </span>
                         <span class="txt">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Gói hàng đã được phân loại và hiện đang được
-                                    chuyển ra khỏi kho</font>
+                                <font style="vertical-align: inherit;">Giao hàng thành công</font>
                             </font>
                         </span>
                     </li>
