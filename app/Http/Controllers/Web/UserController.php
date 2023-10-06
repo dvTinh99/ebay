@@ -41,11 +41,11 @@ class UserController extends Controller
                 break;
             }
             case 'master' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
                 break;
             }
             case 'seller' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
                 break;
             }
         }
@@ -108,11 +108,11 @@ class UserController extends Controller
                     break;
                 }
                 case 'master' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
                     break;
                 }
                 case 'seller' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.globaldropships.com') . '/?_token=' . $tokenResult->accessToken);
+                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
                     break;
                 }
             }
