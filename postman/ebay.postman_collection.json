@@ -58,7 +58,7 @@
 					"response": []
 				},
 				{
-					"name": "my-product",
+					"name": "dashboard",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -90,6 +90,47 @@
 									"type": "text"
 								}
 							]
+						},
+						"url": {
+							"raw": "{{url}}/user/dashboard",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"per_page\" : 1,\n    \"offset\" : 54,\n    \"name\" : \"speaker \",\n    \"special\" : null,\n    \"published\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{url}}/user/my-product",
@@ -153,11 +194,8 @@
 				},
 				{
 					"name": "add-product",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -194,11 +232,8 @@
 				},
 				{
 					"name": "add-product-full",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
@@ -258,19 +293,13 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "email",
-									"value": "tinh6@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "123123",
-									"type": "text"
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url}}/user/list-seller",
@@ -580,6 +609,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/delete-order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"delete-order"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -765,6 +827,47 @@
 					"response": []
 				},
 				{
+					"name": "detail-user-shop",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/shop/detail-user-shop",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"shop",
+								"detail-user-shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "my",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -795,47 +898,6 @@
 							"path": [
 								"shop",
 								"my-shop"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "detail-user-shop",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer  {{token}}",
-								"type": "text"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"user_id\" : 3\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{url}}/shop/detail-user-shop",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"shop",
-								"detail-user-shop"
 							]
 						}
 					},
@@ -1040,7 +1102,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"raw": "{\n    \"per_page\" : 10,\n    \"offset\" : 215,\n    \"name\" : null,\n    \"special\" : null,\n    \"published\" : 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1185,6 +1247,248 @@
 			]
 		},
 		{
+			"name": "Withdraw",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 2,\n    \"withdraw\" : 5.8,\n    \"seller_note\" : \"xin rút trước ngày mai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/create-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"create-withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve-withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3, // id withdraw\n    \"master_note\" : \"ok cho rút\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/approve-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"approve-withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject-withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3, // id withdraw\n    \"master_note\" : \"nghĩ lại rồi, đéo cho rút\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/reject-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"reject-withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 1,\n    \"name\" : \"product 3 update\",\n    \"category_id\" : 1,\n    \"brand_id\" : 1,\n    \"don_vi\" : \"null\",\n    \"so_luong_mua_toi_thieu\" : 1,\n    \"tag\" : \"null\",\n    \"ma_vach\" : \"1132312\",\n    \"returnable\" : 0,\n    \"price\" : 34.6,\n    \"price_discount\" : 0,\n    \"price_discount_type\" : null,\n    \"price_discount_from\" : null,\n    \"price_discount_to\" : null,\n    \"dinh_luong\" : 1,\n    \"sku\" : null,\n    \"out_site_link\" : null,\n    \"text_link\" : null,\n    \"description\" : \"gi do cung dc\",\n    \"time_ship\" : 3.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/list-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"list-withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-withdraw",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/my-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"my-withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : 3 // id withdraw\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/withdraw/detail-withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw",
+								"detail-withdraw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Customer",
 			"item": [
 				{
@@ -1251,7 +1555,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "5@gmail.com",
+							"value": "t3@gmail.com",
 							"type": "text"
 						},
 						{
@@ -1442,6 +1746,46 @@
 					],
 					"path": [
 						"upload-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user-info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user-info"
 					]
 				}
 			},
