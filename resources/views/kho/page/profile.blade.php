@@ -20,11 +20,11 @@
                 <div class="panel-body">
 
                     <form id="update-form" role="form" data-toggle="validator" method="POST" action="/sys.php/general.profile/update" class="nice-validator n-default n-bootstrap" novalidate="novalidate">
-                        <input type="hidden" name="__token__" value="fb5124d44b86c2d510e381c05c0d246d">                    <input type="hidden" id="c-avatar" name="row[avatar]" value="/public/assets/img/default_avatar/avatar-3.png">
+                        <input type="hidden" name="__token__" value="fb5124d44b86c2d510e381c05c0d246d">                    <input type="hidden" id="c-avatar" name="row[avatar]" value="{{ asset('database') . '/avatar_default.png'}}">
                         <div class="box-body box-profile">
 
                             <div class="profile-avatar-container">
-                                <img src=" /public/assets/img/default_avatar/avatar-3.png" class="profile-user-img img-responsive img-circle" style="height: 111px">
+                                <img src=" {{ asset('database') . '/avatar_default.png'}}" class="profile-user-img img-responsive img-circle" style="height: 111px">
                                 <div class="profile-avatar-text img-circle">Click to edit</div>
                                 <button type="button" id="faupload-avatar" class="faupload dz-clickable" data-input-id="c-avatar" initialized="true"><i class="fa fa-upload dz-message"></i> Upload</button>
                             </div>
