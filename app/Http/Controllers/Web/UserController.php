@@ -117,7 +117,7 @@ class UserController extends Controller
                 }
             }
         } else {
-            return redirect()->back()->with('error', 'Username or password incorrect');
+            return redirect()->back()->with('error', 'Sai Email hoặc mật khẩu');
         }
     }
 

@@ -28,7 +28,11 @@
                                         Đăng nhập vào tài khoản của bạn.
                                     </h1>
                                 </div>
-
+                                @if (session('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
                                 <div class="px-4 py-3 py-lg-4">
                                     <div class="">
                                         <form class="form-default" role="form"
