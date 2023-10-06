@@ -73,6 +73,7 @@ Route::group([
     Route::get('/detail-order', [OrderController::class, 'detail']);
     Route::post('/create-order', [OrderController::class, 'create']);
     Route::post('/update-order', [OrderController::class, 'update']);
+    Route::delete('/delete-order', [OrderController::class, 'delete']);
 });
 
 Route::group([
