@@ -97,35 +97,51 @@ class UserRepository extends BaseRepository
     }
 
     public function dashboard() {
-        $walletBalance = Auth::user()->wallet;
-        $myOrder = Order::where('user_id', Auth::id())
+        $wallet = Auth::user()->wallet;
+        $orders = Order::where('user_id', Auth::id())
             ->where('time_create', '<=', Carbon::now());
-        $totalOrderAmount = round($myOrder->sum('price'), 2);
-        $totalOrderProfit = round($myOrder->sum('profit'), 2);
-        $totalUnpaidOrder = round($myOrder->where(function ($q) {
+
+        // Tổng tiền hàng
+        $totalOrderAmount = round($orders->sum('price'), 2);
+
+        // Lợi nhuận
+        $totalOrderProfit = round($orders->sum('profit'), 2);
+
+        // Số tiền chưa thành toán
+        $totalUnpaidAmount = round($orders->where(function ($q) {
             $q->where('payment', 0)->orWhereNull('payment');
         })->sum('warehouse_price'), 2);
 
-        $myProducts = $this->totalMyProduct();
-        $totalProfit = $totalOrderProfit;
-        $totalOrder = $totalOrderAmount;
-        $totalViewsDay = @Auth::user()->shop->views ?? 0;
-        $totalViewsWeek = 0;
-        $totalViewsMonth = 0;
+        // Tổng số đơn hàng chưa thanh toán
+        $totalUnpaidOrder = count($orders->where(function ($q) {
+            $q->where('payment', 0)->orWhereNull('payment');
+        }));
+
+        $totalViewsDay = Auth::user()->total_views_day;
+        $totalViews = Auth::user()->total_views;
+        $updateViewsAt = Auth::user()->update_views_at;
+        if ($updateViewsAt == null || Carbon::parse($updateViewsAt)->diffInDays(Carbon::now()) > 0) {
+            $incMount = rand(50, 150);
+            // inc user.total_views_day, total_views and update_views_at
+            $currentUser = User::where('id', Auth::id())->first();
+            $currentUser->total_views_day = $incMount;
+            $currentUser->total_views += $incMount;
+            $currentUser->update_views_at = Carbon::now();
+            $currentUser->save();
+
+            $totalViewsDay = $incMount;
+            $totalViews += $incMount;
+        }
 
         $data = [
-            'wallet' => $walletBalance,
+            'wallet' => $wallet,
             'total_order_amount' => $totalOrderAmount,
             'total_order_profit' => $totalOrderProfit,
+            'total_unpaid_amount' => $totalUnpaidAmount,
             'total_unpaid_order' => $totalUnpaidOrder,
 
-            /////
-            'my_products' => $myProducts,
-            'total_profit' => $totalProfit,
-            'total_order' => $totalOrder,
             'total_views_day' => $totalViewsDay,
-            'total_views_week' => $totalViewsWeek,
-            'total_views_month' => $totalViewsMonth,
+            'total_views_total' => $totalViews
         ];
         return $data;
     }

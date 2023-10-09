@@ -33,6 +33,9 @@ class User extends Authenticatable
         'cccd_back',
         'giay_phep_kinh_doanh',
         'wallet',
+        'total_views_day',
+        'total_views',
+        'update_views_at',
     ];
 
     /**
