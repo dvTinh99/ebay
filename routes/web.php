@@ -209,4 +209,6 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         }
         echo 'done ne';
     });
+
+    Route::get('/recalculate-order', [OrderController::class, 'recalculateOrder']);
 });
