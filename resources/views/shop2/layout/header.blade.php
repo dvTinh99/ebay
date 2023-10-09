@@ -18,7 +18,7 @@
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ asset('public') }}/assets/css/vendors.css">
-    <link rel="stylesheet" href="{{ asset('public') }}/assets/css/aiz-core.css%3Fv-23.css">
+    <link rel="stylesheet" href="{{ asset('public') }}/assets/css/aiz-core.css">
     <link rel="stylesheet" href="{{ asset('public') }}/assets/css/custom-style.css">
 
 

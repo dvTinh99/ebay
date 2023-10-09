@@ -48,7 +48,7 @@
 
             <!-- CSS Files -->
             <link rel="stylesheet" href="/public/assets/css/vendors.css">
-                        <link rel="stylesheet" href="/public/assets/css/aiz-core.css?v-23">
+                        <link rel="stylesheet" href="/public/assets/css/aiz-core.css">
             <link rel="stylesheet" href="/public/assets/css/custom-style.css">
 
 

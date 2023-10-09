@@ -88,13 +88,6 @@
                                 <button class="btn btn-sm btn-soft-primary" onclick="show_chat_modal()">nhắn tin với
                                     shop</button>
                             </div>
-
-                            <div class="col-auto">
-                                <a href="/brand/other-bv6qs">
-                                    <img src="../public/uploads/all/awe09gTxlALlPlstSub1Qxr7lY9OZwb9qNjWBDiG.jpg"
-                                        alt="other" height="30">
-                                </a>
-                            </div>
                         </div>
 
                         <hr>
@@ -109,8 +102,6 @@
                                         ${{ $product->price }}
                                     </strong>
                                     <span class="opacity-70">/Pc</span>
-                                    <img class="lazyload size-30px ml-3 mb-3" id="recommend_icon"
-                                        src='../public/assets/img/frontend/recommend_icon.jpg';">
                                 </div>
                             </div>
                         </div>
