@@ -31,33 +31,43 @@ class ProductController extends Controller
         $special = $request->special ?? null;
 
         if ($request->user_id) {
-            $data = User::find($request->user_id)->products;
+            // laays cho user thif chir laays published = 1
+            $data = User::find($request->user_id)->products
+                ->when($name, function ($query) use ($name) {
+                    return $query->where('name', 'like', '%' . $name . '%');
+                })
+                ->when($published, function ($query) use ($published) {
+                    return $query->where('published', $published);
+                })
+                ->when($special, function ($query) use ($special) {
+                    return $query->where('special', $special);
+                })
+                ->skip($offset)
+                ->take($perPage);
+
             foreach ($data as $key => $item) {
-                if ($name && !str_contains($item->name, $name)) {
-                    $data->forget($key);
-                }
-                if (!is_null($special) && $item->special != $special) {
-                    $data->forget($key);
-                }
-                if (!is_null($published) && $item->published != $published) {
-                    $data->forget($key);
-                }
                 $images = $item->images->pluck('image_link');
                 unset($item->images);
                 $item->images = $images;
             }
-            // $data = $data->map(function ($item) use($name, $approve, $special){
-            //     $images = $item->images->pluck('image_link');
-            //     unset($item->images);
-            //     $item->images = $images;
-            //     return $item;
-            // });
-            return $this->sendJsonResponse($data, 'success', count($data));
+
+            $count = User::find($request->user_id)->products
+                ->when($name, function ($query) use ($name) {
+                    return $query->where('name', 'like', '%' . $name . '%');
+                })
+                ->when($published, function ($query) use ($published) {
+                    return $query->where('published', $published);
+                })
+                ->when($special, function ($query) use ($special) {
+                    return $query->where('special', $special);
+                })
+                ->count();
+
         } else {
-            $data = $this->productRepo->getAll($perPage, $offset, $name, $special, $published);
-            $count = $data->count();
-            return $this->sendJsonResponse($data->skip($offset)->take($perPage)->flatten(), 'success', $count);
+            $data = $this->productRepo->get($perPage, $offset, $name, $special, $published);
+            $count = $this->productRepo->getCount($name, $special, $published);
         }
+        return $this->sendJsonResponse($data->flatten(), 'success', $count);
     }
 
     public function create(Request $request) {

@@ -39,23 +39,22 @@
                 <div class="mt-4">
                     <a href="#" class="d-block">
                         <img class="lazyload" src="{{ asset('public') }}/assets/img/placeholder-rect.jpg"
-                            data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop"
-                            height="44">
+                             data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop"
+                             height="44">
                     </a>
                     <div class="my-3">
                         <p><br></p>
-                        <table class="gf-t" role="presentation" helvetica="" neue",="" helvetica,="" arial,=""
-                            sans-serif;="" font-size:="" 14px;"=""
-                            style="width: 1247.99px; margin-top: 20px; border-spacing: 0px; color: rgb(51, 51, 51);">
+                        <table class="gf-t" role="presentation">
                             <tbody>
-                                <tr>
-                                    <td colspan="2" style="padding: 1px 0px;"></td>
-                                </tr>
-                                <tr valign="top">
-                                    <td class="gf-legal"
-                                        style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
-                                        Copyright © 2023 eBay. All rights reserved</td>
-                                </tr>
+                            <tr>
+                                <td colspan="2" style="padding: 1px 0px;"></td>
+                            </tr>
+                            <tr valign="top">
+                                <td class="gf-legal"
+                                    style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
+                                    Copyright © 2023 eBay. All rights reserved
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                         <p>
@@ -66,7 +65,7 @@
                             <input type="hidden" name="_token" value="oVvb046Hcw9FgwJYVjbsSE7InrxWD9HGapRVeCtY">
                             <div class="form-group mb-0">
                                 <input type="email" class="form-control" placeholder="Địa chỉ email của bạn"
-                                    name="email" required>
+                                       name="email" required>
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 Đăng ký
@@ -77,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 ml-xl-auto col-md-4 mr-0">
+            <div class="col-lg-3 ml-xl-auto col-md-12 mr-0">
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
                         Thông tin liên lạc
@@ -85,16 +84,16 @@
                     <ul class="list-unstyled">
                         <li class="mb-2">
                             <span class="d-block opacity-30">Địa chỉ:</span>
-                            <span class="d-block opacity-70">ebay shop 8 Marina View, Singapore</span>
+                            <span class="d-block opacity-70">
+                                eBay Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 eBay Inc.
+                            </span>
                         </li>
-                        <!--                         <li class="mb-2"> -->
-                        <!--                            <span class="d-block opacity-30">Điện thoại:</span> -->
-                        <!--                            <span class="d-block opacity-70"></span> -->
-                        <!--                        </li> -->
                         <li class="mb-2">
                             <span class="d-block opacity-30">Số liên lạc:</span>
                             <a style="color:#fff" target="_blank" href="https://telegram.me/"
-                                class="d-block opacity-70"></a>
+                               class="d-block opacity-70">
+
+                            </a>
                         </li>
                         <li class="mb-2">
                             <span class="d-block opacity-30">E-mail:</span>
@@ -105,17 +104,16 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="text-center text-md-left mt-4">
+            <div class="col-lg-2 col-md-12">
+                <div class="text-center text-md-left">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-
                     </h4>
                     <ul class="list-unstyled">
                     </ul>
                 </div>
             </div>
 
-            <div class="col-md-4 col-lg-2">
+            <div class="col-md-12 col-lg-2">
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
                         Tài khoản của tôi
@@ -178,7 +176,7 @@
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
                             <img src="{{ asset('public') }}/uploads/all/A4exnDZSrAXvDu3OLWe07zbp2XXmwnQXb8iHu7jE.png"
-                                height="30" class="mw-100 h-auto" style="max-height: 30px">
+                                 height="30" class="mw-100 h-auto" style="max-height: 30px">
                         </li>
                     </ul>
                 </div>
@@ -189,7 +187,7 @@
 
 
 <div class="aiz-mobile-bottom-nav d-xl-none fixed-bottom bg-white shadow-lg border-top rounded-top"
-    style="box-shadow: 0px -1px 10px rgb(0 0 0 / 15%)!important; ">
+     style="box-shadow: 0px -1px 10px rgb(0 0 0 / 15%)!important; ">
     <div class="row align-items-center gutters-5">
         <div class="col">
             <a href="/" class="text-reset d-block text-center pb-2 pt-3">
@@ -238,7 +236,6 @@
 </div>
 
 
-
 <script>
     function confirm_modal(delete_url) {
         jQuery('#confirm-delete').modal('show', {
@@ -249,7 +246,7 @@
 </script>
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
+     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -272,13 +269,13 @@
 
 <div class="modal fade" id="addToCart">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-zoom product-modal" id="modal-size"
-        role="document">
+         role="document">
         <div class="modal-content position-relative">
             <div class="c-preloader text-center p-3">
                 <i class="las la-spinner la-spin la-3x"></i>
             </div>
             <button type="button" class="close absolute-top-right btn-icon close z-1" data-dismiss="modal"
-                aria-label="Close">
+                    aria-label="Close">
                 <span aria-hidden="true" class="la-2x">&times;</span>
             </button>
             <div id="addToCart-modal-body">
@@ -293,29 +290,29 @@
 <script src="{{ asset('public') }}/assets/js/vendors.js"></script>
 <script src="{{ asset('public') }}/assets/js/aiz-core.js"></script>
 <script>
-    $(document).ready(function() {
-        $('.category-nav-element').each(function(i, el) {
-            $(el).on('mouseover', function() {
+    $(document).ready(function () {
+        $('.category-nav-element').each(function (i, el) {
+            $(el).on('mouseover', function () {
                 if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
                     $.post('/category/nav-element-list', {
                         _token: AIZ.data.csrf,
                         id: $(el).data('id')
-                    }, function(data) {
+                    }, function (data) {
                         $(el).find('.sub-cat-menu').addClass('loaded').html(data);
                     });
                 }
             });
         });
         if ($('#lang-change').length > 0) {
-            $('#lang-change .dropdown-menu a').each(function() {
-                $(this).on('click', function(e) {
+            $('#lang-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
                     e.preventDefault();
                     var $this = $(this);
                     var locale = $this.data('flag');
                     $.post('/language', {
                         _token: AIZ.data.csrf,
                         locale: locale
-                    }, function(data) {
+                    }, function (data) {
                         location.reload();
                     });
 
@@ -324,15 +321,15 @@
         }
 
         if ($('#currency-change').length > 0) {
-            $('#currency-change .dropdown-menu a').each(function() {
-                $(this).on('click', function(e) {
+            $('#currency-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
                     e.preventDefault();
                     var $this = $(this);
                     var currency_code = $this.data('currency');
                     $.post('/currency', {
                         _token: AIZ.data.csrf,
                         currency_code: currency_code
-                    }, function(data) {
+                    }, function (data) {
                         location.reload();
                     });
 
@@ -353,11 +350,11 @@
 
     function debounce(func, delay) {
         let timer = null;
-        return function() {
+        return function () {
             const context = this;
             const args = arguments;
             clearTimeout(timer);
-            timer = setTimeout(function() {
+            timer = setTimeout(function () {
                 func.apply(context, args);
             }, delay);
         };
@@ -373,7 +370,7 @@
             $.post('/ajax-search', {
                 _token: AIZ.data.csrf,
                 search: searchKey
-            }, function(data) {
+            }, function (data) {
                 if (data == '0') {
                     // $('.typed-search-box').addClass('d-none');
                     $('#search-content').html(null);
@@ -403,7 +400,7 @@
 
         $.get('/cart-remove', {
             id: key
-        }, function(data) {
+        }, function (data) {
             AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
             reloadCart()
             // location.reload();
@@ -415,12 +412,13 @@
             // $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html()) - 1);
         });
     }
+
     function removeFromCartPage(key) {
         console.log('key', key);
 
         $.get('/cart-remove', {
             id: key
-        }, function(data) {
+        }, function (data) {
             AIZ.plugins.notify('success', "Mặt hàng đã bị xóa khỏi giỏ hàng");
             location.reload();
 
@@ -433,14 +431,13 @@
     }
 
     function reloadCart() {
-        $.get('/cart-reload', {
-        }, function(data) {
+        $.get('/cart-reload', {}, function (data) {
             const content = data.content;
             const count = data.count;
             const total = data.total;
             let element = '';
             content.forEach(product => {
-            element += (`<li class="list-group-item">
+                element += (`<li class="list-group-item">
                         <span class="d-flex align-items-center">
                             <a href="/product/${product.id}"
                                 class="text-reset d-flex align-items-center flex-grow-1">
@@ -475,8 +472,8 @@
     function addToCompare(id) {
         $.get('/cart-compare', {
             product_id: id,
-            quantity : 1
-        }, function(data) {
+            quantity: 1
+        }, function (data) {
             console.log('data', data);
 
             AIZ.plugins.notify('success', "Mục đã được thêm vào danh sách so sánh");
@@ -494,14 +491,14 @@
             product_id: id,
             quantity: 1,
 
-        }, function(data) {
+        }, function (data) {
             AIZ.plugins.notify('success', "Thêm vào giỏ hàng thành công");
             reloadCart();
 
         });
     }
 
-    $('#option-choice-form input').on('change', function() {
+    $('#option-choice-form input').on('change', function () {
         getVariantPrice();
     });
 
@@ -511,9 +508,9 @@
                 type: "POST",
                 url: '/product/variant_price',
                 data: $('#option-choice-form').serializeArray(),
-                success: function(data) {
+                success: function (data) {
 
-                    $('.product-gallery-thumb .carousel-box').each(function(i) {
+                    $('.product-gallery-thumb .carousel-box').each(function (i) {
                         if ($(this).data('variation') && data.variation == $(this).data(
                             'variation')) {
                             $('.product-gallery-thumb').slick('slickGoTo', i);
@@ -542,11 +539,11 @@
 
     function checkAddToCartValidity() {
         var names = {};
-        $('#option-choice-form input:radio').each(function() { // find unique names
+        $('#option-choice-form input:radio').each(function () { // find unique names
             names[$(this).attr('name')] = true;
         });
         var count = 0;
-        $.each(names, function() { // then count them
+        $.each(names, function () { // then count them
             count++;
         });
 
@@ -583,7 +580,7 @@
             product_id: id,
             quantity: 1,
 
-        }, function(data) {
+        }, function (data) {
             AIZ.plugins.notify('success', "Thêm vào giỏ hàng thành công");
             reloadCart();
 
@@ -599,7 +596,7 @@
                 type: "POST",
                 url: '/cart/addtocart',
                 data: $('#option-choice-form').serializeArray(),
-                success: function(data) {
+                success: function (data) {
                     if (data.status == 1) {
 
                         $('#addToCart-modal-body').html(data.modal_view);

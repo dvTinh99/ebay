@@ -94,18 +94,43 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
     Route::post('/login', [UserController::class, 'login'])->name('login');
 
     Route::get('/craw', function () {
-        $jsonData = file_get_contents(public_path().'/database/ebay/data.json');
+        $jsonFashionData = file_get_contents(public_path().'/database/ebay/fashion.json');
+        $jsonTechData = file_get_contents(public_path().'/database/ebay/tech.json');
 
-        $response = str_replace(chr(0), '', $jsonData);
-        $results = json_decode($response);
+        $fashionResponse = str_replace(chr(0), '', $jsonFashionData);
+        $techResponse = str_replace(chr(0), '', $jsonTechData);
+
+        $fashionResults = json_decode($fashionResponse);
+        $techResults = json_decode($techResponse);
+
+        // merge 2 array
+        $results = array_merge($fashionResults, $techResults);
+
+
         foreach($results as $key => $item) {
+
+            // if $item->name.length > 255 => continue
+            if (strlen($item->name) > 255) {
+                continue;
+            }
+
+            // skip if $item->images.length == 0
+            if (count($item->images) == 0) {
+                continue;
+            }
+
             echo $key .'\n';
             $existSeller = User::where('name', 'like', '%'.$item->seller->name.'%')->first();
             if ($existSeller) {
                 $user = $existSeller;
             } else {
+                // create email by convert $item->seller->name to email + random number
+                $email = str_replace(' ', '', $item->seller->name);
+                $email = strtolower($email);
+                $email = $email . rand(1, 1000);
+
                 $sellerData = [
-                    'email' => $key.'@gmail.com',
+                    'email' => $email.'@gmail.com',
                     'address' => 'some where in this planet',
                     'name' => $item->seller->name,
                     'ref_of' => 0,
@@ -123,13 +148,26 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
             } else {
                 $brandData = [
                     "name" => $item->brand->name,
-                    "image" => $item->brand->image,
+                    //  "image" => $item->brand->image,
                 ];
                 $brand = Brand::create($brandData);
             }
 
+            // category
+            $existCategory = Category::where('name', 'like', '%'. $item->category->name.'%')->first();
+            if ($existCategory) {
+                $category = $existCategory;
+            } else {
+                $categoryData = [
+                    "name" => $item->category->name,
+                    "father_id" => 0,
+                    "image" => "",
+                ];
+                $category = Category::create($categoryData);
+            }
+
             $profitPercen = rand(15, 30) / 100;
-            $price = $item->price / 100;
+            $price = $item->price;
             $profit = $price * $profitPercen;
             $wareHouse = $price - $profit;
 
@@ -142,12 +180,18 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
                 "stock" => $item->stock,
                 "description" => $item->content,
                 "slug" => $item->slug,
-                "category_id" => rand(2, 100),
+                "category_id" => $category->id,
                 "brand_id" => $brand->id,
+                "special" => 1,
             ];
             $pro = Product::create($product);
 
             foreach($item->images as $image) {
+                // if $image == null => continue
+                if (is_null($image)) {
+                    continue;
+                }
+
                 $imageData = [
                     'product_id' => $pro->id,
                     'image_link' => $image
