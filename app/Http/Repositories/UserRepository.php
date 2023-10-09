@@ -115,7 +115,7 @@ class UserRepository extends BaseRepository
         // Tổng số đơn hàng chưa thanh toán
         $totalUnpaidOrder = count($orders->where(function ($q) {
             $q->where('payment', 0)->orWhereNull('payment');
-        }));
+        })->get());
 
         $totalViewsDay = Auth::user()->total_views_day;
         $totalViews = Auth::user()->total_views;
