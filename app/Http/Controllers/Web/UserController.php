@@ -154,7 +154,7 @@ class UserController extends Controller
         }
         $data['ref_link'] = $ramdomLinkRef;
         $data['role'] = $request->role ?? 'seller';
-        $data['address'] = 'anywhere';
+        $data['address'] = '';
         if ($request->ref_link) {
             $user = $this->userRepo->findWithRefCode($request->ref_link);
             if ($user) {
