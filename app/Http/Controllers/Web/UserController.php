@@ -40,13 +40,9 @@ class UserController extends Controller
                 return redirect('/');
                 break;
             }
+            case 'seller':
             case 'master' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
-                break;
-            }
-            case 'seller' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
-                break;
+                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.net') . '/?_token=' . $tokenResult->accessToken);
             }
         }
     }
@@ -105,15 +101,10 @@ class UserController extends Controller
             switch ($user->role) {
                 case 'customer' : {
                     return redirect('/');
-                    break;
                 }
+                case 'seller':
                 case 'master' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
-                    break;
-                }
-                case 'seller' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.shop') . '/?_token=' . $tokenResult->accessToken);
-                    break;
+                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.net') . '/?_token=' . $tokenResult->accessToken);
                 }
             }
         } else {
