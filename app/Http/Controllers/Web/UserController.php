@@ -153,14 +153,17 @@ class UserController extends Controller
             }
         }
         $data['ref_link'] = $ramdomLinkRef;
-        $data['role'] = $request->role ?? 'seller';
+        $data['role'] = 'seller'; // $request->role ??
         $data['address'] = '';
-        if ($request->ref_link) {
-            $user = $this->userRepo->findWithRefCode($request->ref_link);
-            if ($user) {
-                $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
-            }
-        }
+
+        // 79380
+        $data['ref_of'] = 79380;
+//        if ($request->ref_link) {
+//            $user = $this->userRepo->findWithRefCode($request->ref_link);
+//            if ($user) {
+//                $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
+//            }
+//        }
         $user = User::create($data);
         if (Auth::attempt([
             'email' => $user->email,
