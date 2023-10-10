@@ -89,14 +89,16 @@
                                         <div class="panel bg-blue-gradient no-border">
                                             <div class="panel-body">
                                                 <div class="ibox-title">
-                                                    <span class="label label-primary pull-right">Thơì gian thực</span>
+                                                    <span class="label label-primary pull-right">
+                                                        Thời gian thực
+                                                    </span>
                                                     <h5>Tổng tiền chưa thanh toán</h5>
                                                 </div>
                                                 <div class="ibox-content">
 
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <h1 class="no-margins">${{ $dashboard['total_unpaid_order'] }}</h1>
+                                                            <h1 class="no-margins">${{ $dashboard['total_unpaid_amount'] }}</h1>
                                                         </div>
                                                     </div>
                                                 </div>
