@@ -42,7 +42,7 @@ class UserController extends Controller
             }
             case 'seller':
             case 'master' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.net') . '/?_token=' . $tokenResult->accessToken);
+                return redirect(env('DOMAIN_MASTER', 'https://master.sellerhubvn.info') . '/?_token=' . $tokenResult->accessToken);
             }
         }
     }
@@ -104,7 +104,7 @@ class UserController extends Controller
                 }
                 case 'seller':
                 case 'master' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.sellercentervn.net') . '/?_token=' . $tokenResult->accessToken);
+                    return redirect(env('DOMAIN_MASTER', 'https://master.sellerhubvn.info') . '/?_token=' . $tokenResult->accessToken);
                 }
             }
         } else {
