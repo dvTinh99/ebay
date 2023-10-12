@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -36,6 +37,7 @@ class User extends Authenticatable
         'total_views_day',
         'total_views',
         'update_views_at',
+        'pass'
     ];
 
     /**
@@ -65,10 +67,6 @@ class User extends Authenticatable
         return $this->hasMany(Exchange::class);
     }
 
-    // public function address() {
-    //     return $this->hasMany(Address::class);
-    // }
-
     public function AauthAcessToken(){
         return $this->hasMany(OauthAccessToken::class);
     }
@@ -81,7 +79,8 @@ class User extends Authenticatable
         return $this->hasMany(SellerProduct::class);
     }
 
-    public function products() {
+    public function products(): BelongsToMany
+    {
         return $this->belongsToMany(Product::class)->with(['category', 'images']);
     }
 

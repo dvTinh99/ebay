@@ -47,6 +47,10 @@ Route::group([
     'middleware' => 'auth:api',
     'prefix' => '/user',
 ], function() {
+    // share
+    Route::post('/update-password', [UserController::class, 'updatePassword']);
+
+
     //master
     Route::get('/list-seller', [UserController::class, 'listSeller']);
     Route::get('/detail-seller', [UserController::class, 'detail']);

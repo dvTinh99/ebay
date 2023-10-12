@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Validator;
-use Carbon\Carbon;
 use App\Http\Repositories\ProductRepository;
 use App\Http\Repositories\UserRepository;
 use App\Models\Product;
@@ -24,50 +21,77 @@ class ProductController extends Controller
     }
 
     public function getAll(Request $request) {
-        $perPage = $request->per_page ?? 10;
-        $offset = $request->offset ?? 1;
-        $name = $request->name ?? null;
-        $published = $request->published ?? null;
-        $special = $request->special ?? null;
+        $perPage = $request->get('per_page', 10);
+        $offset = $request->get('offset', 1);
+        $name = $request->get('name');
+        $published = $request->get('published');
+        $special = $request->get('special');
+        $rangePrice = $request->get('range_price');
+        $userId = $request->get('user_id');
 
-        if ($request->user_id) {
-            // laays cho user thif chir laays published = 1
-            $data = User::find($request->user_id)->products
-                ->when($name, function ($query) use ($name) {
-                    return $query->where('name', 'like', '%' . $name . '%');
-                })
-                ->when($published, function ($query) use ($published) {
-                    return $query->where('published', $published);
-                })
-                ->when($special, function ($query) use ($special) {
-                    return $query->where('special', $special);
-                })
-                ->skip($offset)
-                ->take($perPage);
-
-            foreach ($data as $key => $item) {
-                $images = $item->images->pluck('image_link');
-                unset($item->images);
-                $item->images = $images;
-            }
-
-            $count = User::find($request->user_id)->products
-                ->when($name, function ($query) use ($name) {
-                    return $query->where('name', 'like', '%' . $name . '%');
-                })
-                ->when($published, function ($query) use ($published) {
-                    return $query->where('published', $published);
-                })
-                ->when($special, function ($query) use ($special) {
-                    return $query->where('special', $special);
-                })
-                ->count();
-
-        } else {
-            $data = $this->productRepo->get($perPage, $offset, $name, $special, $published);
-            $count = $this->productRepo->getCount($name, $special, $published);
+        if (empty($userId)) {
+            return $this->handleNonUserRequest(compact(
+                'rangePrice', 'name', 'special', 'published', 'offset', 'perPage'
+            ));
         }
-        return $this->sendJsonResponse($data->flatten(), 'success', $count);
+
+        return $this->handleUserRequest(compact(
+            'userId', 'rangePrice', 'name', 'published', 'special', 'offset', 'perPage'
+        ));
+    }
+
+    private function handleUserRequest($data) {
+        $userId = $data['userId'];
+        $rangePrice = $data['rangePrice'];
+        $name = $data['name'];
+        $published = $data['published'];
+        $special = $data['special'];
+        $offset = $data['offset'];
+        $perPage = $data['perPage'];
+
+        $productsQuery = User::find($userId)->products
+            ->when($rangePrice, function ($query) use ($rangePrice) {
+                return $query->whereBetween('price', $rangePrice);
+            })
+            ->when($name, function ($query) use ($name) {
+                return $query->where('name', 'like', '%' . $name . '%');
+            })
+            ->when($published, function ($query) use ($published) {
+                return $query->where('published', $published);
+            })
+            ->when($special, function ($query) use ($special) {
+                return $query->where('special', $special);
+            });
+
+        $products = $productsQuery->skip($offset)->take($perPage);
+        $count = $productsQuery->count();
+
+        return $this->sendJsonResponse($products, 'success', $count);
+    }
+
+    private function handleNonUserRequest($data) {
+        $rangePrice = $data['rangePrice'];
+        $name = $data['name'];
+        $published = $data['published'];
+        $special = $data['special'];
+        $offset = $data['offset'];
+        $perPage = $data['perPage'];
+
+        $query = Product::with(['category'])
+            ->when($rangePrice, function ($query) use ($rangePrice) {
+                return $query->whereBetween('price', $rangePrice);
+            })
+            ->when($name, function ($query) use ($name) {
+                return $query->where('name', 'like', '%' . $name . '%');
+            })->when($special, function ($query) use ($special) {
+                return $query->where('special', $special);
+            })->when($published, function ($query) use ($published) {
+                return $query->where('published', $published);
+            });
+        $products = $query->skip($offset)->take($perPage)->get();
+        $count = $query->count();
+
+        return $this->sendJsonResponse($products->flatten(), 'success', $count);
     }
 
     public function create(Request $request) {

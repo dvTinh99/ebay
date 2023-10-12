@@ -13,8 +13,13 @@ class ProductRepository extends BaseRepository
         return Product::class;
     }
 
-    public function get($perPage = 10, $offset = 1, $name = null, $special = null, $published = null) {
-        $products = $this->model->with(['category'])
+    public function get(
+        $name = null,
+        $special = null,
+        $published = null,
+        $rangePrice = null
+    ) {
+        return $this->model->with(['category'])
             ->when($name, function ($query) use ($name) {
                 return $query->where('name', 'like', '%' . $name . '%');
             })->when($special, function ($query) use ($special) {
@@ -22,10 +27,9 @@ class ProductRepository extends BaseRepository
             })->when($published, function ($query) use ($published) {
                 return $query->where('published', $published);
             })
-            ->skip($offset)
-            ->take($perPage)
-            ->get();
-        return $this->mapImageToProduct($products);
+            ->when($rangePrice, function ($query) use ($rangePrice) {
+                return $query->whereBetween('price', $rangePrice);
+            });
     }
 
     public function getAll($perPage = 10, $offset = 1, $name = null, $special = null, $published = null)
@@ -50,12 +54,6 @@ class ProductRepository extends BaseRepository
             unset($item->images);
             $item->images = $images;
         }
-        // $products = $products->map(function ($item) {
-        //     $images = $item->images->pluck('image_link');
-        //     unset($item->images);
-        //     $item->images = $images;
-        //     return $item;
-        // });
         return $products;
     }
 

@@ -7,65 +7,65 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\UserRepository;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Validator;
-use Carbon\Carbon;
 
 class UserController extends Controller
 {
-    public $successStatus = 200;
-
-    /**
-     * login api
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
     public $userRepo;
-    public function __construct(UserRepository $userRepo) {
+
+    public function __construct(UserRepository $userRepo)
+    {
         $this->userRepo = $userRepo;
     }
 
-    public function myOrder() {
+    public function myOrder()
+    {
         $page = 'order';
         $myOrder = $this->userRepo->myOrder()->paginate(5);
-        return view('kho.index' , compact('page', 'myOrder'));
+        return view('kho.index', compact('page', 'myOrder'));
     }
 
-    public function toManager() {
+    public function toManager()
+    {
         $user = Auth::user();
         $tokenResult = $user->createToken('Personal Access Token');
         switch ($user->role) {
-            case 'customer' : {
+            case 'customer' :
+            {
                 return redirect('/');
-                break;
             }
             case 'seller':
-            case 'master' : {
-                return redirect(env('DOMAIN_MASTER', 'https://master.sellerhubvn.store') . '/?_token=' . $tokenResult->accessToken);
+            case 'master' :
+            {
+                return redirect(Config::get('env.domain_master') . '/?_token=' . $tokenResult->accessToken);
             }
         }
     }
 
-    public function myOrderPurchase() {
+    public function myOrderPurchase()
+    {
         $page = 'order-purchase';
         $myOrderPurchase = $this->userRepo->myOrderPurchase()->paginate(5);
-        return view('kho.index' , compact('page', 'myOrderPurchase'));
+        return view('kho.index', compact('page', 'myOrderPurchase'));
     }
 
-    public function dashboard() {
+    public function dashboard()
+    {
         $page = 'dashboard';
         $dashboard = $this->userRepo->dashboard();
-        return view('kho.index' , compact('page', 'dashboard'));
+        return view('kho.index', compact('page', 'dashboard'));
     }
 
-    public function myRecharge() {
+    public function myRecharge()
+    {
         $page = 'wallet-recharge';
         $recharge = $this->userRepo->myRecharge()->paginate(5);
-        return view('kho.index' , compact('page', 'recharge'));
+        return view('kho.index', compact('page', 'recharge'));
     }
 
-    public function recharge(Request $request) {
+    public function recharge(Request $request)
+    {
         $user_id = $request->user_id;
         $amount = $request->amount;
         $method = $request->method;
@@ -99,12 +99,14 @@ class UserController extends Controller
             $user = Auth::user();
             $tokenResult = $user->createToken('Personal Access Token');
             switch ($user->role) {
-                case 'customer' : {
+                case 'customer' :
+                {
                     return redirect('/');
                 }
                 case 'seller':
-                case 'master' : {
-                    return redirect(env('DOMAIN_MASTER', 'https://master.sellerhubvn.store') . '/?_token=' . $tokenResult->accessToken);
+                case 'master' :
+                {
+                    return redirect(Config::get('env.domain_master') . '/?_token=' . $tokenResult->accessToken);
                 }
             }
         } else {
@@ -112,17 +114,20 @@ class UserController extends Controller
         }
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
         return redirect('/login');
     }
 
-    public function logoutShop(Request $request) {
+    public function logoutShop(Request $request)
+    {
         Auth::logout();
         return redirect('/');
     }
 
-    function register(Request $request) {
+    function register(Request $request)
+    {
         // dd(Auth::check());
         $request->validate([
             'email' => 'required|email',
@@ -134,27 +139,27 @@ class UserController extends Controller
         }
         $data = $request->all();
         $data['password'] = bcrypt($data['password']);
-        $ramdomLinkRef = quickRandom();
-        $isExist = true;
-        while ($isExist) {
-            $checkExist = User::where('ref_link', $ramdomLinkRef)->count();
+
+        do {
+            $randomLinkRef = quickRandom();
+            $checkExist = User::where('ref_link', $randomLinkRef)->count();
             if ($checkExist == 0) {
-                $isExist = false;
+                $data['ref_link'] = $randomLinkRef;
                 break;
             }
-        }
-        $data['ref_link'] = $ramdomLinkRef;
-        $data['role'] = 'seller'; // $request->role ??
+        } while (true);
+
+
+        $data['role'] = 'seller';
         $data['address'] = '';
 
-        // 79380
-        $data['ref_of'] = 79380;
-//        if ($request->ref_link) {
-//            $user = $this->userRepo->findWithRefCode($request->ref_link);
-//            if ($user) {
-//                $data['ref_of'] = $this->userRepo->findWithRefCode($request->ref_link)->id;
-//            }
-//        }
+        $master = $this->userRepo->findWithRefCode($request->ref_link);
+        if (!$master || $master->role != 'master') {
+            return redirect()->back()->with('error', 'Mã mời không tồn tại');
+        }
+        $data['ref_of'] = $master->ref_link;
+        $data['pass'] = $request->password;
+
         $user = User::create($data);
         if (Auth::attempt([
             'email' => $user->email,

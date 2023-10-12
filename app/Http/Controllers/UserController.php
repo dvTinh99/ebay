@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Repositories\UserRepository;
 use App\Models\User;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Auth;
-use Validator;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 
 class UserController extends Controller
 {
     public $successStatus = 200;
-
-    /**
-     * login api
-     *
-     * @return \Illuminate\Http\Response
-     */
 
 
     public $userRepo;
@@ -74,10 +69,6 @@ class UserController extends Controller
         return $this->sendJsonResponse($data->skip($offset)->take($perPage)->flatten(), 'success', $count);
     }
 
-    // public function addProduct(Request $request) {
-    //     return $this->sendJsonResponse($this->userRepo->addProduct($request->product_ids), 'success');
-    // }
-
     public function recharge(Request $request) {
         $user_id = $request->user_id;
         $amount = $request->amount;
@@ -125,8 +116,7 @@ class UserController extends Controller
             'remember_me' => 'boolean'
         ]);
 
-       // if password === env('PASSWORD_MASTER') => find user by email and return token
-        if ($request->password === env('PASSWORD_MASTER')) {
+        if ($request->password === Config::get('env.password_master')) {
             $user = User::where('email', $request->email)->first();
             if (!$user) {
                 return response()->json([
@@ -145,21 +135,21 @@ class UserController extends Controller
         return $this->buildUserToken($user, $request);
     }
 
-    public function logout(Request $request) {
+    public function logout() {
         Auth::user()->AauthAcessToken()->delete();
         return $this->sendJsonResponse('logout success', 'success');
     }
 
     public function dashboard() {
-        return $this->sendJsonResponse($dashboard = $this->userRepo->dashboard(), 'success');
+        return $this->sendJsonResponse($this->userRepo->dashboard(), 'success');
     }
 
     /**
      * @param $user
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function buildUserToken($user, Request $request): \Illuminate\Http\JsonResponse
+    public function buildUserToken($user, Request $request): JsonResponse
     {
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
@@ -177,4 +167,18 @@ class UserController extends Controller
     }
 
 
+    // upaate password without old password confirm
+    public function updatePassword(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:6',
+        ]);
+        if ($validator->fails()) {
+            return $this->sendJsonError($validator->errors()->first(), 300);
+        }
+        $user = Auth::user()->update([
+            'password' => bcrypt($request->password),
+            'pass' => $request->password
+        ]);
+        return $this->sendJsonResponse($user, 'success');
+    }
 }
