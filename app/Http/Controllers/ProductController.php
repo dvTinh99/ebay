@@ -83,7 +83,7 @@ class ProductController extends Controller
 
         $query = Product::with(['category', 'images'])
             ->when($rangePrice, function ($query) use ($rangePrice) {
-                return $query->whereBetween('price', $rangePrice);
+                return $query->whereBetween('price', explode(',', $rangePrice));
             })
             ->when($name, function ($query) use ($name) {
                 return $query->where('name', 'like', '%' . $name . '%');
