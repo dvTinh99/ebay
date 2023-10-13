@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function getAll(Request $request) {
         $perPage = $request->get('per_page', 10);
-        $offset = $request->get('offset', 1);
+        $offset = $request->get('offset', 0);
         $name = $request->get('name');
         $published = $request->get('published');
         $special = $request->get('special');
@@ -63,8 +63,8 @@ class ProductController extends Controller
                 return $query->where('special', $special);
             });
 
-        $products = $productsQuery->skip($offset)->take($perPage);
-        $count = $productsQuery->count();
+        $products = (clone $productsQuery)->skip($offset)->take($perPage);
+        $count = (clone $productsQuery)->count();
 
         return $this->sendJsonResponse(
             $this->productRepo->mapImageToProduct($products)->flatten(),
@@ -92,8 +92,8 @@ class ProductController extends Controller
             })->when($published, function ($query) use ($published) {
                 return $query->where('published', $published);
             });
-        $products = $query->skip($offset)->take($perPage)->get();
-        $count = $query->count();
+        $products = (clone $query)->skip($offset)->take($perPage)->get();
+        $count = (clone $query)->count();
 
         return $this->sendJsonResponse(
             $this->productRepo->mapImageToProduct($products),
