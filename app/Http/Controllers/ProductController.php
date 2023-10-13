@@ -67,7 +67,7 @@ class ProductController extends Controller
         $count = $productsQuery->count();
 
         return $this->sendJsonResponse(
-            $this->productRepo->mapImageToProduct($products),
+            $this->productRepo->mapImageToProduct($products)->flatten(),
             'success',
             $count
         );
