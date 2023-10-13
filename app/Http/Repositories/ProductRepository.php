@@ -38,18 +38,9 @@ class ProductRepository extends BaseRepository
         return $this->mapImageToProduct($products, $name, $special, $published);
     }
 
-    public function mapImageToProduct($products, $name = null, $special = null, $published = null) {
+    public function mapImageToProduct($products) {
 
-        foreach ($products as $key => $item) {
-            if ($name && !str_contains(strtolower($item->name), strtolower($name))) {
-                $products->forget($key);
-            }
-            if (!is_null($special) && $item->special != $special) {
-                $products->forget($key);
-            }
-            if (!is_null($published) && $item->published != $published) {
-                $products->forget($key);
-            }
+        foreach ($products as $item) {
             $images = $item->images->pluck('image_link');
             unset($item->images);
             $item->images = $images;

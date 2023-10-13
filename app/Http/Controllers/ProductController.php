@@ -66,7 +66,11 @@ class ProductController extends Controller
         $products = $productsQuery->skip($offset)->take($perPage);
         $count = $productsQuery->count();
 
-        return $this->sendJsonResponse($products, 'success', $count);
+        return $this->sendJsonResponse(
+            $this->productRepo->mapImageToProduct($products),
+            'success',
+            $count
+        );
     }
 
     private function handleNonUserRequest($data) {
@@ -77,7 +81,7 @@ class ProductController extends Controller
         $offset = $data['offset'];
         $perPage = $data['perPage'];
 
-        $query = Product::with(['category'])
+        $query = Product::with(['category', 'images'])
             ->when($rangePrice, function ($query) use ($rangePrice) {
                 return $query->whereBetween('price', $rangePrice);
             })
@@ -91,7 +95,11 @@ class ProductController extends Controller
         $products = $query->skip($offset)->take($perPage)->get();
         $count = $query->count();
 
-        return $this->sendJsonResponse($products->flatten(), 'success', $count);
+        return $this->sendJsonResponse(
+            $this->productRepo->mapImageToProduct($products),
+            'success',
+            $count
+        );
     }
 
     public function create(Request $request) {
