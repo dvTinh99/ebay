@@ -27,16 +27,17 @@ class ProductController extends Controller
         $published = $request->get('published');
         $special = $request->get('special');
         $rangePrice = $request->get('range_price');
+        $category = $request->get('category');
         $userId = $request->get('user_id');
 
         if (empty($userId)) {
             return $this->handleNonUserRequest(compact(
-                'rangePrice', 'name', 'special', 'published', 'offset', 'perPage'
+                'rangePrice', 'name', 'special', 'published', 'offset', 'perPage', 'category'
             ));
         }
 
         return $this->handleUserRequest(compact(
-            'userId', 'rangePrice', 'name', 'published', 'special', 'offset', 'perPage'
+            'userId', 'rangePrice', 'name', 'published', 'special', 'offset', 'perPage', 'category'
         ));
     }
 
@@ -48,10 +49,14 @@ class ProductController extends Controller
         $special = $data['special'];
         $offset = $data['offset'];
         $perPage = $data['perPage'];
+        $category = $data['category'];
 
         $productsQuery = User::find($userId)->products
             ->when($rangePrice, function ($query) use ($rangePrice) {
                 return $query->whereBetween('price', explode(',', $rangePrice));
+            })
+            ->when($category, function ($query) use ($category) {
+                return $query->where('category_id', $category);
             })
             ->when($name, function ($query) use ($name) {
                 return $query->where('name', 'like', '%' . $name . '%');
@@ -80,10 +85,14 @@ class ProductController extends Controller
         $special = $data['special'];
         $offset = $data['offset'];
         $perPage = $data['perPage'];
+        $category = $data['category'];
 
         $query = Product::with(['category', 'images'])
             ->when($rangePrice, function ($query) use ($rangePrice) {
                 return $query->whereBetween('price', explode(',', $rangePrice));
+            })
+            ->when($category, function ($query) use ($category) {
+                return $query->where('category_id', $category);
             })
             ->when($name, function ($query) use ($name) {
                 return $query->where('name', 'like', '%' . $name . '%');

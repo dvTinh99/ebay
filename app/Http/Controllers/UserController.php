@@ -181,4 +181,10 @@ class UserController extends Controller
         ]);
         return $this->sendJsonResponse($user, 'success');
     }
+
+    function deliveryRanking(Request $request) {
+        $data = $this->userRepo->deliveryRanking();
+
+        return $this->sendJsonResponse($data, 'success');
+    }
 }

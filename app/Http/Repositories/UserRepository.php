@@ -7,6 +7,7 @@ use App\Models\Exchange;
 use App\Http\Repositories\BaseRepository;
 use App\Models\Order;
 use App\Models\SellerProduct;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -152,6 +153,25 @@ class UserRepository extends BaseRepository
             'total_views_total' => $totalViews
         ];
         return $data;
+    }
+
+
+    /**
+     * @throws Exception
+     */
+    function deliveryRanking() {
+        // try to read data from cache. If not exists or created from yesterdat,create new cache
+        $cacheKey = 'delivery_ranking';
+        $cache = cache($cacheKey);
+        if (!$cache || Carbon::parse($cache['created_at'])->diffInDays(Carbon::now()) > 0) {
+            $data = []; // create new data here
+            // created_at
+            $data['created_at'] = Carbon::now();
+
+            cache([$cacheKey => $data], 60 * 24);
+            return $data;
+        }
+        return $cache;
     }
 
 }

@@ -59,6 +59,9 @@ Route::group([
     Route::post('/recharge', [UserController::class, 'recharge']);
     Route::get('/dashboard', [UserController::class, 'dashboard']);
 
+    // delivery ranking
+    Route::get('/delivery-ranking', [UserController::class, 'deliveryRanking']);
+
 
     //seller
     Route::get('/info', [UserController::class, 'info']);
