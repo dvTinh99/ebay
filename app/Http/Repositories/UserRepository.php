@@ -142,6 +142,8 @@ class UserRepository extends BaseRepository
         }
 
         $data = [
+            'total_product' => $countProduct,
+
             'wallet' => $wallet,
             'total_order_amount' => $totalOrderAmount,
             'total_order_profit' => $totalOrderProfit,
@@ -168,7 +170,6 @@ class UserRepository extends BaseRepository
             for ($i = 0; $i < 10; $i++) {
                 $data[] = [
                     'id' => rand(1, 20),
-                    'name' => rand(1, 100),
                     'total_order' => rand(1, 100)
                 ];
             }
