@@ -81,8 +81,7 @@ class UserRepository extends BaseRepository
             'amount' => $amount,
             'method' => $method
         ];
-        $recharge = Exchange::create($data);
-        return $recharge;
+        return Exchange::create($data);
     }
 
     public function myOrder() {
@@ -165,6 +164,15 @@ class UserRepository extends BaseRepository
         $cache = cache($cacheKey);
         if (!$cache || Carbon::parse($cache['created_at'])->diffInDays(Carbon::now()) > 0) {
             $data = []; // create new data here
+            // for loop 10 times
+            for ($i = 0; $i < 10; $i++) {
+                $data[] = [
+                    'id' => rand(1, 20),
+                    'name' => rand(1, 100),
+                    'total_order' => rand(1, 100)
+                ];
+            }
+
             // created_at
             $data['created_at'] = Carbon::now();
 
