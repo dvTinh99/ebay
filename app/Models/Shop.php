@@ -16,5 +16,6 @@ class Shop extends Model
         'phone',
         'name',
         'address',
+        'banner'
     ];
 }
