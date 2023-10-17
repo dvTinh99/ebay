@@ -38,26 +38,26 @@ class UserRepository extends BaseRepository
         return User::where('ref_link', $refCode)->first();
     }
 
-    public function listSeller() {
-        $users = User::with('bank')
-        ->where('ref_of', Auth::id())
-        ->orWhere('ref_of', Auth::user()->ref_link)
-        ->get();
+    public function listSeller()
+    {
+        $users = User::with(['bank', 'sellerProduct', 'orders' => function ($query) {
+            $query->where('status', 2);
+        }])
+            ->where(function ($query) {
+                $query->where('ref_of', Auth::id())
+                    ->orWhere('ref_of', Auth::user()->ref_link);
+            })
+            ->withCount('sellerProduct', 'orders')
+            ->get()
+            ->map(function ($user) {
+                $user->orderInfo = [
+                    'total_product' => $user->seller_product_count,
+                    'total_order' => $user->orders_count,
+                    'total_pay' => $user->orders->count(),
+                ];
 
-        $users = $users->map(function ($user){
-            $totalProduct = $user->sellerProduct->count();
-            $totalOrder = $user->orders->count();
-            $totalPay = $user->orders->where('status', 2)->count();
-
-            $result = [
-                'total_product' => $totalProduct,
-                'total_order' => $totalOrder,
-                'total_pay' => $totalPay,
-            ];
-
-            $user->orderInfo = $result;
-            return $user;
-        });
+                return $user;
+            });
 
         return $users;
     }
