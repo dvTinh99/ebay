@@ -190,7 +190,7 @@ class UserRepository extends BaseRepository
             for ($i = 0; $i < 10; $i++) {
                 $data['data'][] = [
                     'id' => rand(1, 20),
-                    'total_order' => rand(1, 100)
+                    'value' => rand(1, 100)
                 ];
             }
 
