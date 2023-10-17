@@ -14,7 +14,8 @@ class AddAdsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            // ads, number, default = 1, nullable
+            $table->integer('ads')->default(1)->nullable();
         });
     }
 
@@ -26,8 +27,7 @@ class AddAdsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            // ads, number, default = 1, nullable
-            $table->integer('ads')->default(1)->nullable();
+            //
         });
     }
 }
