@@ -38,9 +38,9 @@ class UserRepository extends BaseRepository
         return User::where('ref_link', $refCode)->first();
     }
 
-    public function listSeller($limit, $offset, $name = null)
+    public function listSeller($limit, $offset, $name = null, $approve = null)
     {
-        return User::with(['bank', 'sellerProduct', 'orders' => function ($query) {
+        return User::with(['bank', 'orders' => function ($query) {
             $query->where('status', 2);
         }])
             ->where(function ($query) {
@@ -50,14 +50,15 @@ class UserRepository extends BaseRepository
             ->when($name, function ($query, $name) {
                 $query->where('name', 'like', '%' . $name . '%');
             })
-            ->withCount('sellerProduct', 'orders')
-            // sellerProduct
+            ->when($approve !== null, function ($query, $approve) {
+                $query->where('approve', $approve);
+            })
+            ->withCount('orders')
             ->skip($offset)
             ->take($limit)
             ->get()
             ->map(function ($user) {
                 $user->orderInfo = [
-                    'total_product' => $user->seller_product_count,
                     'total_order' => $user->orders_count,
                     'total_pay' => $user->orders->count(),
                 ];
@@ -66,7 +67,7 @@ class UserRepository extends BaseRepository
             });
     }
 
-    public function countSellers($name = null)
+    public function countSellers($name = null, $approve = null)
     {
         $query = User::where(function ($query) {
             $query->where('ref_of', Auth::id())
@@ -77,9 +78,11 @@ class UserRepository extends BaseRepository
             $query->where('name', 'like', '%' . $name . '%');
         }
 
-        $count = $query->count();
+        if ($approve !== null) {
+            $query->where('approve', $approve);
+        }
 
-        return $count;
+        return $query->count();
     }
 
     public function myProduct($perPage = 10, $offset = 0, $name, $special, $published) {
@@ -196,7 +199,8 @@ class UserRepository extends BaseRepository
 
                 $data['data'][] = [
                     'id' => $id,
-                    'value' => rand(1, 100)
+                    'value' => rand(1, 100),
+                    'plan' => rand(1, 4),
                 ];
             }
 
