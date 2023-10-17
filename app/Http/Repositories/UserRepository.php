@@ -31,7 +31,8 @@ class UserRepository extends BaseRepository
     }
 
     public function info() {
-        return Auth::user();
+        // User with shop
+        return User::with(['shop', 'bank'])->find(Auth::id());
     }
 
     public function findWithRefCode($refCode) {
