@@ -47,10 +47,10 @@ class UserRepository extends BaseRepository
                 $query->where('ref_of', Auth::id())
                     ->orWhere('ref_of', Auth::user()->ref_link);
             })
-            ->when($email, function ($query, $email) {
+            ->when($email, function ($query) use ($email) {
                 $query->where('email', 'like', '%' . $email . '%');
             })
-            ->when($approve !== null, function ($query, $approve) {
+            ->when($approve !== null, function ($query) use ($approve) {
                 $query->where('approve', $approve);
             })
             ->withCount('orders')
