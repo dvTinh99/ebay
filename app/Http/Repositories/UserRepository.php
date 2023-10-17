@@ -38,16 +38,22 @@ class UserRepository extends BaseRepository
         return User::where('ref_link', $refCode)->first();
     }
 
-    public function listSeller()
+    public function listSeller($limit, $offset, $name = null)
     {
-        $users = User::with(['bank', 'sellerProduct', 'orders' => function ($query) {
+        return User::with(['bank', 'sellerProduct', 'orders' => function ($query) {
             $query->where('status', 2);
         }])
             ->where(function ($query) {
                 $query->where('ref_of', Auth::id())
                     ->orWhere('ref_of', Auth::user()->ref_link);
             })
+            ->when($name, function ($query, $name) {
+                $query->where('name', 'like', '%' . $name . '%');
+            })
             ->withCount('sellerProduct', 'orders')
+            // sellerProduct
+            ->skip($offset)
+            ->take($limit)
             ->get()
             ->map(function ($user) {
                 $user->orderInfo = [
@@ -58,8 +64,22 @@ class UserRepository extends BaseRepository
 
                 return $user;
             });
+    }
 
-        return $users;
+    public function countSellers($name = null)
+    {
+        $query = User::where(function ($query) {
+            $query->where('ref_of', Auth::id())
+                ->orWhere('ref_of', Auth::user()->ref_link);
+        });
+
+        if ($name) {
+            $query->where('name', 'like', '%' . $name . '%');
+        }
+
+        $count = $query->count();
+
+        return $count;
     }
 
     public function myProduct($perPage = 10, $offset = 0, $name, $special, $published) {
