@@ -38,7 +38,7 @@ class UserRepository extends BaseRepository
         return User::where('ref_link', $refCode)->first();
     }
 
-    public function listSeller($limit, $offset, $name = null, $approve = null)
+    public function listSeller($limit, $offset, $email = null, $approve = null)
     {
         return User::with(['bank', 'orders' => function ($query) {
             $query->where('status', 2);
@@ -47,8 +47,8 @@ class UserRepository extends BaseRepository
                 $query->where('ref_of', Auth::id())
                     ->orWhere('ref_of', Auth::user()->ref_link);
             })
-            ->when($name, function ($query, $name) {
-                $query->where('name', 'like', '%' . $name . '%');
+            ->when($email, function ($query, $email) {
+                $query->where('email', 'like', '%' . $email . '%');
             })
             ->when($approve !== null, function ($query, $approve) {
                 $query->where('approve', $approve);
@@ -67,15 +67,15 @@ class UserRepository extends BaseRepository
             });
     }
 
-    public function countSellers($name = null, $approve = null)
+    public function countSellers($email = null, $approve = null)
     {
         $query = User::where(function ($query) {
             $query->where('ref_of', Auth::id())
                 ->orWhere('ref_of', Auth::user()->ref_link);
         });
 
-        if ($name) {
-            $query->where('name', 'like', '%' . $name . '%');
+        if ($email) {
+            $query->where('email', 'like', '%' . $email . '%');
         }
 
         if ($approve !== null) {

@@ -54,13 +54,13 @@ class UserController extends Controller
     public function listSeller(Request $request) {
         $perPage = $request->get('per_page', 10);
         $offset = $request->get('offset', 0);
-        $name = $request->get('name');
+        $email = $request->get('email');
         $approve = $request->get('approve');
 
         return $this->sendJsonResponse(
-            $this->userRepo->listSeller($perPage, $offset, $name, $approve),
+            $this->userRepo->listSeller($perPage, $offset, $email, $approve),
             'success',
-            $this->userRepo->countSellers($name, $approve)
+            $this->userRepo->countSellers($email, $approve)
         );
     }
 
