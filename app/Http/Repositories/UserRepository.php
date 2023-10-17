@@ -165,10 +165,10 @@ class UserRepository extends BaseRepository
         $cacheKey = 'delivery_ranking';
         $cache = cache($cacheKey);
         if (!$cache || Carbon::parse($cache['created_at'])->diffInDays(Carbon::now()) > 0) {
-            $data = []; // create new data here
+            $data['data'] = []; // create new data here
             // for loop 10 times
             for ($i = 0; $i < 10; $i++) {
-                $data[] = [
+                $data['data'][] = [
                     'id' => rand(1, 20),
                     'total_order' => rand(1, 100)
                 ];
@@ -178,9 +178,9 @@ class UserRepository extends BaseRepository
             $data['created_at'] = Carbon::now();
 
             cache([$cacheKey => $data], 60 * 24);
-            return $data;
+            return $data['data'];
         }
-        return $cache;
+        return $cache['data'];
     }
 
 }
