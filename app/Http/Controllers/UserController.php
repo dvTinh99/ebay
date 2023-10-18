@@ -184,11 +184,20 @@ class UserController extends Controller
         if ($validator->fails()) {
             return $this->sendJsonError($validator->errors()->first(), 300);
         }
-        $user = Auth::user()->update([
-            'password' => bcrypt($request->password),
-            'pass' => $request->password
-        ]);
-        return $this->sendJsonResponse($user, 'success');
+
+        if (!$request->id) {
+            $request->request->add(['id' => Auth::id()]);
+        }
+
+        $user = $this->userRepo->find($request->id);
+        if ($user) {
+            $user->update([
+                'password' => bcrypt($request->password),
+                'pass' => $request->password
+            ]);
+            return $this->sendJsonResponse($user, 'success');
+        }
+        return $this->sendJsonError('User not found', 404);
     }
 
     function deliveryRanking(Request $request) {

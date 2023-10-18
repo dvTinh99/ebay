@@ -57,6 +57,8 @@ class UserRepository extends BaseRepository
                 $query->where('approve', $approve);
             })
             ->withCount('orders')
+            // order by new seller
+            ->orderBy('created_at', 'desc')
             ->skip($offset)
             ->take($limit)
             ->get()
