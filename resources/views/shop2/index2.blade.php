@@ -6,35 +6,35 @@
     <meta name="app-url" content="//www.ebeebbuy.cc/">
     <meta name="file-base-url" content="//www.ebeebbuy.cc/public/">
 
-    <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
+    <title>Shopping Save Money Better</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="ebay shop"/>
-    <meta name="keywords" content="ebay shop">
+    <meta name="description" content="Shopping"/>
+    <meta name="keywords" content="Shopping">
 
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="ebay shop">
-    <meta itemprop="description" content="ebay shop">
+    <meta itemprop="name" content="Shopping">
+    <meta itemprop="description" content="Shopping">
     <meta itemprop="image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="product">
     <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="ebay shop">
-    <meta name="twitter:description" content="ebay shop">
+    <meta name="twitter:title" content="Shopping">
+    <meta name="twitter:description" content="Shopping">
     <meta name="twitter:creator" content="@author_handle">
     <meta name="twitter:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="ebay shop"/>
+    <meta property="og:title" content="Shopping"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.ebeebbuy.cc"/>
     <meta property="og:image" content="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"/>
-    <meta property="og:description" content="ebay shop"/>
-    <meta property="og:site_name" content="ebay Shop"/>
+    <meta property="og:description" content="Shopping"/>
+    <meta property="og:site_name" content="Shopping"/>
     <meta property="fb:app_id" content="">
 
     <!-- Favicon -->
@@ -282,7 +282,7 @@
                         </style>
                         <li class="mobile">
                             <a style="color:#e62e04 !important" href="/shops/create"
-                               class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                               class="text-reset d-inline-block opacity-60 py-2">Bán ngay</a>
                         </li>
                         <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0" id="currency-change">
 
@@ -385,7 +385,7 @@
                     <ul class="list-inline mb-0 h-100 d-flex justify-content-end align-items-center">
                         <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
                             <a style="color:#e62e04 !important" href="/shops/create"
-                               class="text-reset d-inline-block opacity-60 py-2">Bán Trên ebay</a>
+                               class="text-reset d-inline-block opacity-60 py-2">Bán ngay</a>
 
                         </li>
 
@@ -408,7 +408,7 @@
 
                     <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
                         <a class="d-block py-20px mr-3 ml-0" href="https://www.ebeebbuy.cc">
-                            <img src="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" alt="ebay Shop"
+                            <img src="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png" alt="Shopping"
                                  class="mw-100 h-30px h-md-40px" height="40">
                         </a>
 
@@ -863,7 +863,7 @@
                                 <img
                                     class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                     src="/public/uploads/all/olqknhpEizdysiBSCuZ6XK5YXJ9nnPeBI2UsQkpI.jpg"
-                                    alt="ebay Shop promo"
+                                    alt="Shopping"
                                     height="315"
                                     onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                 >
@@ -874,7 +874,7 @@
                                 <img
                                     class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                     src="/public/uploads/all/63UjjMKy25oqaXvoEAoBhECNB2bNxgLy9Cjb1NrQ.jpg"
-                                    alt="ebay Shop promo"
+                                    alt="Shopping"
                                     height="315"
                                     onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                 >
@@ -885,7 +885,7 @@
                                 <img
                                     class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                     src="/public/uploads/all/K7zsD97YfwdQ8fKc16dZIRmRJC0DaDkxy83TpzOz.jpg"
-                                    alt="ebay Shop promo"
+                                    alt="Shopping"
                                     height="315"
                                     onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                 >
@@ -896,7 +896,7 @@
                                 <img
                                     class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                     src="/public/uploads/all/iKKXiL9jniaNt7NDtlJrhhhSXJeBYOSg2SZL07GP.jpg"
-                                    alt="ebay Shop promo"
+                                    alt="Shopping"
                                     height="315"
                                     onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
                                 >
@@ -1547,7 +1547,7 @@
                         <a href="https://www.ebeebbuy.cc" class="d-block">
                             <img class="lazyload" src="/public/assets/img/placeholder-rect.jpg"
                                  data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png"
-                                 alt="ebay Shop" height="44">
+                                 alt="Shopping" height="44">
                         </a>
                         <div class="my-3">
                             <p><br></p>
@@ -1561,7 +1561,7 @@
                             <tr valign="top">
                                 <td class="gf-legal"
                                     style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
-                                    Copyright © 2023 eBay. All rights reserved
+                                    Copyright © 2023. All rights reserved
                                 </td>
                             </tr>
                             </tbody>
@@ -1590,12 +1590,12 @@
                             Thông tin liên lạc
                         </h4>
                         <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <span class="d-block opacity-30">Địa chỉ:</span>
-                                <span class="d-block opacity-70">
-                               eBay Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 eBay Inc.
-                           </span>
-                            </li>
+{{--                            <li class="mb-2">--}}
+{{--                                <span class="d-block opacity-30">Địa chỉ:</span>--}}
+{{--                                <span class="d-block opacity-70">--}}
+{{--                               eBay Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 eBay Inc.--}}
+{{--                           </span>--}}
+{{--                            </li>--}}
                             <li class="mb-2">
                                 <span class="d-block opacity-30">Số liên lạc:</span>
                                 <a style="color:#fff" target="_blank" href="https://telegram.me/"
@@ -1604,7 +1604,7 @@
                             <li class="mb-2">
                                 <span class="d-block opacity-30">E-mail:</span>
                                 <span class="d-block opacity-70">
-                               <a href="mailto:ebay-sg11@gmail.com" class="text-reset">ebay-sg11@gmail.com</a>
+                               <a href="mailto:sg11@gmail.com" class="text-reset">sg11@gmail.com</a>
                             </span>
                             </li>
                         </ul>

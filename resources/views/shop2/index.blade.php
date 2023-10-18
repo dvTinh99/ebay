@@ -22,15 +22,16 @@
                         <a href="https://">
                             <img class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                 src="public/uploads/all/olqknhpEizdysiBSCuZ6XK5YXJ9nnPeBI2UsQkpI.jpg"
-                                alt="ebay Shop promo" height="315"
-                                onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';">
+                                alt="" height="315"
+                                onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';"
+                            >
                         </a>
                     </div>
                     <div class="carousel-box">
                         <a href="#">
                             <img class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                 src="public/uploads/all/63UjjMKy25oqaXvoEAoBhECNB2bNxgLy9Cjb1NrQ.jpg"
-                                alt="ebay Shop promo" height="315"
+                                alt="" height="315"
                                 onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';">
                         </a>
                     </div>
@@ -38,7 +39,7 @@
                         <a href="#">
                             <img class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                 src="public/uploads/all/K7zsD97YfwdQ8fKc16dZIRmRJC0DaDkxy83TpzOz.jpg"
-                                alt="ebay Shop promo" height="315"
+                                alt="" height="315"
                                 onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';">
                         </a>
                     </div>
@@ -46,7 +47,7 @@
                         <a href="#">
                             <img class="d-block mw-100 img-fit rounded shadow-sm overflow-hidden h-lg-460px"
                                 src="public/uploads/all/iKKXiL9jniaNt7NDtlJrhhhSXJeBYOSg2SZL07GP.jpg"
-                                alt="ebay Shop promo" height="315"
+                                alt="" height="315"
                                 onerror="this.onerror=null;this.src='/public/assets/img/placeholder-rect.jpg';">
                         </a>
                     </div>

@@ -39,7 +39,7 @@
                 <div class="mt-4">
                     <a href="#" class="d-block">
                         <img class="lazyload" src="{{ asset('public') }}/assets/img/placeholder-rect.jpg"
-                             data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="ebay Shop"
+                             data-src="/public/uploads/all/WDUzPtHb2k2WBulYLAJpcvuRBxMo5yLeiMzDyzGb.png" alt="Shopping"
                              height="44">
                     </a>
                     <div class="my-3">
@@ -52,7 +52,7 @@
                             <tr valign="top">
                                 <td class="gf-legal"
                                     style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
-                                    Copyright © 2023 eBay. All rights reserved
+                                    Copyright © 2023. All rights reserved
                                 </td>
                             </tr>
                             </tbody>
@@ -85,7 +85,7 @@
                         <li class="mb-2">
                             <span class="d-block opacity-30">Địa chỉ:</span>
                             <span class="d-block opacity-70">
-                                eBay Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 eBay Inc.
+                                Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 Inc.
                             </span>
                         </li>
                         <li class="mb-2">
@@ -98,7 +98,7 @@
                         <li class="mb-2">
                             <span class="d-block opacity-30">E-mail:</span>
                             <span class="d-block opacity-70">
-                                <a href="mailto:ebay-sg11@gmail.com" class="text-reset">ebay-sg11@gmail.com</a>
+                                <a href="mailto:sg11@gmail.com" class="text-reset">sg11@gmail.com</a>
                             </span>
                         </li>
                     </ul>

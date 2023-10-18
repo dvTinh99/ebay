@@ -5,7 +5,7 @@
 
     <meta name="app-url" content="sellerhubvn.info">
 
-    <title>ebay-shop | ebay-shop | Save Money.Live Better</title>
+    <title>Shopping | Save Money Better</title>
 
 
     <!-- Favicon -->
@@ -188,7 +188,7 @@
                                     class="text-reset d-inline-block opacity-60 py-2">
 
                                     @if(!Auth::check())
-                                        Bán Trên ebay
+                                        Bán ngay
                                     @else
                                         @if (Auth::user()->role != 'customer')
                                             <a href="/to-manager">
@@ -231,7 +231,7 @@
                         <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
                             <a class="d-block py-20px mr-3 ml-0" href="/">
                                 <img src="../public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"
-                                    alt="ebay Shop" class="mw-100 h-30px h-md-40px" height="40">
+                                    alt="Shopping" class="mw-100 h-30px h-md-40px" height="40">
                             </a>
 
                             <div class="d-none d-xl-block align-self-stretch category-menu-icon-box ml-auto mr-0">
