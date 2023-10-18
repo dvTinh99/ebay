@@ -200,8 +200,8 @@ class UserRepository extends BaseRepository
 
                 $data['data'][] = [
                     'id' => $id,
-                    'value' => rand(1, 100),
-                    'plan' => rand(1, 4),
+                    'value' => rand(50, 300),
+                    'plan' => rand(1, 3),
                 ];
             }
 
