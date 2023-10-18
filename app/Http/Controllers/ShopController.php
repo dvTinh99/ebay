@@ -32,8 +32,9 @@ class ShopController extends Controller
         return $this->sendJsonResponse($this->ShopRepo->getAll(), 'success');
     }
 
-    public function myShop() {
-        return $this->sendJsonResponse($this->ShopRepo->myShop(), 'success');
+    public function myShop(Request $request) {
+        $user_id = $request->user_id ? $request->user_id : Auth::id();
+        return $this->sendJsonResponse($this->ShopRepo->myShop($user_id), 'success');
     }
 
     public function create(Request $request) {

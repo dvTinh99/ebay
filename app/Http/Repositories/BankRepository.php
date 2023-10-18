@@ -15,7 +15,7 @@ class BankRepository extends BaseRepository
     }
 
 
-    public function myBank() {
-        return Bank::where('user_id', Auth::id())->first();
+    public function myBank($id) {
+        return Bank::where('user_id', $id)->first();
     }
 }

@@ -28,8 +28,9 @@ class BankController extends Controller
         return $this->sendJsonResponse($this->bankRepo->getAll(), 'success');
     }
 
-    public function myBank() {
-        return $this->sendJsonResponse($this->bankRepo->myBank(), 'success');
+    public function myBank(Request $request) {
+        $id = $request->user_id ? $request->user_id : Auth::id();
+        return $this->sendJsonResponse($this->bankRepo->myBank($id), 'success');
     }
 
     public function create(Request $request) {
@@ -42,7 +43,7 @@ class BankController extends Controller
         } else {
             $user = Auth::user();
             $bank = $user->bank;
-            $request->request->add(['user_id' => $user->id]); 
+            $request->request->add(['user_id' => $user->id]);
         }
         if ($bank) {
             $this->bankRepo->update($bank->id, $request->all());
