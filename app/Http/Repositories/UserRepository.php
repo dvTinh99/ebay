@@ -44,6 +44,8 @@ class UserRepository extends BaseRepository
         return User::with(['shop', 'bank', 'orders' => function ($query) {
             $query->where('status', 2);
         }])
+            // role === 'seller'
+            ->where('role', 'seller')
             ->where(function ($query) {
                 $query->where('ref_of', Auth::id())
                     ->orWhere('ref_of', Auth::user()->ref_link);
@@ -62,8 +64,10 @@ class UserRepository extends BaseRepository
                 $user->orderInfo = [
                     'total_order' => $user->orders_count,
                     'total_pay' => $user->orders->count(),
+                    'total_product' => $user->products->count(),
                 ];
-
+                // unset $user->products
+                unset($user->products);
                 return $user;
             });
     }
@@ -73,7 +77,7 @@ class UserRepository extends BaseRepository
         $query = User::where(function ($query) {
             $query->where('ref_of', Auth::id())
                 ->orWhere('ref_of', Auth::user()->ref_link);
-        });
+        })->where('role', 'seller');
 
         if ($email) {
             $query->where('email', 'like', '%' . $email . '%');
