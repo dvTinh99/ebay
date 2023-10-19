@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain(env('DOMAIN_SHOP','shop.btsdoors.com'))->group(function () {
+Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
     Route::get('/', [ShopController::class, 'index']);
     Route::get('/users/login', [ShopController::class, 'login']);
     Route::get('/users/registration', [ShopController::class, 'register']);
