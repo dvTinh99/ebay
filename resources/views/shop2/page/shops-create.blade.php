@@ -68,8 +68,13 @@
 
                             <div class="form-group">
                                 <label>mã mời <span class="text-primary">*</span></label>
-                                <input type="text" class="form-control" value="79380" placeholder="mã mời"
-                                    name="ref_link">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value="{{ $_GET['invitation_code'] ?? '' }}"
+                                    placeholder="mã mời"
+                                    name="ref_link"
+                                >
                             </div>
                         </div>
                     </div>
