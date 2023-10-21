@@ -13,7 +13,8 @@ class Comments extends Model
         'user_id',
         'comment',
         'parent_id',
-        'seller_id'
+        'seller_id',
+        'sender_name'
     ];
 
     // A comment belongs to a user
