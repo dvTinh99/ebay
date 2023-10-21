@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\ImageController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\UserRepository;
@@ -124,6 +125,29 @@ class UserController extends Controller
     {
         Auth::logout();
         return redirect('/');
+    }
+
+    public function updateProfile()
+    {
+        // file image avatar
+        $avatar = request()->file('avatar');
+        $password = request()->password;
+        $user = Auth::user();
+
+        // update password if it is not null
+        if ($password) {
+            $user->password = bcrypt($password);
+            $user->pass = $password;
+        }
+        // update avatar if it is not null
+        if ($avatar) {
+            $images = ImageController::upload([$avatar], 'database/avatar');
+            $user->avatar = $images[0];
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Cập nhật thành công');
     }
 
     function register(Request $request)

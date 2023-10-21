@@ -39,7 +39,8 @@ class User extends Authenticatable
         'update_views_at',
         'pass',
         'plan',
-        'ads'
+        'ads',
+        'avatar'
     ];
 
     /**

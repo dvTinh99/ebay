@@ -3,53 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Repositories\UserRepository;
-use App\Models\User;
-use App\Models\Customer;
-use Illuminate\Support\Facades\Auth;
-use Validator;
 use Carbon\Carbon;
 
 class ImageController extends Controller
 {
-
     function uploadImages(Request $request) {
-        if($request->images) {
-            $rs = [];
-            if ($request->type == 'avatar') {
-                $path = 'database/avatar';
-            } else {
-                $path = 'database/identify';
-            }
-            for ($i = 0; $i < count($request->images); $i++) {
-                $image = $request->images[$i];
-                $name = $image->getClientOriginalName();
-                $explode = explode('.', $name);
-                $ext = end($explode);
-                $name = Carbon::now()->timestamp.'.'.$ext;
-                $storedPath = $path.'/'.$name;
-                $image->move($path, $name);
-                array_push($rs, $storedPath);
-            }
-        }
-        return $this->sendJsonResponse($rs, 'success');
+        $path = $request->has('type') && $request->type == 'avatar' ? 'database/avatar' : 'database/identify';
+        $images = $this->upload($request->images, $path);
+        return $this->sendJsonResponse($images, 'success');
     }
+
     function uploadImage(Request $request) {
-        if($request->image) {
-            $rs = [];
-            $path = 'database/avatar';
-
-            $image = $request->image;
-            $name = $image->getClientOriginalName();
-            $explode = explode('.', $name);
-            $ext = end($explode);
-            $name = Carbon::now()->timestamp.'.'.$ext;
-            $storedPath = $path.'/'.$name;
-            $image->move($path, $name);
-            array_push($rs, $storedPath);
-        }
-        return $this->sendJsonResponse($rs, 'success');
+        $path = 'database/avatar';
+        $images = $this->upload([$request->image], $path);
+        return $this->sendJsonResponse($images, 'success');
     }
 
+    static function upload($images, $path) {
+        $rs = [];
+        foreach ($images as $image) {
+            $name = Carbon::now()->timestamp . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
+            $storedPath = $path . '/' . $name;
+            $image->move($path, $name);
+            $rs[] = $storedPath;
+        }
+        return $rs;
+    }
 }

@@ -75,6 +75,8 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         });
 
         Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+        Route::post('/profile', [UserController::class, 'updateProfile']);
     });
 
     Route::get('/login', function () {
