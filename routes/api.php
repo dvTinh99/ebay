@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -154,4 +155,14 @@ Route::group([
     Route::get('/list-withdraw', [WithdrawController::class, 'getAll']);
     Route::get('/my-withdraw', [WithdrawController::class, 'myWithdraw']);
     Route::get('/detail-withdraw', [WithdrawController::class, 'detail']);
+});
+
+// group comment, auth:api
+Route::group([
+    'middleware' => 'auth:api',
+    'prefix' => '/comment',
+], function() {
+    Route::get('/list-comment', [CommentController::class, 'getAll']);
+    Route::post('/create-comment', [CommentController::class, 'create']);
+    Route::get('/detail-comment', [CommentController::class, 'getConversation']);
 });

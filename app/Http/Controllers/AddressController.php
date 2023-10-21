@@ -35,7 +35,7 @@ class AddressController extends Controller
     public function create(Request $request) {
         if (!$request->user_id) {
             $user = Auth::user();
-            $request->request->add(['user_id' => $user->id]); 
+            $request->request->add(['user_id' => $user->id]);
         }
         $address = $this->addressRepo->create($request->all());
         if ($address) {
