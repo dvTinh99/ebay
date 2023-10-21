@@ -46,6 +46,7 @@ Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
     Route::get('/cart', [ShopController::class, 'cart']);
     Route::get('/shops/create', [ShopController::class, 'shopsCreate']);
     Route::get('/shops', [ShopController::class, 'shops']);
+    Route::get('/shops/{id}', [ShopController::class, 'shopsDetail']);
     Route::get('/search', [ShopController::class, 'search']);
     Route::get('/categories', [ShopController::class, 'categories']);
     Route::get('/category/{id}', [ShopController::class, 'category']);
