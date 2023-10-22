@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Validator;
 use App\Http\Repositories\ProductRepository;
 use App\Http\Repositories\UserRepository;
 use App\Models\Product;
@@ -46,7 +45,7 @@ class ProductController extends Controller
         if ($category) {
             $conditions[] = ['column' => 'category_id', 'operator' => '=', 'value' => $category];
         }
-        if ($userId) {
+        if (isset($userId)) {
             $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $userId];
         }
 
