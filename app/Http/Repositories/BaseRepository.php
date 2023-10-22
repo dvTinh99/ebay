@@ -3,6 +3,7 @@
 namespace App\Http\Repositories;
 
 use App\Http\Repositories\BaseRepositoryInterface;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 
 abstract class BaseRepository implements BaseRepositoryInterface
@@ -10,7 +11,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
     /**
      * @var \Illuminate\Database\Eloquent\Model
      */
-    protected $model;
+    public $model;
 
     /**
      * EloquentRepository constructor.
@@ -116,5 +117,50 @@ abstract class BaseRepository implements BaseRepositoryInterface
     public function rollBack()
     {
         return DB::rollBack();
+    }
+
+    public function wheres($query, $conditions = []) {
+        foreach ($conditions as $condition) {
+            $column = $condition['column'];
+            $operator = $condition['operator'];
+            $value = $condition['value'];
+
+            // If the column has a '.', it means that it is a relation's column.
+            if (strpos($column, '.') !== false) {
+                $this->addHasCondition($query, $column, $operator, $value);
+            } else {
+                $query->where($column, $operator, $value);
+            }
+        }
+        // dd($conditions);
+        return $query;
+    }
+
+    protected function addHasCondition($query, $column, $operator, $value, $relation = null)
+    {
+        $parts = explode('.', $column, 2);
+
+        // If a deeper relationship exists, the function is called recursively
+        if (count($parts) > 1) {
+            $relation = $relation ? $relation . '.' . $parts[0] : $parts[0];
+            $this->addHasCondition($query, $parts[1], $operator, $value, $relation);
+            return;
+        }
+
+        if($relation){ // Nested relation exists, use whereHas
+            $query->whereHas($relation, function($q) use ($operator, $parts, $value){
+                $q->where($parts[0], $operator, $value);
+            });
+        } else { // No relation exists, it's a direct attribute of the model so use where
+            $query->where($parts[0], $operator, $value);
+        }
+    }
+
+    // count bases on wheres
+    public function count($conditions = []) {
+        $query = $this->model->query();
+
+//         $this->wheres($query2, $conditions)->get();
+        return $this->wheres($query, $conditions)->count();
     }
 }

@@ -13,7 +13,8 @@ class Comments extends Model
         'comment',
         'parent_id',
         'seller_id',
-        'sender_name'
+        'sender_name',
+        'product_id'
     ];
 
     // A comment can have many replies
@@ -26,5 +27,11 @@ class Comments extends Model
     public function seller()
     {
         return $this->belongsTo(User::class);
+    }
+
+    // A comment belongs to a product
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }

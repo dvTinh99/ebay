@@ -76,7 +76,7 @@ Route::group([
     'middleware' => 'auth:api',
     'prefix' => '/order',
 ], function() {
-    Route::get('/list-order', [OrderController::class, 'getAll']);
+    Route::get('/list-order', [OrderController::class, 'orders']);
     Route::get('/my-order', [OrderController::class, 'myOrder']);
     Route::get('/detail-order', [OrderController::class, 'detail']);
     Route::post('/create-order', [OrderController::class, 'create']);

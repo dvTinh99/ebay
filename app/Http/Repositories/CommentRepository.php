@@ -15,7 +15,7 @@ class CommentRepository extends BaseRepository
         return $this->model
             ->where('seller_id', $seller_id)
             ->whereNull('parent_id')
-            ->with(['seller', 'replies'])
+            ->with(['seller', 'replies', 'product'])
             ->orderBy('created_at', 'desc')
             ->get();
     }
@@ -25,7 +25,7 @@ class CommentRepository extends BaseRepository
     {
         return $this->model
             ->where('id', $id)
-            ->with(['seller', 'replies'])
+            ->with(['seller', 'replies', 'product'])
             ->first();
     }
 }

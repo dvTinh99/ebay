@@ -3,11 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Validator;
-use Carbon\Carbon;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\OrderItemRepository;
 use App\Models\Product;
@@ -27,8 +22,34 @@ class OrderController extends Controller
         return $this->sendJsonResponse($this->orderRepo->detail($request->id), 'success');
     }
 
-    public function getAll() {
-        return $this->sendJsonResponse($this->orderRepo->getAll(), 'success');
+    public function orders(Request $request) {
+        // $offset and $per_page
+        $offset = $request->get('offset', 0);
+        $per_page = $request->get('per_page', 10);
+        $user_id = $request->get('user_id');
+        $status = $request->get('status');
+        $email = $request->get('email');
+
+        $conditions = [];
+        if ($user_id) {
+            $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $user_id];
+        }
+        if ($status) {
+            $conditions[] = ['column' => 'status', 'operator' => '=', 'value' => $status];
+        }
+        if ($email) {
+            $conditions[] = [
+                'column' => 'seller.email',
+                'operator' => 'like',
+                'value' =>  '%' . $email . '%'
+            ];
+        }
+
+        $count = $this->orderRepo->count($conditions);
+        $orders = $this->orderRepo->orders($conditions, $per_page, $offset);
+
+
+        return $this->sendJsonResponse($orders, 'success', $count);
     }
 
     public function myOrder() {
@@ -50,17 +71,13 @@ class OrderController extends Controller
                 'order_id' => $order->id,
                 'product_id' => $product["product_id"],
                 'quantity' => $product["quantity"],
-                // 'type' ,
             ]);
         }
         $order->price = $price;
         $order->profit = $profit;
         $order->warehouse_price = $warehouse_price;
         $order->save();
-        if ($order) {
-            return $this->sendJsonResponse($order, 'success');
-        }
-        return $this->sendJsonError($order, 'error');
+        return $this->sendJsonResponse($order, 'success');
     }
 
     public function update(Request $request) {
