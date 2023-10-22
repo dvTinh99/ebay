@@ -125,34 +125,32 @@ abstract class BaseRepository implements BaseRepositoryInterface
             $operator = $condition['operator'];
             $value = $condition['value'];
 
-            // If the column has a '.', it means that it is a relation's column.
-            if (strpos($column, '.') !== false) {
-                $this->addHasCondition($query, $column, $operator, $value);
-            } else {
-                $query->where($column, $operator, $value);
-            }
+            $this->addColumnCondition($query, $column, $operator, $value);
         }
-        // dd($conditions);
+
         return $query;
     }
 
-    protected function addHasCondition($query, $column, $operator, $value, $relation = null)
-    {
-        $parts = explode('.', $column, 2);
+    protected function addColumnCondition($query, $column, $operator, $value) {
+        if (strpos($column, '.') === false) {
+            if ($operator === 'between') {
+                $query->whereBetween($column, $value);
+            } else {
+                $query->where($column, $operator, $value);
+            }
+        } else {
+            $parts = explode('.', $column);
 
-        // If a deeper relationship exists, the function is called recursively
-        if (count($parts) > 1) {
-            $relation = $relation ? $relation . '.' . $parts[0] : $parts[0];
-            $this->addHasCondition($query, $parts[1], $operator, $value, $relation);
-            return;
-        }
+            $relation = implode('.', array_slice($parts, 0, -1));
+            $column = end($parts);
 
-        if($relation){ // Nested relation exists, use whereHas
-            $query->whereHas($relation, function($q) use ($operator, $parts, $value){
-                $q->where($parts[0], $operator, $value);
+            $query->whereHas($relation, function ($query) use ($column, $operator, $value) {
+                if ($operator === 'between') {
+                    $query->whereBetween($column, $value);
+                } else {
+                    $query->where($column, $operator, $value);
+                }
             });
-        } else { // No relation exists, it's a direct attribute of the model so use where
-            $query->where($parts[0], $operator, $value);
         }
     }
 

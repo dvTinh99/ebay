@@ -30,46 +30,40 @@ class ProductController extends Controller
         $category = $request->get('category');
         $userId = $request->get('user_id');
 
-        if (empty($userId)) {
-            return $this->handleNonUserRequest(compact(
-                'rangePrice', 'name', 'special', 'published', 'offset', 'perPage', 'category'
-            ));
+        $conditions = [];
+        if ($name) {
+            $conditions[] = ['column' => 'name', 'operator' => 'like', 'value' => '%' . $name . '%'];
+        }
+        if (isset($published)) {
+            $conditions[] = ['column' => 'published', 'operator' => '=', 'value' => $published];
+        }
+        if (isset($special)) {
+            $conditions[] = ['column' => 'special', 'operator' => '=', 'value' => $special];
+        }
+        if ($rangePrice) {
+            $conditions[] = ['column' => 'price', 'operator' => 'between', 'value' => explode(',', $rangePrice)];
+        }
+        if ($category) {
+            $conditions[] = ['column' => 'category_id', 'operator' => '=', 'value' => $category];
+        }
+        if ($userId) {
+            $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $userId];
         }
 
-        return $this->handleUserRequest(compact(
-            'userId', 'rangePrice', 'name', 'published', 'special', 'offset', 'perPage', 'category'
-        ));
+        if (empty($userId)) {
+            return $this->handleNonUserRequest($conditions, $offset, $perPage);
+        }
+
+        return $this->handleUserRequest($userId, $conditions, $offset, $perPage);
     }
 
-    private function handleUserRequest($data) {
-        $userId = $data['userId'];
-        $rangePrice = $data['rangePrice'];
-        $name = $data['name'];
-        $published = $data['published'];
-        $special = $data['special'];
-        $offset = $data['offset'];
-        $perPage = $data['perPage'];
-        $category = $data['category'];
+    private function handleUserRequest($user_id, $conditions, $offset, $perPage) {
+        $query = User::find($user_id)->products;
+        $this->productRepo->wheres($query, $conditions);
 
-        $productsQuery = User::find($userId)->products
-            ->when($rangePrice, function ($query) use ($rangePrice) {
-                return $query->whereBetween('price', explode(',', $rangePrice));
-            })
-            ->when($category, function ($query) use ($category) {
-                return $query->where('category_id', $category);
-            })
-            ->when($name, function ($query) use ($name) {
-                return $query->where('name', 'like', '%' . $name . '%');
-            })
-            ->when($published, function ($query) use ($published) {
-                return $query->where('published', $published);
-            })
-            ->when($special, function ($query) use ($special) {
-                return $query->where('special', $special);
-            });
 
-        $products = (clone $productsQuery)->skip($offset)->take($perPage);
-        $count = (clone $productsQuery)->count();
+        $products = (clone $query)->skip($offset)->take($perPage);
+        $count = (clone $query)->count();
 
         return $this->sendJsonResponse(
             $this->productRepo->mapImageToProduct($products)->flatten(),
@@ -78,29 +72,10 @@ class ProductController extends Controller
         );
     }
 
-    private function handleNonUserRequest($data) {
-        $rangePrice = $data['rangePrice'];
-        $name = $data['name'];
-        $published = $data['published'];
-        $special = $data['special'];
-        $offset = $data['offset'];
-        $perPage = $data['perPage'];
-        $category = $data['category'];
+    private function handleNonUserRequest($conditions, $offset, $perPage) {
+        $query = Product::with(['category', 'images']);
+        $this->productRepo->wheres($query, $conditions);
 
-        $query = Product::with(['category', 'images'])
-            ->when($rangePrice, function ($query) use ($rangePrice) {
-                return $query->whereBetween('price', explode(',', $rangePrice));
-            })
-            ->when($category, function ($query) use ($category) {
-                return $query->where('category_id', $category);
-            })
-            ->when($name, function ($query) use ($name) {
-                return $query->where('name', 'like', '%' . $name . '%');
-            })->when($special, function ($query) use ($special) {
-                return $query->where('special', $special);
-            })->when($published, function ($query) use ($published) {
-                return $query->where('published', $published);
-            });
         $products = (clone $query)->skip($offset)->take($perPage)->get();
         $count = (clone $query)->count();
 
