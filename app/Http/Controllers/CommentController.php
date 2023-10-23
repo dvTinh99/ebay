@@ -25,6 +25,11 @@ class CommentController extends Controller
                 // pluck images.image_link to images
                 // unset images first and then set images
                 $images = $comment->product->images->pluck('image_link');
+                // remove null images
+                $images = $images->filter(function ($image) {
+                    return $image != null;
+                });
+
                 unset($comment->product->images);
                 $comment->product->images = $images;
             }
@@ -42,6 +47,10 @@ class CommentController extends Controller
         if ($conversation->product) {
             // pluck images.image_link to images
             $images = $conversation->product->images->pluck('image_link');
+            // remove null images
+            $images = $images->filter(function ($image) {
+                return $image != null;
+            });
             unset($conversation->product->images);
             $conversation->product->images = $images;
         }
