@@ -58,8 +58,11 @@ Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
     Route::get('/cart-reload', [ShopController::class, 'cartReload']);
     Route::get('/compare/reset', [ShopController::class, 'compareReset']);
 
-    //index 2 là page có sản phẩm trong giỏ hàng trên header
-    Route::get('/index2', [ShopController::class, 'index2']);
+
+    // match 404 url and redirect to / page
+    Route::get('/{any}', function () {
+        return redirect('/');
+    })->where('any', '.*');
 });
 Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
 

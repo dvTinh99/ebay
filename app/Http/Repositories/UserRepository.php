@@ -19,7 +19,9 @@ class UserRepository extends BaseRepository
     public $productRepository;
 
     public function __construct(ProductRepository $productRepository) {
+       //  $this->model = $this->getModel();
         $this->productRepository = $productRepository;
+        parent::__construct();
     }
     public function getModel()
     {

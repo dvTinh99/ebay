@@ -157,8 +157,6 @@ abstract class BaseRepository implements BaseRepositoryInterface
     // count bases on wheres
     public function count($conditions = []) {
         $query = $this->model->query();
-
-//         $this->wheres($query2, $conditions)->get();
         return $this->wheres($query, $conditions)->count();
     }
 }
