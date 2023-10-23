@@ -20,6 +20,14 @@ class CommentController extends Controller
     {
         $seller_id = request()->query('seller_id');
         $comments = $this->commentRepo->getCommentsForSeller($seller_id);
+        $comments = $comments->map(function ($comment) {
+            if ($comment->product) {
+                // pluck images.image_link to images
+                $comment->product->images = $comment->product->images->pluck('image_link');
+            }
+            return $comment;
+        });
+
         return $this->sendJsonResponse($comments, 'success');
     }
 
@@ -28,6 +36,10 @@ class CommentController extends Controller
     {
         $id = request()->query('id');
         $conversation = $this->commentRepo->getConversation($id);
+        if ($conversation->product) {
+            // pluck images.image_link to images
+            $conversation->product->images = $conversation->product->images->pluck('image_link');
+        }
         return $this->sendJsonResponse($conversation, 'success');
     }
 
