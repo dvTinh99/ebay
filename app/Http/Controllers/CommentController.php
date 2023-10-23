@@ -20,22 +20,6 @@ class CommentController extends Controller
     {
         $seller_id = request()->query('seller_id');
         $comments = $this->commentRepo->getCommentsForSeller($seller_id);
-        $comments = $comments->map(function ($comment) {
-            if ($comment->product) {
-                // pluck images.image_link to images
-                // unset images first and then set images
-                $images = $comment->product->images->pluck('image_link');
-                // remove null images
-                $images = $images->filter(function ($image) {
-                    return $image != null;
-                });
-
-                unset($comment->product->images);
-                $comment->product->images = $images;
-            }
-            return $comment;
-        });
-
         return $this->sendJsonResponse($comments, 'success');
     }
 
@@ -44,16 +28,6 @@ class CommentController extends Controller
     {
         $id = request()->query('id');
         $conversation = $this->commentRepo->getConversation($id);
-        if ($conversation->product) {
-            // pluck images.image_link to images
-            $images = $conversation->product->images->pluck('image_link');
-            // remove null images
-            $images = $images->filter(function ($image) {
-                return $image != null;
-            });
-            unset($conversation->product->images);
-            $conversation->product->images = $images;
-        }
         return $this->sendJsonResponse($conversation, 'success');
     }
 
