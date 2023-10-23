@@ -23,7 +23,10 @@ class CommentController extends Controller
         $comments = $comments->map(function ($comment) {
             if ($comment->product) {
                 // pluck images.image_link to images
-                $comment->product->images = $comment->product->images->pluck('image_link');
+                // unset images first and then set images
+                $images = $comment->product->images->pluck('image_link');
+                unset($comment->product->images);
+                $comment->product->images = $images;
             }
             return $comment;
         });
@@ -38,7 +41,9 @@ class CommentController extends Controller
         $conversation = $this->commentRepo->getConversation($id);
         if ($conversation->product) {
             // pluck images.image_link to images
-            $conversation->product->images = $conversation->product->images->pluck('image_link');
+            $images = $conversation->product->images->pluck('image_link');
+            unset($conversation->product->images);
+            $conversation->product->images = $images;
         }
         return $this->sendJsonResponse($conversation, 'success');
     }
