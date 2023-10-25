@@ -99,20 +99,24 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
     Route::post('/login', [UserController::class, 'login'])->name('login');
 
     Route::get('/craw', function () {
-        $jsonFashionData = file_get_contents(public_path().'/database/ebay/fashion.json');
-        $jsonTechData = file_get_contents(public_path().'/database/ebay/tech.json');
+//        $jsonFashionData = file_get_contents(public_path().'/database/ebay/fashion.json');
+//        $jsonTechData = file_get_contents(public_path().'/database/ebay/tech.json');
+//
+//        $fashionResponse = str_replace(chr(0), '', $jsonFashionData);
+//        $techResponse = str_replace(chr(0), '', $jsonTechData);
+//
+//        $fashionResults = json_decode($fashionResponse);
+//        $techResults = json_decode($techResponse);
+//
+//        // merge 2 array
+//        $results = array_merge($fashionResults, $techResults);
 
-        $fashionResponse = str_replace(chr(0), '', $jsonFashionData);
-        $techResponse = str_replace(chr(0), '', $jsonTechData);
 
-        $fashionResults = json_decode($fashionResponse);
-        $techResults = json_decode($techResponse);
-
-        // merge 2 array
-        $results = array_merge($fashionResults, $techResults);
+        $jsonUpdatedData = file_get_contents(public_path().'/resources/updated-data.json');
+        $updatedResponse = str_replace(chr(0), '', $jsonUpdatedData);
 
 
-        foreach($results as $key => $item) {
+        foreach($updatedResponse as $key => $item) {
 
             // if $item->name.length > 255 => continue
             if (strlen($item->name) > 255) {
@@ -121,6 +125,12 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
 
             // skip if $item->images.length == 0
             if (count($item->images) == 0) {
+                continue;
+            }
+
+            // find exist product by name ===
+            $existProduct = Product::where('name', $item->name)->first();
+            if ($existProduct) {
                 continue;
             }
 
