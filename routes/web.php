@@ -115,8 +115,9 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         $jsonUpdatedData = file_get_contents(public_path().'/resources/updated-data.json');
         $updatedResponse = str_replace(chr(0), '', $jsonUpdatedData);
 
+        $updatedResults = json_decode($updatedResponse);
 
-        foreach($updatedResponse as $key => $item) {
+        foreach($updatedResults as $key => $item) {
 
             // if $item->name.length > 255 => continue
             if (strlen($item->name) > 255) {
