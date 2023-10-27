@@ -261,10 +261,14 @@
     $(document).ready(function () {
 
         // emit event iframe_change to parent window with current url
-        window.parent.postMessage({
-            type: 'iframe_change',
-            url: window.location.href
-        }, '*');
+        try {
+            window.parent.postMessage({
+                type: 'iframe_change',
+                url: window.location.href
+            }, '*');
+        } catch (e) {
+            //
+        }
 
         $('.category-nav-element').each(function (i, el) {
             $(el).on('mouseover', function () {
