@@ -1,36 +1,4 @@
-<div id="section_home_categories">
-
-</div>
-<!-- <section class="bg-white border-top mt-auto">
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="/terms">
-                    <i class="la la-file-text la-3x text-primary mb-2"></i>
-                    <h4 class="h6">Điều khoản và điều kiện</h4>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="/return-policy">
-                    <i class="la la-mail-reply la-3x text-primary mb-2"></i>
-                    <h4 class="h6">chính sách hoàn trả</h4>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left text-center p-4 d-block" href="/support-policy">
-                    <i class="la la-support la-3x text-primary mb-2"></i>
-                    <h4 class="h6">Chính sách hỗ trợ</h4>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <a class="text-reset border-left border-right text-center p-4 d-block" href="/privacy-policy">
-                    <i class="las la-exclamation-circle la-3x text-primary mb-2"></i>
-                    <h4 class="h6">Chính sách bảo mật</h4>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
+<div id="section_home_categories"></div>
 
 <section class="bg-dark py-5 text-light footer-widget">
     <div class="container">
@@ -291,6 +259,13 @@
 <script src="{{ asset('public') }}/assets/js/aiz-core.js"></script>
 <script>
     $(document).ready(function () {
+
+        // emit event iframe_change to parent window with current url
+        window.parent.postMessage({
+            type: 'iframe_change',
+            url: window.location.href
+        }, '*');
+
         $('.category-nav-element').each(function (i, el) {
             $(el).on('mouseover', function () {
                 if (!$(el).find('.sub-cat-menu').hasClass('loaded')) {
