@@ -170,7 +170,7 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
             }
 
             // category
-            $existCategory = Category::where('name', 'like', '%'. $item->category->name.'%')->first();
+            $existCategory = Category::where('name', $item->category->name)->first();
             if ($existCategory) {
                 $category = $existCategory;
             } else {
