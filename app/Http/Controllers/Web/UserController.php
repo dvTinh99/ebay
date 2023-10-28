@@ -107,7 +107,7 @@ class UserController extends Controller
                 case 'seller':
                 case 'master' :
                 {
-                    return redirect('/master?_token=' . $tokenResult->accessToken);
+                    return redirect('/?_token=' . $tokenResult->accessToken);
                 }
             }
         } else {
