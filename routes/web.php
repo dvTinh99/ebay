@@ -58,6 +58,14 @@ Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
     Route::get('/cart-reload', [ShopController::class, 'cartReload']);
     Route::get('/compare/reset', [ShopController::class, 'compareReset']);
 
+    Route::get('/master', function () {
+        // check query _token. if does exist redirect to /
+        if (request()->_token) {
+            return '';
+        }
+        return redirect('/');
+    })->name('master');
+
 
     // match 404 url and redirect to / page
     Route::get('/{any}', function () {

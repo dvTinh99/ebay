@@ -107,7 +107,7 @@ class UserController extends Controller
                 case 'seller':
                 case 'master' :
                 {
-                    return redirect(Config::get('env.domain_master') . '/?_token=' . $tokenResult->accessToken);
+                    return redirect('/master?_token=' . $tokenResult->accessToken);
                 }
             }
         } else {
