@@ -264,7 +264,7 @@
         try {
             window.parent.postMessage({
                 type: 'iframe_change',
-                url: window.location.href
+                url: window.location.href.replace(window.location.origin, "")
             }, '*');
         } catch (e) {
             //
