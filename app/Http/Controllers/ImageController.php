@@ -22,7 +22,9 @@ class ImageController extends Controller
     static function upload($images, $path) {
         $rs = [];
         foreach ($images as $image) {
-            $name = Carbon::now()->timestamp . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
+            // random string suffix to prevent duplicate name
+            $suffix = Carbon::now()->timestamp . '_' . rand(1000, 999999);
+            $name = $suffix . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $storedPath = $path . '/' . $name;
             $image->move($path, $name);
             $rs[] = $storedPath;
