@@ -48,7 +48,6 @@ class ProductController extends Controller
         }
 
         if (empty($userId)) {
-            $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $userId];
             return $this->handleNonUserRequest($conditions, $offset, $perPage);
         }
         return $this->handleUserRequest($userId, $conditions, $offset, $perPage);
