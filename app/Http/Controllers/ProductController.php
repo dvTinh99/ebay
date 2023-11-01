@@ -86,11 +86,29 @@ class ProductController extends Controller
     }
 
     public function create(Request $request) {
-        $order = $this->productRepo->create($request->all());
-        if ($order) {
-            return $this->sendJsonResponse($order, 'success');
+        $product = $this->productRepo->create($request->all());
+
+        // images default: []
+        $images = $request->get('images', []);
+
+//        protected $fillable = [
+//            'product_id',
+//            'image_link',
+//            'user_id',
+//            'image_type',
+//        ];
+
+        foreach ($images as $image) {
+            $product->images()->create([
+                'image_link' => $image,
+                'image_type' => 'library'
+            ]);
         }
-        return $this->sendJsonError($order, 'error');
+
+        if ($product) {
+            return $this->sendJsonResponse($product, 'success');
+        }
+        return $this->sendJsonError($product, 'error');
     }
 
     public function update(Request $request) {
