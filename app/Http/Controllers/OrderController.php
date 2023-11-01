@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Repositories\OrderRepository;
 use App\Http\Repositories\OrderItemRepository;
@@ -29,6 +30,7 @@ class OrderController extends Controller
         $user_id = $request->get('user_id');
         $status = $request->get('status');
         $email = $request->get('email');
+        $island = $request->get('island');
 
         $conditions = [];
         if ($user_id) {
@@ -42,6 +44,14 @@ class OrderController extends Controller
                 'column' => 'seller.email',
                 'operator' => 'like',
                 'value' =>  '%' . $email . '%'
+            ];
+        }
+
+        if ($island) {
+            $conditions[] = [
+                'column' => 'time_create',
+                'operator' => '<=',
+                'value' =>  Carbon::now()
             ];
         }
 
