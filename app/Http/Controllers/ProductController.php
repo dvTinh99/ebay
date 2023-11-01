@@ -30,13 +30,14 @@ class ProductController extends Controller
         $userId = $request->get('user_id');
 
         $conditions = [];
+
         if ($name) {
             $conditions[] = ['column' => 'name', 'operator' => 'like', 'value' => '%' . $name . '%'];
         }
-        if (isset($published)) {
+        if ($published) {
             $conditions[] = ['column' => 'published', 'operator' => '=', 'value' => $published];
         }
-        if (isset($special)) {
+        if ($special) {
             $conditions[] = ['column' => 'special', 'operator' => '=', 'value' => $special];
         }
         if ($rangePrice) {
@@ -45,27 +46,26 @@ class ProductController extends Controller
         if ($category) {
             $conditions[] = ['column' => 'category_id', 'operator' => '=', 'value' => $category];
         }
-        if (isset($userId)) {
-            $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $userId];
-        }
 
         if (empty($userId)) {
+            $conditions[] = ['column' => 'user_id', 'operator' => '=', 'value' => $userId];
             return $this->handleNonUserRequest($conditions, $offset, $perPage);
         }
-
         return $this->handleUserRequest($userId, $conditions, $offset, $perPage);
     }
 
     private function handleUserRequest($user_id, $conditions, $offset, $perPage) {
-        $query = User::find($user_id)->products;
+        $ids = User::find($user_id)->products->pluck('id')->toArray();
+        $query = Product::with(['category', 'images'])->whereIn('id', $ids);
+
         $this->productRepo->wheres($query, $conditions);
 
 
-        $products = (clone $query)->skip($offset)->take($perPage);
+        $products = (clone $query)->skip($offset)->take($perPage)->get();
         $count = (clone $query)->count();
 
         return $this->sendJsonResponse(
-            $this->productRepo->mapImageToProduct($products)->flatten(),
+            $this->productRepo->mapImageToProduct($products),
             'success',
             $count
         );
