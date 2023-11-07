@@ -33,6 +33,7 @@ class Product extends Model
         'text_link',
         'description',
         'time_ship',
+        'vendor_id'
     ];
 
     public function images() {
@@ -41,5 +42,9 @@ class Product extends Model
 
     public function category() {
         return $this->belongsTo(Category::class);
+    }
+
+    public function vendor() {
+        return $this->belongsTo(Vendor::class);
     }
 }
