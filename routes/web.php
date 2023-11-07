@@ -236,10 +236,10 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         $orders = Order::whereNull('custom_id')->get();
         foreach ($orders as $order) {
             // rndom five number character
-            $custom_id = quickRandom(6);
+            $custom_id = quickRandom();
             // loop until custom_id not exist
             while (Order::where('custom_id', $custom_id)->first()) {
-                $custom_id = quickRandom(6);
+                $custom_id = quickRandom();
             }
 
             $order->custom_id = $custom_id;
@@ -249,10 +249,10 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
         // do the same with withdraws
         $withdraws = Withdraw::whereNull('custom_id')->get();
         foreach ($withdraws as $withdraw) {
-            $custom_id = quickRandom(6);
+            $custom_id = quickRandom();
             // loop until custom_id not exist
             while (Withdraw::where('custom_id', $custom_id)->first()) {
-                $custom_id = quickRandom(6);
+                $custom_id = quickRandom();
             }
 
             $withdraw->custom_id = $custom_id;
