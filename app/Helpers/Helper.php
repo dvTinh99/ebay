@@ -1,6 +1,6 @@
 <?php
 
-function quickRandom($length = 5)
+function quickRandom($length = 6)
 {
     // create number by length and does not start with 0
     $pool = '0123456789';

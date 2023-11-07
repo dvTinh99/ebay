@@ -68,10 +68,10 @@ class OrderController extends Controller
     }
 
     public function create(Request $request) {
-        $custom_id= quickRandom(5);
+        $custom_id= quickRandom(6);
         // loop until custom_id not exist
         while (Order::where('custom_id', $custom_id)->exists()) {
-            $custom_id = quickRandom(5);
+            $custom_id = quickRandom(6);
         }
 
         // add custom_id to request
