@@ -69,6 +69,7 @@ Route::group([
     Route::get('/my-product', [UserController::class, 'myProduct']);
     Route::post('/add-product', [SellerProductController::class, 'create']);
     Route::post('/add-product-full', [SellerProductController::class, 'addFull']);
+    Route::delete('/delete-product', [SellerProductController::class, 'delete']);
     Route::get('/my-exchange', [ExchangeController::class, 'myExchange']);
 });
 
