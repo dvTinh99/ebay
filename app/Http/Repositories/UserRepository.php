@@ -154,24 +154,8 @@ class UserRepository extends BaseRepository
 
         $totalViewsDay = Auth::user()->total_views_day;
         $totalViews = Auth::user()->total_views;
-        $updateViewsAt = Auth::user()->update_views_at;
 
         $countProduct = $this->totalMyProduct();
-
-        if (
-            $countProduct >= 50 && ($updateViewsAt == null || Carbon::parse($updateViewsAt)->diffInDays(Carbon::now()) > 0)
-        ) {
-            $incMount = rand(50, 150);
-            // inc user.total_views_day, total_views and update_views_at
-            $currentUser = User::where('id', Auth::id())->first();
-            $currentUser->total_views_day = $incMount;
-            $currentUser->total_views += $incMount;
-            $currentUser->update_views_at = Carbon::now();
-            $currentUser->save();
-
-            $totalViewsDay = $incMount;
-            $totalViews += $incMount;
-        }
 
         $data = [
             'total_product' => $countProduct,
