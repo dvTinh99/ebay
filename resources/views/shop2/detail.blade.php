@@ -367,7 +367,6 @@
                                 <div class="text-center fs-18 opacity-70">
                                     Chưa có nhận xét nào cho sản phẩm này.
                                 </div>
-                                <!--\u76d7\u7248\u9632\u62a4\u0020\u0020\u0071\u0069\u0020\u0065\u0020\u0034\u0039\u0035\u0032\u0020\u0038\u0038\u0038\u0037-->
                             </div>
                         </div>
                     </div>
@@ -387,7 +386,7 @@
                                 <div
                                     class="aiz-card-box border border-light rounded hov-shadow-md my-2 has-transition">
                                     <div class="">
-                                        <a href="/product/1854604143-VAp84" class="d-block">
+                                        <a href="/product/{{ $productSame->id }}" class="d-block">
                                             <img class="img-fit lazyload mx-auto h-140px h-md-210px"
                                                 src="../public/assets/img/placeholder.jpg"
                                                 data-src="{{ $productSame->images->first()->image_link }}"
@@ -405,8 +404,12 @@
                                                 class='las la-star'></i>
                                         </div>
                                         <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0 h-35px">
-                                            <a href="/product/1854604143-VAp84"
-                                                class="d-block text-reset">{{ $productSame->name }}</a>
+                                            <a
+                                                href="/product/{{ $productSame->id }}"
+                                                class="d-block text-reset"
+                                            >
+                                                {{ $productSame->name }}
+                                            </a>
                                         </h3>
                                     </div>
                                 </div>
