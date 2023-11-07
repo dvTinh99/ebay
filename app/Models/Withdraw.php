@@ -14,7 +14,8 @@ class Withdraw extends Model
         'status',
         'user_id',
         'seller_note',
-        'master_note'
+        'master_note',
+        'custom_id'
     ];
 
     public function user() {

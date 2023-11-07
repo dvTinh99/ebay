@@ -24,6 +24,7 @@ class Order extends Model
         'coupon',
         'time_create',
         'time_signing',
+        'custom_id'
     ];
 
     public function orderItem() {

@@ -40,7 +40,7 @@ class UserRepository extends BaseRepository
 
     public function listSeller($limit, $offset, $email = null, $approve = null)
     {
-        return User::with(['shop', 'bank', 'orders' => function ($query) {
+        return User::with(['shop', 'bank', 'withdraws', 'orders' => function ($query) {
             $query->where('status', 2);
         }])
             // role === 'seller'
