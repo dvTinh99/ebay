@@ -4,12 +4,9 @@ namespace App\Http\Repositories;
 
 use App\Models\User;
 use App\Models\Exchange;
-use App\Http\Repositories\BaseRepository;
 use App\Models\Order;
-use App\Models\SellerProduct;
 use Exception;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
 
