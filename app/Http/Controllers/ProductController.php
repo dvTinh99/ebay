@@ -128,4 +128,11 @@ class ProductController extends Controller
         return $this->sendJsonError($order, 'error');
     }
 
+
+    public function assignVendor() {
+        $venders = [
+            'Dương Trần'
+        ];
+    }
+
 }
