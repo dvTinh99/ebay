@@ -29,3 +29,18 @@ function getCountCompare()
     }
     return $count;
 }
+
+function __t($vi, $en) {
+    $supportedLanguages = ['en', 'vi'];
+
+    // Retrieve the language from the cookie or default to 'vi'
+    $lang = $_COOKIE['lang'] ?? 'vi';
+
+    // If unsupported language, default to 'vi'
+    if (!in_array($lang, $supportedLanguages)) {
+        $lang = 'vi';
+    }
+
+    // Return translation based on the language
+    return $lang == 'vi' ? $vi : $en;
+}

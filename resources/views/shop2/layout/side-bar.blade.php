@@ -2,7 +2,9 @@
     <div class="aiz-category-menu bg-white rounded  shadow-sm">
         <div
             class="p-3 bg-soft-primary d-none d-lg-block rounded-top all-category position-relative text-left">
-            <span class="fw-600 fs-16 mr-3">Thể loại</span>
+            <span class="fw-600 fs-16 mr-3">
+                {{ __t('Thể loại', 'Category')  }}
+            </span>
             <a href="/categories" class="text-reset">
                 <span class="d-none d-lg-inline-block">Nhìn thấy tất cả &gt;</span>
             </a>
