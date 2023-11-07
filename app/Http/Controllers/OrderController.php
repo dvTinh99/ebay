@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Repositories\OrderRepository;
@@ -67,6 +68,14 @@ class OrderController extends Controller
     }
 
     public function create(Request $request) {
+        $custom_id= quickRandom(5);
+        // loop until custom_id not exist
+        while (Order::where('custom_id', $custom_id)->exists()) {
+            $custom_id = quickRandom(5);
+        }
+
+        // add custom_id to request
+        $request->merge(['custom_id' => $custom_id]);
         $order = $this->orderRepo->create($request->all());
         $products = $request->products;
         $warehouse_price = 0.0;

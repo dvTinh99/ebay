@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -33,6 +34,16 @@ class WithdrawController extends Controller
     }
 
     public function create(Request $request) {
+
+        $custom_id= quickRandom(5);
+        // loop until custom_id not exist
+        while (Withdraw::where('custom_id', $custom_id)->exists()) {
+            $custom_id = quickRandom(5);
+        }
+
+        // add custom_id to request
+        $request->merge(['custom_id' => $custom_id]);
+
         $rs = $this->withdrawRepo->createWithDraw($request->all());
         if (isset($rs['success'])) {
             return $this->sendJsonError($rs['message'], 300);

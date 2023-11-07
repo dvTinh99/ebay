@@ -5,10 +5,12 @@ use App\Http\Controllers\Web\UserController;
 use App\Http\Controllers\Web\ShopController;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\SellerProduct;
 use App\Models\User;
+use App\Models\Withdraw;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -227,4 +229,34 @@ Route::domain(env('DOMAIN_KHO','dev.btsdoors.com'))->group(function () {
     });
 
     Route::get('/recalculate-order', [OrderController::class, 'recalculateOrder']);
+
+
+    Route::get('/fix-custom-id', function () {
+        // get all orders where custom_id == null
+        $orders = Order::whereNull('custom_id')->get();
+        foreach ($orders as $order) {
+            // rndom five number character
+            $custom_id = quickRandom(5);
+            // loop until custom_id not exist
+            while (Order::where('custom_id', $custom_id)->first()) {
+                $custom_id = quickRandom(5);
+            }
+
+            $order->custom_id = $custom_id;
+            $order->save();
+        }
+
+        // do the same with withdraws
+        $withdraws = Withdraw::whereNull('custom_id')->get();
+        foreach ($withdraws as $withdraw) {
+            $custom_id = quickRandom(5);
+            // loop until custom_id not exist
+            while (Withdraw::where('custom_id', $custom_id)->first()) {
+                $custom_id = quickRandom(5);
+            }
+
+            $withdraw->custom_id = $custom_id;
+            $withdraw->save();
+        }
+    });
 });
