@@ -60,11 +60,14 @@ class SellerProductController extends Controller
 
     public function delete(Request $request) {
         $id = $request->id;
-        $order = $this->sellerProductRepo->delete($id);
-        if ($order) {
-            return $this->sendJsonResponse($order, 'success');
+        $userId = Auth::id();
+
+        $product = $this->sellerProductRepo->remove($userId, $id);
+
+        if ($product) {
+            return $this->sendJsonResponse($product, 'success');
         }
-        return $this->sendJsonError($order, 'error');
+        return $this->sendJsonError($product, 'error');
     }
 
 }

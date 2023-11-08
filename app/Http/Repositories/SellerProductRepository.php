@@ -16,4 +16,8 @@ class SellerProductRepository extends BaseRepository
     public function checkExist($user_id, $product_id) {
         return SellerProduct::where('user_id',$user_id)->where('product_id',$product_id)->exists();
     }
+
+    public function remove($user_id, $product_id) {
+        return SellerProduct::where('user_id',$user_id)->where('product_id',$product_id)->delete();
+    }
 }
