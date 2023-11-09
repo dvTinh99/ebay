@@ -22,7 +22,7 @@ class OrderRepository extends BaseRepository {
             $query->offset($offset)->limit($perPage);
         }
 
-        $orders = $query->get();
+        $orders = $query->orderBy('created_at', 'desc')->get();
         return $this->transformOrders($orders);
     }
 
