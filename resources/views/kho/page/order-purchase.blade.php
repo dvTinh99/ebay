@@ -255,7 +255,7 @@
                                                     <tbody data-listidx="0">
                                                         @foreach($myOrderPurchase as $order)
                                                             <tr>
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $order->custom_id }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->warehouse_price }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->profit }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $order->price }}</td>

@@ -65,7 +65,7 @@
                                                     @else
                                                         @foreach ($recharge as $bill)
                                                             <tr class="no-records-found">
-                                                                <td style="text-align: center; vertical-align: middle;">{{ $bill->id }}</td>
+                                                                <td style="text-align: center; vertical-align: middle;">{{ $bill->custom_id }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $bill->amount }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $bill->method }}</td>
                                                                 <td style="text-align: center; vertical-align: middle;">{{ $bill->created_at }}</td>
