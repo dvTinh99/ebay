@@ -32,6 +32,7 @@ class OrderController extends Controller
         $status = $request->get('status');
         $email = $request->get('email');
         $island = $request->get('island');
+        $ref_link = $request->get('ref_link');
 
         $conditions = [];
         if ($user_id) {
@@ -56,8 +57,8 @@ class OrderController extends Controller
             ];
         }
 
-        $count = $this->orderRepo->count($conditions);
-        $orders = $this->orderRepo->orders($conditions, $per_page, $offset);
+        $count = $this->orderRepo->getCount($ref_link, $conditions);
+        $orders = $this->orderRepo->orders($ref_link, $conditions, $per_page, $offset);
 
 
         return $this->sendJsonResponse($orders, 'success', $count);

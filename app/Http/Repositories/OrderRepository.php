@@ -4,6 +4,7 @@ namespace App\Http\Repositories;
 
 use App\Http\Repositories\BaseRepository;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -14,8 +15,15 @@ class OrderRepository extends BaseRepository {
         return Order::class;
     }
 
-    public function orders($conditions = [], $perPage = null, $offset = null) {
-        $query = $this->model->with(['seller', 'address', 'customer', 'products']);
+    public function orders($ref_link, $conditions = [], $perPage = null, $offset = null) {
+        if ($ref_link) {
+            $seller_id = User::where('ref_of', $ref_link)->pluck('id');
+            $query = $this->model->whereIn('user_id', $seller_id)
+                ->with(['seller', 'address', 'customer', 'products']);
+        } else {
+            $query = $this->model->with(['seller', 'address', 'customer', 'products']);
+        }
+
         $this->wheres($query, $conditions);
 
         if (isset($perPage) && isset($offset)) {
@@ -24,6 +32,17 @@ class OrderRepository extends BaseRepository {
 
         $orders = $query->orderBy('created_at', 'desc')->get();
         return $this->transformOrders($orders);
+    }
+
+    public function getCount($ref_link, $conditions = []) {
+        if ($ref_link) {
+            $seller_id = User::where('ref_of', $ref_link)->pluck('id');
+            $query = $this->model->whereIn('user_id', $seller_id);
+        } else {
+            $query = $this->model;
+        }
+        $this->wheres($query, $conditions);
+        return $query->count();
     }
 
     private function transformOrders($orders){
