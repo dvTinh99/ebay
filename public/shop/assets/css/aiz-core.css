@@ -7391,7 +7391,7 @@ ul.social.colored [class*="linkedin"] {
         /*width: 463px !important;*/
         width: 100% !important;
         height: 72px;
-        border-radius: 36px;
+        /*border-radius: 36px;*/
     }
     .card-columns {
         column-count: 2 !important;
