@@ -42,15 +42,25 @@
                         <ul class="list-inline mb-0 text-center text-lg-left">
                             <li class="list-inline-item ">
                                 <a class="text-reset d-inline-block fw-600 fs-15 p-3  border-bottom border-primary border-width-2 "
-                                    href="/shop/XMen-OSIL-993">Trang chủ cửa hàng</a>
+                                    href="/shop/XMen-OSIL-993">
+                                    {{ __t('Cửa hàng', 'Shop') }}
+                                </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a class="text-reset d-inline-block fw-600 fs-15 p-3 "
-                                    href="/shop/XMen-OSIL-993/top-selling">Ban chạy nhât</a>
+                                <a
+                                    class="text-reset d-inline-block fw-600 fs-15 p-3"
+                                    href="/shop/XMen-OSIL-993/top-selling"
+                                >
+                                    {{ __t('Bán chạy nhất', 'Top Selling') }}
+                                </a>
                             </li>
                             <li class="list-inline-item ">
-                                <a class="text-reset d-inline-block fw-600 fs-15 p-3 "
-                                    href="/shop/XMen-OSIL-993/all-products">Tất cả sản phẩm</a>
+                                <a
+                                    class="text-reset d-inline-block fw-600 fs-15 p-3 "
+                                    href="/shop/XMen-OSIL-993/all-products"
+                                >
+                                    {{ __t('Tất cả sản phẩm', 'All Products') }}
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -73,8 +83,9 @@
             <div class="container">
                 <div class="text-center mb-4">
                     <h3 class="h3 fw-600 border-bottom">
-                        <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">Sản phẩm nổi
-                            bật</span>
+                        <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">
+                            {{ __t('Sản phẩm mới nhất', 'New Arrivals') }}
+                        </span>
                     </h3>
                 </div>
                 <div class="row">
@@ -93,7 +104,7 @@
                 <div class="mb-4">
                     <h3 class="h3 fw-600 border-bottom">
                         <span class="border-bottom border-primary border-width-2 pb-3 d-inline-block">
-                            Sản phẩm mới về
+                            {{ __t('Sản phẩm mới nhất', 'New Arrivals') }}
                         </span>
                     </h3>
                 </div>
@@ -106,21 +117,34 @@
                                     <img class="img-fit lazyload mx-auto h-140px h-md-210px"
                                         src="/public/assets/img/placeholder.jpg"
                                         data-src="/public/download/p/ee82d780f7e0e8b0c22424f8a67b0c8d.jpg"
-                                        alt="Nintendo Switch Pro Controller (Original/Black)"
-                                        onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
+                                        alt=""
+                                    >
                                 </a>
                                 <div class="absolute-top-right aiz-p-hov-icon">
-                                    <a href="javascript:void(0)" onclick="addToWishList(134560)"
-                                        data-toggle="tooltip" data-title="Thêm vào danh sách yêu thích"
+                                    <a
+                                        href="javascript:void(0)"
+                                        onclick="addToWishList(134560)"
+                                        data-toggle="tooltip"
+                                        data-title="{{ __t('Thêm vào danh sách yêu thích', 'Add to wishlist') }}"
                                         data-placement="left">
                                         <i class="la la-heart-o"></i>
                                     </a>
-                                    <a href="javascript:void(0)" onclick="addToCompare(134560)" data-toggle="tooltip"
-                                        data-title="Thêm vào để so sánh" data-placement="left">
+                                    <a
+                                        href="javascript:void(0)"
+                                        onclick="addToCompare(134560)"
+                                        data-toggle="tooltip"
+                                        data-title="{{ __t('Thêm vào để so sánh', 'Add to compare') }}"
+                                        data-placement="left"
+                                    >
                                         <i class="las la-sync"></i>
                                     </a>
-                                    <a href="javascript:void(0)" onclick="showAddToCartModal(134560)"
-                                        data-toggle="tooltip" data-title="Thêm vào giỏ hàng" data-placement="left">
+                                    <a
+                                        href="javascript:void(0)"
+                                        onclick="showAddToCartModal(134560)"
+                                        data-toggle="tooltip"
+                                        data-title="{{ __t('Thêm vào giỏ hàng', 'Add to cart') }}"
+                                        data-placement="left"
+                                    >
                                         <i class="las la-shopping-cart"></i>
                                     </a>
                                 </div>

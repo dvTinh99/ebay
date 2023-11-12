@@ -25,7 +25,7 @@
 
                                 <div class="text-center pt-4">
                                     <h1 class="h4 fw-600">
-                                        Đăng nhập vào tài khoản của bạn.
+                                        {{ __('Đăng nhập vào tài khoản của bạn.', 'Login to your account') }}
                                     </h1>
                                 </div>
                                 @if (session('error'))
@@ -39,48 +39,61 @@
                                             action="/user/login" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                <input type="email" class="form-control input-email" value=""
-                                                    placeholder="E-mail" name="email" id="email"
-                                                    autocomplete="off">
+                                                <input
+                                                    type="email"
+                                                    class="form-control input-email"
+                                                    value=""
+                                                    placeholder="E-mail"
+                                                    name="email"
+                                                    id="email"
+                                                    autocomplete="off"
+                                                >
                                             </div>
 
                                             <div class="form-group input-password">
-                                                <input type="password" class="form-control " placeholder="Mật khẩu"
-                                                    name="password" id="password">
-                                            </div>
-
-
-                                            <div class="form-group google_code_container" style="display: none;">
-                                                <input type="text" class="form-control" value=""
-                                                    placeholder="Nhập mã xác minh của Google" name="google_code"
-                                                    id="google_code" autocomplete="off">
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    placeholder="{{ __('Mật khẩu', 'Password') }}"
+                                                    name="password"
+                                                    id="password"
+                                                >
                                             </div>
 
                                             <div class="row mb-2">
                                                 <div class="col-6">
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="remember">
-                                                        <span class=opacity-60>Nhớ tôi</span>
+                                                        <span class=opacity-60>
+                                                            {{ __('Nhớ tôi', 'Remember Me') }}
+                                                        </span>
                                                         <span class="aiz-square-check"></span>
                                                     </label>
                                                 </div>
                                                 <div class="col-6 text-right">
                                                     <a href="/password/reset"
-                                                        class="text-reset opacity-60 fs-14">Quên mật khẩu?</a>
+                                                        class="text-reset opacity-60 fs-14">
+                                                        {{ __('Quên mật khẩu?', 'Forgot Password?') }}
+                                                    </a>
                                                 </div>
                                             </div>
 
                                             <div class="mb-5">
-                                                <button type="submit" class="btn btn-primary btn-block fw-600">Đăng
-                                                    nhập</button>
+                                                <button type="submit" class="btn btn-primary btn-block fw-600">
+                                                    {{ __t('Đăng nhập', 'Login') }}
+                                                </button>
                                             </div>
                                         </form>
 
 
                                     </div>
                                     <div class="text-center">
-                                        <p class="text-muted mb-0">Không có tài khoản?</p>
-                                        <a href="/users/registration">Đăng ký ngay</a>
+                                        <p class="text-muted mb-0">
+                                            {{ __t('Bạn chưa có tài khoản?', "Don't have an account?") }}
+                                        </p>
+                                        <a href="/users/registration">
+                                            {{ __t('Đăng ký ngay', 'Register Now') }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>

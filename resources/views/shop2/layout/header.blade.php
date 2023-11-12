@@ -126,20 +126,31 @@
                     <div class="col-lg-6 col">
                         <ul class="list-inline d-flex justify-content-between justify-content-lg-start mb-0">
                             <li class="list-inline-item dropdown mr-3" id="lang-change">
-                                <a href="javascript:void(0)" class="dropdown-toggle text-reset py-2"
-                                    data-toggle="dropdown" data-display="static">
-                                    <img src="../public/assets/img/placeholder.jpg"
+                                <a
+                                    href="javascript:void(0)"
+                                    class="dropdown-toggle text-reset py-2"
+                                    data-toggle="dropdown"
+                                    data-display="static"
+                                >
+                                    <img
+                                        src="../public/assets/img/placeholder.jpg"
                                         data-src="/public/assets/img/flags/vn.png" class="mr-2 lazyload"
-                                        alt="Vietnamese" height="11">
+                                        alt="Vietnamese"
+                                        height="11"
+                                    >
                                     <span class="opacity-60">Vietnamese</span>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-left">
                                     <li>
                                         <a href="javascript:void(0)" data-flag="en" class="dropdown-item ">
-                                            <img src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/en.png" class="mr-1 lazyload"
-                                                alt="English" height="11">
+                                            <img
+                                                src="../public/assets/img/placeholder.jpg"
+                                                data-src="/public/assets/img/flags/en.png"
+                                                class="mr-1 lazyload"
+                                                alt="English"
+                                                height="11"
+                                            >
                                             <span class="language">English</span>
                                         </a>
                                     </li>
@@ -155,29 +166,12 @@
                                         display: block
                                     }
                                 }
-                                }
                             </style>
                             <li class="mobile">
                                 <a style="color:#e62e04 !important" href="/shops/create"
                                     class="text-reset d-inline-block opacity-60 py-2">
 
                                 </a>
-                            </li>
-                            <li class="list-inline-item dropdown ml-auto ml-lg-0 mr-0" id="currency-change">
-
-                                <a href="javascript:void(0)" class="dropdown-toggle text-reset py-2 opacity-60"
-                                    data-toggle="dropdown" data-display="static">
-                                    U.S. Dollar $
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-
-
-                                    <li>
-                                        <a class="dropdown-item  active " href="javascript:void(0)"
-                                            data-currency="USD">U.S. Dollar ($)</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -188,11 +182,11 @@
                                     class="text-reset d-inline-block opacity-60 py-2">
 
                                     @if(!Auth::check())
-                                        Bán ngay
+                                        {{ __t('Bán ngay', 'Sell now')  }}
                                     @else
                                         @if (Auth::user()->role != 'customer')
                                             <a href="/to-manager">
-                                            Trang điều khiển
+                                                {{ __t('Trang điều khiển', 'Dashboard')  }}
                                             </a>
                                         @endif
                                     @endif
@@ -201,18 +195,24 @@
                             </li>
                             @if(!Auth::check())
                                 <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
-                                    <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">Đăng nhập</a>
+                                    <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">
+                                        Đăng nhập
+                                        {{ __t('Đăng nhập', 'Login')  }}
+                                    </a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">Đăng
-                                        ký</a>
+                                    <a href="/users/registration" class="text-reset d-inline-block opacity-60 py-2">
+                                        {{ __t('Đăng ký', 'Register')  }}
+                                    </a>
                                 </li>
                             @else
                             <li class="list-inline-item border-right border-left-0 pr-3 pl-0">
                                 <a href="/user/" class="text-reset d-inline-block opacity-60 py-2">{{ Auth::user()->name }}</a>
                             </li>
                             <li class="list-inline-item border-right border-left-0 pr-3 pl-0">
-                                <a href="/user/logout" class="text-reset d-inline-block opacity-60 py-2">Đăng xuất</a>
+                                <a href="/user/logout" class="text-reset d-inline-block opacity-60 py-2">
+                                    {{ __t('Đăng xuất', 'Logout')  }}
+                                </a>
                             </li>
                             @endif
 
@@ -304,7 +304,9 @@
                                     <i class="la la-refresh la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill" id="cart-compare">{{ getCountCompare() }}</span>
-                                        <span class="nav-box-text d-none d-xl-block opacity-70">Đối chiếu</span>
+                                        <span class="nav-box-text d-none d-xl-block opacity-70">
+                                            {{ __t('Đối chiếu', 'Compare')  }}
+                                        </span>
                                     </span>
                                 </a>
                             </div>
@@ -316,8 +318,9 @@
                                     <i class="la la-heart-o la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill">0</span>
-                                        <span class="nav-box-text d-none d-xl-block opacity-70">Danh sách yêu
-                                            thích</span>
+                                        <span class="nav-box-text d-none d-xl-block opacity-70">
+                                            {{ __t('Danh sách yêu thích', 'Wishlist') }}
+                                        </span>
                                     </span>
                                 </a>
                             </div>
@@ -330,19 +333,14 @@
                                     <i class="la la-shopping-cart la-2x opacity-80"></i>
                                     <span class="flex-grow-1 ml-1">
                                         <span class="badge badge-primary badge-inline badge-pill cart-count" id="cart-count">{{ getCountCart() }}</span>
-                                        <span class="nav-box-text d-none d-xl-block opacity-70">xe đẩy</span>
+                                        <span class="nav-box-text d-none d-xl-block opacity-70">
+                                            {{ __t('Giỏ hàng', 'Cart')  }}
+                                        </span>
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg p-0 stop-propagation">
-
-                                    {{-- @if(\Cart::count() == 0)
-                                    <div class="text-center p-3">
-                                        <i class="las la-frown la-3x opacity-60 mb-3"></i>
-                                        <h3 class="h6 fw-700">Giỏ của bạn trống trơn</h3>
-                                    </div>
-                                    @else --}}
                                     <div class="p-3 fs-15 fw-600 p-3 border-bottom">
-                                        Các mặt hàng trong giỏ hàng
+                                        {{ __t('Các mặt hàng trong giỏ hàng', 'Items in cart')  }}
                                     </div>
                                     <ul class="h-250px overflow-auto c-scrollbar-light list-group list-group-flush" id="ul-cart">
                                         @foreach (Cart::content() as $product)
@@ -377,15 +375,19 @@
 
                                     </ul>
                                     <div class="px-3 py-2 fs-15 border-top d-flex justify-content-between">
-                                        <span class="opacity-60">Tổng phụ</span>
+                                        <span class="opacity-60">
+                                            {{ __t('Tổng phụ', 'Subtotal') }}
+                                        </span>
                                         <span class="fw-600" id="cart-total">${{ Cart::priceTotal()}}</span>
                                     </div>
                                     <div class="px-3 py-2 text-center border-top">
                                         <ul class="list-inline mb-0">
                                             <li class="list-inline-item">
-                                                <a href="/cart"
-                                                    class="btn btn-soft-primary btn-sm">
-                                                    Xem giỏ hàng
+                                                <a
+                                                    href="/cart"
+                                                    class="btn btn-soft-primary btn-sm"
+                                                >
+                                                    {{ __t('Xem giỏ hàng', 'View cart')  }}
                                                 </a>
                                             </li>
                                         </ul>
@@ -420,181 +422,16 @@
                                 <div class="aiz-category-menu bg-white rounded  shadow-lg" id="category-sidebar">
                                     <div
                                         class="p-3 bg-soft-primary d-none d-lg-block rounded-top all-category position-relative text-left">
-                                        <span class="fw-600 fs-16 mr-3">Thể loại</span>
+                                        <span class="fw-600 fs-16 mr-3">
+                                            Thể loại
+                                            {{ __t('Thể loại', 'Categories')  }}
+                                        </span>
                                         <a href="/categories" class="text-reset">
-                                            <span class="d-none d-lg-inline-block">Nhìn thấy tất cả ></span>
+                                            <span class="d-none d-lg-inline-block">
+                                                {{ __t('Nhìn thấy tất cả', 'See all')  }}
+                                            </span>
                                         </a>
                                     </div>
-                                    <ul class="list-unstyled categories no-scrollbar py-2 mb-0 text-left">
-                                        <li class="category-nav-element" data-id="116">
-                                            <a href="/category/pet-accessories-oceab"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg" data-src=""
-                                                    width="16" alt="Đồ dùng cho thú cưng"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Đồ dùng cho thú cưng</span>
-                                            </a>
-                                        </li>
-                                        <li class="category-nav-element" data-id="15">
-                                            <a href="/category/-r0egg"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg" data-src=""
-                                                    width="16" alt="Thời trang nữ và phụ kiện"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Thời trang nữ và phụ kiện</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="2">
-                                            <a href="/category/men%20clothing%20&amp;%20fashion"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/YTrXmHPHEBAeW73ffIhMuvOkpDsDbd1IbHVGDaZh.jpg"
-                                                    width="16" alt="Thời Trang &amp; Phụ Kiện Nam"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Thời Trang &amp; Phụ Kiện Nam</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="68">
-                                            <a href="/category/epidemic-prevention-supplies-xfhil"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg" data-src=""
-                                                    width="16" alt="Vật liệu chống dịch"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Vật liệu chống dịch</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="3">
-                                            <a href="/category/computer%20&amp;%20accessories"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/aZrKPk8DiOV4C5wAMt5ObBC3Jk5dSpnWUuLHP8xe.jpg"
-                                                    width="16" alt="Các thiết bị điện tử"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Các thiết bị điện tử</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="4">
-                                            <a href="/category/kids--toy-6j7m7"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/sC6ULeGDfqVbu1b3LcqrTOL5pm4UGQedv0kbHDIv.jpg"
-                                                    width="16" alt="Trẻ em &amp; đồ chơi"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Trẻ em &amp; đồ chơi</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="5">
-                                            <a href="/category/sports--outdoor-quozm"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/FwZlWQdDtdap6FDGukabtPR9nGISL2SINWeDUlLV.jpg"
-                                                    width="16" alt="Thể thao &amp; ngoài trời"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Thể thao &amp; ngoài trời</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="6">
-                                            <a href="/category/automobile--motorcycle-jjc59"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/xjmjKIo32nm4WUsDbDgpyEOyJtDNXSCqZvrclGPL.jpg"
-                                                    width="16" alt="Ô tô &amp; Xe máy"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Ô tô &amp; Xe máy</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="7">
-                                            <a href="/category/jewelry--watches-9zv51"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/AmrpWEDDbar3ylIjWdVvyIxHrAhcYfq9EGGY9tjh.jpg"
-                                                    width="16" alt="Trang sức &amp; Đồng hồ"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Trang sức &amp; Đồng hồ</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="8">
-                                            <a href="/category/phone-accessories-fqzez"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/EF9g1my5HQIF8tGgEjNGW1vxR8JajuhSvZ1C0uBn.jpg"
-                                                    width="16" alt="Phụ Kiện Điện Tử"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Phụ Kiện Điện Tử</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="category-nav-element" data-id="9">
-                                            <a href="/category/home-improvement--tools-ywx7z"
-                                                class="text-truncate text-reset py-2 px-3 d-block">
-                                                <img class="cat-image lazyload mr-2 opacity-60"
-                                                    src="../public/assets/img/placeholder.jpg"
-                                                    data-src="/public/uploads/all/n3HgCaj2U1rbs12p3TVUKNbCVD3Jo4r4hYOcEzH2.jpg"
-                                                    width="16" alt="Công cụ &amp; Cải tiến Trang chủ"
-                                                    onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
-                                                <span class="cat-name">Công cụ &amp; Cải tiến Trang chủ</span>
-                                            </a>
-                                            <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4">
-                                                <div class="c-preloader text-center absolute-center">
-                                                    <i class="las la-spinner la-spin la-3x opacity-70"></i>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -16,15 +16,21 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-6 text-center text-lg-left">
-                <h1 class="fw-600 h4">Đăng ký cửa hàng của bạn</h1>
+                <h1 class="fw-600 h4">
+                    {{ __t('Đăng ký cửa hàng của bạn', 'Create your shop') }}
+                </h1>
             </div>
             <div class="col-lg-6">
                 <ul class="breadcrumb bg-transparent p-0 justify-content-center justify-content-lg-end">
                     <li class="breadcrumb-item opacity-50">
-                        <a class="text-reset" href="/">Trang Chủ</a>
+                        <a class="text-reset" href="/">
+                            {{ __t('Trang chủ', 'Home') }}
+                        </a>
                     </li>
                     <li class="text-dark fw-600 breadcrumb-item">
-                        <a class="text-reset" href="create.html">"Đăng ký cửa hàng của bạn"</a>
+                        <a class="text-reset" href="create.html">
+                            {{ __t('Đăng ký cửa hàng của bạn', 'Create your shop') }}
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -40,34 +46,61 @@
                     @csrf
                     <div class="bg-white rounded shadow-sm mb-3">
                         <div class="fs-15 fw-600 p-3 border-bottom">
-                            Thông tin cá nhân
+                            {{ __t('Thông tin cửa hàng', 'Shop Information') }}
                         </div>
                         <div class="p-3">
                             <div class="form-group">
-                                <label>Tên của bạn <span class="text-primary">*</span></label>
-                                <input type="text" class="form-control" value="" placeholder="Tên"
-                                    name="name">
-                                <input type="hidden" class="form-control" value="seller"
-                                    name="role">
+                                <label>
+                                    {{ __t('Tên', 'Name') }}
+                                    <span class="text-primary">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    value=""
+                                    placeholder="Tên"
+                                    name="name"
+                                >
+                                <input
+                                    type="hidden"
+                                    class="form-control"
+                                    value="seller"
+                                    name="role"
+                                >
                             </div>
                             <div class="form-group">
-                                <label>Email của bạn <span class="text-primary">*</span></label>
+                                <label>
+                                    Email
+                                    <span class="text-primary">*</span>
+                                </label>
                                 <input type="email" class="form-control" value="" placeholder="E-mail"
                                     name="email">
                             </div>
 
                             <div class="form-group">
-                                <label>Mật khẩu của bạn <span class="text-primary">*</span></label>
-                                <input type="password" class="form-control" placeholder="Mật khẩu" name="password">
+                                <label>
+                                    {{ __t('Mật khẩu', 'Password') }}
+                                    <span class="text-primary">*</span>
+                                </label>
+                                <input type="password" class="form-control" placeholder="{{ __t('Mật khẩu', 'Password') }}" name="password">
                             </div>
                             <div class="form-group">
-                                <label>Lặp lại mật khẩu <span class="text-primary">*</span></label>
-                                <input type="password" class="form-control" placeholder="Xác nhận mật khẩu"
-                                    name="password_confirmation">
+                                <label>
+                                    {{ __t('Xác nhận mật khẩu', 'Confirm Password')}}
+                                    <span class="text-primary">*</span>
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    placeholder="{{ __t('Xác nhận mật khẩu', 'Confirm Password')}}"
+                                    name="password_confirmation"
+                                >
                             </div>
 
                             <div class="form-group">
-                                <label>mã mời <span class="text-primary">*</span></label>
+                                <label>
+                                    mã mời
+                                    <span class="text-primary">*</span></label>
                                 <input
                                     type="text"
                                     class="form-control"

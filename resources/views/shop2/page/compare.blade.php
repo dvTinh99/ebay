@@ -17,15 +17,21 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-lg-6 text-center text-lg-left">
-                <h1 class="fw-600 h4">Đối chiếu</h1>
+                <h1 class="fw-600 h4">
+                    {{ __t('Đối chiếu', 'Compare') }}
+                </h1>
             </div>
             <div class="col-lg-6">
                 <ul class="breadcrumb bg-transparent p-0 justify-content-center justify-content-lg-end">
                     <li class="breadcrumb-item opacity-50">
-                        <a class="text-reset" href="/">Trang Chủ</a>
+                        <a class="text-reset" href="/">
+                            {{ __t('Trang chủ', 'Home') }}
+                        </a>
                     </li>
                     <li class="text-dark fw-600 breadcrumb-item">
-                        <a class="text-reset" href="/compare">"Đối chiếu"</a>
+                        <a class="text-reset" href="/compare">
+                            {{ __t('Đối chiếu', 'Compare') }}
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -37,9 +43,13 @@
     <div class="container text-left">
         <div class="bg-white shadow-sm rounded">
             <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
-                <div class="fs-15 fw-600">So sánh</div>
+                <div class="fs-15 fw-600">
+                    {{ __t('So sánh', 'Compare') }}
+                </div>
                 <a href="/compare/reset" style="text-decoration: none;"
-                    class="btn btn-soft-primary btn-sm fw-600">Đặt lại danh sách so sánh</a>
+                    class="btn btn-soft-primary btn-sm fw-600">
+                    {{ __t('Đặt lại', 'Reset') }}
+                </a>
             </div>
             <div class="p-3">
                 @if(getCountCompare() > 0)
@@ -47,7 +57,7 @@
                     <thead>
                         <tr>
                             <th scope="col" style="width:16%" class="font-weight-bold">
-                                Tên
+                                {{ __('Tên', 'Name') }}
                             </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
@@ -61,20 +71,26 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Hình ảnh</th>
+                            <th scope="row">
+                                {{ __('Hình ảnh', 'Image') }}
+                            </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
                             <td>
                                 <img loading="lazy"
                                     src="{{ $product->options['image'] }}"
-                                    alt="Hình ảnh sản phẩm" class="img-fluid py-4">
+                                    alt=""
+                                     class="img-fluid py-4"
+                                >
                             </td>
                             @endif
                             @endforeach
 
                         </tr>
                         <tr>
-                            <th scope="row">Giá bán</th>
+                            <th scope="row">
+                                {{ __t('Giá bán', 'Price') }}
+                            </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
                             <td>
@@ -85,11 +101,13 @@
 
                         </tr>
                         <tr>
-                            <th scope="row">Nhãn hiệu</th>
+                            <th scope="row">
+                                {{ __t('Nhãn hiệu', 'Brand') }}
+                            </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
                             <td>
-                                No brand
+                                {{ __t('Không nhãn hiệu', 'No brand') }}
                             </td>
                             @endif
                             @endforeach
@@ -111,7 +129,7 @@
                             <td class="text-center py-4">
                                 <button type="button" class="btn btn-primary fw-600"
                                     onclick="showAddToCartModal('{{ $product->id }}')">
-                                    Thêm vào giỏ hàng
+                                    {{ __t('Thêm vào giỏ hàng', 'Add to cart') }}
                                 </button>
                             </td>
                             @endif

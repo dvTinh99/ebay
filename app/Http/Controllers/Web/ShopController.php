@@ -104,11 +104,6 @@ class ShopController extends Controller
         return view('shop2.index', compact('categories', 'products', 'productNoiBat', 'productBanChay'));
     }
 
-    function index2() {
-        $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
-        return view('shop2.index2', compact('categories'));
-    }
-
     function login() {
         return view('shop2.login');
     }

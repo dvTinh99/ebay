@@ -18,8 +18,7 @@
                                 <td colspan="2" style="padding: 1px 0px;"></td>
                             </tr>
                             <tr valign="top">
-                                <td class="gf-legal"
-                                    style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
+                                <td class="gf-legal" style="text-size-adjust: 100%; color: rgb(65, 65, 63); padding: 1px 0px; font-size: 11px !important;">
                                     Copyright © 2023. All rights reserved
                                 </td>
                             </tr>
@@ -32,11 +31,16 @@
                         <form class="form-inline" method="POST" action="/subscribers">
                             <input type="hidden" name="_token" value="oVvb046Hcw9FgwJYVjbsSE7InrxWD9HGapRVeCtY">
                             <div class="form-group mb-0">
-                                <input type="email" class="form-control" placeholder="Địa chỉ email của bạn"
-                                       name="email" required>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="Địa chỉ email của bạn"
+                                    name="email"
+                                    required
+                                >
                             </div>
                             <button type="submit" class="btn btn-primary">
-                                Đăng ký
+                                {{ __t('Đăng ký', 'Subscrib') }}
                             </button>
                         </form>
                     </div>
@@ -48,6 +52,7 @@
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
                         Thông tin liên lạc
+                        {{ __t('Thông tin liên lạc', 'Contact Info') }}
                     </h4>
                     <ul class="list-unstyled">
                         <li class="mb-2">
@@ -57,7 +62,9 @@
                             </span>
                         </li>
                         <li class="mb-2">
-                            <span class="d-block opacity-30">Số liên lạc:</span>
+                            <span class="d-block opacity-30">
+                                {{ __t('Số liên lạc', 'Contact Number') }}
+                            </span>
                             <a style="color:#fff" target="_blank" href="https://telegram.me/"
                                class="d-block opacity-70">
 
@@ -84,43 +91,41 @@
             <div class="col-md-12 col-lg-2">
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        Tài khoản của tôi
+                        {{ __t('Tài khoản của tôi', 'My Account') }}
                     </h4>
                     <ul class="list-unstyled">
                         <li class="mb-2">
                             <a class="opacity-50 hov-opacity-100 text-reset" href="/users/login">
-                                Đăng nhập
+                                {{ __t('Đăng nhập', 'Login') }}
                             </a>
                         </li>
                         <li class="mb-2">
                             <a class="opacity-50 hov-opacity-100 text-reset" href="/purchase_history">
-                                lịch sử đơn hàng
+                                {{ __t('Lịch sử mua hàng', 'Purchase History') }}
                             </a>
                         </li>
                         <li class="mb-2">
                             <a class="opacity-50 hov-opacity-100 text-reset" href="/wishlists">
                                 Sản phẩm yêu thích
+                                {{ __t('Sản phẩm yêu thích', 'Wishlist') }}
                             </a>
                         </li>
                         <li class="mb-2">
                             <a class="opacity-50 hov-opacity-100 text-reset" href="/track-your-order">
-                                Theo dõi thứ tự
+                                {{ __t('Theo dõi thứ tự', 'Track Your Order') }}
                             </a>
                         </li>
-                        <!--                             <li class="mb-2"> -->
-                        <!--                                 <a class="opacity-50 hov-opacity-100 text-light" href="/affiliate">Là một đối tác liên kết</a> -->
-                        <!--                             </li> -->
                     </ul>
                 </div>
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        Hãy là người bán hàng
+                        {{ __t('Hãy là người bán hàng', 'Be a Seller') }}
                     </h4>
                     <a href="/shops/create" class="btn btn-primary btn-sm shadow-md mb-4">
-                        Áp dụng ngay bây giờ
+                        {{ __t('Áp dụng ngay bây giờ', 'Apply Now') }}
                     </a>
                     <a href="/users/shops" class="btn btn-primary btn-sm shadow-md mb-4">
-                        Đăng nhập người bán
+                        {{ __t('Đăng nhập người bán', 'Login as Seller') }}
                     </a>
                 </div>
             </div>
@@ -160,13 +165,17 @@
         <div class="col">
             <a href="/" class="text-reset d-block text-center pb-2 pt-3">
                 <i class="las la-home fs-20 opacity-60 opacity-100 text-primary"></i>
-                <span class="d-block fs-10 fw-600 opacity-60 opacity-100 fw-600">Trang Chủ</span>
+                <span class="d-block fs-10 fw-600 opacity-60 opacity-100 fw-600">
+                    {{ __t('Trang chủ', 'Home') }}
+                </span>
             </a>
         </div>
         <div class="col">
             <a href="/categories" class="text-reset d-block text-center pb-2 pt-3">
                 <i class="las la-list-ul fs-20 opacity-60 "></i>
-                <span class="d-block fs-10 fw-600 opacity-60 ">Thể loại</span>
+                <span class="d-block fs-10 fw-600 opacity-60 ">
+                    {{ __t('Danh mục', 'Categories') }}
+                </span>
             </a>
         </div>
         <div class="col-auto">
@@ -177,7 +186,7 @@
                     <i class="las la-shopping-bag la-2x text-white"></i>
                 </span>
                 <span class="d-block mt-1 fs-10 fw-600 opacity-60 ">
-                    xe đẩy
+                    {{ __t('Giỏ hàng', 'Cart') }}
                     (<span class="cart-count">0</span>)
                 </span>
             </a>
@@ -187,7 +196,9 @@
                 <span class="d-inline-block position-relative px-2">
                     <i class="las la-bell fs-20 opacity-60 "></i>
                 </span>
-                <span class="d-block fs-10 fw-600 opacity-60 ">Thông báo</span>
+                <span class="d-block fs-10 fw-600 opacity-60 ">
+                    {{ __t('Thông báo', 'Notification') }}
+                </span>
             </a>
         </div>
         <div class="col">
@@ -195,12 +206,12 @@
                 <span class="d-block mx-auto">
                     <img src="{{ asset('public') }}/assets/img/avatar-place.png" class="rounded-circle size-20px">
                 </span>
-                <span class="d-block fs-10 fw-600 opacity-60">Tài khoản</span>
+                <span class="d-block fs-10 fw-600 opacity-60">
+                    {{ __t('Tài khoản', 'Account') }}
+                </span>
             </a>
         </div>
     </div>
-</div>
-
 </div>
 
 
@@ -220,16 +231,24 @@
 
             <div class="modal-header">
 
-                <h4 class="modal-title" id="myModalLabel">Xác nhận</h4>
+                <h4 class="modal-title" id="myModalLabel">
+                    {{ __t('Xác nhận', 'Confirm') }}
+                </h4>
             </div>
 
             <div class="modal-body">
-                <p>Xóa tin nhắn xác nhận</p>
+                <p>
+                    {{ __t('Bạn có chắc chắn muốn xóa?', 'Are you sure you want to delete?') }}
+                </p>
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Huỷ bỏ</button>
-                <a id="delete_link" class="btn btn-danger btn-ok">Xóa bỏ</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    {{ __t('Huỷ bỏ', 'Cancel') }}
+                </button>
+                <a id="delete_link" class="btn btn-danger btn-ok">
+                    {{ __t('Xóa bỏ', 'Delete')}}
+                </a>
             </div>
         </div>
     </div>
