@@ -247,6 +247,7 @@ class ShopController extends Controller
     public function changeLanguage() {
         // get lang from url and chnage cookie
         $lang = request()->lang;
+        dd($lang);
 
         // change cookie. SameSite=None; Secure
         setcookie('lang', $lang, time() + (86400 * 30));
