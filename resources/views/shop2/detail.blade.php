@@ -68,7 +68,7 @@
                                         class='las la-star'></i><i class='las la-star'></i>
                                 </span>
                                 <span class="ml-1 opacity-50">
-                                    (0{{ __t('Đánh giá', 'Reviews') }}
+                                    (0{{ __t('Đánh giá', 'Reviews') }})
                                 </span>
                             </div>
                             <div class="col-auto ml">
@@ -213,9 +213,6 @@
                                 </div>
                             </div>
                             <div class="col-10">
-                                <a href="/return-policy" target="_blank">
-                                    <img src="../public/assets/img/refund-sticker.jpg" height="36">
-                                </a>
                                 <a href="/return-policy" class="ml-2" target="_blank">
                                     {{ __t('Xem chính sách', 'View policy') }}
                                 </a>
@@ -323,7 +320,7 @@
                                                class="d-block text-reset">
                                                 <img class="img-fit lazyload h-xxl-110px h-xl-80px h-120px"
                                                      src="/public/assets/img/placeholder.jpg"
-                                                     data-src="{{ $productSell->images->first()->image_link }}"
+                                                     data-src="{{ $productSell->images->first()->image_link ?? '' }}"
                                                      alt=""
                                                 >
                                             </a>
@@ -416,7 +413,7 @@
                                             <a href="/product/{{ $productSame->id }}" class="d-block">
                                                 <img class="img-fit lazyload mx-auto h-140px h-md-210px"
                                                      src="/public/assets/img/placeholder.jpg"
-                                                     data-src="{{ $productSame->images->first()->image_link }}"
+                                                     data-src="{{ $productSame->images->first()->image_link ?? '' }}"
                                                      alt=""
                                                 >
                                             </a>

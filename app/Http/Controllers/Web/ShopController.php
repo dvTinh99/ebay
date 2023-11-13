@@ -105,19 +105,19 @@ class ShopController extends Controller
                 $query->with('images');
             },
             'seller'
-        ])->inRandomOrder()->limit(11)->get();
+        ])->inRandomOrder()->limit(110)->get();
         $specialProducts = SellerProduct::with([
             'product' => function($query) {
                 $query->with('images');
             },
             'seller'
-        ])->inRandomOrder()->limit(11)->get();
+        ])->inRandomOrder()->limit(110)->get();
         $bestSellerProducts = SellerProduct::with([
             'product' => function($query) {
                 $query->with('images');
             },
             'seller'
-        ])->inRandomOrder()->limit(11)->get();
+        ])->inRandomOrder()->limit(110)->get();
 
         // map newProducts to item.product + seller
         $products = $newProducts->map(function($item) {
@@ -126,18 +126,32 @@ class ShopController extends Controller
             $product->seller = $item->seller;
             return $product;
         });
+        // filter ưhere not empty images and limit 11
+        $products = $products->filter(function($item) {
+            return count($item->images) > 0;
+        })->take(11);
+
         $productNoiBat = $specialProducts->map(function($item) {
             $product = $item->product;
             $product->seller_product_id = $item->id;
             $product->seller = $item->seller;
             return $product;
         });
+        // filter ưhere not empty images and limit 11
+        $productNoiBat = $productNoiBat->filter(function($item) {
+            return count($item->images) > 0;
+        })->take(11);
+
         $productBanChay = $bestSellerProducts->map(function($item) {
             $product = $item->product;
             $product->seller_product_id = $item->id;
             $product->seller = $item->seller;
             return $product;
         });
+        // filter ưhere not empty images and limit 11
+        $productBanChay = $productBanChay->filter(function($item) {
+            return count($item->images) > 0;
+        })->take(11);
 
         return view('shop2.index', compact('categories', 'products', 'productNoiBat', 'productBanChay'));
     }
@@ -190,7 +204,7 @@ class ShopController extends Controller
                 'product' => function($query) {
                     $query->with('images');
                 },
-            ])->where('user_id', $sellerProduct->user_id)->inRandomOrder()->limit(11)->get();
+            ])->where('user_id', $sellerProduct->user_id)->inRandomOrder()->limit(110)->get();
 
             $productBanChay = $productBanChay->map(function($item) {
                 $product = $item->product;
@@ -198,9 +212,19 @@ class ShopController extends Controller
                 $product->seller = $item->seller;
                 return $product;
             });
+
+            // filter ưhere not empty images and limit 11
+            $productBanChay = $productBanChay->filter(function($item) {
+                return count($item->images) > 0;
+            })->take(11);
+
         } else {
             $product = Product::with('images')->find($id);
-            $productBanChay = Product::with(['images'])->inRandomOrder()->limit(11)->get();
+            $productBanChay = Product::with(['images'])->inRandomOrder()->limit(110)->get();
+            // filter ưhere not empty images and limit 11
+            $productBanChay = $productBanChay->filter(function($item) {
+                return count($item->images) > 0;
+            })->take(11);
         }
 
         if (!$product) {
