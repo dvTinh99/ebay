@@ -97,8 +97,8 @@
                                 <div class="position-relative">
                                     <a href="/product/{{ $product->id }}" class="d-block">
                                         <img class="img-fit mx-auto h-140px h-md-210px lazyload"
-                                            src="/{{ @$product->images->first()->image_link }}"
-                                            data-src="/{{ @$product->images->first()->image_link }}"
+                                            src="{{ asset(@$product->images->first()->image_link) }}"
+                                            data-src="{{ asset(@$product->images->first()->image_link) }}"
                                             alt=""
                                         >
                                     </a>

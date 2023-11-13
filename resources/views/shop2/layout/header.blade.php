@@ -358,8 +358,8 @@
                                             <span class="d-flex align-items-center">
                                                 <a href="/product/{{ $product->id }}"
                                                     class="text-reset d-flex align-items-center flex-grow-1">
-                                                    <img src="/{{ $product->options['image'] }}"
-                                                        data-src="/{{ $product->options['image'] }}"
+                                                    <img src="{{ $product->options['image'] }}"
+                                                        data-src="{{ $product->options['image'] }}"
                                                         class="img-fit size-60px rounded ls-is-cached lazyloaded"
                                                         alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed">
                                                     <span class="minw-0 pl-2 flex-grow-1">

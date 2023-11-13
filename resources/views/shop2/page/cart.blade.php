@@ -93,7 +93,7 @@
                                 <div class="row gutters-5">
                                     <div class="col-lg-5 d-flex">
                                         <span class="mr-2 ml-0">
-                                            <img src="/{{ $product->options['image'] }}"
+                                            <img src="{{ $product->options['image'] }}"
                                                 class="img-fit size-60px rounded"
                                                 alt="AliToys alphabet flash cards Educational Toys Set 0-12 Months Baby Learning Language Quiet Cloth Book First Kids Soft Books Animal English Learning Card Can be washed">
                                         </span>

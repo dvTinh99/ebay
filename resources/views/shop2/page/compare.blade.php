@@ -78,7 +78,7 @@
                             @if($product->options['type'] != 1)
                             <td>
                                 <img loading="lazy"
-                                    src="/{{ $product->options['image'] }}"
+                                    src="{{ $product->options['image'] }}"
                                     alt=""
                                      class="img-fluid py-4"
                                 >
