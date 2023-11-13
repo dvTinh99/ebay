@@ -31,6 +31,17 @@ function getCountCompare()
 }
 
 function __t($vi, $en) {
+    $lang = __currentLanguage();
+
+    // Return translation based on the language
+    return $lang == 'vi' ? $vi : $en;
+}
+
+/**
+ * @return mixed|string
+ */
+function __currentLanguage()
+{
     $supportedLanguages = ['en', 'vi'];
 
     // Retrieve the language from the cookie or default to 'vi'
@@ -40,7 +51,5 @@ function __t($vi, $en) {
     if (!in_array($lang, $supportedLanguages)) {
         $lang = 'vi';
     }
-
-    // Return translation based on the language
-    return $lang == 'vi' ? $vi : $en;
+    return $lang;
 }

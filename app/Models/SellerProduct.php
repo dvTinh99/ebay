@@ -17,6 +17,11 @@ class SellerProduct extends Model
     ];
 
     public function product() {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
+    }
+
+    // seller, belongto user, column user_id
+    public function seller() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

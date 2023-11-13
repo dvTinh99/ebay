@@ -133,25 +133,29 @@
                                     data-display="static"
                                 >
                                     <img
-                                        src="../public/assets/img/placeholder.jpg"
-                                        data-src="/public/assets/img/flags/vn.png" class="mr-2 lazyload"
-                                        alt="Vietnamese"
+                                        src="/public/assets/img/placeholder.jpg"
+                                        data-src="/public/assets/img/flags/{{__currentLanguage()}}.png" class="mr-2 lazyload"
+                                        alt=""
                                         height="11"
                                     >
-                                    <span class="opacity-60">Vietnamese</span>
+                                    <span class="opacity-60">
+                                        {{ __currentLanguage() === 'vi' ? __t('Tiếng việt', 'Vietnamese') : __t('Tiếng anh', 'English') }}
+                                    </span>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-left">
                                     <li>
-                                        <a href="javascript:void(0)" data-flag="en" class="dropdown-item ">
+                                        <a href="/change-language/{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}" data-flag="en" class="dropdown-item ">
                                             <img
-                                                src="../public/assets/img/placeholder.jpg"
-                                                data-src="/public/assets/img/flags/en.png"
+                                                src="/public/assets/img/placeholder.jpg"
+                                                data-src="/public/assets/img/flags/{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}.png"
                                                 class="mr-1 lazyload"
-                                                alt="English"
+                                                alt=""
                                                 height="11"
                                             >
-                                            <span class="language">English</span>
+                                            <span class="language">
+                                                {{ __currentLanguage() !== 'vi' ? __t('Tiếng việt', 'Vietnamese') : __t('Tiếng anh', 'English') }}
+                                            </span>
                                         </a>
                                     </li>
                                 </ul>
@@ -196,7 +200,6 @@
                             @if(!Auth::check())
                                 <li class="list-inline-item mr-3 border-right border-left-0 pr-3 pl-0">
                                     <a href="/users/login" class="text-reset d-inline-block opacity-60 py-2">
-                                        Đăng nhập
                                         {{ __t('Đăng nhập', 'Login')  }}
                                     </a>
                                 </li>

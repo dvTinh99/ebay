@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Models\Category;
+use App\Models\SellerProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -98,9 +99,46 @@ class ShopController extends Controller
 
     function index() {
         $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
-        $products = Product::limit(11)->get();
-        $productNoiBat = Product::skip(11)->limit(11)->get();
-        $productBanChay = Product::skip(22)->limit(11)->get();
+
+        $newProducts = SellerProduct::with([
+            'product' => function($query) {
+                $query->with('images');
+            },
+            'seller'
+        ])->inRandomOrder()->limit(11)->get();
+        $specialProducts = SellerProduct::with([
+            'product' => function($query) {
+                $query->with('images');
+            },
+            'seller'
+        ])->inRandomOrder()->limit(11)->get();
+        $bestSellerProducts = SellerProduct::with([
+            'product' => function($query) {
+                $query->with('images');
+            },
+            'seller'
+        ])->inRandomOrder()->limit(11)->get();
+
+        // map newProducts to item.product + seller
+        $products = $newProducts->map(function($item) {
+            $product = $item->product;
+            $product->seller_product_id = $item->id;
+            $product->seller = $item->seller;
+            return $product;
+        });
+        $productNoiBat = $specialProducts->map(function($item) {
+            $product = $item->product;
+            $product->seller_product_id = $item->id;
+            $product->seller = $item->seller;
+            return $product;
+        });
+        $productBanChay = $bestSellerProducts->map(function($item) {
+            $product = $item->product;
+            $product->seller_product_id = $item->id;
+            $product->seller = $item->seller;
+            return $product;
+        });
+
         return view('shop2.index', compact('categories', 'products', 'productNoiBat', 'productBanChay'));
     }
 
@@ -137,10 +175,48 @@ class ShopController extends Controller
         return view('shop2.detail');
     }
     function detailProduct($id) {
-        $product = Product::find($id);
-        // dd($product);
-        $productBanChay = Product::skip(22)->limit(3)->get();
-        $productTuongTu = Product::skip(44)->limit(11)->get();
+        $sellerProduct = SellerProduct::with([
+            'product' => function($query) {
+                $query->with('images');
+            },
+        ])->find($id);
+
+        if ($sellerProduct) {
+            $product = $sellerProduct->product;
+            $product->seller_product_id = $sellerProduct->id;
+            $product->seller = $sellerProduct->seller;
+
+            $productBanChay = SellerProduct::with([
+                'product' => function($query) {
+                    $query->with('images');
+                },
+            ])->where('user_id', $sellerProduct->user_id)->inRandomOrder()->limit(11)->get();
+
+            $productBanChay = $productBanChay->map(function($item) {
+                $product = $item->product;
+                $product->seller_product_id = $item->id;
+                $product->seller = $item->seller;
+                return $product;
+            });
+        } else {
+            $product = Product::with('images')->find($id);
+            $productBanChay = Product::with(['images'])->inRandomOrder()->limit(11)->get();
+        }
+
+        if (!$product) {
+            return redirect('/');
+        }
+
+
+
+        // find $productTuongTu by category and different id cimpare to $product
+        $productTuongTu = Product::with('images')
+            ->where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->inRandomOrder()
+            ->limit(11)
+            ->get();
+
         return view('shop2.detail', compact('product', 'productBanChay', 'productTuongTu'));
     }
 

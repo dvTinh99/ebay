@@ -257,7 +257,9 @@
                                             60,116.6 124.1,116.6 "/>
                             </svg>
                         </div>
-                        <div class="opacity-50 fs-12 border-bottom">chủ shop</div>
+                        <div class="opacity-50 fs-12 border-bottom">
+                            {{ __t('Chủ shop:', 'Seller') }}
+                        </div>
                         <a href="/shop/%C4%90%E1%BA%B7ng-%C4%90%C3%ACnh-Th%C6%B0%C6%A1ng-1510"
                            class="text-reset d-block fw-600">
                             Đặng Đình Thương
