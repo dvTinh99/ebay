@@ -117,15 +117,19 @@ class UserRepository extends BaseRepository
         return Order::where('user_id', Auth::id())
             ->where('time_create', '<=', Carbon::now())
             ->where('status', '<=', '1')
-            ->orWhereNull('status');
+            ->orWhereNull('status')
+            ->orderBy('created_at', 'desc');
     }
 
     public function myOrderPurchase() {
-        return Order::where('user_id', Auth::id())->where('status', '>', '1');
+        return Order::where('user_id', Auth::id())
+            ->where('status', '>', '1')
+            ->orderBy('created_at', 'desc');
     }
 
     public function myRecharge() {
-        return Exchange::where('user_id', Auth::id());
+        return Exchange::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc');
     }
 
     public function dashboard() {
