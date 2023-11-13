@@ -244,6 +244,15 @@ class ShopController extends Controller
         return view('shop2.detail', compact('product', 'productBanChay', 'productTuongTu'));
     }
 
+    public function changeLanguage() {
+        // get lang from url and chnage cookie
+        $lang = request()->lang;
+
+        // change cookie. SameSite=None; Secure
+        setcookie('lang', $lang, time() + (86400 * 30));
+        return redirect()->back();
+    }
+
     function shopsCreate() {
         return view('shop2.page.shops-create');
     }

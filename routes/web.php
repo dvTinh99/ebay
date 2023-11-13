@@ -61,14 +61,7 @@ Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
     Route::get('/compare/reset', [ShopController::class, 'compareReset']);
 
     // /change-language/{lang}. update cookie
-    Route::get('/change-language/{lang}', function () {
-        // get lang from url and chnage cookie
-        $lang = request()->lang;
-
-        // change cookie. SameSite=None; Secure
-        setcookie('lang', $lang, time() + (86400 * 30));
-        return redirect()->back();
-    });
+    Route::get('/change-language/{lang}', [ShopController::class, 'changeLanguage']);
 
 
     Route::get('/fix-seller-product', function () {
