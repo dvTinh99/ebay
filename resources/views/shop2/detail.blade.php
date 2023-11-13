@@ -87,7 +87,7 @@
                                 </small>
                                 <br>
                                 <a class="text-reset">
-                                    Đặng Đình Thương
+                                    {{ $product->seller ? $product->seller->name : 'Ebay'  }}
                                 </a>
                             </div>
                             <div class="col-auto">
@@ -260,19 +260,21 @@
                         <div class="opacity-50 fs-12 border-bottom">
                             {{ __t('Chủ shop:', 'Seller') }}
                         </div>
-                        <a href="/shop/%C4%90%E1%BA%B7ng-%C4%90%C3%ACnh-Th%C6%B0%C6%A1ng-1510"
-                           class="text-reset d-block fw-600">
-                            Đặng Đình Thương
-                            <span class="ml-2"><i class="fa fa-check-circle" style="color:green"></i></span>
+                        <a href="javascript:void(0);"
+                           class="text-reset d-block fw-600"
+                        >
+                            {{ $product->seller ? $product->seller->name : 'Ebay'  }}
+                            <span class="ml-2">
+                                <i class="fa fa-check-circle" style="color:green"></i>
+                            </span>
                         </a>
-                        <div class="location opacity-70">Huyện EaHleo, Tỉnh Đăk lăk</div>
                         <div class="text-center border rounded p-2 mt-3">
                             <div class="rating">
                                 <i class='las la-star'></i><i class='las la-star'></i><i class='las la-star'></i><i
                                     class='las la-star'></i><i class='las la-star'></i>
                             </div>
-                            <div class="opacity-60 fs-12">(0
-                                Phản hồi khách hàng)
+                            <div class="opacity-60 fs-12">
+                                (0 {{ __t('Phản hồi khách hàng', 'Customer Reviews') }})
                             </div>
                         </div>
                     </div>

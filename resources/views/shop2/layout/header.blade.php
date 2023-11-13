@@ -233,7 +233,7 @@
 
                         <div class="col-auto col-xl-3 pl-0 pr-3 d-flex align-items-center">
                             <a class="d-block py-20px mr-3 ml-0" href="/">
-                                <img src="../public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"
+                                <img src="/public/uploads/all/VwBQ1GmLLisBmocOWOdSycMpbviwKwNHz3A8cFzD.png"
                                     alt="Shopping" class="mw-100 h-30px h-md-40px" height="40">
                             </a>
 
@@ -263,8 +263,12 @@
                                                     class="la la-2x la-long-arrow-left"></i></button>
                                         </div>
                                         <div class="input-group">
-                                            <input type="text" class="border-0 border-lg form-control"
-                                                id="search" name="keyword" placeholder="bạn muốn mua gì ..."
+                                            <input
+                                                type="text"
+                                                class="border-0 border-lg form-control"
+                                                id="search"
+                                                name="keyword"
+                                                placeholder="{{ __t('Tìm kiếm sản phẩm', 'Search products')  }}"
                                                 autocomplete="off">
                                             <div class="input-group-append d-none d-lg-block">
                                                 <button class="btn btn-primary" type="submit">

@@ -34,7 +34,7 @@
                                 <input
                                     type="email"
                                     class="form-control"
-                                    placeholder="Địa chỉ email của bạn"
+                                    placeholder="{{ __t('Nhập email của bạn', 'Enter your email')}}"
                                     name="email"
                                     required
                                 >
@@ -51,12 +51,13 @@
             <div class="col-lg-3 ml-xl-auto col-md-12 mr-0">
                 <div class="text-center text-md-left mt-4">
                     <h4 class="fs-13 text-uppercase fw-600 border-bottom border-gray-900 pb-2 mb-4">
-                        Thông tin liên lạc
                         {{ __t('Thông tin liên lạc', 'Contact Info') }}
                     </h4>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <span class="d-block opacity-30">Địa chỉ:</span>
+                            <span class="d-block opacity-30">
+                                {{ __t('Địa chỉ:', 'Address:') }}
+                            </span>
                             <span class="d-block opacity-70">
                                 Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 Inc.
                             </span>
@@ -73,7 +74,7 @@
                         <li class="mb-2">
                             <span class="d-block opacity-30">E-mail:</span>
                             <span class="d-block opacity-70">
-                                <a href="mailto:sg11@gmail.com" class="text-reset">sg11@gmail.com</a>
+                                <a href="mailto:sg11@gmail.com" class="text-reset"></a>
                             </span>
                         </li>
                     </ul>
@@ -106,7 +107,6 @@
                         </li>
                         <li class="mb-2">
                             <a class="opacity-50 hov-opacity-100 text-reset" href="/wishlists">
-                                Sản phẩm yêu thích
                                 {{ __t('Sản phẩm yêu thích', 'Wishlist') }}
                             </a>
                         </li>
@@ -301,22 +301,22 @@
                 }
             });
         });
-        if ($('#lang-change').length > 0) {
-            $('#lang-change .dropdown-menu a').each(function () {
-                $(this).on('click', function (e) {
-                    e.preventDefault();
-                    var $this = $(this);
-                    var locale = $this.data('flag');
-                    $.post('/language', {
-                        _token: AIZ.data.csrf,
-                        locale: locale
-                    }, function (data) {
-                        location.reload();
-                    });
-
-                });
-            });
-        }
+        // if ($('#lang-change').length > 0) {
+        //     $('#lang-change .dropdown-menu a').each(function () {
+        //         $(this).on('click', function (e) {
+        //             e.preventDefault();
+        //             var $this = $(this);
+        //             var locale = $this.data('flag');
+        //             $.post('/language', {
+        //                 _token: AIZ.data.csrf,
+        //                 locale: locale
+        //             }, function (data) {
+        //                 location.reload();
+        //             });
+        //
+        //         });
+        //     });
+        // }
 
         if ($('#currency-change').length > 0) {
             $('#currency-change .dropdown-menu a').each(function () {
