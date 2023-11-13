@@ -323,7 +323,7 @@
                                                class="d-block text-reset">
                                                 <img class="img-fit lazyload h-xxl-110px h-xl-80px h-120px"
                                                      src="/public/assets/img/placeholder.jpg"
-                                                     data-src="{{ $image->image_link }}"
+                                                     data-src="{{ $productSell->images->first()->image_link }}"
                                                      alt=""
                                                 >
                                             </a>
