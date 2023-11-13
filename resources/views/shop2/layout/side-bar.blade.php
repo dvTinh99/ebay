@@ -6,7 +6,9 @@
                 {{ __t('Thể loại', 'Category')  }}
             </span>
             <a href="/categories" class="text-reset">
-                <span class="d-none d-lg-inline-block">Nhìn thấy tất cả &gt;</span>
+                <span class="d-none d-lg-inline-block">
+                    {{ __t('Nhìn thấy tất cả', 'See all') }}
+                </span>
             </a>
         </div>
         <ul class="list-unstyled categories no-scrollbar py-2 mb-0 text-left">
