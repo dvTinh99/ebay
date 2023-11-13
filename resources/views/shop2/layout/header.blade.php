@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('public') }}/assets/css/aiz-core.css">
     <link rel="stylesheet" href="{{ asset('public') }}/assets/css/custom-style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.min.js" integrity="sha512-Nonc2AqL1+VEN+97F3n4YxucBOAL5BgqNwEVc2uUjdKOWAmzwj5ChdJQvN2KldAxkCxE4OenuJ/RL18bWxGGzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <script>
         var AIZ = AIZ || {};
@@ -145,7 +147,7 @@
 
                                 <ul class="dropdown-menu dropdown-menu-left">
                                     <li>
-                                        <a href="/change-language/{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}" data-flag="en" class="dropdown-item ">
+                                        <a href="/change-language/{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}" data-flag="{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}" class="dropdown-item ">
                                             <img
                                                 src="/public/assets/img/placeholder.jpg"
                                                 data-src="/public/assets/img/flags/{{__currentLanguage() === 'vi' ? 'en' : 'vi'}}.png"

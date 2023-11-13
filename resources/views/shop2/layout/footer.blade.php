@@ -277,6 +277,8 @@
 <script src="{{ asset('public') }}/assets/js/vendors.js"></script>
 <script src="{{ asset('public') }}/assets/js/aiz-core.js"></script>
 <script>
+    import lo from "../../../../public/kho/bower_components/moment/src/locale/lo";
+
     $(document).ready(function () {
 
         // emit event iframe_change to parent window with current url
@@ -301,22 +303,20 @@
                 }
             });
         });
-        // if ($('#lang-change').length > 0) {
-        //     $('#lang-change .dropdown-menu a').each(function () {
-        //         $(this).on('click', function (e) {
-        //             e.preventDefault();
-        //             var $this = $(this);
-        //             var locale = $this.data('flag');
-        //             $.post('/language', {
-        //                 _token: AIZ.data.csrf,
-        //                 locale: locale
-        //             }, function (data) {
-        //                 location.reload();
-        //             });
-        //
-        //         });
-        //     });
-        // }
+        if ($('#lang-change').length > 0) {
+            $('#lang-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
+                    e.preventDefault();
+                    // use jquery to set cookie lang
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+                    Cookies.set('lang', locale);
+
+                    window.location.reload();
+
+                });
+            });
+        }
 
         if ($('#currency-change').length > 0) {
             $('#currency-change .dropdown-menu a').each(function () {
