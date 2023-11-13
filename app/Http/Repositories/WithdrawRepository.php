@@ -56,12 +56,18 @@ class WithdrawRepository extends BaseRepository
     }
 
     public function myWithdraw() {
-        $withDraws = Withdraw::where('user_id', Auth::id())->with('user')->get();
+        $withDraws = Withdraw::where('user_id', Auth::id())
+            ->with('user')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return $withDraws;
     }
 
     public function getAll() {
-        return $this->model->with('user')->get();
+        return $this->model
+            ->with('user')
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 
     public function detail($id) {
