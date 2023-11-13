@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Session;
+
 function quickRandom($length = 5)
 {
     // create number by length and does not start with 0
@@ -37,15 +39,12 @@ function __t($vi, $en) {
     return $lang == 'vi' ? $vi : $en;
 }
 
-/**
- * @return mixed|string
- */
 function __currentLanguage()
 {
     $supportedLanguages = ['en', 'vi'];
 
-    // Retrieve the language from the cookie or default to 'vi'
-    $lang = $_COOKIE['lang'] ?? 'vi';
+    // Retrieve the language from the sesioj or default to 'vi'
+    $lang = Session::get('lang', 'vi');
 
     // If unsupported language, default to 'vi'
     if (!in_array($lang, $supportedLanguages)) {

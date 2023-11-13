@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Validator;
 use Carbon\Carbon;
 use App\Http\Repositories\OrderRepository;
@@ -245,10 +246,10 @@ class ShopController extends Controller
     }
 
     public function changeLanguage() {
-        // get lang from url and chnage cookie
         $lang = request()->lang;
-        // change cookie. SameSite=None; Secure
-        setcookie('lang', $lang, time() + (86400 * 30));
+        // change session.
+        Session::put('lang', $lang);
+
         return redirect()->back();
     }
 
