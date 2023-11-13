@@ -182,9 +182,9 @@ class UserRepository extends BaseRepository
             // for loop 10 times
             for ($i = 0; $i < 10; $i++) {
                 // get random id from 1 to 20 and dont duplicate
-                $id = rand(1, 20);
+                $id = rand(1, 30);
                 while (in_array($id, array_column($data['data'], 'id'))) {
-                    $id = rand(1, 20);
+                    $id = rand(1, 30);
                 }
 
                 $data['data'][] = [
