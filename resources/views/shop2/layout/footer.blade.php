@@ -55,17 +55,11 @@
                     </h4>
                     <ul class="list-unstyled">
                         <li class="mb-2">
-                            <span class="d-block opacity-30">
-                                {{ __t('Địa chỉ:', 'Address:') }}
-                            </span>
                             <span class="d-block opacity-70">
                                 Inc., 2025 Hamilton Avenue, San Jose, CA 95125, United States © 1995-2023 Inc.
                             </span>
                         </li>
                         <li class="mb-2">
-                            <span class="d-block opacity-30">
-                                {{ __t('Số liên lạc', 'Contact Number') }}
-                            </span>
                             <a style="color:#fff" target="_blank" href="https://telegram.me/"
                                class="d-block opacity-70">
 
