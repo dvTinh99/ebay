@@ -22,8 +22,8 @@
                                 <div class="position-relative">
                                     <a href="/product/{{ $item->seller_product_id ?? $item->id }}" class="d-block">
                                         <img class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                             src="{{ asset(''). $item->images->first()->image_link }}"
-                                             data-src="{{ asset(''). $item->images->first()->image_link }}"
+                                             src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
+                                             data-src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
                                              alt=""
                                         >
                                     </a>
@@ -101,8 +101,8 @@
                                 <div class="position-relative">
                                     <a href="/product/{{ $item->seller_product_id ?? $item->id }}" class="d-block">
                                         <img class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                             src="{{ asset(''). $item->images->first()->image_link }}"
-                                             data-src="{{ asset(''). $item->images->first()->image_link }}"
+                                             src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
+                                             data-src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
                                              alt="Cisco Table Microphone with Jack plug spare"
                                         >
                                     </a>
@@ -177,8 +177,8 @@
                                 <div class="position-relative">
                                     <a href="/product/{{ $item->seller_product_id ?? $item->id }}" class="d-block">
                                         <img class="img-fit lazyload mx-auto h-140px h-md-210px"
-                                             src="{{ asset(''). $item->images->first()->image_link }}"
-                                             data-src="{{ asset(''). $item->images->first()->image_link }}"
+                                             src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
+                                             data-src="{{ asset(''). $item->images->first()->image_link ?? '' }}"
                                              alt=""
                                         >
                                     </a>
