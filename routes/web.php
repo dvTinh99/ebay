@@ -65,8 +65,8 @@ Route::domain(env('DOMAIN_SHOP','arfmartgo.info'))->group(function () {
         // get lang from url and chnage cookie
         $lang = request()->lang;
 
-        // change cookie
-        setcookie('lang', $lang, time() + (86400 * 30), "/");
+        // change cookie. SameSite=None; Secure
+        setcookie('lang', $lang, time() + (86400 * 30), "/; SameSite=None; Secure");
         return redirect()->back();
     });
 
