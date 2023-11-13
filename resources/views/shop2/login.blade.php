@@ -25,7 +25,7 @@
 
                                 <div class="text-center pt-4">
                                     <h1 class="h4 fw-600">
-                                        {{ __('Đăng nhập vào tài khoản của bạn.', 'Login to your account') }}
+                                        {{ __t('Đăng nhập vào tài khoản của bạn.', 'Login to your account') }}
                                     </h1>
                                 </div>
                                 @if (session('error'))
@@ -54,7 +54,7 @@
                                                 <input
                                                     type="password"
                                                     class="form-control"
-                                                    placeholder="{{ __('Mật khẩu', 'Password') }}"
+                                                    placeholder="{{ __t('Mật khẩu', 'Password') }}"
                                                     name="password"
                                                     id="password"
                                                 >
@@ -65,7 +65,7 @@
                                                     <label class="aiz-checkbox">
                                                         <input type="checkbox" name="remember">
                                                         <span class=opacity-60>
-                                                            {{ __('Nhớ tôi', 'Remember Me') }}
+                                                            {{ __t('Nhớ tôi', 'Remember Me') }}
                                                         </span>
                                                         <span class="aiz-square-check"></span>
                                                     </label>
@@ -73,7 +73,7 @@
                                                 <div class="col-6 text-right">
                                                     <a href="/password/reset"
                                                         class="text-reset opacity-60 fs-14">
-                                                        {{ __('Quên mật khẩu?', 'Forgot Password?') }}
+                                                        {{ __t('Quên mật khẩu?', 'Forgot Password?') }}
                                                     </a>
                                                 </div>
                                             </div>

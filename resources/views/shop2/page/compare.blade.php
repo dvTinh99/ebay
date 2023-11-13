@@ -57,7 +57,7 @@
                     <thead>
                         <tr>
                             <th scope="col" style="width:16%" class="font-weight-bold">
-                                {{ __('Tên', 'Name') }}
+                                {{ __t('Tên', 'Name') }}
                             </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
@@ -72,7 +72,7 @@
                     <tbody>
                         <tr>
                             <th scope="row">
-                                {{ __('Hình ảnh', 'Image') }}
+                                {{ __t('Hình ảnh', 'Image') }}
                             </th>
                             @foreach (Cart::content() as $product)
                             @if($product->options['type'] != 1)
