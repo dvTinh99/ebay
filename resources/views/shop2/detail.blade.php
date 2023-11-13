@@ -68,12 +68,12 @@
                                         class='las la-star'></i><i class='las la-star'></i>
                                 </span>
                                 <span class="ml-1 opacity-50">
-                                    (0{{ __t('Đánh giá', 'Reviews') }})
+                                    (0 {{ __t('Đánh giá', 'Reviews') }})
                                 </span>
                             </div>
                             <div class="col-auto ml">
                                 <small class="mr-2 opacity-50">
-                                    {{ __t('Thời gian giao hàng', 'Delivery time') }}
+                                    {{ __t('Ước tính thời gian vận chuyển:', 'Delivery time') }}
                                 </small>
                                 3
                                 {{ __t('Ngày', 'Days') }}
