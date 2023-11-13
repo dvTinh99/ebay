@@ -112,6 +112,8 @@
                                     <strong class="h2 fw-600 text-primary">
                                         ${{ $product->price }}
                                     </strong>
+                                    <span class="opacity-70">/Pc</span>
+                                    <img class="size-30px ml-3 mb-3 ls-is-cached lazyloaded" id="recommend_icon" src="/public/assets/img/recommend_icon.jpg">
                                 </div>
                             </div>
                         </div>
