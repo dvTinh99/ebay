@@ -96,9 +96,9 @@
                                 class="aiz-card-box border border-light rounded hov-shadow-md mt-1 mb-2 has-transition bg-white">
                                 <div class="position-relative">
                                     <a href="/product/{{ $product->id }}" class="d-block">
-                                        <img class="img-fit mx-auto h-140px h-md-210px lazyloaded"
-                                            src="{{ @$product->images->first()->image_link }}"
-                                            data-src="{{ @$product->images->first()->image_link }}"
+                                        <img class="img-fit mx-auto h-140px h-md-210px lazyload"
+                                            src="/{{ @$product->images->first()->image_link }}"
+                                            data-src="/{{ @$product->images->first()->image_link }}"
                                             alt=""
                                         >
                                     </a>

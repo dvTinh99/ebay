@@ -31,7 +31,7 @@
 
                                     <div class="carousel-box img-zoom rounded">
                                         <img style="width:100%;height:auto;" class="img-fluid lazyload"
-                                             src="../public/assets/img/placeholder.jpg"
+                                             src="/public/assets/img/placeholder.jpg"
                                              data-src="{{ asset('') . $image->image_link }}"
                                              onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </div>
@@ -45,7 +45,7 @@
                                 @foreach ($product->images as $image)
                                     <div class="carousel-box c-pointer border p-1 rounded">
                                         <img class="lazyload mw-100 size-50px mx-auto"
-                                             src="../public/assets/img/placeholder.jpg"
+                                             src="/public/assets/img/placeholder.jpg"
                                              data-src="{{ asset('') . $image->image_link }}"
                                              onerror="this.onerror=null;this.src='/public/assets/img/placeholder.jpg';">
                                     </div>
