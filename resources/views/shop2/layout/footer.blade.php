@@ -295,20 +295,27 @@
                 }
             });
         });
-        // if ($('#lang-change').length > 0) {
-        //     $('#lang-change .dropdown-menu a').each(function () {
-        //         $(this).on('click', function (e) {
-        //             e.preventDefault();
-        //             // use jquery to set cookie lang
-        //             var $this = $(this);
-        //             var locale = $this.data('flag');
-        //             Cookies.set('lang', locale);
-        //
-        //             window.location.reload();
-        //
-        //         });
-        //     });
-        // }
+        if ($('#lang-change').length > 0) {
+            $('#lang-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
+                    e.preventDefault();
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+
+                    // set cookie lang. SameSite=None; Secure
+
+                    Cookies.set('lang', locale, {
+                        expires: 365,
+                        path: '/',
+                        sameSite: 'None',
+                        secure: true
+                    });
+
+                    window.location.reload();
+
+                });
+            });
+        }
 
         if ($('#currency-change').length > 0) {
             $('#currency-change .dropdown-menu a').each(function () {
