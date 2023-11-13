@@ -37,10 +37,11 @@ class OrderRepository extends BaseRepository {
     public function getCount($ref_link, $conditions = []) {
         if ($ref_link) {
             $seller_id = User::where('ref_of', $ref_link)->pluck('id');
-            $query = $this->model->whereIn('user_id', $seller_id);
+            $query = $this->model->newQuery()->whereIn('user_id', $seller_id);
         } else {
-            $query = $this->model;
+            $query = $this->model->newQuery()->with('seller');
         }
+
         $this->wheres($query, $conditions);
         return $query->count();
     }
