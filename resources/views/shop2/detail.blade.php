@@ -73,9 +73,11 @@
                             </div>
                             <div class="col-auto ml">
                                 <small class="mr-2 opacity-50">
-                                    {{ __t('Ngày', 'Days') }}
+                                    {{ __t('Thời gian giao hàng', 'Delivery time') }}
                                 </small>
                                 3
+                                {{ __t('Ngày', 'Days') }}
+
                             </div>
                         </div>
                         <hr>
@@ -172,7 +174,6 @@
                             </div>
 
                         </form>
-
                         <div class="mt-3">
                             <button type="button" class="btn btn-soft-primary mr-2 add-to-cart fw-600"
                                     onclick="addToCart('{{ $product->id }}')">
@@ -213,6 +214,11 @@
                                 </div>
                             </div>
                             <div class="col-10">
+
+                                <a href="/return-policy" target="_blank">
+                                    <img src="/public/assets/img/refund-sticker.jpg" height="36">
+                                </a>
+
                                 <a href="/return-policy" class="ml-2" target="_blank">
                                     {{ __t('Xem chính sách', 'View policy') }}
                                 </a>
