@@ -47,8 +47,6 @@ function __currentLanguage()
     // Retrieve the language from the cookie or default to 'vi'
     $lang = $_COOKIE['lang'] ?? 'vi';
 
-    dd($lang);
-
     // If unsupported language, default to 'vi'
     if (!in_array($lang, $supportedLanguages)) {
         $lang = 'vi';
