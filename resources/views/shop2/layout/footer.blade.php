@@ -271,8 +271,6 @@
 <script src="{{ asset('public') }}/assets/js/vendors.js"></script>
 <script src="{{ asset('public') }}/assets/js/aiz-core.js"></script>
 <script>
-    import lo from "../../../../public/kho/bower_components/moment/src/locale/lo";
-
     $(document).ready(function () {
 
         // emit event iframe_change to parent window with current url
