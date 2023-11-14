@@ -16,7 +16,7 @@
             <li class="category-nav-element" data-id="15">
                 <a href="/category/{{ $category->id }}"
                     class="text-truncate text-reset py-2 px-3 d-block">
-                    <span class="cat-name">{{ $category->name }}</span>
+                    <span class="cat-name">{{ __t($category->name, $category->name) }}</span>
                 </a>
                 <div class="sub-cat-menu c-scrollbar-light rounded shadow-lg p-4 loaded">
                     <div class="card-columns">
