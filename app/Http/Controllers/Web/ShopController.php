@@ -250,6 +250,8 @@ class ShopController extends Controller
         // change session.
         Session::put('lang', $lang);
 
+        dd(Session::get('lang'));
+
         return redirect()->back();
     }
 
