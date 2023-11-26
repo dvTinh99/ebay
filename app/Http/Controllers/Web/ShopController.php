@@ -99,7 +99,7 @@ class ShopController extends Controller
     }
 
     function index() {
-        $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
+        $categories = $this->getCategories();
 
         $newProducts = SellerProduct::with([
             'product' => function($query) {
@@ -266,7 +266,7 @@ class ShopController extends Controller
     function search(Request $request) {
         $keyWord = $request->keyword;
         $products = Product::where('name', 'like', '%' . $keyWord . '%')->paginate(9);
-        $categories = Category::where('father_id', 0)->get();
+        $categories = $this->getCategories();
         return view('shop2.page.search', compact('products', 'categories', 'keyWord'));
     }
 
@@ -275,13 +275,29 @@ class ShopController extends Controller
     }
 
     function categories() {
-        $categories = Category::with('children')->where('father_id', 0)->get();
+        $categories = $this->getCategories();
         return view('shop2.page.categories', compact('categories'));
     }
 
     function category($id) {
         $products = Product::where('category_id', $id)->paginate(10);
-        $categories = Category::where('father_id', 0)->get();
+        $categories = $this->getCategories();
         return view('shop2.page.search', compact('products', 'categories'));
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
+     */
+    public function getCategories()
+    {
+        $categories = Category::with('children')->where('father_id', 0)->limit(11)->get();
+
+//        $lang = __currentLanguage();
+//
+//        $categories = $categories->map(function ($item) use ($lang) {
+//            $item->name = $lang == 'vi' ? $item->name : $item->name_en;
+//            return $item;
+//        });
+        return $categories;
     }
 }
