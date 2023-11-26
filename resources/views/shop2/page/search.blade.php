@@ -39,7 +39,9 @@
                                         @foreach ($categories as $category)
                                         <li class="mb-2 ml-2">
                                             <a class="text-reset fs-14"
-                                                href="/category/{{ $category->id }}">{{ $category->name }}</a>
+                                                href="/category/{{ $category->id }}">
+                                                {{ __t($category->name, $category->name_en) }}
+                                            </a>
                                         </li>
                                         @endforeach
 

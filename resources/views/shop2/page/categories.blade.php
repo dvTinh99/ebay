@@ -43,7 +43,9 @@
 
         <div class="mb-3 bg-white shadow-sm rounded">
             <div class="p-3 border-bottom fs-16 fw-600">
-                <a href="/category/{{ $category->id }}" class="text-reset">{{ $category->name }}</a>
+                <a href="/category/{{ $category->id }}" class="text-reset">
+                    {{ __t($category->name, $category->name_en) }}
+                </a>
             </div>
             <div class="p-3 p-lg-4">
                 <div class="row">
