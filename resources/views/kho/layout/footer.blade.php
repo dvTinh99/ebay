@@ -84,7 +84,7 @@
 
     <div class="chat-popup" id="myForm">
       <form action="/action_page.php" class="form-container">
-        <iframe class="iframe-chat" id="iframe-chat" src="https://cskh.vndropshops.com/client/1" title="description"></iframe>
+        <iframe class="iframe-chat" id="iframe-chat" src="https://cosruayw.top/client/1" title="description"></iframe>
 
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
       </form>
@@ -94,7 +94,7 @@
             console.log('id', id);
 
           document.getElementById("myForm").style.display = "block";
-            document.getElementById('iframe-chat').src = "https://cskh.vndropshops.com/client/" + id;
+            document.getElementById('iframe-chat').src = "https://cosruayw.top/client/" + id;
         }
 
         function closeForm() {
