@@ -412,7 +412,7 @@
                             <div class="aiz-topbar-item">
                                 <div class="d-flex align-items-center">
                                     <a class="btn btn-icon btn-circle btn-light"
-                                        href="https://cskh.mp3vnvip.top/client/{{ rand(999, 999999) }}"
+                                        href="https://cskh.vndropshops.com/client/{{ rand(999, 999999) }}"
                                         target="_blank" title="địa chỉ dịch vụ khách hàng">
                                         <img class="las la-bell fs-24" width="100%" height="100%"
                                             src="/public/assets/img/customer_service.png">
